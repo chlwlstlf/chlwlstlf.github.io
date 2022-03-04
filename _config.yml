@@ -103,12 +103,11 @@ analytics:
 # Site Author
 author:
   name             : "최진실"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-<<<<<<< HEAD
-<<<<<<< HEAD
+  avatar           : # path of avatar image, e.g. "/assets/images/jinsillogo.png"
   bio              : "Sejong Univ. DataScience"
   location         : "South Korea"
   email            : "jinsil378900@gmail.com"
+  links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
