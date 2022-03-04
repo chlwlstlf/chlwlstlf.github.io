@@ -15,7 +15,6 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-<<<<<<< HEAD
 locale                   : "ko-KR"
 title                    : "JinBlog"
 title_separator          : "|"
@@ -29,7 +28,6 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Jinsil"
 description              : "작업 내용 올리는 중"
->>>>>>> b5ac1709cbab20d5e2643f546c108024cd2ab87d
 url                      : "https://chlwlstlf.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -114,6 +112,7 @@ author:
   name             : "최진실"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
 <<<<<<< HEAD
+<<<<<<< HEAD
   bio              : "Sejong Univ. DataScience"
   location         : "South Korea"
   email            : "jinsil378900@gmail.com"
@@ -121,7 +120,10 @@ author:
   bio              : "Sejong Univ. Datascience"
   location         : "Osan, South Korea"
   email            : "jinisl378900@gmail.com"
->>>>>>> b5ac1709cbab20d5e2643f546c108024cd2ab87d
+=======
+  bio              : "Sejong Univ. Datascience"
+  location         : "Osan, South Korea"
+  email            : "jinisl378900@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
