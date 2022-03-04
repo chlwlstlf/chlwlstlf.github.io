@@ -19,8 +19,8 @@ locale                   : "ko-KR"
 title                    : "JinBlog"
 title_separator          : "|"
 subtitle                 : "Gonna be my Best Part"
-name                     : "최진실"
-description              : "작업 내용 올리는 중.."
+name                     : "Jinsil"
+description              : "진실의 블로그"
 url                      : "https://chlwlstlf.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "최진실"
-  avatar           : # path of avatar image, e.g. "/assets/images/jinsillogo.png"
+  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Sejong Univ. DataScience"
   location         : "South Korea"
   email            : "jinsil378900@gmail.com"
@@ -289,5 +289,4 @@ defaults:
       share: true
       related: true
       show_date: true
-
 date_format: "%Y-%m-%d"
