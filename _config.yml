@@ -103,9 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "최진실"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-<<<<<<< HEAD
-<<<<<<< HEAD
+  avatar           : "/assets/images/jinsillogo.png"
   bio              : "Sejong Univ. DataScience"
   location         : "South Korea"
   email            : "jinsil378900@gmail.com"
