@@ -104,8 +104,8 @@ analytics:
 author:
   name             : "최진실"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "SJU Datascience 19"
-  location         : "Osan, Korea"
+  bio              : "Sejong Univ. Datascience"
+  location         : "Osan, South Korea"
   email            : "jinisl378900@gmail.com"
   links:
     - label: "Email"
