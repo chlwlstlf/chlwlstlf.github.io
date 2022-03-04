@@ -21,13 +21,6 @@ title_separator          : "|"
 subtitle                 : "Gonna be my Best Part"
 name                     : "최진실"
 description              : "작업 내용 올리는 중.."
-=======
-locale                   : "en-US"
-title                    : "JinBlog"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Jinsil"
-description              : "작업 내용 올리는 중"
 url                      : "https://chlwlstlf.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -116,15 +109,6 @@ author:
   bio              : "Sejong Univ. DataScience"
   location         : "South Korea"
   email            : "jinsil378900@gmail.com"
-=======
-  bio              : "Sejong Univ. Datascience"
-  location         : "Osan, South Korea"
-  email            : "jinisl378900@gmail.com"
-=======
-  bio              : "Sejong Univ. Datascience"
-  location         : "Osan, South Korea"
-  email            : "jinisl378900@gmail.com"
-  links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
