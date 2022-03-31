@@ -21,11 +21,12 @@ toc: true
 ## 응용문제1 : 최대공약수 구하기 - 유클리드 호제법
 
 입력예시  
-12 8  
+12 8    
+
 출력예시  
 4  
 
-```C
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -75,7 +76,8 @@ int gcd(int a, int b)
     - to: 목표 말뚝
     
 입력예시  
-2 
+2   
+
 출력예시  
 A B	↦ 말뚝 A의 맨 위 원반을 말뚝 B로 이동
 A C	↦ 이하 동일
@@ -101,7 +103,7 @@ Alg rHanoi(n, from, aux, to) {recursive}
 ```
 
 C언어
-```C
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
