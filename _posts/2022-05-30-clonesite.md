@@ -37,7 +37,7 @@ toc_sticky: true
 
 [https://chlwlstlf.github.io/megabox2022/index02.html](https://chlwlstlf.github.io/megabox2022/index02.html)  
 
-![megabox2](https://user-images.githubusercontent.com/63334368/162913022-0913d343-a796-4a9d-8294-9d7f3ce9c0b2.png)
+![megabox2](https://user-images.githubusercontent.com/63334368/165305775-dea51fee-f060-4ba7-b681-1450ed47c9f2.png)
 
 :bulb:문제해결
 1. 이미지에 마우스 올렸을 때 설명 뜨는거는 nav에서 했던 거라 쉽게 할 수 있었다.
