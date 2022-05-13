@@ -24,7 +24,7 @@ description              : "진실의 블로그"
 url                      : "https://chlwlstlf.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "/assets/images/chlwlstlf.jpg"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/jinsillogo.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "최진실"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/chlwlstlf.jpg"
   bio              : "Sejong Univ. DataScience"
   location         : "South Korea"
   email            :
