@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 2022 농림축산식품 공공빅데이터 활용 창업경진대회-제품 및 서비스 개발 부분  
+# 제품 및 서비스 개발 부분  
 
 [공모전 사이트](https://data.mafra.go.kr/contest/introduction/introductionNew/screen.do){: .btn .btn--primary}
 [공모전 노션](https://polite-rambutan-6e0.notion.site/b498691ea2124e23ac4fb7246538cd5f){: .btn .btn--primary}
