@@ -6,7 +6,8 @@ toc: true
 toc_sticky: true
 ---
 
-# 2022 농림축산식품 공공빅데이터 활용 창업경진대회-제품 및 서비스 개발 부분
+# 2022 농림축산식품 공공빅데이터 활용 창업경진대회-제품 및 서비스 개발 부분  
+
 [공모전 사이트](https://data.mafra.go.kr/contest/introduction/introductionNew/screen.do){: .btn .btn--primary}
 [공모전 노션](https://polite-rambutan-6e0.notion.site/b498691ea2124e23ac4fb7246538cd5f){: .btn .btn--primary}
 [공모전 깃허브](https://github.com/farmfarmfarmfarm){: .btn .btn--primary}
@@ -32,13 +33,13 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 ***
 
 ## <mark style='background-color: #ffdce0'> 트러블 슈팅 </mark>
-1. <mark style='background-color: #fff5b1'>입력전역 변수 필요 (useState)</mark> 
+1. <mark style='background-color: #fff5b1'>전역 변수 필요 (useState)</mark> 
 - 문제 : function 안에서 `const num = 1` 이라고 선언하면 함수 밖에서는 그 변수를 사용하지 못 한다
 - 해결 : `const [num, setNum] = useState(0);` 은 전역변수처럼 사용 가능
 
 2. <mark style='background-color: #fff5b1'>비동기 해결 (useEffect)</mark>
 - 문제 : api를 여러개 불러올수록 비동기의 문제점이 커진다 화면이 뜨자마자 데이터를 불러오고 싶으면?
-- 해결 : useEffect 안에 불러오고 싶음 api 코드를 넣으면 된다
+- 해결 : useEffect 안에 불러오고 싶은 api 코드를 넣으면 된다
 
 3. <mark style='background-color: #fff5b1'>api null ({ && })</mark>
 - 문제 : api로 받아온 값이 잘 들어가 있는데 null값이라고 에러가 뜬다
@@ -46,24 +47,24 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 
 4. <mark style='background-color: #fff5b1'>고유 주소 (useParams)</mark>
 - 문제 : 각 작물을 누르면 그 작물의 레시피로 넘어가고 싶은데 작물id를 어떻게 넘겨야할 지 고민했다
-- 해결 : `/:cropId`로 넘겨주고 `params = useParams`로 받는다
+- 해결 : `/:cropId`로 넘겨주고 `params = useParams()`로 받는다
 
 5. <mark style='background-color: #fff5b1'>props가 안 될 때(Recoil)</mark>
-- 문제 : 형제, 자식->부모 컴포넌트에서는 props 전달이 안된다
+- 문제 : 형제/자식->부모 컴포넌트에서는 props 전달이 안된다
 - 해결 : Redux를 사용하려 했지만 코드짜는 데 어려움이 있어서 최신 라이브러리인 Recoil을 사용했다
 
 6. <mark style='background-color: #fff5b1'>cors에러 (프록시 방식)</mark>
 - 문제 : 개발할 때 무조건 한번씩 보는 cors에러가 어김없이 등장했다
 - 해결 : setupProxy.js 파일을 만들어서 사람들의 코드를 그대로 넣었다
-<details>
-  <summary>※cors 에러※</summary>
-  <div markdown="1">       
-    CORS 에러는 브라우저에서 서로 다른 도메인/포트의 서버로 요청이 갈때 브라우저에서 발생
-  </div>
-</details>
+    <details>
+      <summary>※cors 에러※</summary>
+      <div markdown="1">       
+        CORS 에러는 브라우저에서 서로 다른 도메인/포트의 서버로 요청이 갈때 브라우저에서 발생
+      </div>
+    </details>
 
 ## <mark style='background-color: #ffdce0'> 후기 </mark>
-리액트를 2주 공부하고 바로 공모전을 준비했던 시기라 코드를 "잘" 짠다는 게 뭔지 몰랐다.  
+리액트를 2주 공부하고 바로 공모전을 준비했던 시기라 코드를 "잘" 짠다는 게 뭔지 몰랐다.
 파이썬처럼 시간 복잡도가 눈으로 보이는 것도 아니고 리액트적인 코드가 뭔지 감도 오지 않았다.  
 
 구글링으로 사람들의 코드를 열심히 분석하고 복붙으로도 실행을 성공시키려고 노력했다.
