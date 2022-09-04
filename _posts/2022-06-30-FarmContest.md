@@ -38,7 +38,8 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 - 해결 : `const [num, setNum] = useState(0);` 은 전역변수처럼 사용 가능
 
 2. <mark style='background-color: #fff5b1'>비동기 해결 (useEffect)</mark>
-- 문제 : api를 여러개 불러올수록 비동기의 문제점이 커진다 화면이 뜨자마자 데이터를 불러오고 싶으면?
+- 문제 : api를 여러개 불러올수록 비동기의 문제점이 커진다  
+화면이 뜨자마자 데이터를 불러오고 싶으면?
 - 해결 : useEffect 안에 불러오고 싶은 api 코드를 넣으면 된다
 
 3. <mark style='background-color: #fff5b1'>api null ({ && })</mark>
