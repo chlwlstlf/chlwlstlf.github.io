@@ -12,22 +12,23 @@ toc_sticky: true
 1\. 폰켓몬 (Level 1)
 [1845](https://school.programmers.co.kr/learn/courses/30/lessons/1845)
 ```python
-import sys
-input = sys.stdin.readline
-
 def solution(nums):
-    if len(set(nums)) > len(nums)//2 :
-        return len(nums)//2
-    else:
-        return len(set(nums))
-
-arr = list(map(int, input().split()))
-print(solution(arr))
+  if len(set(nums)) > len(nums)//2 :
+    return len(nums)//2
+  else:
+    return len(set(nums))
 ```
 2\. 완주하지 못한 선수 (Level 1)
 [42576](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
 3\. 같은 숫자는 싫어 (Level 1)
 [12906](https://school.programmers.co.kr/learn/courses/30/lessons/12906)
+```python
+def solution(nums):
+  if len(set(nums)) > len(nums)//2 :
+    return len(nums)//2
+  else:
+    return len(set(nums))
+```
 4\. K번째 수 (Level 1)
 [42748](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
 5\. 최소직사각형 (Level 1)
