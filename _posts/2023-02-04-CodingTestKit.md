@@ -19,7 +19,7 @@ def solution(nums):
     return len(set(nums))
 ```
 2\. 완주하지 못한 선수 (Level 1)
-[42576](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+[42576](https://school.programmers.co.kr/learn/courses/30/lessons/42576)  
 3\. 같은 숫자는 싫어 (Level 1)
 [12906](https://school.programmers.co.kr/learn/courses/30/lessons/12906)
 ```python
@@ -31,8 +31,30 @@ def solution(nums):
 ```
 4\. K번째 수 (Level 1)
 [42748](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
+```python
+def solution(array, commands):
+    answer = []
+    for i in range(len(commands)):
+        arr = array[commands[i][0]-1:commands[i][1]]
+        arr.sort()
+        answer.append(arr[commands[i][2]-1])
+    return answer
+```
 5\. 최소직사각형 (Level 1)
 [86491](https://school.programmers.co.kr/learn/courses/30/lessons/86491)
+```python
+def solution(sizes):
+    r_max = 0
+    c_max = 0
+    for i in range (len(sizes)):
+        if sizes[i][0] < sizes[i][1]:
+            sizes[i][0], sizes[i][1] = sizes[i][1], sizes[i][0]
+        if sizes[i][0] > r_max:
+            r_max = sizes[i][0]
+        if sizes[i][1] > c_max:
+            c_max = sizes[i][1]
+    return r_max*c_max
+```
 6\. 모의고사 (Level 1)
 [42840](https://school.programmers.co.kr/learn/courses/30/lessons/42840)
 7\. 체육복 (Level 1)
