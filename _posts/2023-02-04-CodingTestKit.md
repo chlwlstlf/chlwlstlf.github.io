@@ -110,7 +110,7 @@ def solution(phone_book):
 9\. 위장 (Level 2)
 [42578](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
 10\. 기능 개발 (Level 2)
-42586https://school.programmers.co.kr/learn/courses/30/lessons/42586
+[42586](https://school.programmers.co.kr/learn/courses/30/lessons/42586)
 11\. 올바른 괄호 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/12909
 12\. 프린터 (Level 2)
