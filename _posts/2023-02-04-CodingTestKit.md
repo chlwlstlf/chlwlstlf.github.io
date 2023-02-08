@@ -57,10 +57,56 @@ def solution(sizes):
 ```
 6\. 모의고사 (Level 1)
 [42840](https://school.programmers.co.kr/learn/courses/30/lessons/42840)
+```python
+def solution(answers):
+    answer = []
+    result = []
+    s = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]]
+    for i in range(3):
+        cnt = 0
+        for j in range(len(answers)):
+            if answers[j] == s[i][j%len(s[i])]:
+                cnt += 1
+        result.append(cnt)
+        
+    for i in range(3):
+        if max(result) == result[i]:
+            answer.append(i+1)
+    return answer
+```
 7\. 체육복 (Level 1)
 [42862](https://school.programmers.co.kr/learn/courses/30/lessons/42862)
+```python
+def solution(n, lost, reserve):
+    arr = [0]*(n+1)
+    for i in range(len(lost)):
+        arr[lost[i]] -= 1
+    for i in range(len(reserve)):
+        arr[reserve[i]] += 1
+    
+    for i in range(n+1):
+        if arr[i] == 1 and arr[i-1] == -1:
+            arr[i] = 0
+            arr[i-1] = 0
+        if i != n and arr[i] == 1 and arr[i+1] == -1:
+            arr[i] = 0
+            arr[i+1] = 0
+    answer = n - arr.count(-1)
+    return answer
+```
 8\. 전화번호 목록 (Level 2)
 [42577](https://school.programmers.co.kr/learn/courses/30/lessons/42577)
+```python
+def solution(phone_book):
+    answer = True
+    phone_book.sort()
+    for i in range(len(phone_book)-1):
+        pb = phone_book[i+1][:len(phone_book[i])] #startwith 쓰면 이 부분 필요 없음
+        if pb == phone_book[i]:
+            answer = False
+            break
+    return answer
+```
 9\. 위장 (Level 2)
 [42578](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
 10\. 기능 개발 (Level 2)
