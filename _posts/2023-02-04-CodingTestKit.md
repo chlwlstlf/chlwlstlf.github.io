@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# Coding Test Study 3
+# Coding Test Study Algorithm
 
 ## 💻230204~230208 (Level 1~2)
 1\. 폰켓몬 (Level 1)
@@ -20,6 +20,7 @@ def solution(nums):
 ```
 2\. 완주하지 못한 선수 (Level 1)
 [42576](https://school.programmers.co.kr/learn/courses/30/lessons/42576)  
+>시간초과
 3\. 같은 숫자는 싫어 (Level 1)
 [12906](https://school.programmers.co.kr/learn/courses/30/lessons/12906)
 ```python
@@ -109,28 +110,130 @@ def solution(phone_book):
 ```
 9\. 위장 (Level 2)
 [42578](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
+>시간초과
 10\. 기능 개발 (Level 2)
 [42586](https://school.programmers.co.kr/learn/courses/30/lessons/42586)
+```python
+import math
+
+def solution(progresses, speeds):
+    answer = []
+    time = math.ceil((100.0-progresses[0])/speeds[0])
+    count = 0
+    
+    for i in range(len(progresses)):
+        if math.ceil((100.0-progresses[i])/speeds[i]) > time: #현재 시간보다 큰 시간이 나올 때 count값을 배열에 넣어줌
+            answer.append(count)
+            count = 0
+            time = math.ceil((100.0-progresses[i])/speeds[i])
+        count += 1
+    answer.append(count)
+    return answer
+```
+
+## 💻230209~230215 (Level 2)
 11\. 올바른 괄호 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/12909
+[12909](https://school.programmers.co.kr/learn/courses/30/lessons/12909)
+```python
+def solution(s):
+    answer = True
+    stack = []
+
+    for i in range(len(s)):
+        if s[i] == '(': #'('이면 stack에 넣기
+            stack.append('(')
+        else: #맨 처음 ')'가 아니고 stack이 비어있지 않으면 stack에 있는 마지막 '('을 없애기
+            if i == 0 or len(stack) == 0:
+                answer = False
+                break
+            else:
+                stack.pop()
+                
+    if len(stack) != 0: #stack이 짝이 다 맞아서 비어있을 때만 True임
+        answer = False
+    return answer
+```
 12\. 프린터 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42587
+[42587](https://school.programmers.co.kr/learn/courses/30/lessons/42587)
+```python
+def solution(priorities, location):
+    result = [i for i in range(len(priorities))] #순서 배열
+    priorities2 = []
+    result2 = []
+    while True:
+        if priorities[0] != max(priorities): #더 큰 수가 있다면 제일 앞에 있는 수를 제일 뒤로 둠
+            priorities.append(priorities.pop(0))
+            result.append(result.pop(0))
+        else: #제일 큰 수라면 원래 배열에서 빼서 새 배열에 넣기
+            priorities2.append(priorities.pop(0)) #priorities2는 내림차순 정렬 되어야함
+            result2.append(result.pop(0))
+
+        if len(priorities) == 0:
+            break
+            
+    answer = result2.index(location)+1
+    return answer
+```
 13\. 다리를 지나는 트럭 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42583
+[42583](https://school.programmers.co.kr/learn/courses/30/lessons/42583)
+```python
+def solution(bridge_length, weight, truck_weights):
+    answer = 0
+    cnt = [] #다리 위를 얼마나 건넜는지 판별
+    i = 0
+    stack = []
+    
+    while True:
+        if i == len(truck_weights): #마지막 트럭이 다리에 올라가면 종료
+            break
+            
+        if i > 0 and cnt[0] == bridge_length: #다리 위를 다 건넜으면 stack, cnt에서 pop
+            stack.pop(0)
+            cnt.pop(0)
+            
+        if sum(stack)+truck_weights[i] <= weight: #무게로 stack에 넣어도 되는지 판별
+            stack.append(truck_weights[i])
+            cnt.append(0)
+            i += 1
+            
+        for j in range(len(cnt)):
+            cnt[j] += 1
+        answer += 1
+        
+    answer += bridge_length
+    return answer
+```
 14\. 주식가격 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42584
+[42584](https://school.programmers.co.kr/learn/courses/30/lessons/42584)
+```python
+def solution(prices):
+    answer = []
+    for i in range(len(prices)):
+        cnt = 0
+        for j in range(i+1, len(prices)):
+            cnt += 1
+            if prices[i] > prices[j] or j == len(prices)-1:
+                answer.append(cnt)
+                break
+    answer.append(0)
+    return answer
+```
 15\. 더 맵게 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42626
+[42626](https://school.programmers.co.kr/learn/courses/30/lessons/42626)
+>정확성 실패
 16\. 가장 큰 수 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42746
+[42746](https://school.programmers.co.kr/learn/courses/30/lessons/42746)
+>못 풀겠음
 17\. H-Index (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42747
+[42747](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
 18\. 소수 찾기 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42839
+[42839](https://school.programmers.co.kr/learn/courses/30/lessons/42839)
 19\. 카펫 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42842
+[42842](https://school.programmers.co.kr/learn/courses/30/lessons/42842)
 20\. 피로도 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/87946
+[87946](https://school.programmers.co.kr/learn/courses/30/lessons/87946)
+
+## 💻230209~230215 (Level 2)
 21\. 전력망을 둘로 나누기 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/86971
 22\. 모음사전 (Level 2)
