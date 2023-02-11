@@ -21,6 +21,7 @@ def solution(nums):
 2\. 완주하지 못한 선수 (Level 1)
 [42576](https://school.programmers.co.kr/learn/courses/30/lessons/42576)  
 >시간초과
+
 3\. 같은 숫자는 싫어 (Level 1)
 [12906](https://school.programmers.co.kr/learn/courses/30/lessons/12906)
 ```python
@@ -111,6 +112,7 @@ def solution(phone_book):
 9\. 위장 (Level 2)
 [42578](https://school.programmers.co.kr/learn/courses/30/lessons/42578)
 >시간초과
+
 10\. 기능 개발 (Level 2)
 [42586](https://school.programmers.co.kr/learn/courses/30/lessons/42586)
 ```python
@@ -221,21 +223,114 @@ def solution(prices):
 15\. 더 맵게 (Level 2)
 [42626](https://school.programmers.co.kr/learn/courses/30/lessons/42626)
 >정확성 실패
+
 16\. 가장 큰 수 (Level 2)
 [42746](https://school.programmers.co.kr/learn/courses/30/lessons/42746)
 >못 풀겠음
+
 17\. H-Index (Level 2)
 [42747](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
+```python
+def solution(citations):
+    citations.sort(reverse=True)
+    for i in range(len(citations)):
+        if citations[i] <= i: #개수가 인용수보다 커지는 경곗값
+            return i
+    return len(citations)
+```
 18\. 소수 찾기 (Level 2)
 [42839](https://school.programmers.co.kr/learn/courses/30/lessons/42839)
+```python
+from itertools import permutations
+
+def solution(numbers):
+    answer = 0
+    arr = []
+    numbers = list(map(int, numbers))
+    
+    #조합가능한 숫자들 구하기
+    for i in range(len(numbers)):
+        per = list(permutations(numbers, i+1))
+        for p in per:
+            arr.append(int(''.join(map(str, p))))
+    arr = list(set(arr))
+
+    #소수찾기
+    for i in range(len(arr)):
+        f = 0
+        for j in range(2, arr[i]):
+            if arr[i]%j == 0:
+                f = 1
+                break
+        if f == 0 and arr[i] > 1:
+            answer +=1
+                       
+    return answer
+```
 19\. 카펫 (Level 2)
 [42842](https://school.programmers.co.kr/learn/courses/30/lessons/42842)
+```python
+def solution(brown, yellow):
+    i = 1
+    while True:
+        j = yellow/i
+        if (i+2)*(j+2) == (brown+yellow):
+            answer = [i+2, j+2]
+            break
+        i += 1
+    answer.sort(reverse=True)
+    return answer
+```
 20\. 피로도 (Level 2)
 [87946](https://school.programmers.co.kr/learn/courses/30/lessons/87946)
+```python
+from itertools import permutations
+
+def solution(k, dungeons):
+    answer = -1
+    per = [i for i in range(len(dungeons))]
+    per = list(permutations(per, len(dungeons)))
+    
+    for p in per:
+        cnt = 0
+        rest = k
+        for j in p:
+            if dungeons[j][0] <= rest:
+                rest -= dungeons[j][1]
+                cnt += 1
+            else:
+                break
+        if answer < cnt :
+            answer = cnt
+    return answer
+```
 
 ## 💻230209~230215 (Level 2)
 21\. 전력망을 둘로 나누기 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/86971
+```python
+def dfs(graph, v, visited):
+    visited[v] = 1
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+            
+def solution(n, wires):
+    answer = n
+    
+    for i in range(n-1):
+        graph = [[] for _ in range(n+1)]
+        for j in range(n-1):
+            if i != j:
+                graph[wires[j][0]].append(wires[j][1])
+                graph[wires[j][1]].append(wires[j][0])
+        visited = [0]*(n+1)
+        dfs(graph, 1, visited)
+        if abs(visited.count(1)-visited.count(0)+1) < answer:
+            answer = abs(visited.count(1)-visited.count(0)+1)
+            
+    return answer
+```
 22\. 모음사전 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/84512
 23\. 조이스틱 (Level 2)
