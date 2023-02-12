@@ -333,10 +333,62 @@ def solution(n, wires):
 ```
 22\. 모음사전 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/84512
+```python
+arr = ['A', 'E', 'I', 'O', 'U']
+count = 0
+
+def dfs(n, word, cnt):
+    global count
+    count += 1
+    if word == n:
+        return True
+    if cnt < 4 :
+        for i in range(5):
+            if dfs(n+arr[i], word, cnt+1)==True:
+                return True #차례차례 위로 올라가면서 True를 반환
+
+def solution(word):
+    for i in range(5):
+        if dfs(''+arr[i], word, 0) == True:
+            return count
+```
 23\. 조이스틱 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/42860
+>못품(조건 너무 많음)
+
 24\. 큰 수 만들기 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/42883
+```python
+def solution(number, k):
+    n = list(map(int, str(number)))
+    total = len(n)-k
+    idx = 0
+    answer = ''
+    while True:
+        end = len(n)-total+1
+        
+        #최댓값 찾기
+        max = 0
+        for i in range(idx,end):
+            if n[i] == 9: #시간 줄이기
+                max = n[i]
+                id = i+1
+                break
+            if n[i] > max:
+                max = n[i]
+                id = i+1
+        
+        answer += str(max)
+        idx = id
+        total -= 1
+        if total == 0 or len(n)-idx==total:
+            break
+            
+    if total > 0:
+        answer += ''.join(map(str, n[idx:len(n)]))
+    
+    return answer
+```
 25\. 구명보트 (Level 2)
 https://school.programmers.co.kr/learn/courses/30/lessons/42885
 26\. 타겟 넘버 (Level 2)
