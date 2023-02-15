@@ -307,7 +307,7 @@ def solution(k, dungeons):
 
 ## 💻230209~230215 (Level 2)
 21\. 전력망을 둘로 나누기 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/86971
+[86971](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
 ```python
 def dfs(graph, v, visited):
     visited[v] = 1
@@ -332,7 +332,7 @@ def solution(n, wires):
     return answer
 ```
 22\. 모음사전 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/84512
+[84512](https://school.programmers.co.kr/learn/courses/30/lessons/84512)
 ```python
 arr = ['A', 'E', 'I', 'O', 'U']
 count = 0
@@ -353,11 +353,11 @@ def solution(word):
             return count
 ```
 23\. 조이스틱 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42860
+[42860](https://school.programmers.co.kr/learn/courses/30/lessons/42860)
 >못품(조건 너무 많음)
 
 24\. 큰 수 만들기 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42883
+[42883](https://school.programmers.co.kr/learn/courses/30/lessons/42883)
 ```python
 def solution(number, k):
     n = list(map(int, str(number)))
@@ -390,17 +390,17 @@ def solution(number, k):
     return answer
 ```
 25\. 구명보트 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/42885
+[42885](https://school.programmers.co.kr/learn/courses/30/lessons/42885)
 26\. 타겟 넘버 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/43165
+[43165](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
 27\. 게임 맵 최단거리 (Level 2)
-https://school.programmers.co.kr/learn/courses/30/lessons/1844
+[1844](https://school.programmers.co.kr/learn/courses/30/lessons/1844)
 28\. 베스트앨범 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42579
+[42579](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
 29\. 디스크 컨트롤러 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42627
+[42627](https://school.programmers.co.kr/learn/courses/30/lessons/42627)
 30\. 이중우선순위큐 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42628
+[42628](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
 31\. 섬 연결하기 (Level 3)
 https://school.programmers.co.kr/learn/courses/30/lessons/42861
 32\. 단속카메라 (Level 3)
