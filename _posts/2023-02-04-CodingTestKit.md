@@ -391,10 +391,81 @@ def solution(number, k):
 ```
 25\. 구명보트 (Level 2)
 [42885](https://school.programmers.co.kr/learn/courses/30/lessons/42885)
+```python
+from collections import deque
+
+def solution(people, limit):
+    answer = 0
+    people.sort()
+    people = deque(people)
+
+    while True:
+        if len(people) <= 1:
+            break
+        if people[0]+people[-1] <= limit:
+            people.popleft()
+            people.pop()
+            answer += 1
+        else:
+            people.pop()
+            answer += 1  
+            
+    if len(people) > 0:
+        answer += 1
+    return answer
+```
 26\. 타겟 넘버 (Level 2)
 [43165](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
+```python
+def solution(numbers, target):
+    answer = 0
+        
+    def dfs(cnt, total):
+        nonlocal answer
+        if cnt == len(numbers):
+            if total == target:
+                answer += 1
+            return
+        
+        dfs(cnt+1, total+numbers[cnt])
+        dfs(cnt+1, total-numbers[cnt])
+    
+    dfs(0, 0)
+    return answer
+```
 27\. 게임 맵 최단거리 (Level 2)
 [1844](https://school.programmers.co.kr/learn/courses/30/lessons/1844)
+```python
+from collections import deque
+
+def solution(maps):
+    def bfs (x, y):
+        q = deque()
+        q.append((x, y)) 
+        while q:
+            x, y = q.popleft()
+            for i in range(4):
+                nx = x+dx[i]
+                ny = y+dy[i]
+                if nx < 0 or nx >= len(maps) or ny < 0 or ny >= len(maps[0]):
+                    continue
+                if maps[nx][ny] == 0:
+                    continue 
+                if maps[nx][ny] == 1:
+                    maps[nx][ny] = maps[x][y]+1
+                    q.append((nx, ny))
+        if maps[len(maps)-1][len(maps[0])-1] <= 1:
+            return -1
+        else :
+            return maps[len(maps)-1][len(maps[0])-1]
+            
+    
+    dx = [0, 1, -1, 0]
+    dy = [1, 0, 0, -1]
+    
+    
+    return bfs(0, 0)
+```
 28\. 베스트앨범 (Level 3)
 [42579](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
 29\. 디스크 컨트롤러 (Level 3)
