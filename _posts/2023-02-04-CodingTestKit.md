@@ -467,21 +467,21 @@ def solution(maps):
     return bfs(0, 0)
 ```
 28\. 베스트앨범 (Level 3)
-[42579](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
+[42579](https://school.programmers.co.kr/learn/courses/30/lessons/42579)  
 29\. 디스크 컨트롤러 (Level 3)
-[42627](https://school.programmers.co.kr/learn/courses/30/lessons/42627)
+[42627](https://school.programmers.co.kr/learn/courses/30/lessons/42627)  
 30\. 이중우선순위큐 (Level 3)
-[42628](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
+[42628](https://school.programmers.co.kr/learn/courses/30/lessons/42628)  
 31\. 섬 연결하기 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42861
+[42861](https://school.programmers.co.kr/learn/courses/30/lessons/42861)  
 32\. 단속카메라 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42884
+[42884](https://school.programmers.co.kr/learn/courses/30/lessons/42884)  
 33\. N으로 표현 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42895
+[42895](https://school.programmers.co.kr/learn/courses/30/lessons/42895)  
 34\. 정수 삼각형 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/43105
+[43105](https://school.programmers.co.kr/learn/courses/30/lessons/43105)  
 35\. 등굣길 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/42898
+[42898](https://school.programmers.co.kr/learn/courses/30/lessons/42898)  
 36\. 네트워크 (Level 3)
 https://school.programmers.co.kr/learn/courses/30/lessons/43162
 37\. 단어 변환 (Level 3)
