@@ -305,7 +305,6 @@ def solution(k, dungeons):
     return answer
 ```
 
-## 💻230209~230215 (Level 2)
 21\. 전력망을 둘로 나누기 (Level 2)
 [86971](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
 ```python
@@ -466,6 +465,8 @@ def solution(maps):
     
     return bfs(0, 0)
 ```
+
+## 💻230216~230222 (Level 3)
 28\. 베스트앨범 (Level 3)
 [42579](https://school.programmers.co.kr/learn/courses/30/lessons/42579)  
 29\. 디스크 컨트롤러 (Level 3)
