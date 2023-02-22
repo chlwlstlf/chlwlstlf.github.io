@@ -226,7 +226,17 @@ def solution(prices):
 
 16\. 가장 큰 수 (Level 2)
 [42746](https://school.programmers.co.kr/learn/courses/30/lessons/42746)
->못 풀겠음
+```python
+def solution(numbers):
+    answer = ''
+    numbers = list(map(lambda x:str(x)*3, numbers))
+    numbers.sort(reverse=True)
+    for i in range(len(numbers)):
+        answer += numbers[i][:len(numbers[i])//3]   
+    if int(answer)==0:
+        answer = '0'
+    return answer
+```
 
 17\. H-Index (Level 2)
 [42747](https://school.programmers.co.kr/learn/courses/30/lessons/42747)
@@ -469,6 +479,41 @@ def solution(maps):
 ## 💻230216~230222 (Level 3)
 28\. 베스트앨범 (Level 3)
 [42579](https://school.programmers.co.kr/learn/courses/30/lessons/42579)  
+```python
+def solution(genres, plays):
+    answer = [] 
+    result = []
+    genres_set = list(set(genres))
+    
+    #장르별로 합친 딕셔너리 만들기
+    for i in range(len(genres_set)):
+        n = {}
+        for j in range(len(genres)):
+            if genres[j] == genres_set[i]:
+                n[j] = plays[j]
+        result.append(n)
+    
+    #재생 횟수로 버블 정렬
+    for i in range(len(genres_set)):
+        for j in range(i, len(genres_set)):
+            if sum(result[j].values())>sum(result[i].values()):
+                result[i], result[j] = result[j], result[i]
+
+    #장르 내에서 많이 재생된 노래 순으로 정렬
+    for i in range(len(genres_set)):
+        result[i] = sorted(result[i].items(), key = lambda x: x[1], reverse=True)
+    
+    #2개까지 출력
+    for i in range(len(genres_set)):
+        if len(result[i]) <= 1:
+            answer.append(result[i][0][0])
+        else:
+            answer.append(result[i][0][0])
+            answer.append(result[i][1][0])
+
+    return answer
+```
+
 29\. 디스크 컨트롤러 (Level 3)
 [42627](https://school.programmers.co.kr/learn/courses/30/lessons/42627)  
 30\. 이중우선순위큐 (Level 3)
@@ -477,6 +522,19 @@ def solution(maps):
 [42861](https://school.programmers.co.kr/learn/courses/30/lessons/42861)  
 32\. 단속카메라 (Level 3)
 [42884](https://school.programmers.co.kr/learn/courses/30/lessons/42884)  
+```python
+def solution(routes):
+    routes = sorted(routes, key=lambda x:(x[1], x[0]))
+
+    camera = routes[0][1]
+    answer = 1
+    for i in range(len(routes)):
+        if camera < routes[i][0]:
+            camera = routes[i][1]
+            answer += 1
+    return answer
+```
+
 33\. N으로 표현 (Level 3)
 [42895](https://school.programmers.co.kr/learn/courses/30/lessons/42895)  
 34\. 정수 삼각형 (Level 3)
