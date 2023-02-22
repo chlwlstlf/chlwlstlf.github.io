@@ -515,7 +515,42 @@ def solution(genres, plays):
 ```
 
 29\. 디스크 컨트롤러 (Level 3)
-[42627](https://school.programmers.co.kr/learn/courses/30/lessons/42627)  
+[42627](https://school.programmers.co.kr/learn/courses/30/lessons/42627) 
+```python
+from heapq import heappush, heappop
+
+def solution(jobs):
+    answer = []
+    l = len(jobs)
+    time = 0
+    waiting = []
+    
+    jobs.sort()
+
+    while True:
+        #time안에 실행할 수 있는 모든 작업을 waiting에 넣기
+        while True:
+            if jobs and jobs[0][0] <= time:
+                heappush(waiting, (jobs[0][1], jobs[0][0])) #2열 기준으로 정렬됨
+                heappop(jobs)
+            else:
+                break
+        
+        #waiting배열이 있으면 작업시간 제일 작은 거 answer에 넣기
+        if waiting:
+            answer.append(time-waiting[0][1]+waiting[0][0])
+            time += waiting[0][0]
+            heappop(waiting)
+        else:
+            time += 1
+            
+        #answer에 값이 다 들어가면 종료    
+        if len(answer) == l:
+            break
+        
+    return sum(answer)//len(answer)
+```
+
 30\. 이중우선순위큐 (Level 3)
 [42628](https://school.programmers.co.kr/learn/courses/30/lessons/42628)  
 31\. 섬 연결하기 (Level 3)
@@ -542,26 +577,26 @@ def solution(routes):
 35\. 등굣길 (Level 3)
 [42898](https://school.programmers.co.kr/learn/courses/30/lessons/42898)  
 36\. 네트워크 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/43162
+[43162](https://school.programmers.co.kr/learn/courses/30/lessons/43162)
 37\. 단어 변환 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/43163
+[43163](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
 38\. 아이템 줍기 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/87694
+[87694](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
 39\. 여행경로 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/43164
+[43164](https://school.programmers.co.kr/learn/courses/30/lessons/43164)
 40\. 퍼즐 조각 채우기 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/84021
+[84021](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
 41\. 입국심사 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/43238
+[43238](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
 42\. 가장 먼 노드 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/49189
+[49189](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
 43\. 순위 (Level 3)
-https://school.programmers.co.kr/learn/courses/30/lessons/49191
+[49191](https://school.programmers.co.kr/learn/courses/30/lessons/49191)
 44\. 사칙연산 (Level 4)
-https://school.programmers.co.kr/learn/courses/30/lessons/1843
+[1843](https://school.programmers.co.kr/learn/courses/30/lessons/1843)
 45\. 도둑질 (Level 4)
-https://school.programmers.co.kr/learn/courses/30/lessons/42897
+[42897](https://school.programmers.co.kr/learn/courses/30/lessons/42897)
 46\. 징검다리 (Level 4)
-https://school.programmers.co.kr/learn/courses/30/lessons/43236
+[43236](https://school.programmers.co.kr/learn/courses/30/lessons/43236)
 47\. 방의 개수 (Level 5)
-https://school.programmers.co.kr/learn/courses/30/lessons/49190
+[49190](https://school.programmers.co.kr/learn/courses/30/lessons/49190)
