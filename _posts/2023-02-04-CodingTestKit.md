@@ -575,11 +575,79 @@ def solution(routes):
 34\. 정수 삼각형 (Level 3)
 [43105](https://school.programmers.co.kr/learn/courses/30/lessons/43105)  
 35\. 등굣길 (Level 3)
-[42898](https://school.programmers.co.kr/learn/courses/30/lessons/42898)  
+[42898](https://school.programmers.co.kr/learn/courses/30/lessons/42898) 
+
+## 💻230223~230301 (Level 3)
 36\. 네트워크 (Level 3)
 [43162](https://school.programmers.co.kr/learn/courses/30/lessons/43162)
+```python
+def solution(n, computers):
+    answer = 0
+    graph = [[] for _ in range(n+1)]
+    visited = [0]*(n+1)
+    
+    def dfs(v):
+        nonlocal cnt
+        visited[v] = 1
+        cnt += 1
+        for i in graph[v]:
+            if visited[i] == 0:
+                dfs(i)
+            
+                
+    #그래프 생성
+    for i in range(len(computers)):
+        for j in range(i+1, len(computers)):
+            if computers[i][j] == 1:
+                graph[i+1].append(j+1)
+                graph[j+1].append(i+1)
+    
+    #dfs 부르기
+    for i in range(len(computers)):
+        cnt = 0
+        if visited[i+1] == 0:
+            dfs(i+1)
+            answer += 1
+            
+    return answer
+```
+
 37\. 단어 변환 (Level 3)
 [43163](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
+```python
+from collections import deque
+
+def solution(begin, target, words):
+    answer = 0
+    visited = [0]*len(words)
+    
+    #변환할 수 없을 때 예외 처리
+    if target not in words:
+        return 0
+    
+    def bfs(word):
+        nonlocal answer
+        q = deque()
+        q.append(word)
+        while q :
+            word = q.popleft()
+            for i in range(len(words)):
+                cnt = 0
+                for j in range(len(words[i])):
+                    if word[j] == words[i][j]:
+                        cnt += 1
+                if cnt == len(word)-1 and visited[i] == 0:
+                    if word == begin:
+                        visited[i] = 1
+                    else:
+                        visited[i] = visited[words.index(word)]+1
+                    q.append(words[i])      
+            if visited[words.index(target)] != 0:
+                return visited[words.index(target)]
+    
+    return bfs(begin)
+```
+
 38\. 아이템 줍기 (Level 3)
 [87694](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
 39\. 여행경로 (Level 3)
