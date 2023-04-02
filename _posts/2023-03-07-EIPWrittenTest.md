@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 정보처리기사-필기 최종 정리
+# 정보처리기사 필기 최종 정리
 
 ## 1과목
 ![1](https://user-images.githubusercontent.com/63334368/229288113-b775ec80-3d18-42bd-b19c-ec35a5cea4d1.jpg)
