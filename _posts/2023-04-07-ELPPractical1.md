@@ -125,9 +125,9 @@ toc_sticky: true
 
 ### <mark style='background-color: #ffdce0'>(2) 현행 시스템 파악 절차</mark> 
 
-- 1단계: 구성/기능/인터페이스 파악
-- 2단계: 아키텍처 및 소프트웨어 구성 파악
-- 3단계: 하드웨어 및 네트워크 구성 파악
+1. 1단계: 구성/기능/인터페이스 파악
+2. 2단계: 아키텍처 및 소프트웨어 구성 파악
+3. 3단계: 하드웨어 및 네트워크 구성 파악
 
 ### <mark style='background-color: #ffdce0'>(3) 소프트웨어 아키텍처</mark> 
 
@@ -139,8 +139,13 @@ toc_sticky: true
 
 <mark style='background-color: #fff5b1'>3. 소프트웨어 아키텍처 4+1 뷰</mark>  
 
-- 4: 논리 뷰, 구현 뷰, 프로세스 뷰, 배포 뷰
-- 1: 유스케이스 뷰
+- 4
+  - 논리 뷰: 설계자, 개발자 관점
+  - 프로세스 뷰: 개발자, 시스템 통합자 관점
+  - 구현 뷰: 모듈의 구성
+  - 배포 뷰: 물리, 배치
+- 1
+  - 유스케이스 뷰: 사용자, 설계자, 개발자, 테스트 관점
 
 4\. 소프트웨어 아키텍처 패턴  
 유형
@@ -150,22 +155,38 @@ toc_sticky: true
 - 브로커 패턴: 분산 시스템
 - 모델-뷰-컨트롤러 패턴: 각 부분이 별도의 컴포넌트
 
-5\. 소프트웨어 아키텍처 비용 평가 모델 종류
-- SAAM: 변경 용이성, 기능성
-- ATAM: SAAM을 계승하여 발전시킴
-- CBAM: ATAM에서 부족한 경제성 평가를 보강
-- ADR: 응집도 평가
-- ARID: ATAM과 ADR를 혼합
-
 ### <mark style='background-color: #ffdce0'>(4) 디자인 패턴</mark> 
-- 목적
-  - 생성(Builder, Prototype, Factory Method, Abstract Factory, Singleton)
-  - 구조(Bridge, Decorator, Facade, Flyweight, Proxy, Composite, Adapter)
-  - 행위(Mediator, Interpreter, Iterator, Template Method, Observer, State, Visitor, Command, Strategy, Memento, Chain of Responsibility)
+<mark style='background-color: #fff5b1'>1. 목적</mark>
+- 생성
+  - Builder: 조립
+  - Prototype: 일반적인 원형
+  - Factory Method: 상위 클래스 정의, 서브 클래스 생성
+  - Abstract Factory: 구체적인 클래스x
+  - Singleton: 전역 변수x
+- 구조
+  - Bridge: 클래스, 구현 연결
+  - Decorator
+  - Facade
+  - Flyweight
+  - Proxy
+  - Composite
+  - Adapter
+- 행위
+  - Template Method: 일부분을 서브 클래스로 캡슐화
+  - Command: 실행될 기능을 캡슐화
+  - Observer: 느슨하게
+  - State: 객체 상태를 캡슐화
+  - Strategy: 알고리즘 군 정의
+  - Mediator
+  - Interpreter
+  - Iterator
+  - Visitor
+  - Memento
+  - Chain of Responsibility
 
-- 범위
-  - 클래스
-  - 객체
+2\. 범위
+- 클래스
+- 객체
 
 ## <mark style='background-color: #fdb5bd'>2. 개발 기술 환경 정의</mark> 
 
@@ -185,7 +206,36 @@ toc_sticky: true
 - 표현 계층: 데이터
 - 세션 계층: 데이터
 - 전송 계층: 세그먼트
-----------------------
 - 네트워크 계층: 패킷
 - 데이터 링크 계층: 프레임
 - 물리 계층: 비트
+
+
+# <mark style='background-color: #fed3fe'>03 요구사항 확인</mark>
+
+## <mark style='background-color: #fdb5bd'>1. 요구사항</mark>
+
+### <mark style='background-color: #ffdce0'>(1) 요구사항 개념</mark>
+
+3\. 요구사항의 분류
+- 기능적   
+  기능, 서비스에 대한 요구사항
+
+- 비기능적 요구사항  
+  시스템 구축에 대한 제약사항(서버 계속 가동)
+
+### <mark style='background-color: #ffdce0'>(2) 요구공학 프로세스</mark>
+
+1\. 요구사항 개발 단계 구성  
+도출 -> 분석 -> 명세 -> 확인 및 검증
+
+2\. 요구사항 개발 단계 상세  
+
+3) 명세 단계  
+- 비정형 명세 기법: 자연어
+- 정형 명세 기법: 수학적
+
+4) 확인 및 검증 단계
+- 동료 검토: 2~3명
+- 워크 스루: 회의
+- 인스펙션: 전문가 or 팀
