@@ -8,11 +8,13 @@ toc_sticky: true
 
 # 정보처리기사 실기 Vol.1
 
-# 1. 소프트웨어 개발 방법론
+# <mark style='background-color: #fca1ab'># I 요구사항 확인</mark>
 
-## 1-1. 소프트웨어 개발 방법론
+# <mark style='background-color: ##fdb5bd'>01 소프트웨어 개발 방법론</mark>
 
-### 1-1-1. 소프트웨어 생명주기 모델
+## <mark style='background-color: #f9c7cd'>1. 소프트웨어 개발 방법론</mark>
+
+### <mark style='background-color: #ffdce0'>(1) 소프트웨어 생명주기 모델</mark>
 
 1\. <mark style='background-color: #fff5b1'>소프트웨어 생명주기(SDLC)</mark>  
 - Software Development Life Cycle
@@ -31,7 +33,7 @@ toc_sticky: true
 - 나선형 모델 (점진적, <mark style='background-color: #fff5b1'>위험 감소</mark>)
 - 반복적 모델 (일부분을 반복적)
 
-### 1-1-2. 소프트웨어 개발 방법론
+### <mark style='background-color: #ffdce0'>(2) 소프트웨어 개발 방법론</mark>
 
 1\. 소프트웨어 개발 방법론  
 소프트웨어 개발 전 과정에서 지속적으로 적용할 수 있는 방법, 절차, 기법
@@ -51,7 +53,7 @@ toc_sticky: true
 - 스크럼
 - 린
 
-### 1-1-3. 객체 지향 분석 방법론
+### <mark style='background-color: #ffdce0'>(3) 객체 지향 분석 방법론</mark>
 
 1\. 객체 지향  
 실세계의 개체를 속성과 메서드가 결합한 형태의 객체로 표현
@@ -81,15 +83,15 @@ toc_sticky: true
 6\. 객체 지향 분석 방법론 종류
 럼바우: 객체 모델링(정보 모델링, 객체D) -> 동적 모델링(상태D) -> 기능 모델링(자료 흐름도)
 
+## <mark style='background-color: #f9c7cd'>2. 프로젝트 관리</mark>
 
-## 1-2. 프로젝트 관리
+### <mark style='background-color: #ffdce0'>(1) 프로젝트 관리</mark>
 
-### 1-2-1. 프로젝트 관리
 
 1\. 프로젝트 관리  
 주어진 기간 내에 최소의 비용으로 사용자를 만족시키는 시스템을 개발하기 위한 전반적인 활동
 
-### 1-2-2. 비용산정 모형
+### <mark style='background-color: #ffdce0'>(2) 비용산정 모형</mark>
 
 2\. 비용산정 모형 분류
 - 하향식
@@ -102,14 +104,14 @@ toc_sticky: true
   - 푸트남
   - 기능점수(FP): 가중치
 
-### 1-2-3. 일정관리 모델
+### <mark style='background-color: #ffdce0'>(3) 일정관리 모델</mark>
 
 2\. 일정관리 모델 분류
 - 주 공정법(CPM): 가장 긴 시간 경로
 - PERT: 비관치, 중간치, 낙관치
 - 중요 연쇄 프로젝트 관리(CCPM)
 
-### 1-2-4. 위험 관리
+### <mark style='background-color: #ffdce0'>(4) 위험 관리</mark>
 
 3\. 위험 대응 전략  
 회피, 전가, 완화, 수용
