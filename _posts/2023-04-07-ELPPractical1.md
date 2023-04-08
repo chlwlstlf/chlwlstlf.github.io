@@ -1,18 +1,16 @@
 ---
 layout: single
-title:  "정보처리기사-실기1"
+title:  "정보처리기사 1단원"
 categories: Certificate
 toc: true
 toc_sticky: true
 ---
 
-# 정보처리기사 실기 Vol.1
+# I 요구사항 확인
 
-# <mark style='background-color: #fca1ab'># I 요구사항 확인</mark>
+# <mark style='background-color: #fed3fe'>01 소프트웨어 개발 방법론</mark>
 
-# <mark style='background-color: ##fdb5bd'>01 소프트웨어 개발 방법론</mark>
-
-## <mark style='background-color: #f9c7cd'>1. 소프트웨어 개발 방법론</mark>
+## <mark style='background-color: #fdb5bd'>1. 소프트웨어 개발 방법론</mark>
 
 ### <mark style='background-color: #ffdce0'>(1) 소프트웨어 생명주기 모델</mark>
 
@@ -83,7 +81,7 @@ toc_sticky: true
 6\. 객체 지향 분석 방법론 종류
 럼바우: 객체 모델링(정보 모델링, 객체D) -> 동적 모델링(상태D) -> 기능 모델링(자료 흐름도)
 
-## <mark style='background-color: #f9c7cd'>2. 프로젝트 관리</mark>
+## <mark style='background-color: #fdb5bd'>2. 프로젝트 관리</mark>
 
 ### <mark style='background-color: #ffdce0'>(1) 프로젝트 관리</mark>
 
@@ -116,3 +114,78 @@ toc_sticky: true
 3\. 위험 대응 전략  
 회피, 전가, 완화, 수용
 
+
+# <mark style='background-color: #fed3fe'>02 현행 시스템 분석</mark>
+
+## <mark style='background-color: #fdb5bd'>1. 현행 시스템 파악</mark>  
+
+### <mark style='background-color: #ffdce0'>(1) 현행 시스템 파악 개념</mark>  
+
+어떤 하위 시스템으로 구성되어 있고, 제공 기능 및 연계 정보는 무엇이며 어떤 기술 요소를 사용하는지를 파악하는 활동
+
+### <mark style='background-color: #ffdce0'>(2) 현행 시스템 파악 절차</mark> 
+
+- 1단계: 구성/기능/인터페이스 파악
+- 2단계: 아키텍처 및 소프트웨어 구성 파악
+- 3단계: 하드웨어 및 네트워크 구성 파악
+
+### <mark style='background-color: #ffdce0'>(3) 소프트웨어 아키텍처</mark> 
+
+2\. 소프트웨어 아키텍처 프레임워크 구성요소
+- 아키텍처 명세서
+- 이해관계자
+- 관심사
+- 관점
+
+<mark style='background-color: #fff5b1'>3. 소프트웨어 아키텍처 4+1 뷰</mark>  
+
+- 4: 논리 뷰, 구현 뷰, 프로세스 뷰, 배포 뷰
+- 1: 유스케이스 뷰
+
+4\. 소프트웨어 아키텍처 패턴  
+유형
+- 계층화 패턴: 두 개의 계층 사이에서만 상호 작용
+- 클라이언트-서버 패턴: 하나의 서버, 다수의 클라
+- 파이프-필터: 서브 시스템에 넘겨줌
+- 브로커 패턴: 분산 시스템
+- 모델-뷰-컨트롤러 패턴: 각 부분이 별도의 컴포넌트
+
+5\. 소프트웨어 아키텍처 비용 평가 모델 종류
+- SAAM: 변경 용이성, 기능성
+- ATAM: SAAM을 계승하여 발전시킴
+- CBAM: ATAM에서 부족한 경제성 평가를 보강
+- ADR: 응집도 평가
+- ARID: ATAM과 ADR를 혼합
+
+### <mark style='background-color: #ffdce0'>(4) 디자인 패턴</mark> 
+- 목적
+  - 생성(Builder, Prototype, Factory Method, Abstract Factory, Singleton)
+  - 구조(Bridge, Decorator, Facade, Flyweight, Proxy, Composite, Adapter)
+  - 행위(Mediator, Interpreter, Iterator, Template Method, Observer, State, Visitor, Command, Strategy, Memento, Chain of Responsibility)
+
+- 범위
+  - 클래스
+  - 객체
+
+## <mark style='background-color: #fdb5bd'>2. 개발 기술 환경 정의</mark> 
+
+### <mark style='background-color: #ffdce0'>(1) 개발 기술 환경 현행 시스템 분석</mark>  
+
+1\. 운영체제 종류 및 특징
+- PC
+  - 윈도즈
+  - 유닉스
+  - 리눅스
+- 모바일
+  - 안드로이드
+  - iOS
+
+2\. OSI 7계층
+- 응용 계층: 데이터
+- 표현 계층: 데이터
+- 세션 계층: 데이터
+- 전송 계층: 세그먼트
+----------------------
+- 네트워크 계층: 패킷
+- 데이터 링크 계층: 프레임
+- 물리 계층: 비트
