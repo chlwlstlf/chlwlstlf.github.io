@@ -60,7 +60,7 @@ XMLHttpRequest, JavaScript, XML, DOM, XSLT, HTML, CSS
 1) 개념
 - HTTP 메서드로 주고받는 웹 아키텍처
 
-## <mark style='background-color: #fdb5bd'>2. 인터페이스 보안 기능 적용/mark>
+## <mark style='background-color: #fdb5bd'>2. 인터페이스 보안 기능 적용</mark>
 
 ### <mark style='background-color: #ffdce0'>(2) 인터페이스 보안 구현 방안</mark>
 

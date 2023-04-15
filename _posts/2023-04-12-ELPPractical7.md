@@ -19,7 +19,7 @@ toc_sticky: true
 2\. 특성
 - 원자성: 전체 성공 또는 실패
 - 일관성: 트랜잭션 수행 전과 후 같음
-- 격리생: 서로 영향x
+- 격리성: 서로 영향x
 - 영속성: 영속적으로 저장
 
 5\. 병행 제어 기법 종류
@@ -95,7 +95,7 @@ TRUNCATE TABLE 테이블명;
 5\. VIEW DDL
 - CREATE VIEW (뷰 생성)
 ```sql
-CREATE VEIW 뷰이름 AS
+CREATE VIEW 뷰이름 AS
 조회쿼리;
 ```
 
@@ -139,8 +139,7 @@ DROP INDEX 인덱스명;
 
 - 갱신: UPDATE
   ```sql
-  UPDATE 테이블명 
-    SET 속성명=데이터, ... 
+  UPDATE 테이블명 SET 속성명=데이터, ... 
   WHERE 조건;
   ```
 
