@@ -136,7 +136,7 @@ toc_sticky: true
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>3. Hosting URL에 있는 링크를 누르면 배포가 된 걸 볼 수 있음</p>
-  <a href="https://choijinsilportfolio.web.app">https://choijinsilportfolio.web.app</div>
+  <a href="https://choijinsilportfolio.web.app">https://choijinsilportfolio.web.app</a>
 </div>
 
 ![19](https://github.com/chlwlstlf/portfolio/assets/63334368/d1fbac85-9d86-4396-b506-f4200caae278)
