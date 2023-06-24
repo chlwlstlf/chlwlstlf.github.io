@@ -28,7 +28,7 @@ toc_sticky: true
   <p>3. 프로젝트 이름 지정</p>
   <div>※아래에 연필 아이콘 뒤에 나오는 것이 링크 이름</div>
   <div>파이어베이스에서 생성한 적이 없는 프로젝트 이름이면 프로젝트 이름이 링크 이름이지만,</div>
-  <div>이미 있는 이름이면 뒤에 test-8b105 이런식으로 프로젝트 이름 뒤에 임의의 코드가 붙게 된다.</div>
+  <div>이미 있는 이름이면 test-8b105 이런식으로 프로젝트 이름 뒤에 임의의 코드가 붙게 된다.</div>
 </div>
 
   ![2](https://github.com/chlwlstlf/portfolio/assets/63334368/6bacd937-c0a4-4e6f-8613-e6a2cc2cb5c7)
@@ -70,7 +70,7 @@ toc_sticky: true
 ***
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
-  <div>8. 좌측 메뉴 칸에서 빌드-Hosting을 누른 후 `시작하기` 버튼 클릭</div>
+  <div>8. 좌측 메뉴 칸에서 `빌드-Hosting`을 누른 후 `시작하기` 버튼 클릭</div>
 </div>
 
   ![8](https://github.com/chlwlstlf/portfolio/assets/63334368/a40307b8-1786-44b0-96df-4c88cd574418)
@@ -105,7 +105,7 @@ toc_sticky: true
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>3. firebase init 복붙하기</p>
   <div>1) 진행할 준비 되었나요? yes</div>
-  <div>2) 밑으로 내리는건 방향키 ↓, 선택은 space bar, hosting 두 개를 선택한다</div>
+  <div>2) 밑으로 내리는건 방향키 ↓, 선택은 space bar → hosting 두 개를 선택한다</div>
   <div>3) 위에서 프로젝트를 생성했으니 Use an exisiting project 선택</div>
   <div>4) 배포할 프로젝트 이름 선택</div>
   <div>5) publice 디렉토리에 할건가요? build</div>
@@ -136,7 +136,7 @@ toc_sticky: true
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>3. Hosting URL에 있는 링크를 누르면 배포가 된 걸 볼 수 있음</p>
-  <div>https://choijinsilportfolio.web.app</div>
+  <a href="https://choijinsilportfolio.web.app">https://choijinsilportfolio.web.app</div>
 </div>
 
 ![19](https://github.com/chlwlstlf/portfolio/assets/63334368/d1fbac85-9d86-4396-b506-f4200caae278)
