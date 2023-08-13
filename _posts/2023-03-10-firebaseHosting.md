@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "React+구글 Firebase로 배포하기"
-categories: React
+categories: react
 toc: true
 toc_sticky: true
 ---

@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "코딩테스트 준비"
-categories: CodingTest
+categories: cote
 toc: true
 toc_sticky: true
 ---

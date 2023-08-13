@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "프로그래머스 랜덤"
-categories: CodingTest
+categories: programmers
 toc: true
 toc_sticky: true
 ---

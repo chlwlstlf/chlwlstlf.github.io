@@ -1,7 +1,7 @@
 ---
 layout: archivee
 title: "정보처리기사 8단원"
-categories: Certificate
+categories: elp
 toc: true
 toc_sticky: true
 ---

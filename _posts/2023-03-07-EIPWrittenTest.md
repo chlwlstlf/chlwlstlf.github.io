@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "정보처리기사-필기"
-categories: Certificate
+categories: elp
 toc: true
 toc_sticky: true
 ---

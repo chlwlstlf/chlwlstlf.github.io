@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "자료구조-재귀"
-categories: C
+categories: c
 toc: true
 toc_sticky: true
 ---

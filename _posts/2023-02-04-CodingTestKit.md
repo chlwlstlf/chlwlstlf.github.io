@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "[Programmers]코딩테스트 고득점 Kit"
-categories: CodingTest
+categories: programmers
 toc: true
 toc_sticky: true
 ---

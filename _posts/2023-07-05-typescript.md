@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "TypeScript 시작하기"
-categories: React
+categories: react
 toc: true
 toc_sticky: true
 ---

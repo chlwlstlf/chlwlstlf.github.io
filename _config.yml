@@ -106,22 +106,6 @@ author:
   bio: "Sejong Univ. DataScience"
   location: "South Korea"
   email: "jinsil378900@gmail.com"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:jinsil378900@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://chlwlstlf.github.io"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/profile.php?id=100007927308650"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/chlwlstlf"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/wlsiri_.__._/"
 
 # Site Footer
 footer:

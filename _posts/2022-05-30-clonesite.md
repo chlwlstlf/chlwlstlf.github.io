@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "MegaBox 2022"
-categories: Web
+categories: js
 toc: true
 toc_sticky: true
 ---
