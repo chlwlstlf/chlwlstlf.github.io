@@ -104,8 +104,6 @@ author:
   name: "최진실"
   avatar: "/assets/images/chlwlstlf.jpg"
   bio: "Sejong Univ. DataScience"
-  location: "South Korea"
-  email: "jinsil378900@gmail.com"
 
 # Site Footer
 footer:
@@ -246,6 +244,8 @@ defaults:
       share: true
       related: true
       show_date: true
+      toc: true
+      toc_sticky: true
       sidebar_main: true
       sidebar:
         nav: "docs"
