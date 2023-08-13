@@ -263,7 +263,7 @@ defaults:
       related: true
       show_date: true
       sidebar:
-        nav: "sidebar-category"
+        nav: "docs"
 
 date_format: "%Y-%m-%d"
 future: true

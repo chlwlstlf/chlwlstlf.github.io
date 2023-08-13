@@ -1,21 +1,59 @@
 # main links
-sidebar-category:
+main:
   - title: "Category"
     url: /categories/
   - title: "Search"
     url: /search/
 
 docs:
-  - title: "대목차"
+  - title: Front
     children:
-      - title: "Category"
-        url: /categories/
+      - title: "Vanilla JS"
+        url: /categories/js
+        category: "js"
+      - title: "React"
+        url: /categories/react
+        category: "react"
+      - title: "Project"
+        url: /categories/project
+        category: "project"
 
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: Coding Test
+    children:
+      - title: "이코테"
+        url: /categories/cote
+        category: "cote"
+      - title: "백준"
+        url: /categories/boj
+        category: "boj"
+      - title: "프로그래머스"
+        url: /categories/programmers
+        category: "programmers"
+
+  - title: CS 면접 대비
+    children:
+      - title: "CS 전공지식 노트"
+        url: /categories/csnote
+        category: "csnote"
+
+  - title: Certificate
+    children:
+      - title: "ADsP"
+        url: /categories/adsp
+        category: "adsp"
+      - title: "정보처리기사"
+        url: /categories/elp
+        category: "elp"
+
+  - title: Language
+    children:
+      - title: "C언어"
+        url: /categories/c
+        category: "c"
+      - title: "Python"
+        url: /categories/python
+        category: "python"
+
+counts:
+  - title: "Category"
+    use: true
