@@ -1,6 +1,6 @@
 ---
-layout: single
-title:  "코딩테스트 준비"
+layout: archive
+title: "코딩테스트 준비"
 categories: CodingTest
 toc: true
 toc_sticky: true
@@ -9,6 +9,7 @@ toc_sticky: true
 # Coding Test Summary
 
 ## 이진 탐색
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>1. start, end 범위 정하기</p>
   <p>2. while start <= end: 후 mid = (start+end)//2</p>
@@ -17,7 +18,8 @@ toc_sticky: true
   <p>5. result는 문제 조건에 따라 필요한 곳에 넣음</p>
 </div>
 
-코드(python)  
+코드(python)
+
 ```python
 start = #(1)보통 0이나 최솟값
 end = #(1)보통 최댓값이나 매우 큰 수
@@ -39,11 +41,11 @@ while start <= end: #(2)
 :grey_question:한 줄에 연속해 있는 나무들을 땅으로부터 H미터 올라간 부분에서 자른다. 나무를 필요한 만큼만 집으로 가져가려고 할 때 적어도 나무를 M미터 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값은 무엇인가?
 
 입력 예시  
-4 7  #나무 4개, 7미터 가져가려고 함  
-20 15 10 17  
+4 7 #나무 4개, 7미터 가져가려고 함  
+20 15 10 17
 
 출력 예시  
-15  #5+0+0+2 = 7  
+15 #5+0+0+2 = 7
 
 ```python
 import sys
@@ -53,7 +55,7 @@ N, M = map(int, input().split())
 T = list(map(int, input().split()))
 
 start = 0
-end = max(T) 
+end = max(T)
 while start <= end :
   mid = (start+end)//2
   total = 0
@@ -65,12 +67,12 @@ while start <= end :
   else : #M보다 total이 크거나 같으므로 result값 갱신
     start = mid+1
     result = mid
-     
+
 print(result)
 ```
 
-
 ## dfs
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>1. graph 생성하기(단방향, 양방향 구분)</p>
   <p>2. visited 배열 0으로 초기화(배열은 전역 변수임)</p>
@@ -78,7 +80,8 @@ print(result)
   <p>4. v와 연결 되어있는 곳 중에서 방문하지 않은 곳에서 dfs 호출</p>
 </div>
 
-코드(python) 
+코드(python)
+
 ```python
 graph = [[], [], [], []] #(1)
 visited = [0]*(n+1) #(2)
@@ -95,17 +98,17 @@ def dfs(v):
 :grey_question:컴퓨터가 서로 연결되어 있으면 바이러스에 걸리게 된다. 1번 컴퓨터가 바이러스에 걸렸을 때 바이러스가 걸리게 되는 컴퓨터 수는 몇 대인가?
 
 입력 예시  
-7  #컴퓨터 수  
-6  #간선 개수  
+7 #컴퓨터 수  
+6 #간선 개수  
 1 2  
 2 3  
 1 5  
 5 2  
 5 6  
-4 7  
+4 7
 
 출력 예시  
-4  
+4
 
 ```python
 import sys
@@ -136,6 +139,7 @@ print(visited.count(1)-1)
 ```
 
 ## bfs
+
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>1. from collections import deque</p>
   <p>2. q = deque() 후 q.append(bfs 인자)</p>
@@ -145,7 +149,8 @@ print(visited.count(1)-1)
   <p>6. 마지막 지점에 도달하면 return 마지막 지점</p>
 </div>
 
-코드(python) 
+코드(python)
+
 ```python
 from collections import deque #(1)
 
@@ -155,7 +160,7 @@ def bfs(x):
 
   while q: #(3)
     nx = q.popleft() #(3)
-    
+
     for 범위: #(4)for문을 이용한 코드
       if 특정 조건:
         visited[i] = visited[nx] + 1 #(5)전 단계에서 하나를 더함
@@ -171,10 +176,10 @@ bfs(k)
 :grey_question:(0, 0)에서 (n, m)으로 갈 수 있는 최단 거리를 구하려고 한다. 0은 막혀있는 부분이고 1인 곳으로만 갈 수 있다. 막혀서 도착할 수 없는 경우에는 -1을 return한다. 최단거리는 무엇인가?
 
 입력 예시  
-[[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]  
+[[1,0,1,1,1],[1,0,1,0,1],[1,0,1,1,1],[1,1,1,0,1],[0,0,0,0,1]]
 
 출력 예시  
-11  
+11
 
 ```python
 from collections import deque
@@ -182,7 +187,7 @@ from collections import deque
 def solution(maps):
     def bfs (x, y):
         q = deque()
-        q.append((x, y)) 
+        q.append((x, y))
         while q:
             x, y = q.popleft()
             for i in range(4):
@@ -191,7 +196,7 @@ def solution(maps):
                 if nx < 0 or nx >= len(maps) or ny < 0 or ny >= len(maps[0]):
                     continue
                 if maps[nx][ny] == 0:
-                    continue 
+                    continue
                 if maps[nx][ny] == 1:
                     maps[nx][ny] = maps[x][y]+1
                     q.append((nx, ny))
@@ -199,12 +204,12 @@ def solution(maps):
             return -1
         else :
             return maps[len(maps)-1][len(maps[0])-1]
-            
-    
+
+
     dx = [0, 1, -1, 0]
     dy = [1, 0, 0, -1]
-    
-    
+
+
     return bfs(0, 0)
 ```
 
@@ -213,11 +218,11 @@ def solution(maps):
 1 0 1 0 1  
 1 0 1 1 1  
 1 1 1 0 1  
-0 0 0 0 1   
+0 0 0 0 1
 
 최종 maps  
-3  0  9 10 11  
-2  0  8  0 10  
-3  0  7  8  9  
-4  5  6  0 10  
-0  0  0  0 11  
+3 0 9 10 11  
+2 0 8 0 10  
+3 0 7 8 9  
+4 5 6 0 10  
+0 0 0 0 11

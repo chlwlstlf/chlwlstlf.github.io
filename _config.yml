@@ -12,101 +12,100 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
-title                    : "JinBlog"
-title_separator          : "|"
-subtitle                 : "Gonna be my Best Part"
-name                     : "Jinsil"
-description              : "진실의 블로그"
-url                      : "https://chlwlstlf.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/jinsillogo.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs              : true # true, false (default)
-words_per_minute         : 200
+locale: "ko-KR"
+title: "JinBlog"
+title_separator: "|"
+subtitle: "Gonna be my Best Part"
+name: "Jinsil"
+description: "진실의 블로그"
+url: "https://chlwlstlf.github.io"
+baseurl: # the subpath of your site, e.g. "/blog"
+repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo: "/assets/images/jinsillogo.png"
+masthead_title: # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs: true # true, false (default)
+words_per_minute: 200
 comments:
-  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider: "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname            : "chlwlstlf"
+    shortname: "chlwlstlf"
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    appid:
+    num_posts: # 5 (default)
+    colorscheme: # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme: # "github-light" (default), "github-dark"
+    issue_term: # "pathname" (default)
   giscus:
-    repo_id              : # Shown during giscus setup at https://giscus.app
-    category_name        : # Full text name of the category
-    category_id          : # Shown during giscus setup at https://giscus.app
-    discussion_term      : # "pathname" (default), "url", "title", "og:title"
-    reactions_enabled    : # '1' for enabled (default), '0' for disabled
-    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+    repo_id: # Shown during giscus setup at https://giscus.app
+    category_name: # Full text name of the category
+    category_id: # Shown during giscus setup at https://giscus.app
+    discussion_term: # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled: # '1' for enabled (default), '0' for disabled
+    theme: # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
   staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    branch: # "master"
+    endpoint: # "https://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey:
+  secret:
 atom_feed:
-  path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+  path: # blank (default) uses feed.xml
+  hide: # true, false (default)
+search: # true, false (default)
+search_full_content: # true, false (default)
+search_provider: # lunr (default), algolia, google
 algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
+  application_id: # YOUR_APPLICATION_ID
+  index_name: # YOUR_INDEX_NAME
+  search_only_api_key: # YOUR_SEARCH_ONLY_API_KEY
+  powered_by: # true (default), false
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
+  search_engine_id: # YOUR_SEARCH_ENGINE_ID
+  instant_search: # false (default), true
 # SEO Related
-google_site_verification :
-bing_site_verification   :
-naver_site_verification  : "a360db64cdf50c1b24e1c25755da2be6ebe72b94"
-yandex_site_verification :
-baidu_site_verification  :
+google_site_verification:
+bing_site_verification:
+naver_site_verification: "a360db64cdf50c1b24e1c25755da2be6ebe72b94"
+yandex_site_verification:
+baidu_site_verification:
 
 # Social Sharing
 twitter:
-  username               :
+  username:
 facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 : # Open Graph/Twitter default site image
+  username:
+  app_id:
+  publisher:
+og_image: # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type: # Person or Organization (defaults to Person)
+  name: # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
 # Analytics
 analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "G-EEE6F2ZH41"
-    anonymize_ip         : false # true, false (default)
-
+    tracking_id: "G-EEE6F2ZH41"
+    anonymize_ip: false # true, false (default)
 
 # Site Author
 author:
-  name             : "최진실"
-  avatar           : "/assets/images/chlwlstlf.jpg"
-  bio              : "Sejong Univ. DataScience"
-  location         : "South Korea"
-  email            :
+  name: "최진실"
+  avatar: "/assets/images/chlwlstlf.jpg"
+  bio: "Sejong Univ. DataScience"
+  location: "South Korea"
+  email: "jinsil378900@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -123,7 +122,7 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/wlsiri_.__._/"
-      
+
 # Site Footer
 footer:
   links:
@@ -136,7 +135,6 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/wlsiri_.__._/"
-
 
 # Reading Files
 include:
@@ -175,14 +173,12 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -195,19 +191,16 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
 
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 # timezone: Asia/Seoul
-
 
 # Plugins (previously gems:)
 plugins:
@@ -225,7 +218,6 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-
 
 # Archives
 #  Type
@@ -249,14 +241,12 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
 
-
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
-
 
 # Defaults
 defaults:
@@ -272,6 +262,8 @@ defaults:
       share: true
       related: true
       show_date: true
-      
+      sidebar:
+        nav: "sidebar-category"
+
 date_format: "%Y-%m-%d"
 future: true
