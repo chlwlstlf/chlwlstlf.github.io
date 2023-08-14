@@ -10,14 +10,24 @@ toc_sticky: true
 
 ## 기본 규칙
 
-    - 베이스 케이스
-        베이스 케이스를 항상 가져야 하며, 이는 재귀 없이 해결될 수 있어야 한다
-    - 진행 방향
-        재귀적으로 해결되어야 할 경우, 재귀호출은 항상 베이스 케이스를 향하는 방향으로 진행되어야 한다
-    - 정상작동 가정
-        모든 재귀호출이 제대로 작동한다고 가정하라!
-    - 적절한 사용
-        꼭 필요할 때만 사용하라, 저장/복구 때문에 성능이 저하되기 때문이다
+  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+    <p>
+      <div>베이스 케이스</div>
+      <div>베이스 케이스를 항상 가져야 하며, 이는 재귀 없이 해결될 수 있어야 한다</div>
+    </p>
+    <p>
+      <div>진행 방향</div>
+      <div>재귀적으로 해결되어야 할 경우, 재귀호출은 항상 베이스 케이스를 향하는 방향으로 진행되어야 한다</div>
+    </p>
+		<p>
+      <div>정상작동 가정</div>
+      <div>모든 재귀호출이 제대로 작동한다고 가정하라!</div>
+    </p>
+		<p>
+      <div>적절한 사용</div>
+      <div>꼭 필요할 때만 사용하라, 저장/복구 때문에 성능이 저하되기 때문이다</div>
+    </p>
+  </div>
 
 ## 응용문제1 : 최대공약수 구하기 - 유클리드 호제법
 

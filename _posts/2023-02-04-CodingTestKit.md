@@ -8,6 +8,8 @@ toc_sticky: true
 
 # Coding Test Study Algorithm
 
+[코딩테스트 고득점 Kit](https://school.programmers.co.kr/learn/challenges?tab=algorithm_practice_kit){: .btn .btn--primary}
+
 ## 💻230204~230208 (Level 1~2)
 
 1\. 폰켓몬 (Level 1)
@@ -603,9 +605,11 @@ def solution(jobs):
 ```
 
 30\. 이중우선순위큐 (Level 3)
-[42628](https://school.programmers.co.kr/learn/courses/30/lessons/42628)  
+[42628](https://school.programmers.co.kr/learn/courses/30/lessons/42628)
+
 31\. 섬 연결하기 (Level 3)
-[42861](https://school.programmers.co.kr/learn/courses/30/lessons/42861)  
+[42861](https://school.programmers.co.kr/learn/courses/30/lessons/42861)
+
 32\. 단속카메라 (Level 3)
 [42884](https://school.programmers.co.kr/learn/courses/30/lessons/42884)
 
@@ -623,9 +627,11 @@ def solution(routes):
 ```
 
 33\. N으로 표현 (Level 3)
-[42895](https://school.programmers.co.kr/learn/courses/30/lessons/42895)  
+[42895](https://school.programmers.co.kr/learn/courses/30/lessons/42895)
+
 34\. 정수 삼각형 (Level 3)
-[43105](https://school.programmers.co.kr/learn/courses/30/lessons/43105)  
+[43105](https://school.programmers.co.kr/learn/courses/30/lessons/43105)
+
 35\. 등굣길 (Level 3)
 [42898](https://school.programmers.co.kr/learn/courses/30/lessons/42898)
 
@@ -704,22 +710,31 @@ def solution(begin, target, words):
 ```
 
 38\. 아이템 줍기 (Level 3)
-[87694](https://school.programmers.co.kr/learn/courses/30/lessons/87694)  
+[87694](https://school.programmers.co.kr/learn/courses/30/lessons/87694)
+
 39\. 여행경로 (Level 3)
-[43164](https://school.programmers.co.kr/learn/courses/30/lessons/43164)  
+[43164](https://school.programmers.co.kr/learn/courses/30/lessons/43164)
+
 40\. 퍼즐 조각 채우기 (Level 3)
-[84021](https://school.programmers.co.kr/learn/courses/30/lessons/84021)  
+[84021](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
+
 41\. 입국심사 (Level 3)
-[43238](https://school.programmers.co.kr/learn/courses/30/lessons/43238)  
+[43238](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
+
 42\. 가장 먼 노드 (Level 3)
-[49189](https://school.programmers.co.kr/learn/courses/30/lessons/49189)  
+[49189](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
+
 43\. 순위 (Level 3)
-[49191](https://school.programmers.co.kr/learn/courses/30/lessons/49191)  
+[49191](https://school.programmers.co.kr/learn/courses/30/lessons/49191)
+
 44\. 사칙연산 (Level 4)
-[1843](https://school.programmers.co.kr/learn/courses/30/lessons/1843)  
+[1843](https://school.programmers.co.kr/learn/courses/30/lessons/1843)
+
 45\. 도둑질 (Level 4)
-[42897](https://school.programmers.co.kr/learn/courses/30/lessons/42897)  
+[42897](https://school.programmers.co.kr/learn/courses/30/lessons/42897)
+
 46\. 징검다리 (Level 4)
-[43236](https://school.programmers.co.kr/learn/courses/30/lessons/43236)  
+[43236](https://school.programmers.co.kr/learn/courses/30/lessons/43236)
+
 47\. 방의 개수 (Level 5)
 [49190](https://school.programmers.co.kr/learn/courses/30/lessons/49190)
