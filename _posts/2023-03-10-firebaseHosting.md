@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "React+구글 Firebase로 배포하기"
 categories: react
 toc: true

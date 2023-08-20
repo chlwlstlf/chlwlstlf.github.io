@@ -1,5 +1,5 @@
 ---
-layout: archivee
+layout: singlee
 title: "정보처리기사 8단원"
 categories: elp
 toc: true

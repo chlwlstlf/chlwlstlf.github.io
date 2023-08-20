@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "TypeScript 시작하기"
 categories: react
 toc: true

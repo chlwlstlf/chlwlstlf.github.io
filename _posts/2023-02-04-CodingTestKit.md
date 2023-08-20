@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "[Programmers]코딩테스트 고득점 Kit"
 categories: programmers
 toc: true

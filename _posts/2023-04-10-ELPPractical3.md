@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "정보처리기사 3단원"
 categories: elp
 toc: true

@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "MegaBox 2022"
 categories: js
 toc: true

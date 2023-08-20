@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "자료구조-재귀"
 categories: c
 toc: true

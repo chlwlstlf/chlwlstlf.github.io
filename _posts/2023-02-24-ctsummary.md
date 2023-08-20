@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "코딩테스트 준비"
 categories: cote
 toc: true
