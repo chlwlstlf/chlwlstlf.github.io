@@ -16,7 +16,7 @@ toc_sticky: true
 
 1. \+ Add Icon: 뱃지 제일 앞에 아이콘 추가
 2. ICON COLOR: 아이콘 색깔 변경
-3. BORDER: ROUND | FLAT 뱃지 모서리
+3. BORDER: ROUND or FLAT 뱃지 모서리
 4. TITLE: 제목
 5. TITLE BG COLOR: 제목 배경색
 6. COUNT BG COLOR: 방문수 배경색
@@ -32,7 +32,7 @@ toc_sticky: true
 ![3](https://github.com/chlwlstlf/data/assets/63334368/edbf7288-a66e-4c14-bef7-1cd5972ce067)
 
 - 사이드바 제목 바로 아래에 나오길 원해서 그 아래에 코드 추가했다.
-- 뱃지 크기 이슈 때문에 img에 hits 클래스를 추가해준 후 style로 크기 조정했다.
+- 뱃지 크기 이슈 때문에 img에 hits 클래스를 추가해준 후 style로 크기를 조정했다.
 
 ## 결과 확인하기
 

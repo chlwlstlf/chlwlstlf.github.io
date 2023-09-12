@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[React] react hooks"
+title: "react hooks"
 categories: react
 toc: true
 toc_sticky: true
@@ -31,7 +31,7 @@ import React, {
 } from "react";
 ```
 
-# <mark style='background-color: #ffdce0'>0. React</mark>
+## <mark style='background-color: #ffdce0'>0. React</mark>
 
 ```jsx
 import React from "react";
@@ -47,7 +47,7 @@ import React from "react";
 
 ## <mark style='background-color: #ffdce0'>1. useState</mark>
 
-- 구성 요소 상태를 관리하는 데 사용된다.
+- 구성 요소 <mark style='background-color: #fff5b1'>상태를 관리</mark>하는 데 사용된다.
 - 현재 상태 값과 해당 상태를 업데이트하는 함수가 포함된 배열을 반환한다.
 
 ```jsx
@@ -81,7 +81,7 @@ function Counter() {
 
 ## <mark style='background-color: #ffdce0'>2. useEffect</mark>
 
-- 데이터 가져오기, 구독, DOM 조작과 같은 구성 요소의 부작용을 관리하는 데 사용된다.
+- 데이터 가져오기, 구독, DOM 조작과 같은 구성 요소의 <mark style='background-color: #fff5b1'>특정 상태를 관리</mark>하는 데 사용된다.
 - 효과가 실행되는 시점을 제어하기 위해 함수와 선택적 종속성 배열을 허용한다.
 
 ```jsx
@@ -120,7 +120,7 @@ export default OnceEffectExample;
 
 ## <mark style='background-color: #ffdce0'>3. useContext</mark>
 
-- 기능 구성요소의 컨텍스트 값에 액세스하는 데 사용된다.
+- 기능 구성요소의 <mark style='background-color: #fff5b1'>컨텍스트 값</mark>에 액세스하는 데 사용된다.
 - 구성 요소가 컨텍스트 변경 사항을 구독하고 컨텍스트 값에 액세스할 수 있도록 한다.
 
 ```jsx
@@ -179,7 +179,7 @@ export default App;
 
 ## <mark style='background-color: #ffdce0'>4. useRef</mark>
 
-- 렌더링 전반에 걸쳐 지속되는 DOM 요소 또는 값에 대한 변경 가능한 참조를 생성하는 데 사용된다.
+- 렌더링 전반에 걸쳐 지속되는 <mark style='background-color: #fff5b1'>DOM 요소</mark> 또는 값에 대한 변경 가능한 참조를 생성하는 데 사용된다.
 - 참조된 값에 접근하기 위한 .current 속성을 제공한다.
 
 ```jsx
@@ -227,7 +227,7 @@ useEffect(() => {
 
 ## <mark style='background-color: #ffdce0'>5. useReducer</mark>
 
-- 보다 복잡한 상태 로직을 관리하기 위한 useState의 대안이다.
+- 보다 복잡한 상태 로직을 관리하기 위한 <mark style='background-color: #fff5b1'>useState의 대안</mark>이다.
 - 리듀서 함수와 초기 상태를 취하고 현재 상태와 디스패치 함수를 반환한다.
 
 ```jsx
@@ -273,7 +273,7 @@ export default Counter;
 
 ## <mark style='background-color: #ffdce0'>6. useCallback</mark>
 
-- 기능을 메모하고 하위 구성 요소가 불필요하게 다시 렌더링되는 것을 방지하는 데 사용된다.
+- <mark style='background-color: #fff5b1'>함수를 메모</mark>하고 하위 구성 요소가 불필요하게 다시 렌더링되는 것을 방지하는 데 사용된다.
 - 함수와 종속성 배열이 필요하다.
 
 ```jsx
@@ -311,7 +311,7 @@ export default App;
 
 ## <mark style='background-color: #ffdce0'>7. useMemo</mark>
 
-- 계산된 값을 메모하고 불필요한 재계산을 방지하는 데 사용된다.
+- <mark style='background-color: #fff5b1'>계산된 값을 메모</mark>하고 불필요한 재계산을 방지하는 데 사용된다.
 - 값과 종속성 배열을 계산하는 함수가 필요하다.
 
 ```jsx
@@ -358,18 +358,19 @@ export default App;
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
     <div>useMemo를 사용하면 팩토리얼 계산이 메모이제이션되어, number 입력이 변경될 때만 재계산된다. 이를 통해 불필요한 계산을 방지하고 컴포넌트의 성능을 향상시킬 수 있다.</div>
+  </p>
 </div>
 
 ## <mark style='background-color: #ffdce0'>8. useLayoutEffect</mark>
 
-- useLayoutEffect는 useEffect와 유사하지만 모든 DOM 변형 후에 동기적으로 실행됩니다.
-- 거의 필요하지 않으며 종종 useEffect로 충분합니다.
+- useEffect와 유사하지만 모든 DOM 변형 후에 <mark style='background-color: #fff5b1'>동기적</mark>으로 실행된다.
+- 거의 필요하지 않으며 종종 useEffect로 충분하다.
 
 ## <mark style='background-color: #ffdce0'>9. useImperativeHandle</mark>
 
-- useImperativeHandle은 React.forwardRef 사용 시 노출되는 인스턴스 값을 커스터마이징하는 데 사용됩니다.
-- 일반적으로 고차 부품에 사용됩니다.
+- React.forwardRef 사용 시 노출되는 인스턴스 값을 커스터마이징하는 데 사용된다.
 
 ## <mark style='background-color: #ffdce0'>10. useDebugValue</mark>
 
-- useDebugValue는 사용자 정의 후크 디버깅에 사용됩니다. React DevTools의 사용자 정의 후크에 대한 레이블을 제공할 수 있습니다.
+- <mark style='background-color: #fff5b1'>사용자 정의 후크 디버깅</mark>에 사용된다.
+- React DevTools의 사용자 정의 후크에 대한 레이블을 제공할 수 있다.
