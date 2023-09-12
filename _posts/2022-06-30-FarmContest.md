@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "2022 농림축산식품 공공빅데이터 활용 창업경진대회"
-categories: project
+categories: etc
 toc: true
 toc_sticky: true
 ---

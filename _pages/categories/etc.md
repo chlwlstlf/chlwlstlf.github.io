@@ -1,12 +1,12 @@
 ---
-title: "Project"
+title: "etc"
 layout: archive
-permalink: categories/project
+permalink: categories/etc
 author_profile: true
 types: posts
 ---
 
-{% assign posts = site.categories['project']%}
+{% assign posts = site.categories['etc']%}
 {% for post in posts %}
 {% include archive-single.html type=page.entries_layout %}
 {% endfor %}

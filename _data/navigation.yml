@@ -14,9 +14,9 @@ docs:
       - title: "React"
         url: /categories/react
         category: "react"
-      - title: "Project"
-        url: /categories/project
-        category: "project"
+      - title: "etc"
+        url: /categories/etc
+        category: "etc"
 
   - title: Coding Test
     children:
