@@ -33,38 +33,38 @@ toc_sticky: true
 
 <mark style='background-color: #fff5b1'>1. JSON(JavaScript Object Notation)</mark>
 
-1. 개념
+1\) 개념
 
 - 속성-값 쌍 or 키-값 쌍
 - 데이터 오브젝트를 전달하기 위해 인간이 읽을 수 있는 텍스트를 사용하는 개방형 표준 포맷
 
-2. 특징
+2\) 특징
 
 - AJAX에서 많이 사용되고 XML을 대체하는 주요 데이터 포맷
 
 <mark style='background-color: #fff5b1'>2. XML(eXtensible Markup Language)</mark>
 
-1. 개념
+1\) 개념
 
 - HTML의 단점을 보완한 인터넷 언어
 - SGML의 복잡한 단점을 개선한 특수한 목적을 갖는 마크업 언어
 
-2. 특징
+2\) 특징
 
 - 송, 수신 시스템 간 데이터 연계의 편의성을 위해서 전송되는 데이터 구조를 동일한 형태로 정의
 
 <mark style='background-color: #fff5b1'>3. AJAX(Asynchronous Javascript And Xml)</mark>
 
-1. 개념
+1\) 개념
 
 - 자바스크립트를 사용하여 웹 서버와 클라이언트 간 비동기적으로 XML 데이터를 교환하고 조작하기 위한 웹 기술
 
-2. 주요기술  
-   XMLHttpRequest, JavaScript, XML, DOM, XSLT, HTML, CSS
+2\) 주요기술  
+ XMLHttpRequest, JavaScript, XML, DOM, XSLT, HTML, CSS
 
 4\. REST
 
-1. 개념
+1\) 개념
 
 - HTTP 메서드로 주고받는 웹 아키텍처
 
@@ -84,13 +84,13 @@ toc_sticky: true
 
 2\. 데이터 베이스 보안 적용
 
-1. 암호화 알고리즘
+1\) 암호화 알고리즘
 
 - 대칭 키 암호화 알고리즘: 암, 복호화에 같은 암호 키 씀
 - 비대칭 키 암호화 알고리즘: 공개키, 비밀키
 - 해시 암호화 알고리즘: 해시값으로 원래 입력값 찾음
 
-2. 암호화 기법
+2\) 암호화 기법
 
 - API 방식: 애플리케이션 서버
 - Plug-in 방식: DB 서버

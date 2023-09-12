@@ -1,5 +1,5 @@
 ---
-layout: singlee
+layout: single
 title: "정보처리기사 8단원"
 categories: elp
 toc: true
@@ -47,14 +47,14 @@ toc_sticky: true
 
 1\. 하드웨어 개발환경
 
-1. 서버 하드웨어 개발환경
+1\) 서버 하드웨어 개발환경
 
 - 웹 서버
 - 웹 애플리케이션 서버
 - 데이터베이스 서버
 - 파일 서버
 
-2. 클라이언트 하드웨어 개발환경
+2\) 클라이언트 하드웨어 개발환경
 
 - 클라이언트 프로그램
 - 웹 브라우저
@@ -117,7 +117,8 @@ toc_sticky: true
 5. 통신적(Communication): 동일한 입출력
 6. 순차적(Sequential): 출력값 다른 활동이 사용
 7. 기능적(Functional): 기능
-   (좋음)
+
+(좋음)
 
 ### <mark style='background-color: #ffdce0'>(4) 소프트웨어 모듈 결합도</mark>
 
@@ -136,7 +137,8 @@ toc_sticky: true
 4. 제어(Control): 제어 신호
 5. 스탬프(Stamp): 배열, 객체, 구조 전달
 6. 자료(Data): 파라미터
-   (좋음)
+
+(좋음)
 
 ### <mark style='background-color: #ffdce0'>(5) 팬인 팬아웃</mark>
 

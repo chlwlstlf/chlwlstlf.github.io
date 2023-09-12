@@ -34,6 +34,10 @@
       */
       max-height: calc(100vh - #{$nav-height} - 2em);
     }
+
+    &.sticky::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   @include breakpoint($x-large) {
@@ -216,7 +220,7 @@
 
     &:before {
       @supports (pointer-events: none) {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
@@ -350,4 +354,3 @@
     margin-right: initial;
   }
 }
-

@@ -31,7 +31,7 @@ toc_sticky: true
 
 ### <mark style='background-color: #ffdce0'>(2) EAI</mark>
 
-1\. 개념
+1\. 개념  
 기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션 간의 정보를 전달, 연계, 통합이 가능하도록 해주는 솔루션
 
 2\. 구성요소

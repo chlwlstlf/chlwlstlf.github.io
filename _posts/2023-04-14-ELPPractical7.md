@@ -30,13 +30,13 @@ toc_sticky: true
 - 타임 스탬프 순서: 실행 전에 타임 스탬프 부여
 - 다중버전 동시성 제어: 직렬가능성 보장 되는 버전 선택
 
-7\. 회복 기법
-주요 요소
+7\. 회복 기법  
+1\)주요 요소
 
 - REDO: 시작, 완료 기록으로 재작업
 - UNDO: 시작은 있지만, 완료 기록 없는 트랜잭션 취소
 
-회복 기법 종류
+2\)회복 기법 종류
 
 - 로그 기반 회복 기법: 지연 갱신 회복 기법/ 즉각 갱신 회복 기법
 - 체크 포인트 회복 기법: 검사점 이후에 처리된 트랜잭션만 복원
@@ -71,79 +71,83 @@ toc_sticky: true
 
 - CREATE (테이블 생성)
 
-```sql
-CREATE TABLE 테이블명
-{
-  컬럼명 데이터타입 PRIMARY KEY,
-  컬럼명 데이터타입 FOREIGN KEY REFERENCES,
-  컬럼명 데이터타입 UNIQUE,
-  컬럼명 데이터타입 NOT NULL,
-  컬럼명 데이터타입 CHECK(조건식),
-  컬럼명 데이터타입 DEFAULT,
-};
-```
+  ```sql
+  CREATE TABLE 테이블명
+  {
+    컬럼명 데이터타입 PRIMARY KEY,
+    컬럼명 데이터타입 FOREIGN KEY REFERENCES,
+    컬럼명 데이터타입 UNIQUE,
+    컬럼명 데이터타입 NOT NULL,
+    컬럼명 데이터타입 CHECK(조건식),
+    컬럼명 데이터타입 DEFAULT,
+  };
+  ```
 
 - ALTER (테이블 수정)
 
-```sql
-ALTER TABLE 테이블명 ADD 컬럼명 데이터타입 제약조건; --추가
-ALTER TABLE 테이블명 MODIFY 컬럼명 데이터타입 제약조건; --수정
-ALTER TABLE 테이블명 DROP 컬럼명 데이터타입 제약조건; --삭제
-```
+  ```sql
+  ALTER TABLE 테이블명 ADD 컬럼명 데이터타입 제약조건; --추가
+  ALTER TABLE 테이블명 MODIFY 컬럼명 데이터타입 제약조건; --수정
+  ALTER TABLE 테이블명 DROP 컬럼명 데이터타입 제약조건; --삭제
+  ```
 
 - DROP (테이블 삭제)
 
-```sql
-DROP TABLE 테이블명 CASCADE | RESTRICT;
-```
+  ```sql
+  DROP TABLE 테이블명 CASCADE | RESTRICT;
+  ```
 
 - TRUNCATE (테이블 내 데이터 삭제)
 
-```sql
-TRUNCATE TABLE 테이블명;
-```
+  ```sql
+  TRUNCATE TABLE 테이블명;
+  ```
+
+---
 
 5\. VIEW DDL
 
 - CREATE VIEW (뷰 생성)
 
-```sql
-CREATE VIEW 뷰이름 AS
-조회쿼리;
-```
+  ```sql
+  CREATE VIEW 뷰이름 AS
+  조회쿼리;
+  ```
 
 - CREATE OR REPLACE VIEW (뷰 교체)
 
-```sql
-CREATE OR REPLACE VIEW 뷰이름 AS
-조회쿼리;
-```
+  ```sql
+  CREATE OR REPLACE VIEW 뷰이름 AS
+  조회쿼리;
+  ```
 
 - DROP VIEW (뷰 삭제)
 
-```sql
-DROP VIEW 뷰이름;
-```
+  ```sql
+  DROP VIEW 뷰이름;
+  ```
+
+---
 
 6\. INDEX DDL
 
 - CREATE INDEX (인덱스 생성)
 
-```sql
-CREATE INDEX 인덱스명 ON 테이블(컬럼명1, 컬럼명2, ...);
-```
+  ```sql
+  CREATE INDEX 인덱스명 ON 테이블(컬럼명1, 컬럼명2, ...);
+  ```
 
 - ALTER INDEX (인덱스 수정)
 
-```sql
-ALTER INDEX 인덱스명 ON 테이블(컬럼명1, 컬럼명2, ...);
-```
+  ```sql
+  ALTER INDEX 인덱스명 ON 테이블(컬럼명1, 컬럼명2, ...);
+  ```
 
 - DROP INDEX (인덱스 삭제)
 
-```sql
-DROP INDEX 인덱스명;
-```
+  ```sql
+  DROP INDEX 인덱스명;
+  ```
 
 ### <mark style='background-color: #ffdce0'>(3) DML</mark>
 
