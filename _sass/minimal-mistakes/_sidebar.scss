@@ -34,10 +34,6 @@
       */
       max-height: calc(100vh - #{$nav-height} - 2em);
     }
-
-    &.sticky::-webkit-scrollbar {
-      display: none;
-    }
   }
 
   @include breakpoint($x-large) {
