@@ -71,3 +71,11 @@ toc_sticky: true
 </div>
 
 <script src="https://gist.github.com/chlwlstlf/370418e9cc729518d400238da1c6a185.js"></script>
+
+## 💻20230916~20230922 (LV. 2)
+
+1\. 주차 요금 계산 (Lv. 2) [92341](https://school.programmers.co.kr/learn/courses/30/lessons/92341)
+
+2\. k진수에서 소수 개수 구하기 (Lv. 2) [92335](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
+
+3\. 두 큐 합 같게 만들기 (Lv. 2) [118667](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
