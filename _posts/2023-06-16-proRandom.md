@@ -8,7 +8,7 @@ toc_sticky: true
 
 # Programmers Random
 
-## 💻20230617~20230623 (LV. 2)
+## 💻230617~230623 (LV. 2)
 
 1\. 숫자의 표현 (Lv. 2) [12924](https://school.programmers.co.kr/learn/courses/30/lessons/12924)
 
@@ -72,10 +72,57 @@ toc_sticky: true
 
 <script src="https://gist.github.com/chlwlstlf/370418e9cc729518d400238da1c6a185.js"></script>
 
-## 💻20230916~20230922 (LV. 2)
+## 💻230916~230922 (LV. 2)
 
 1\. 주차 요금 계산 (Lv. 2) [92341](https://school.programmers.co.kr/learn/courses/30/lessons/92341)
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>dict1: 입차 딕셔너리</div>
+    <div>dict2: 시간 계산 결과 딕셔너리</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/318f718d835338df581e64926fcbb042.js"></script>
+
+---
+
 2\. k진수에서 소수 개수 구하기 (Lv. 2) [92335](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
 
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>범위를 (2, int(math.sqrt(n))+1) 이렇게 안 해주면 시간초과남</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/39fc4e09b8f77071688779fe3394f99c.js"></script>
+
+---
+
 3\. 두 큐 합 같게 만들기 (Lv. 2) [118667](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>9번째 줄 *3인 이유</div>
+    <div>length가 최대일 때는</div>
+    <div>1. a에서 b로 다 넘김 -> 길이 n</div>
+    <div>2. b에 있는 (a+b)를 a로 다 넘김 -> 길이 2n</div>
+    <div>따라서 최대 길이는 3n임</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/af9bf7425c77f70328f76f61e9691c78.js"></script>
+
+## 💻230923~231006 (LV. 2~LV. 3)
+
+1\. [64065](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
+
+2\. [17684](https://school.programmers.co.kr/learn/courses/30/lessons/17684)
+
+3\. [17687](https://school.programmers.co.kr/learn/courses/30/lessons/17687)
+
+4\. [42888](https://school.programmers.co.kr/learn/courses/30/lessons/42888)
+
+5\. [17686](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
+
+6\. [17679](https://school.programmers.co.kr/learn/courses/30/lessons/17679)
