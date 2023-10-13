@@ -113,7 +113,7 @@ toc_sticky: true
 
 <script src="https://gist.github.com/chlwlstlf/af9bf7425c77f70328f76f61e9691c78.js"></script>
 
-## 💻230923~231006 (LV. 3)
+## 💻230923~231006 (LV. 2)
 
 1\. 튜플 (Lv. 2) [64065](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
 
@@ -206,3 +206,11 @@ toc_sticky: true
 </div>
 
 <script src="https://gist.github.com/chlwlstlf/ccd336366b4f02dfcd569860ed5b822f.js"></script>
+
+## 💻231007~231013 (LV. 1)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/81301
+https://school.programmers.co.kr/learn/courses/30/lessons/17681
+https://school.programmers.co.kr/learn/courses/30/lessons/42889
+https://school.programmers.co.kr/learn/courses/30/lessons/17682
+https://school.programmers.co.kr/learn/courses/30/lessons/77484
