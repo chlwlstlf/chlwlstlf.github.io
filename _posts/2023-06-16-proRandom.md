@@ -334,7 +334,7 @@ toc_sticky: true
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
     <div>정규표현식 쓰면 됨</div>
-    <a herf='https://chlwlstlf.github.io/cote/regex'>👉🏻 정규표현식이란?</div>
+    <a herf='https://chlwlstlf.github.io/cote/regex'>👉🏻 정규표현식이란?</a>
   </p>
 </div>
 
