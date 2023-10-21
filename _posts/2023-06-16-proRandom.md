@@ -209,8 +209,152 @@ toc_sticky: true
 
 ## 💻231007~231013 (LV. 1)
 
-https://school.programmers.co.kr/learn/courses/30/lessons/81301
-https://school.programmers.co.kr/learn/courses/30/lessons/17681
-https://school.programmers.co.kr/learn/courses/30/lessons/42889
-https://school.programmers.co.kr/learn/courses/30/lessons/17682
-https://school.programmers.co.kr/learn/courses/30/lessons/77484
+1\. 숫자 문자열과 영단어 (Lv. 1) [81301](https://school.programmers.co.kr/learn/courses/30/lessons/81301)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>문자열의 영어를 숫자로 바꾸면 됨</div>
+    <div>replace를 연쇄적으로 써도 되지만 for문 쓰면 편함</div>
+  </p>
+  <p>
+    <div>딕셔너리 for문 문법</div>
+    <div>for key, value in dict.items():</div>
+    <div>하면 key, value를 한번에 쓸 수 있음</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/597634110bf8f86cfbd871399da60021.js"></script>
+
+---
+
+2\. [1차] 비밀지도 (Lv. 1) [17681](https://school.programmers.co.kr/learn/courses/30/lessons/17681)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>notation함수는 모든 진법으로 바꿀 수 있음</div>
+    <div>2진수, 8진수, 16진수는 내장함수를 쓸 수 있음</div>
+    <p>
+      <div>[10진수 → n진수]</div>
+      <div>2진수: bin()</div>
+      <div>8진수: oct()</div>
+      <div>16진수: hex()</div>
+    </p>
+  <p>
+    <div>[n진수 → 10진수]</div>
+    <div>int('0b111100', 2)</div>
+    <div>int('0o74', 8)</div>
+    <div>str(0b111100)</div>
+  </p>
+  <p>
+    <div>딕셔너리 for문 문법</div>
+    <div>for key, value in dict.items():</div>
+    <div>하면 key, value를 한번에 쓸 수 있음</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/f8acb2a9616cc5f80df153dd1d58df70.js"></script>
+
+---
+
+3\. 실패율 (Lv. 1) [42889](https://school.programmers.co.kr/learn/courses/30/lessons/42889)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>• 계수 정렬(O(N) 정렬)</div>
+    <div>조건: 0이상의 정수, 범위가 정해져 있어야함</div>
+    <div>1. 원래 데이터 [3,4,1,2,4,6,1]</div>
+    <div>2. 개수 저장하는 데이터 [0, 2, 1, 1, 2, 0, 1] (1이 2개, 2가 1개 있다는 뜻)</div>
+    <div>3. 정렬된 데이터 [1,1,2,3,4,4,6] (1을 2번, 2를 1번 출력하면 됨)</div>
+  </p>
+  <p>• 0으로 나눌 수 없으므로 0일때 예외처리 해줘야 함</p>
+  <p>
+    <div>• sort 내림차순, 오름차순 같이 쓰고 싶으면</div>
+    <div>(-x[1], x[0]) 이렇게 쓰면 됨</div>
+    <div>'-'를 붙이면 내림차순으로 됨</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/00de4dc8746eb2533c214d4faf64d4b7.js"></script>
+
+---
+
+4\. [1차] 다트 게임 (Lv. 1) [17682](https://school.programmers.co.kr/learn/courses/30/lessons/17682)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>• 0~10이므로 10일 때 예외처리 해줘야 함</div>
+    <div>• 스타상일 때만 저번 값 포함임(아차상일 땐 x)</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/b3745ed1eae83987318dc86c8e52ca1e.js"></script>
+
+---
+
+5\. 로또의 최고 순위와 최저 순위 (Lv. 1) [77484](https://school.programmers.co.kr/learn/courses/30/lessons/77484)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>rank 배열 만들어서 풀면 편함</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/4510c73fd38bde1fd1d0a265f67ab6b7.js"></script>
+
+## 💻231014~231020 (LV. 1, LV. 3)
+
+1\. 크레인 인형뽑기 게임 (Lv. 1) [64061](https://school.programmers.co.kr/learn/courses/30/lessons/64061)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>zip 내장함수</div>
+    <div>zip은 여러 개의 배열들을 첫 번째 요소끼리, 두 번째 요소끼리 묶어주는 함수</div>
+    <div>튜플로 묶여지기 때문에 map을 사용해서 list로 바꿔주면 전치행렬로 사용할 수 있음</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/5112546c96a90f93e2e539837dc44cc7.js"></script>
+
+---
+
+2\. [카카오 인턴] 키패드 누르기 (Lv. 1) [67256](https://school.programmers.co.kr/learn/courses/30/lessons/67256)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>keypad 딕셔너리에 각 숫자의 버튼을 저장하면 바로 거리를 계산 할 수 있음</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/1868b09a363788dd51230e564022f047.js"></script>
+
+---
+
+3\. 신규 아이디 추천 (Lv. 1) [72410](https://school.programmers.co.kr/learn/courses/30/lessons/72410)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>정규표현식 쓰면 됨</div>
+    <a herf='https://chlwlstlf.github.io/cote/regex'>👉🏻 정규표현식이란?</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/d2b17d2ad8c7676aad6af6190058fa16.js"></script>
+
+---
+
+4\. 불량 사용자 (Lv. 3) [64064](https://school.programmers.co.kr/learn/courses/30/lessons/64064)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>result는 각 banned_id에 해당하는 user_id를 저장한 배열이다</div>
+    <div>백트래킹에서는 재귀함수를 돌고 나오면 원래 값으로 돌려주어야 함</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/447dd0961906a58a7804941edb25df91.js"></script>
+
+## 💻231021~231027 (LV. 1)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/72411
+https://school.programmers.co.kr/learn/courses/30/lessons/67258
+https://school.programmers.co.kr/learn/courses/30/lessons/118666

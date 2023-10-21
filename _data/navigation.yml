@@ -20,7 +20,7 @@ docs:
 
   - title: Coding Test
     children:
-      - title: "이코테"
+      - title: "공부"
         url: /categories/cote
         category: "cote"
       - title: "백준"
@@ -30,7 +30,7 @@ docs:
         url: /categories/programmers
         category: "programmers"
 
-  - title: CS 면접 대비
+  - title: Computer Science
     children:
       - title: "CS 전공지식 노트"
         url: /categories/csnote

@@ -10,9 +10,9 @@ toc_sticky: true
 
 ## react-query란?
 
-React Query는 React 애플리케이션에서 데이터를 관리하고 상태를 처리하기 위한 JavaScript 라이브러리이다.  
-이 라이브러리는 API 호출, 데이터 캐싱, 상태 관리, 그리고 리액티브한 UI 업데이트를 간편하게 처리할 수 있도록 도와준다.  
-React Query는 주로 웹 애플리케이션에서 서버에서 데이터를 가져오거나 업데이트할 때 사용되며, 컴포넌트 간 데이터 공유 및 상태 관리를 효율적으로 처리할 수 있습니다.
+- React Query는 React 애플리케이션에서 데이터를 관리하고 상태를 처리하기 위한 JavaScript 라이브러리이다.
+- 이 라이브러리는 API 호출, 데이터 캐싱, 상태 관리, 그리고 리액티브한 UI 업데이트를 간편하게 처리할 수 있도록 도와준다.
+- React Query는 주로 웹 애플리케이션에서 서버에서 데이터를 가져오거나 업데이트할 때 사용되며, 컴포넌트 간 데이터 공유 및 상태 관리를 효율적으로 처리할 수 있다.
 
 ```
 npm install react-query
@@ -23,13 +23,13 @@ npm install react-query
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
     <div>index.tsx 파일</div>
-    <div>React Query를 애플리케이션에 통합하고 데이터 요청 및 상태 관리를 수행할 수 있게 한다</div>
+    <div>React Query를 애플리케이션에 통합하고 데이터 요청 및 상태 관리를 수행할 수 있게 한다.</div>
   </p>
   <p>
     <div>apis 폴더</div>
     <div>1. index.ts: 사용자 정보를 활용하여 API 요청 헤더에 인증 토큰을 추가하는 Axios 인터셉터 코드</div>
     <div>2. queryKey.ts: 데이터베이스 또는 API에서 데이터를 요청하고 식별하는 데 사용되는 문자열 상수 보관 파일</div>
-    <div>3. calendar.ts: 달력 관련된 api 모아져 있는 파일로 반환값을 return한다</div>
+    <div>3. calendar.ts: 달력과 관련된 api가 모아져 있는 파일로 반환값을 return</div>
   </p>
   <p>
     <div>pages 폴더</div>
@@ -63,7 +63,7 @@ src/
   </p> 
   <p>
     <div>QueryClient 객체 생성해준다음</div>
-    <div>QueryClientProvider로 App을 감싸주면 react-query 세팅이 완료된다</div>
+    <div>QueryClientProvider로 App을 감싸주면 react-query 세팅이 완료된다.</div>
   </p>
 </div>
 
@@ -200,13 +200,12 @@ export const fetchDetailCalendar = async (date: string) => {
     <div>2. react-query 문법</div>
     <div>• const { data } = useQuery(쿼리키, 함수);</div>
     <div>• data: calendarData로 하면 calendarData를 변수처럼 사용할 수 있다.</div>
-    <div>• 쿼리키를 [queryKey.CALENDARDATA, currentMonth] 이렇게 배열로 지정하면 첫 번쨰 요소는 쿼리키이고, 두 번째 요소부터는 저 값이 바뀔 때마다 함수를 실행할 수 있다.(useEffect의 의존성 배열과 비슷함)</div>
+    <div>• 쿼리키를 [queryKey.CALENDARDATA, currentMonth] 이렇게 배열로 지정하면 첫 번째 요소는 쿼리키이고, 두 번째 요소부터는 저 값이 바뀔 때마다 함수를 실행할 수 있다.(useEffect의 의존성 배열과 비슷함)</div>
   </p>
 </div>
 
 ```jsx
-// --- 중간 생략 --- //
-
+// --- 다른 import 생략 --- //
 import { fetchMonthCalendar, fetchDetailCalendar } from "apis/calendar";
 import { useQuery } from "react-query";
 import { queryKey } from "apis/queryKey";
