@@ -239,11 +239,12 @@ toc_sticky: true
       <div>8진수: oct()</div>
       <div>16진수: hex()</div>
     </p>
-  <p>
-    <div>[n진수 → 10진수]</div>
-    <div>int('0b111100', 2)</div>
-    <div>int('0o74', 8)</div>
-    <div>str(0b111100)</div>
+    <p>
+      <div>[n진수 → 10진수]</div>
+      <div>int('0b111100', 2)</div>
+      <div>int('0o74', 8)</div>
+      <div>str(0b111100)</div>
+    </p>
   </p>
   <p>
     <div>딕셔너리 for문 문법</div>
