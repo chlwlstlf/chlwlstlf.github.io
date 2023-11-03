@@ -354,8 +354,47 @@ toc_sticky: true
 
 <script src="https://gist.github.com/chlwlstlf/447dd0961906a58a7804941edb25df91.js"></script>
 
-## 💻231021~231027 (LV. 1)
+## 💻231021~231027 (LV. 1, LV. 3)
 
-https://school.programmers.co.kr/learn/courses/30/lessons/72411
-https://school.programmers.co.kr/learn/courses/30/lessons/67258
-https://school.programmers.co.kr/learn/courses/30/lessons/118666
+1\. 메뉴 리뉴얼 (Lv. 1) [72411](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>course에 있는 숫자로 모든 메뉴의 조합을 만듦</div>
+    <div>가장 빈도가 많은 것 출력하면 됨</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/ceef75a8f11d214448115998ae0669f9.js"></script>
+
+---
+
+2\. [카카오 인턴] 보석 쇼핑 (Lv. 3) [67258](https://school.programmers.co.kr/learn/courses/30/lessons/67258)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>- current는 모든 보석을 다 살 수 있는 조건을 만족하면 계속 갱신됨. (예제 1에서 [B C A] 구간도 위 조건을 만족하므로 current가 1로 갱신됨)</div>
+    <div>- length의 초깃값은 전체 보석의 개수이고 `현위치-start`가 현재 length보다 작아질 때마다 start는 current로, end는 현위치로 갱신함</div>
+    <img src="https://github.com/chlwlstlf/data/assets/63334368/b1470b7b-64fd-4f39-b950-dfa8261c0617" />
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/d83d80aab8fbb7b40994ff41577fe7b3.js"></script>
+
+---
+
+3\. 성격 유형 검사하기 (Lv. 1) [118666](https://school.programmers.co.kr/learn/courses/30/lessons/118666)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>점수 배열을 새롭게 만들어서 점수를 매기면 쉬움</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/63856e58cee7227c1d2cea28dcdf5841.js"></script>
+
+## 💻231028~231103 (LV. 2)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/17683
+https://school.programmers.co.kr/learn/courses/30/lessons/60058
+https://school.programmers.co.kr/learn/courses/30/lessons/67257
