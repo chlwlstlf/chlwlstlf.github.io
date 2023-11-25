@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# ⚾ 자동차 경주 게임
+# 🚗 자동차 경주 게임
 
 <mark style='color: red'>※ 진블로그는 링크가 있는 사람만 조회할 수 있어서 저만의 기록 공간으로 활용하고 있습니다.</mark>
 
@@ -45,17 +45,17 @@ toc_sticky: true
   ```
 - 사용자가 잘못된 값을 입력한 경우 throw문을 사용해 "[ERROR]"로 시작하는 메시지를 가지는 예외를 발생시킨 후, 애플리케이션은 종료되어야 한다.
 
-1\. 시작 입출력
+**1\. 시작 입출력**
 
 `경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)`  
 `pobi,woni,jun`  
 `시도할 횟수는 몇 회인가요?`  
 `5`
 
-2\. 출력
+**2\. 출력**
 
 - 각 차수별 실행 결과
-  ```Bash
+  ```bash
   pobi : --
   woni : ----
   jun : ---
@@ -67,7 +67,7 @@ toc_sticky: true
 
 ### 🎯 프로그래밍 요구사항
 
-※ 추가된 요구 사항
+**※ 추가된 요구 사항**
 
 - indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다. 2까지만 허용한다.
   - 예를 들어 while문 안에 if문이 있으면 들여쓰기는 2이다.
@@ -141,10 +141,11 @@ src/
 └── index.js
 ```
 
+---
+
 **constants 폴더**
 
-저번주에 util 폴더로 했는데 util에는 상수를 넣는 게 아닌 것 같다..
-
+저번주에 util 폴더로 했는데 util에는 상수를 넣는 게 아닌 것 같다..  
 그래서 폴더명을 constants로 바꿨다
 
 - AppConstants.js
@@ -215,6 +216,8 @@ class App {
 
 export default App;
 ```
+
+---
 
 **components 폴더**
 
@@ -312,7 +315,7 @@ export class RacingCar {
 
 **Jest 테스트 도구 사용법**
 
-1\. 기본 문법
+**1\. 기본 문법**
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
@@ -329,7 +332,9 @@ test("테스트 설명", () => {
 });
 ```
 
-2\. 예시
+---
+
+**2\. 예시**
 
 ```jsx
 test("split 메서드로 주어진 값을 구분", () => {
@@ -487,10 +492,16 @@ class App {
 export default App;
 ```
 
+---
+
 **2\. InputTest.js**
 
-- 자동차 이름 유효성 검사를 하고 싶을 땐 `expect(app.InputName())` 이렇게 부르고,
-  횟수 유효성 검사를 하고 싶을 땐 `expect(app.InputNumber())` 로 부르면 된다.
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>자동차 이름 유효성 검사를 하고 싶을 땐 `expect(app.InputName())` 이렇게 부르고,</div>
+    <div>횟수 유효성 검사를 하고 싶을 땐 `expect(app.InputNumber())` 로 부르면 된다.</div>
+  </p>
+</div>
 
 ```jsx
 import App from "../src/App.js";
@@ -591,9 +602,15 @@ describe("문자열 테스트", () => {
 });
 ```
 
+---
+
 **3\. RacingCarTest.js**
 
-- 우승자가 여러 명일 때 예시 하나만 들었다.
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>우승자가 여러 명일 때 예시 하나만 만들었다.</div>
+  </p>
+</div>
 
 ```jsx
 import App from "../src/App.js";

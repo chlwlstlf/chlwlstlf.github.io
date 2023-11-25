@@ -42,7 +42,7 @@ toc_sticky: true
 1주차 미션 깃허브  
 👉🏻 [https://github.com/woowacourse-precourse/javascript-baseball-6](https://github.com/woowacourse-precourse/javascript-baseball-6)
 
-제출 참고 사이트
+제출 참고 사이트  
 👉🏻 [프리코스 과제 제출](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse), [우아한테크코스 지원 사이트](https://apply.techcourse.co.kr/), [제출 가이드](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse#%EC%A0%9C%EC%B6%9C-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ---
@@ -55,8 +55,8 @@ README.md를 그대로 따라하면 된다.
 
 <details>
 <summary>⚠ node 버전이 안 맞아서 오류가 떴다</summary>
-  <div markdown="1">
-    오류 메세지
+<div markdown="1">
+오류 메세지
 
 ```
 C:\Users\LG\Desktop\취업\15_우테코\javascript-baseball-6>npm install
@@ -75,7 +75,9 @@ npm ERR!     C:\Users\LG\AppData\Local\npm-cache\_logs\2023-10-20T04_45_17_214Z-
 ---
 
 해결 과정
+
 1️⃣ **Node.js와 npm 버전 확인**
+
 Node.js 버전 16.16.0 → 18.17.1 이상으로 바꾸기
 
 ```
@@ -94,7 +96,8 @@ npm WARN config global `--global`, `--local` are deprecated. Use `--location=glo
 ---
 
 2️⃣ **Node.js와 npm 업데이트**
-Node.js 업데이트: 18.18.2 다운로드 받기
+
+Node.js 업데이트: 18.18.2 다운로드 받기  
 👉🏻 [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
 ![Untitled (4)](https://github.com/chlwlstlf/data/assets/63334368/4372c3a0-edc5-4acd-ab6e-5f2bbee830e7)
@@ -132,25 +135,27 @@ found 0 vulnerabilities
 
 <mark style='background-color: #fff5b1'>숫자야구 - 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.</mark>
 
-1. 게임 시작 문구 출력  
-   `숫자 야구 게임을 시작합니다.`
+1\. 게임 시작 문구 출력  
+ `숫자 야구 게임을 시작합니다.`
 
-2. 입력1 - 서로 다른 3자리의 수  
-   `숫자를 입력해주세요 : 123`
+2\. 입력1 - 서로 다른 3자리의 수  
+ `숫자를 입력해주세요 : 123`
 
-3. 출력1 - 입력한 수에 대한 결과를 볼, 스트라이크 개수로 표시
-   - 입력한 수에 대한 결과를 볼, 스트라이크 개수로 표시  
-     `1볼 1스트라이크`
-   - 하나도 없는 경우  
-     `낫싱`
-   - 3개의 숫자를 모두 맞힐 경우  
-     `3스트라이크`  
-     `3개의 숫자를 모두 맞히셨습니다! 게임 종료`
-4. 입력2 - 게임이 끝난 경우 재시작/종료를 구분하는 1과 2 중 하나의 수  
-   `게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.`  
-   `1`
+3\. 출력1 - 입력한 수에 대한 결과를 볼, 스트라이크 개수로 표시
 
-5. 예외처리 - 에러 문구 출력 `[ERROR]` 로 시작해야 한다.
+- 입력한 수에 대한 결과를 볼, 스트라이크 개수로 표시  
+  `1볼 1스트라이크`
+- 하나도 없는 경우  
+  `낫싱`
+- 3개의 숫자를 모두 맞힐 경우  
+  `3스트라이크`  
+  `3개의 숫자를 모두 맞히셨습니다! 게임 종료`
+
+4\. 입력2 - 게임이 끝난 경우 재시작/종료를 구분하는 1과 2 중 하나의 수  
+ `게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.`  
+ `1`
+
+5\. 예외처리 - 에러 문구 출력 `[ERROR]` 로 시작해야 한다.
 
 ---
 
@@ -162,9 +167,9 @@ found 0 vulnerabilities
 
 2\. JavaScript 코드 컨벤션을 지키기
 
-- 우테코 JS 코드 컨벤션
+- 우테코 JS 코드 컨벤션  
   👉🏻 [https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/javascript](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/javascript)
-- Airbnb JS 코드 컨벤션
+- Airbnb JS 코드 컨벤션  
   👉🏻 [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 
 <details>
@@ -471,6 +476,8 @@ arr.forEach((num) => {
 console.log(mulArr); //[3, 6, 9, 12]
 ```
 
+---
+
 **3\. reduce**
 
 배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환한다.
@@ -535,9 +542,11 @@ arr.every((elem, index, arr) => elem < 5);
 ### 💻 개발 시작
 
 **1\. 나의 브랜치 만들기**
+
 PR 날렸을 때 나의 브랜치를 파악하기 위해 만들었다.
 
-`git branch chlwlstlf` , `git checkout chlwlstlf`
+- `git branch chlwlstlf`
+- `git checkout chlwlstlf`
 
 ---
 
@@ -944,9 +953,9 @@ src/
 
 **과제 제출 오류**
 
-이 엄청 많은 Fix들…
-알고 봤더니 깃허브는 파일명을 지멋대로 바꾼다. 대문자, 소문자 구분을 안 하는 듯
-그치만 내 코드에선 파일 명이 소문자로 되어있기 때문에 인식을 못 했던 거였다.
+이 엄청 많은 Fix들…  
+알고 봤더니 깃허브는 파일명을 지멋대로 바꾼다. 대문자, 소문자 구분을 안 하는 듯.  
+그치만 내 코드에선 파일 명이 소문자로 되어있기 때문에 인식을 못 했던 거였다.  
 다음주부턴 이런 실수를 하지 않아야 겠다.
 
 ![Untitled (7)](https://github.com/chlwlstlf/data/assets/63334368/ae597aee-290d-499a-a166-6bf778f5f12c)
