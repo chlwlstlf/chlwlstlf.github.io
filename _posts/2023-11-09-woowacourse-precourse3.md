@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "우테코6기 프리코스 2주차"
+title: "우테코6기 프리코스 3주차"
 categories: js
 toc: true
 toc_sticky: true
@@ -300,7 +300,7 @@ person.setName = "Bob";
 console.log(person.getName); // 'Bob'
 ```
 
-## 2023.11.04(토)
+## <mark style='background-color: #ffdce0'>2023.11.04(토)</mark>
 
 ### 🛠️ 고려할 점
 
@@ -482,7 +482,7 @@ console.log(person.getName); // 'Bob'
 
 5\. 당첨 내역 출력
 
-## 2023.11.05(일)
+## <mark style='background-color: #ffdce0'>2023.11.05(일)</mark>
 
 ### 🛠️ eslint 적용된 내용
 
@@ -688,7 +688,7 @@ console.log(person.getName); // 'Bob'
   export default Validate;
   ```
 
-## 2023.11.06(월)
+## <mark style='background-color: #ffdce0'>2023.11.06(월)</mark>
 
 ### 🎯 2. 구매 개수와 랜덤 로또 번호 출력
 
@@ -803,7 +803,7 @@ console.log(person.getName); // 'Bob'
   export default InputView;
   ```
 
-## 2023.11.07(화)
+## <mark style='background-color: #ffdce0'>2023.11.07(화)</mark>
 
 ### 💣 구조 대공사 - mvc 패턴 없애기
 
@@ -1046,7 +1046,7 @@ src/
   }
   ```
 
-## 2023.11.08(수)
+## <mark style='background-color: #ffdce0'>2023.11.08(수)</mark>
 
 ### ✅ 테스트
 
