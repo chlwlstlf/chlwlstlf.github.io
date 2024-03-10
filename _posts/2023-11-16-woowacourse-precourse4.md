@@ -226,7 +226,7 @@ toc_sticky: true
 
 **[10분 테코톡] 🧀 제리의 MVC 패턴**
 
-👉🏻 https://www.youtube.com/watch?v=ogaXW6KPc8I
+👉🏻 [https://www.youtube.com/watch?v=ogaXW6KPc8I](https://www.youtube.com/watch?v=ogaXW6KPc8I)
 
 1\. MVC는 왜 생겨난걸까?
 
