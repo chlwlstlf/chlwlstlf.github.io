@@ -8,12 +8,16 @@ main:
 docs:
   - title: Front
     children:
-      - title: "Vanilla JS"
-        url: /categories/js
-        category: "Vanilla JS"
+    woowacours
       - title: "React"
         url: /categories/React
         category: "React"
+      - title: "UMC세종대 2기"
+        url: /categories/umc
+        category: "UMC세종대 2기"
+      - title: "우아한테크코스 6기"
+        url: /categories/woowacourse
+        category: "우아한테크코스 6기"
       - title: "etc"
         url: /categories/etc
         category: "etc"

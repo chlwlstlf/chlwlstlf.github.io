@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "React+구글 Firebase로 배포하기"
-categories: react
+categories: React
 toc: true
 toc_sticky: true
 ---

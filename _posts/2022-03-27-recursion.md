@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "자료구조-재귀"
-categories: c
+categories: C언어
 toc: true
 toc_sticky: true
 ---

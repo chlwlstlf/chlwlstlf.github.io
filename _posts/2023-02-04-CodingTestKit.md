@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[Programmers]코딩테스트 고득점 Kit"
-categories: programmers
+categories: 프로그래머스
 toc: true
 toc_sticky: true
 ---

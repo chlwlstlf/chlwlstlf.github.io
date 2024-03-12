@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "우테코6기 프리코스 1주차"
-categories: js
+categories: 우아한테크코스 6기
 toc: true
 toc_sticky: true
 ---
