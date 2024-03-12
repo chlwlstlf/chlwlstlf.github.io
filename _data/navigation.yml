@@ -10,10 +10,10 @@ docs:
     children:
       - title: "Vanilla JS"
         url: /categories/js
-        category: "js"
+        category: "Vanilla JS"
       - title: "React"
-        url: /categories/react
-        category: "react"
+        url: /categories/React
+        category: "React"
       - title: "etc"
         url: /categories/etc
         category: "etc"
@@ -22,37 +22,37 @@ docs:
     children:
       - title: "공부"
         url: /categories/cote
-        category: "cote"
+        category: "공부"
       - title: "백준"
         url: /categories/boj
-        category: "boj"
+        category: "백준"
       - title: "프로그래머스"
         url: /categories/programmers
-        category: "programmers"
+        category: "프로그래머스"
 
   - title: Computer Science
     children:
       - title: "CS 전공지식 노트"
         url: /categories/csnote
-        category: "csnote"
+        category: "CS 전공지식 노트"
 
   - title: Certificate
     children:
       - title: "ADsP"
         url: /categories/adsp
-        category: "adsp"
+        category: "ADsP"
       - title: "정보처리기사"
         url: /categories/elp
-        category: "elp"
+        category: "정보처리기사"
 
   - title: Language
     children:
       - title: "C언어"
         url: /categories/c
-        category: "c"
+        category: "C언어"
       - title: "Python"
         url: /categories/python
-        category: "python"
+        category: "Python"
 
 counts:
   - title: "Category"
