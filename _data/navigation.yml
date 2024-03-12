@@ -11,12 +11,12 @@ docs:
       - title: "React"
         url: /categories/React
         category: "React"
-      - title: "UMC세종대 2기"
+      - title: "UMC세종대"
         url: /categories/umc
-        category: "UMC세종대 2기"
-      - title: "우아한테크코스 6기"
+        category: "UMC세종대"
+      - title: "우아한테크코스"
         url: /categories/woowacourse
-        category: "우아한테크코스 6기"
+        category: "우아한테크코스"
       - title: "etc"
         url: /categories/etc
         category: "etc"

@@ -1,5 +1,5 @@
 ---
-title: "UMC세종대 2기"
+title: "UMC세종대"
 layout: archive
 permalink: categories/umc
 author_profile: true

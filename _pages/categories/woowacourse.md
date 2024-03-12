@@ -1,5 +1,5 @@
 ---
-title: "우아한테크코스 6기"
+title: "우아한테크코스"
 layout: archive
 permalink: categories/woowacourse
 author_profile: true

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "TypeScript 시작하기"
+title: "[React]TypeScript 시작하기"
 categories: React
 toc: true
 toc_sticky: true

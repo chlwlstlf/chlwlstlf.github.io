@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "정보처리기사 12단원"
+title: "[정보처리기사]12단원"
 categories: 정보처리기사
 toc: true
 toc_sticky: true

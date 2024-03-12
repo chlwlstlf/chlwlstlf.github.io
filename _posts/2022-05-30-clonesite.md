@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "MegaBox 2022"
-categories: UMC세종대 2기
+categories: UMC세종대
 toc: true
 toc_sticky: true
 ---

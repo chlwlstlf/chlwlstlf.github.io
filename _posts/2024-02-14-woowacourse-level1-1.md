@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "우테코6기 Level1 단위 테스트"
-categories: 우아한테크코스 6기
+title: "Level1 단위 테스트"
+categories: 우아한테크코스
 toc: true
 toc_sticky: true
 ---

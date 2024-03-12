@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "자료구조-재귀"
+title: "[C언어]자료구조-재귀"
 categories: C언어
 toc: true
 toc_sticky: true
