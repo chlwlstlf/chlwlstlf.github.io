@@ -9,14 +9,14 @@ docs:
   - title: Front
     children:
       - title: "React"
-        url: /categories/React
-        category: "React"
+        url: /categories/react
+        category: "react"
       - title: "UMC세종대"
         url: /categories/umc
-        category: "UMC세종대"
+        category: "umc"
       - title: "우아한테크코스"
         url: /categories/woowacourse
-        category: "우아한테크코스"
+        category: "woowacourse"
       - title: "etc"
         url: /categories/etc
         category: "etc"
@@ -25,37 +25,37 @@ docs:
     children:
       - title: "공부"
         url: /categories/cote
-        category: "공부"
+        category: "cote"
       - title: "백준"
         url: /categories/boj
-        category: "백준"
+        category: "boj"
       - title: "프로그래머스"
         url: /categories/programmers
-        category: "프로그래머스"
+        category: "programmers"
 
   - title: Computer Science
     children:
       - title: "CS 전공지식 노트"
         url: /categories/csnote
-        category: "CS 전공지식 노트"
+        category: "csnote"
 
   - title: Certificate
     children:
       - title: "ADsP"
         url: /categories/adsp
-        category: "ADsP"
+        category: "adsp"
       - title: "정보처리기사"
         url: /categories/elp
-        category: "정보처리기사"
+        category: "elp"
 
   - title: Language
     children:
       - title: "C언어"
         url: /categories/c
-        category: "C언어"
+        category: "c"
       - title: "Python"
         url: /categories/python
-        category: "Python"
+        category: "python"
 
 counts:
   - title: "Category"
