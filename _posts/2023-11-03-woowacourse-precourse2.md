@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "프리코스 2주차"
+title: "[우테코]프리코스 2주차"
 categories: 우아한테크코스
 toc: true
 toc_sticky: true
