@@ -15,7 +15,7 @@ docs:
         url: /categories/umc
         category: "umc"
       - title: "우아한테크코스"
-        url: /categories/
+        url: /categories/woowacourse
         category: "woowacourse"
       - title: "etc"
         url: /categories/etc
