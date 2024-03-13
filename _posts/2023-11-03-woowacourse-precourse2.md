@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[우테코]프리코스 2주차"
-categories: 우아한테크코스
+categories: woowacourse
 toc: true
 toc_sticky: true
 ---

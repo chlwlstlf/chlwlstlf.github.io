@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[우테코]Level1 자동차 경주 게임 2단계"
-categories: 우아한테크코스
+categories: woowacourse
 toc: true
 toc_sticky: true
 ---

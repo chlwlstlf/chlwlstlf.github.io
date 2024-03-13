@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[정보처리기사]5단원"
-categories: 정보처리기사
+categories: elp
 toc: true
 toc_sticky: true
 ---

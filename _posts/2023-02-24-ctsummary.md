@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "코딩테스트 준비"
-categories: 공부
+categories: cote
 toc: true
 toc_sticky: true
 ---

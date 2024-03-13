@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[Programmers]프로그래머스 랜덤"
-categories: 프로그래머스
+categories: programmers
 toc: true
 toc_sticky: true
 ---
