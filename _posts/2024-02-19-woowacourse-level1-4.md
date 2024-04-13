@@ -26,6 +26,9 @@ toc_sticky: true
 - `get name()`은 다른 곳에서 .name으로 값처럼 불러올 수 있는데 이때 name이 name을 불러오는 것인지 할당하는 것인지 다른 사람들이 알기 어렵다.
 - 명확한 이름인 `getName()`으로 바꾼 후 함수를 불러오는 것으로 변경했다.
 
+<br>
+<br>
+
 ## <mark style='background-color: #ffdce0'>1단계 피드백</mark>
 
 **1\. regex 대신 isNan 사용하기**
@@ -59,6 +62,9 @@ toc_sticky: true
   }
   ```
 
+<br>
+<br>
+
 ## <mark style='background-color: #ffdce0'>1단계 수정 사항</mark>
 
 **1\. 상수화 변경하기**
@@ -79,12 +85,16 @@ toc_sticky: true
 
 - 1단계 때 재입력을 성공하지 못 하였는데 그 부분 테스트 코드를 짜지 않아 알지 못 하였다.
 - 각 도메인 안에서 유효성 검사를 하고 있기 때문에 그 부분까지 묶어서 catchReturn 콜백 함수로 넘겨주었다.
+
   ```js
   async #input() {
     this.#cars = await catchReturn(this.#getCars);
     this.#tryCount = await catchReturn(this.#getCount);
   }
   ```
+
+<br>
+<br>
 
 ## <mark style='background-color: #ffdce0'>2단계 피드백</mark>
 

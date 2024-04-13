@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 2024년 02월 14일 수업 내용
 
-## <mark style='background-color: #ffdce0'>🧨좋은 코드</mark>
+## <mark style='background-color: #ffdce0'>📖 좋은 코드</mark>
 
 1\. 가독성이 좋은 코드  
 다른 사람이 코드를 빠르게 이해할 수 있게 한다.
@@ -30,7 +30,7 @@ toc_sticky: true
 
 ---
 
-## <mark style='background-color: #ffdce0'>📏단위 테스트</mark>
+## <mark style='background-color: #ffdce0'>📖 단위 테스트</mark>
 
 **기본 용어**
 
@@ -80,7 +80,7 @@ test("랜덤값이 4이상이면 1칸 전진", () => {
 - toContain
 - toThrow
 
-## <mark style='background-color: #ffdce0'>📏단위 테스트 예시</mark>
+## <mark style='background-color: #ffdce0'>📖 단위 테스트 예시</mark>
 
 **Calculator.js (프로덕션 코드)**
 
@@ -160,7 +160,7 @@ describe("계산기 기능 검증", () => {
 });
 ```
 
-## <mark style='background-color: #ffdce0'>📏단위 테스트 사용 Tip</mark>
+## <mark style='background-color: #ffdce0'>📖 단위 테스트 사용 Tip</mark>
 
 💡 팁1. Jest > docs > getting start 에서 도움받을 수 있음  
 💡 팁2. test.skip(), xtest()는 걔만 빼고 테스트, test.only()는 걔만 테스트

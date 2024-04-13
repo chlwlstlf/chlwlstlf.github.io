@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 🚗 1단계, 2단계 제출 방법
+# 1단계, 2단계 제출 방법
 
 ## <mark style='background-color: #ffdce0'>🔌pair와 구현한 코드 내보내기</mark>
 
