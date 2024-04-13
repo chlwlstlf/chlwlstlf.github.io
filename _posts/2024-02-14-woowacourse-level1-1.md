@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 단위 테스트"
+title: "[우테코]Level1 좋은 코드, 단위 테스트"
 categories: woowacourse
 toc: true
 toc_sticky: true
@@ -37,6 +37,8 @@ toc_sticky: true
 - 프로덕션 코드: 실제 코드, 테스트 대상이 되는 코드
 - 테스트 코드: Car.js의 테스트 코드는 Car.test.js
 
+<br/>
+
 **테스트 케이스**
 
 - given(arrange): 테스트할 동작을 호출하기 위해 필요한 사전 준비 작업
@@ -56,13 +58,18 @@ test("랜덤값이 4이상이면 1칸 전진", () => {
 });
 ```
 
+<br/>
+
 **Setup & Teardown**
 
 - beforeEach, afterEach: 반복적으로 수행해야 하는 작업
 - beforeAll, afterAll: 일회성으로 설정
 - describe: 이 블록 내부에만 before* 과 after* 를 적용할 수도 있다.
 
+<br/>
+
 **Jest Matchers**
+
 정의: 다양한 방식으로 값을 테스트할 수 있게 하는 것
 
 종류
@@ -75,7 +82,7 @@ test("랜덤값이 4이상이면 1칸 전진", () => {
 
 ## <mark style='background-color: #ffdce0'>📏단위 테스트 예시</mark>
 
-Calculator.js (프로덕션 코드)
+**Calculator.js (프로덕션 코드)**
 
 ```js
 class Calculator {
@@ -99,7 +106,7 @@ class Calculator {
 export default Calculator;
 ```
 
-Calculator.test.js - AAA 패턴 (테스트 코드)
+**Calculator.test.js** - AAA 패턴 (테스트 코드)
 
 ```js
 import Calculator from "../src/Calculator";
@@ -155,7 +162,7 @@ describe("계산기 기능 검증", () => {
 
 ## <mark style='background-color: #ffdce0'>📏단위 테스트 사용 Tip</mark>
 
-💡 팁1. Jest > docs > getting start 에서 도움받을 수 있음
+💡 팁1. Jest > docs > getting start 에서 도움받을 수 있음  
 💡 팁2. test.skip(), xtest()는 걔만 빼고 테스트, test.only()는 걔만 테스트
 
 ⚠️ 주의. 프로덕션 코드나 테스트 코드 둘 중 하나씩만 리팩토링 하기
