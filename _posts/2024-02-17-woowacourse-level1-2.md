@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 1단계, 2단계 제출 방법
 
-## <mark style='background-color: #ffdce0'>🔌pair와 구현한 코드 내보내기</mark>
+## <mark style='background-color: #ffdce0'>🔌 pair와 구현한 코드 내보내기</mark>
 
 (내 vscode에서 구현했다고 가정)
 
@@ -28,15 +28,19 @@ git remote add second {pair의 저장소 url}
 git push second step1 //pair의 step1 브랜치에 push
 ```
 
-## <mark style='background-color: #ffdce0'>🖇Pull Request에 들어갈 내용</mark>
+<br/>
+<br/>
+
+## <mark style='background-color: #ffdce0'>📝 Pull Request에 들어갈 내용</mark>
 
 1\. 어떻게 해결하려고 했는 지  
 2\. (덜 됐다면) 덜 된 이유  
 3\. 글 다듬어서 쓰기
 
----
+<br/>
+<br/>
 
-## <mark style='background-color: #ffdce0'>📁미션 2단계 제출 방법</mark>
+## <mark style='background-color: #ffdce0'>📁 미션 2단계 제출 방법</mark>
 
 1\. merge를 완료했다는 통보를 받으면 브랜치 변경 및 작업 브랜치 삭제(option)한다.
 
@@ -74,20 +78,20 @@ git branch -a //remotes/upstream/chlwlstlf 브랜치 생성 확인
 git rebase upstream/chlwlstlf
 ```
 
-<br/>
-
-⚠️ rebase에서 충돌이 떴다. 커밋 충돌인 것 같다.
-
-<<<<<< HEAD 위에 있는 글씨들이 버튼이다.
-
-나는 현재 변경 사항이 제일 최근 상태이기 때문에 첫 번째 버튼을 눌러 바꿔 주었다.
-
-![Untitled (4)](https://github.com/chlwlstlf/data/assets/63334368/fe91d4a4-de41-4baf-952d-bad4c4ca40c1)
-
-- Accept Current Change: 현재 변경 사항
-- Accept Incoming Change
-- Accept Both Changes
-- Compare Changes
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <p>⚠️ rebase에서 충돌이 떴다. 커밋 충돌인 것 같다.</p>
+    <div><<<<<< HEAD 위에 있는 글씨들이 버튼이다.</div>
+    <div>나는 현재 변경 사항이 제일 최근 상태이기 때문에 첫 번째 버튼을 눌러 바꿔 주었다.</div>
+    <img src="https://github.com/chlwlstlf/data/assets/63334368/fe91d4a4-de41-4baf-952d-bad4c4ca40c1" alt="충돌 사진"/>
+  </p>
+  <p>
+    <div>- Accept Current Change: 현재 변경 사항</div>
+    <div>- Accept Incoming Change</div>
+    <div>- Accept Both Changes</div>
+    <div>- Compare Changes</div>
+  </p>
+</div>
 
 <br/>
 

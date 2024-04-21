@@ -26,8 +26,8 @@ toc_sticky: true
 - `get name()`은 다른 곳에서 .name으로 값처럼 불러올 수 있는데 이때 name이 name을 불러오는 것인지 할당하는 것인지 다른 사람들이 알기 어렵다.
 - 명확한 이름인 `getName()`으로 바꾼 후 함수를 불러오는 것으로 변경했다.
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>1단계 피드백</mark>
 
@@ -62,8 +62,8 @@ toc_sticky: true
   }
   ```
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>1단계 수정 사항</mark>
 
@@ -93,8 +93,8 @@ toc_sticky: true
   }
   ```
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>2단계 피드백</mark>
 

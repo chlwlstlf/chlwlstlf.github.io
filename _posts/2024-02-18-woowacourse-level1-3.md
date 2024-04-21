@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 미션1 LMS 강의 자료
+# 미션1 LMS 강의 자료2
 
 ## <mark style='background-color: #ffdce0'>📚 JavsScript Data Type</mark>
 
@@ -30,10 +30,8 @@ console.log(age); // 20
 console.log(copy); // 30
 ```
 
----
-
-<br>
-<br>
+<br/>
+<br/>
 
 **2\. Reference Type(참조형)**
 
@@ -57,7 +55,7 @@ console.log(copy); // 30
 - this 값 설정
 - 전역 공간과 eval을 제외하면 함수를 실행할 때 생성된다.
 
----
+<br/>
 
 **2\. Scope**
 
@@ -75,8 +73,8 @@ Scope Chain
 - 식별자의 유효범위를 안에서부터 바깥으로 차례로 검색해 나가는 것
 - 현재 호출된 함수가 선언될 당시의 렉시컬 환경을 참조
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>📚 Object</mark>
 
@@ -87,7 +85,7 @@ Scope Chain
 - 자신의 속성을 가지고 있고 다른 것과 식별 가능한 것
 - 속성과 메소드
 
----
+<br/>
 
 **2\. 객체와 원시 값**
 
@@ -95,7 +93,7 @@ Scope Chain
 - 객체를 참조가 저장되므로 객체를 복사하면 참조만 복사된다.
 - 객체는 서로 동일한 객체를 참조하고 있을 때만 같은 것으로 본다.
 
----
+<br/>
 
 **3\. 객체와 Prototype**
 
@@ -105,7 +103,7 @@ Scope Chain
 - 여기서도 속성을 찾을 수 없으면 이 속성은 정의되지 않았다고 판단한다.(undefined)
 - prototype 속성은 Object() 객체라는 사실과 객체 속성 검색 체인(=프로토타입 상속) 덕분에 모든 객체는 Object()를 상속받는다.
 
----
+<br/>
 
 **4\. 함수와 객체에서의 스코프**
 
@@ -113,15 +111,15 @@ Scope Chain
 - 함수는 스코프 체인을 통해 변수를 찾는다.
 - 한 번 작성된 함수는 다른 컨텍스트에서 실행되더라도 원래의 스코프에 접근할 수 있다. 이러한 특성으로 인해 클로저가 만들어진다.
 
----
+<br/>
 
 **5\. 자바스크립트에서의 객체 지향**
 
 - 기본 객체: Object, Function, Array
 - 클래스 기반x, 프로토타입 기반o
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>📚 Prototype</mark>
 
@@ -137,7 +135,7 @@ Scope Chain
 - new 연산자로 constructor를 호출하면 instance가 만들어진다.
 - 이 instance가 가지고 있는 생략 가능한 프로퍼티인 `__proto__`를 constructor의 prototype을 참조한다.
 
----
+<br/>
 
 **2\. Mixin**
 

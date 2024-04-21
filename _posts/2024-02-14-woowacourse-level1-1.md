@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 2024년 02월 14일 수업 내용
+# 미션1 LMS 강의 자료1
 
 ## <mark style='background-color: #ffdce0'>📖 좋은 코드</mark>
 

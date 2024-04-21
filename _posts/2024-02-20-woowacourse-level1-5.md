@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 2024년 02월 20일 수업 내용
+# 미션2 LMS 강의 자료1
 
 ## <mark style='background-color: #ffdce0'>📖 TDD와 리팩터링</mark>
 
@@ -15,7 +15,7 @@ toc_sticky: true
 - 테스트를 먼저 작성하고 그 후 실제 코드를 작성하는 방법
 - 문제를 작은 단위로 정의하고, 피드백을 자주 받으면서 그 해답을 찾아가는 과정
 
----
+<br/>
 
 **2\. TDD 사이클**
 
@@ -23,13 +23,15 @@ toc_sticky: true
 - 초록 - 빨리 테스트가 통과하게끔 만든다.
 - 파랑 - 리팩토링: 모든 중복을 없앤다.
 
-**2\. 고려할 점**
+<br/>
+
+**3\. 고려할 점**
 
 - 생성자를 추가하는 것을 추천
 - 메소드 추가는 비추천
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>📖 프로그래밍 패러다임 종류</mark>
 
@@ -39,9 +41,13 @@ toc_sticky: true
 - 명령어들로 구성
 - 절차적, 객체지향 프로그래밍
 
+<br/>
+
 **1-1. 절차적 프로그래밍**
 
 - 명령어의 목록
+
+<br/>
 
 **1-2. 객체 지향 프로그래밍**
 
@@ -53,12 +59,14 @@ toc_sticky: true
 - 함수의 비일관성
 - 객체 내 상태 변화
 
----
+<br/>
 
 **2\. 선언형 프로그래밍**
 
 - 무엇(WHAT)에 초점
 - 함수형, 논리형 프로그래밍
+
+<br/>
 
 **2-1. 함수형 프로그래밍**
 
@@ -78,8 +86,8 @@ toc_sticky: true
   const newArray = [...originals, 4];
   ```
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>📖 객체</mark>
 
@@ -90,8 +98,8 @@ toc_sticky: true
 - 단일 책임: 한 가지 기능을 변경할 때에는 하나의 클래스만 변경
 - 캡슐화: 객체의 데이터를 직접 꺼대지 않고, 객체에 메세지를 던지도록 구조를 바꾼다.
 
-<br>
-<br>
+<br/>
+<br/>
 
 ## <mark style='background-color: #ffdce0'>📖 유효성 검사 중복될 때</mark>
 
