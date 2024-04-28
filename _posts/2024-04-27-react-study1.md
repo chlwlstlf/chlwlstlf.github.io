@@ -489,3 +489,207 @@ export default function Scoreboard() {
   );
 }
 ```
+
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>5. state 로직을 reducer로 작성하기</mark>
+
+**1\. reducer 함수란?**
+
+- 한 컴포넌트에서 state 업데이트가 여러 이벤트 핸들러로 분산되는 경우가 있다.
+- 이 경우 컴포넌트를 관리하기 어려워진다.
+- 따라서, 이 문제 해결을 위해 state를 업데이트하는 모든 로직을 reducer를 사용해 컴포넌트 외부로 단일 함수로 통합해 관리할 수 있다.
+
+<br>
+<br>
+
+**2\. useState에서 useReducer로 리펙토링 하는 방법**
+
+<mark style='background-color: #fff5b1'>1. state를 설정하는 것에서 action을 dispatch 함수로 전달하는 것으로 바꾸기</mark>
+
+useState 코드
+
+```jsx
+function handleAddTask(text) {
+  setTasks([
+    ...tasks,
+    {
+      id: nextId++,
+      text: text,
+      done: false,
+    },
+  ]);
+}
+
+function handleChangeTask(task) {
+  setTasks(
+    tasks.map((t) => {
+      if (t.id === task.id) {
+        return task;
+      } else {
+        return t;
+      }
+    })
+  );
+}
+
+function handleDeleteTask(taskId) {
+  setTasks(tasks.filter((t) => t.id !== taskId));
+}
+```
+
+<br>
+
+useReducer로 코드
+
+```jsx
+function handleAddTask(text) {
+  // "action" 객체:
+  dispatch({
+    type: "added",
+    id: nextId++,
+    text: text,
+  });
+}
+
+function handleChangeTask(task) {
+  dispatch({
+    type: "changed",
+    task: task,
+  });
+}
+
+function handleDeleteTask(taskId) {
+  dispatch({
+    type: "deleted",
+    id: taskId,
+  });
+}
+```
+
+<br>
+<br>
+
+<mark style='background-color: #fff5b1'>2. reducer 함수 작성하기</mark>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <div>1. 첫 번째 인자에 현재 state (tasks) 선언하기</div>
+    <div>2. 두 번째 인자에 action 객체 선언하기</div>
+    <div>3. reducer에서 다음 state 반환하기 (React가 state에 설정하게 될 값)</div>
+  </p>
+</div>
+
+```jsx
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case "added": {
+      return [
+        ...tasks,
+        {
+          id: action.id,
+          text: action.text,
+          done: false,
+        },
+      ];
+    }
+    case "changed": {
+      return tasks.map((t) => {
+        if (t.id === action.task.id) {
+          return action.task;
+        } else {
+          return t;
+        }
+      });
+    }
+    case "deleted": {
+      return tasks.filter((t) => t.id !== action.id);
+    }
+    default: {
+      throw Error("Unknown action: " + action.type);
+    }
+  }
+}
+```
+
+<br>
+<br>
+
+<mark style='background-color: #fff5b1'>3. 컴포넌트에서 reducer 사용하기</mark>
+
+```jsx
+const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+```
+
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>5. Context를 사용해 데이터를 깊게 전달하기</mark>
+
+**1\. "Prop drilling" 이란?**
+
+- Props 전달하기는 UI 트리를 통해 명시적으로 데이터를 사용하는 컴포넌트에 전달하는 훌륭한 방법이다.
+
+- 하지만 이 방식은 어떤 prop을 트리를 통해 깊이 전해줘야 하거나, 많은 컴포넌트에서 같은 prop이 필요한 경우에 장황하고 불편할 수 있다.
+
+- 데이터가 필요한 여러 컴포넌트의 가장 가까운 공통 조상은 트리 상 높이 위치할 수 있고 그렇게 높게까지 state를 끌어올리는 것은 “Prop drilling”이라는 상황을 초래할 수 있다.
+
+<br>
+
+**2\. "Context" 란?**
+
+- 부모가 트리 내부 전체에, 심지어 멀리 떨어진 컴포넌트에조차 어떤 데이터를 제공할 수 있도록 한다.
+
+<br>
+
+**3\. Context 사용하기**
+
+<mark style='background-color: #fff5b1'>1. Context 생성하기</mark>
+
+```jsx
+import { createContext } from "react";
+
+export const LevelContext = createContext(1);
+```
+
+<br>
+
+<mark style='background-color: #fff5b1'>2. Context 사용하기</mark>
+
+```jsx
+export default function Heading({ children }) {
+  const level = useContext(LevelContext);
+  // ...
+}
+```
+
+<br>
+
+<mark style='background-color: #fff5b1'>3. Context 제공하기</mark>
+
+```jsx
+import { useContext } from "react";
+import { LevelContext } from "./LevelContext.js";
+
+export default function Section({ children }) {
+  const level = useContext(LevelContext);
+  return (
+    <section className="section">
+      <LevelContext.Provider value={level + 1}>
+        {children}
+      </LevelContext.Provider>
+    </section>
+  );
+}
+```
+
+<br>
+<br>
+
+**4\. Context 사용 예시**
+
+- 테마 지정하기
+- 현재 계정
+- 라우팅
+- 상태관리

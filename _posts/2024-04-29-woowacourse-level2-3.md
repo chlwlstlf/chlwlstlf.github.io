@@ -72,7 +72,7 @@ const [open,setOpen] = setState(false)
 
 왜냐하면 1번 방법은 하위 컴포넌트와 상위 컴포넌트 간의 결합도가 증가하고 2번 방법이 유지 보수하기에 더 용이하다고 판단했기 때문이다.
 
-</br>
+<br>
 
 **[ 피드백 ]**
 
@@ -110,8 +110,8 @@ const [open,setOpen] = setState(false)
 
 때문에 단순히 결합도 측면에서 바라보기보다는, 구현하려는 컴포넌트에서 중요한 것이 '재사용성'인지, 혹은 '자유도'인지 폭넓게 고려하여 때에 따라 적절한 방식을 취해주면 좋을 것 같습니다.
 
-</br>
-</br>
+<br>
+<br>
 
 ## <mark style='background-color: #ffdce0'>📃 2단계 pr 메세지</mark>
 
@@ -125,7 +125,7 @@ const [open,setOpen] = setState(false)
 - 각 Input 필드가 다 다른 기능을 하고 있어서 재사용을 고려하기가 어려웠습니다.
 - 재사용이 되지 않더라도 같은 관심사를 가진 기능끼리 UI로부터 분리하면 된다는 강의를 듣고 커스텀 훅 작성하였습니다.
 
-</br>
+<br>
 
 **2. 조건부 렌더링**
 
@@ -146,8 +146,8 @@ const isNextVisible = userNameState.isNextVisible || isValid;
   </p>
 </div>
 
-</br>
-</br>
+<br>
+<br>
 
 ### 🖱 UI/UX 고려사항
 
@@ -171,7 +171,7 @@ if (nextInput && nextInput instanceof HTMLInputElement) {
 }
 ```
 
-</br>
+<br>
 
 **2. 숫자만, 영어만 입력할 수 있게**
 
@@ -192,7 +192,7 @@ setPasswordState((prevState) => ({
 }));
 ```
 
-</br>
+<br>
 
 **3. 사용자 이름은 엔터치면 완료**
 
@@ -223,7 +223,7 @@ const handleKeyDown = (e) => {
 };
 ```
 
-</br>
+<br>
 
 **4. 어떻게 children으로 넘겨줘야할까?**
 
