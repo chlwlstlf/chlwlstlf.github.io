@@ -18,8 +18,8 @@ toc_sticky: true
 - React에서는 직접 UI를 조작하지 않는다.
 - 대신 표시할 내용을 선언하면 React가 UI를 업데이트할 방법을 알아낸다.
 
-</br>
-</br>
+<br>
+<br>
 
 <mark style='background-color: #fff5b1'>선언형 UI</mark>
 
@@ -30,7 +30,7 @@ toc_sticky: true
 - 원하는 UI 결과값만 리턴하고 어떻게 화면에 보여지게 할 지 로직은 추상화해둔다.
 - 즉, UI를 다루는 부분은 리액트에게 위임하고 개발자는 결과에만 초점을 맞추자.
 
-</br>
+<br>
 
 예시
 
@@ -46,8 +46,8 @@ toc_sticky: true
   console.log(sum); // 18
   ```
 
-</br>
-</br>
+<br>
+<br>
 
 <mark style='background-color: #fff5b1'>명령형 UI</mark>
 
@@ -58,7 +58,7 @@ toc_sticky: true
 - 결과를 얻기 위해 데이터를 어떻게 조작해야 하는지 '과정'에 집중한다.
 - 코드가 어떻게 동작해야 하는지를 작성한다.
 
-</br>
+<br>
 
 예시
 
@@ -77,8 +77,8 @@ toc_sticky: true
   console.log(sum); // 18
   ```
 
-</br>
-</br>
+<br>
+<br>
 
 **2\. state가 왜 필요한가?**
 
@@ -120,8 +120,8 @@ const plus = () => {
 };
 ```
 
-</br>
-</br>
+<br>
+<br>
 
 **3\. UI를 선언적인 방식으로 생각하기**
 
@@ -137,7 +137,7 @@ const [isSuccess, setIsSuccess] = useState(false);
 const [isError, setIsError] = useState(false);
 ```
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>리팩토링 과정</mark>
 
@@ -158,7 +158,7 @@ const [isError, setIsError] = useState(false);
 
 - isError는 error !== null을 대신 확인할 수 있기 때문에 필요하지 않다.
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>리팩토링 후</mark>
 
@@ -168,8 +168,8 @@ const [error, setError] = useState(null);
 const [status, setStatus] = useState("typing"); // 'typing', 'submitting', 'success'
 ```
 
-</br>
-</br>
+<br>
+<br>
 
 ## <mark style='background-color: #ffdce0'>2. State 구조 선택</mark>
 
@@ -184,13 +184,16 @@ const [x, setX] = useState(0);
 const [y, setY] = useState(0);
 ```
 
+<br>
+
 <mark style='background-color: #fff5b1'>올바른 코드</mark>
 
 ```jsx
 const [position, setPosition] = useState({ x: 0, y: 0 });
 ```
 
-</br>
+<br>
+<br>
 
 **2\. 깊게 중첩된 state 피하기**
 
@@ -222,6 +225,8 @@ export const initialTravelPlan = {
 };
 ```
 
+<br>
+
 <mark style='background-color: #fff5b1'>올바른 코드</mark>
 
 ```jsx
@@ -249,8 +254,8 @@ export const initialTravelPlan = {
 };
 ```
 
-</br>
-</br>
+<br>
+<br>
 
 ## <mark style='background-color: #ffdce0'>3. 컴포넌트 간의 state 공유</mark>
 
@@ -261,20 +266,20 @@ export const initialTravelPlan = {
 - 때로는 두 컴포넌트의 state가 항상 함께 변경되기를 원할 때가 있다.
 - 그렇게 하려면 두 컴포넌트에서 state를 제거하고 가장 가까운 공통 부모로 이동한 다음 props를 통해 전달하면 된다.
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>틀린 예시</mark>
 
 ![1](https://github.com/chlwlstlf/data/assets/63334368/b3249519-a35c-4800-80a2-4181a97e1135)
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>올바른 예시</mark>
 
 ![2](https://github.com/chlwlstlf/data/assets/63334368/c1feb463-f362-437c-bfe6-b0e45f668cd2)
 
-</br>
-</br>
+<br>
+<br>
 
 ## <mark style='background-color: #ffdce0'>4. state 보존 및 재설정</mark>
 
@@ -286,7 +291,7 @@ export const initialTravelPlan = {
 - 하지만 state는 실제로 React 내부에서 유지된다.
 - React는 렌더링 트리에서 해당 컴포넌트의 위치에 따라 보유하고 있는 각 state를 올바른 컴포넌트와 연결한다.
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>다른 위치</mark>
 
@@ -330,7 +335,7 @@ export default function App() {
 }
 ```
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>같은 위치</mark>
 
@@ -345,8 +350,8 @@ export default function App() {
 }
 ```
 
-</br>
-</br>
+<br>
+<br>
 
 **2\. 동일한 위치에서 state 재설정하기**
 
@@ -370,7 +375,7 @@ export default function Scoreboard() {
 }
 ```
 
-</br>
+<br>
 
 <mark style='background-color: #fff5b1'>올바른 코드</mark>
 
@@ -395,7 +400,7 @@ export default function Scoreboard() {
 }
 ```
 
-</br>
+<br>
 
 2\) 각 컴포넌트에 key로 명시적인 아이덴티티를 부여하기
 
