@@ -8,6 +8,8 @@ toc_sticky: true
 
 # 리액트 스터디1 - state
 
+[참고 자료-state 관리](https://ko.react.dev/learn/managing-state){: .btn .btn--primary}
+
 ## <mark style='background-color: #ffdce0'>1. state로 입력에 반응하기</mark>
 
 **1\. 선언형 UI 프로그래밍과 명령형 UI 프로그래밍의 차이점**
@@ -90,15 +92,21 @@ toc_sticky: true
 
 - 일반적으로 리액트에서는 유동적인 데이터는 변수에 담아서 사용하지 않고 useState()라는 리액트 함수를 사용하여 state라는 저장 공간에 담아 사용한다.
 
+<br>
+<br>
+
 <mark style='background-color: #fff5b1'>state를 사용하는 이유</mark>
 
 - 변수는 변경되어도 자동으로 화면이 바뀌지 않는다. 하지만 state는 변경되면 자동으로 화면이 바뀌기 때문에 state를 사용한다.
+
+<br>
+<br>
 
 <mark style='background-color: #fff5b1'>setState</mark>
 
 state도 결국 객체이기 때문에, 같은 키값을 가진 경우라면 가장 마지막 실행값으로 덮어씌워지는데 이는 객체를 합치는 함수인 Object.assign()에서 확인할 수 있다.
 
-3씩 증가
+1\) 3씩 증가
 
 ```jsx
 const plus = () => {
@@ -110,7 +118,9 @@ const plus = () => {
 
 콜백 함수를 사용하면 항상 최신의 값을 인자로 받아와서 처리하기 때문에 setCount(count => count + 1)를 쓰면 최신 값을 받아서 처리할 수 있다.
 
-6씩 증가
+<br>
+
+2\) 6씩 증가
 
 ```jsx
 const plus = () => {
@@ -138,6 +148,7 @@ const [isError, setIsError] = useState(false);
 ```
 
 <br>
+<br>
 
 <mark style='background-color: #fff5b1'>리팩토링 과정</mark>
 
@@ -148,16 +159,21 @@ const [isError, setIsError] = useState(false);
 - 두 boolean의 조합은 네 가지가 가능하지만 유효한 state는 세 가지뿐이다.
 - “불가능한” state를 제거하려면 세 가지 값을 하나의 status로 결합하면 된다: 'typing', 'submitting', 'success'.
 
+<br>
+
 2\. 다른 state 변수에 이미 같은 정보가 있나요?
 
 - isEmpty와 isTyping은 동시에 true가 될 수 없다.
 - 이를 각 state 변수로 분리하면 동기화되지 않아 버그가 발생할 위험이 있다.
 - 다행히 isEmpty를 제거하고 대신 answer.length === 0으로 확인할 수 있다.
 
+<br>
+
 3\. 다른 state 변수를 뒤집으면 동일한 정보를 얻을 수 있나요?
 
 - isError는 error !== null을 대신 확인할 수 있기 때문에 필요하지 않다.
 
+<br>
 <br>
 
 <mark style='background-color: #fff5b1'>리팩토링 후</mark>
@@ -167,6 +183,47 @@ const [answer, setAnswer] = useState("");
 const [error, setError] = useState(null);
 const [status, setStatus] = useState("typing"); // 'typing', 'submitting', 'success'
 ```
+
+<br>
+<br>
+
+**4\. ⭐️ 참고**
+
+즉, 모든 컴포넌트가 자신의 이벤트 핸들러에서 setState() 를 호출하기 전까지 기다린다. 이렇게 하면 불필요한 렌더링을 줄이면서, 성능을 향상시킬 수 있다
+
+`setState` 의 호출은 비동기적으로 이루어진다. 따라서 setState 호출 직후 새로운 값이 state에 반영될 것이라고 생각하면 안된다.
+
+React는 브라우저 이벤트가 끝날 시점에 state를 **일괄적으로 업데이트 한다.**
+
+React에서는 16ms 단위로 batch update를 진행한다. 16ms 동안 변경된 상태 값들을 모아 리렌더링을 진행한다. ⇒ 모니터
+
+<br>
+
+[React에서의 setState](https://mingule.tistory.com/64)
+
+1\. 첫번째 이유
+
+state가 바뀔 때마다 렌더링 하면 효율성이 떨어지기 떄문이다.
+
+<br>
+
+2\. 두번쨰 이유
+
+내부적인 State, Props, Ref들에 대한 일관성을 보장할 수 있다. React는 재조정(reconciliation) 그리고 바뀌는 작업(flush) 이후에 State과 Props를 업데이트 하도록 만들어놨다. 이렇게 state가 바로 바뀌는 것이 아닌, 바뀌는 시간을 딜레이 함으로써
+
+state, props 등의 일관성을 유지하여 애플리케이션의 안정성을 높인다.
+
+state 를 생성할 떄는 ‘반드시 필요한’ ‘핵심적인’ state 부터 선언하는 것으로 시작한다. 처음부터 효율적인 state를 설계하는 것이 힘들다면, 다 적어놓고 리팩토링한다.
+
+<br>
+
+3\. 세번째 이유
+
+16 \* 60 = 960
+
+1000ms = 1s
+
+⇒ 모니터의 주사율 때문이다.
 
 <br>
 <br>
@@ -339,6 +396,8 @@ export default function App() {
 
 <mark style='background-color: #fff5b1'>같은 위치</mark>
 
+> React에서 중요한 것은 JSX 마크업이 아니라 UI 트리에서의 위치라는 것을 기억하세요! 이 컴포넌트에는 if 내부와 외부에 서로 다른 <Counter /> JSX 태그가 있는 두 개의 return절이 있습니다
+
 ```jsx
 export default function App() {
   const [isFancy, setIsFancy] = useState(false);
@@ -402,7 +461,7 @@ export default function Scoreboard() {
 
 <br>
 
-2\) 각 컴포넌트에 key로 명시적인 아이덴티티를 부여하기
+2\) 각 컴포넌트에 key로 명시적인 아이덴티티를 부여하기 (props는 상관x)
 
 - key를 지정하면 React가 부모 내 순서가 아닌 key 자체를 위치의 일부로 사용하도록 지시한다.
 - 그렇기 때문에 JSX에서 같은 위치에 렌더링하더라도 React의 관점에서 보면 두 카운터는 서로 다른 카운터이다.
