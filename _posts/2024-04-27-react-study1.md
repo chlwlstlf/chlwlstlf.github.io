@@ -625,7 +625,7 @@ const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>5. Context를 사용해 데이터를 깊게 전달하기</mark>
+## <mark style='background-color: #ffdce0'>6. Context를 사용해 데이터를 깊게 전달하기</mark>
 
 **1\. "Prop drilling" 이란?**
 

@@ -227,16 +227,24 @@ const handleKeyDown = (e) => {
 
 **4. 어떻게 children으로 넘겨줘야할까?**
 
-> 추가로 현재 구현해주신 NewCardInputSection 컴포넌트 같은 경우 단순히 children으로 하위 컴포넌트를 넣어버리면, 다른 사용자 입장에서 아래와 같은 의문이 들 수 있을 것 같아요.
->
-> - children으로 어떤 컴포넌트를 넣어줘야 하는지?
-> - children으로 들어간 컴포넌트가 어떤 위치에 보이게 되는 건지?
->
-> 때문에 하위 컴포넌트를 넣어주는 방식에 대해 좀 더 구체화가 필요해보입니다.
+- children을 inputComponents로 변경한 후 아래와 같이 props로 children에 들어가는 코드를 넘겨주었습니다.
 
-1단계 때 이런 피드백을 주셨는데요! 이 부분에 대해 고민을 해보았는데 해결책이 떠오르지 않았습니다.. 죄송합니다😭
-이런 부분에서는 어떻게 구체화를 해주는 지 힌트 알려주시면 이번 피드백에 반영해보겠습니다..!
-
-```
-
+```jsx
+<NewCardInputSection
+  mainText={FORM_FIELDS.PASSWORD.MAIN_TEXT}
+  subText={FORM_FIELDS.PASSWORD.SUB_TEXT}
+  label={FORM_FIELDS.PASSWORD.LABEL}
+  errorMessage={PasswordState.errorMessage}
+  inputComponents={
+    <Input
+      type="password"
+      value={PasswordState.value}
+      maxLength={FORM_FIELDS.PASSWORD.MAX_LENGTH}
+      placeholder={FORM_FIELDS.PASSWORD.PLACEHOLDER}
+      isError={!!PasswordState.errorMessage[0]}
+      onChange={(e) => handlePasswordChange(e.target.value)}
+      autoFocus
+    ></Input>
+  }
+></NewCardInputSection>
 ```
