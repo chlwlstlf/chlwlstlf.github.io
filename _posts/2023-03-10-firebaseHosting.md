@@ -14,7 +14,7 @@ toc_sticky: true
   <div>1. firebase에 회원가입 & 로그인</div>
 </div>
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>2. 프로젝트 추가 클릭</div>
@@ -22,7 +22,7 @@ toc_sticky: true
 
 ![1](https://github.com/chlwlstlf/portfolio/assets/63334368/a5df2403-3100-4318-bdfd-f4efbf3106ef)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>3. 프로젝트 이름 지정</p>
@@ -33,7 +33,7 @@ toc_sticky: true
 
 ![2](https://github.com/chlwlstlf/portfolio/assets/63334368/6bacd937-c0a4-4e6f-8613-e6a2cc2cb5c7)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>4. 애널리틱스 사용은 본인 선택, `계속` 버튼 클릭</div>
@@ -41,7 +41,7 @@ toc_sticky: true
 
 ![3](https://github.com/chlwlstlf/portfolio/assets/63334368/d171ac4d-c594-4fdc-ad10-c2c2a123be1d)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>5. 구글 계정 선택 후 `프로젝트 만들기` 클릭</div>
@@ -49,7 +49,7 @@ toc_sticky: true
 
 ![4](https://github.com/chlwlstlf/portfolio/assets/63334368/72853f07-cbca-4ac2-a83d-97cc78b9e814)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>6. 로딩 후 프로젝트가 생성됨</div>
@@ -59,7 +59,7 @@ toc_sticky: true
 
 ![6](https://github.com/chlwlstlf/portfolio/assets/63334368/4078632a-c1ff-45cc-909c-c481d802491b)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>7. 프로젝트가 생성되면 프로젝트의 첫 화면으로 옴</div>
@@ -67,7 +67,7 @@ toc_sticky: true
 
 ![7](https://github.com/chlwlstlf/portfolio/assets/63334368/5d326a38-5859-41bf-9bff-622b09150ec9)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>8. 좌측 메뉴 칸에서 `빌드-Hosting`을 누른 후 `시작하기` 버튼 클릭</div>
@@ -75,7 +75,7 @@ toc_sticky: true
 
 ![8](https://github.com/chlwlstlf/portfolio/assets/63334368/a40307b8-1786-44b0-96df-4c88cd574418)
 
----
+<br>
 
 ## 호스팅 설정하기
 
@@ -87,7 +87,7 @@ toc_sticky: true
 
 ![10](https://github.com/chlwlstlf/portfolio/assets/63334368/0424a0a6-0723-4053-8ce2-165bd1c9c1ad)
 
----
+<br>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>2. firebase login 복붙하기</p>
