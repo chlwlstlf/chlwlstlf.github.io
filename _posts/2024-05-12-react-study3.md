@@ -56,7 +56,7 @@ toc_sticky: true
 - useEffect는 컴포넌트가 마운트될 때, 업데이트될 때, 혹은 언마운트될 때 실행되는데, 이때마다 부수 효과를 처리할 수 있다.
 - useEffect는 기본적으로 컴포넌트가 마운트될 때와 업데이트될 때마다 실행된다.
 - 이때, useEffect의 의존성 배열을 통해 특정 상태나 props의 변화를 감지하여 실행 여부를 결정할 수 있다.
-- useEffect의 의존성 배열에 명시된 값들이 변경될 때에만 useEffect가 다시 실행됩니다.
+- useEffect의 의존성 배열에 명시된 값들이 변경될 때에만 useEffect가 다시 실행된다.
 
 ```jsx
 import { useState, useEffect } from "react";
