@@ -14,6 +14,8 @@ toc_sticky: true
 
 ### 🧐 1주차 공통 피드백
 
+[1주차 공통 피드백](https://docs.google.com/document/d/1DWiROxxsQpE2p5BtnM0JJZ55RyzNmeZLDsEtdChyHbw/edit){: .btn .btn--primary}
+
 - 요구 사항, 프로그래밍 요구 사항, 과제 진행 요구 사항의 항목을 모두 잘 지켰는지 다시 한 번 점검한다.
 - 커밋 메시지에 해당 커밋에서 작업한 내용에 대한 이해가 가능하도록 작성한다.
 - git에 코드를 추가할 때는 git을 통해 관리할 필요가 있는지를 고려해볼 것을 추천한다. (**node modules** 는 **package.json** 파일이 있으면 설치할 수 있고 버전 관리를 직접 하지 않으므로 git으로 관리하지 않아도 된다.)

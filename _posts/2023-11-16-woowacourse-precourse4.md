@@ -14,6 +14,8 @@ toc_sticky: true
 
 ### 🧐 3주차 공통 피드백
 
+[3주차 공통 피드백](https://docs.google.com/document/d/18IX2mHca7U-sd2Gi12Vl4o7ZKMFIfamv8jB_zOcGDuM/edit){: .btn .btn--primary}
+
 - 함수가 15라인이 넘어가면 고민하자.
 - 예외 사항을 다 고려하자.
   (로또 번호 입력의 예외 처리 예시는 모두 하였다.)
