@@ -227,7 +227,7 @@ npm run build
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌4. eslint 설정</mark>
+## <mark style='background-color: #ffdce0'>📌4. ESlint 설정</mark>
 
 **1\. eslint 관련 패키지 설치**
 
@@ -289,7 +289,7 @@ npm install -D eslint eslint-plugin-react eslint-plugin-prettier @typescript-esl
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌5. prettier 설정</mark>
+## <mark style='background-color: #ffdce0'>📌5. Prettier 설정</mark>
 
 **1\. prettier 설치**
 
@@ -335,7 +335,7 @@ npm install -D prettier @trivago/prettier-plugin-sort-imports
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌6. jest 설정</mark>
+## <mark style='background-color: #ffdce0'>📌6. Jest 설정</mark>
 
 **1\. jest 설치**
 
