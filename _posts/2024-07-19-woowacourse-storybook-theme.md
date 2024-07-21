@@ -12,7 +12,7 @@ toc_sticky: true
 
 > storybook에서 theme이 적용이 안된다!!!!!
 
-ThemeProvider를 사용하여 공통 theme을 관리하고 있었는데 이걸 storybook 인식을 하기 못 하여 오류가 발생했습니다.
+ThemeProvider를 사용하여 공통 theme을 관리하고 있었는데 이걸 storybook 인식하지 못 하여 오류가 발생했습니다.
 
 <br>
 
@@ -79,7 +79,7 @@ export default preview;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌storybook에 절대 경로 설정하기</mark>
+## <mark style='background-color: #ffdce0'>📌storybook에 절대 경로 적용하기</mark>
 
 **1\. 패키지 설치**
 
@@ -100,8 +100,7 @@ npm install -D tsconfig-paths-webpack-plugin
 
 ```tsx
 import type { StorybookConfig } from "@storybook/react-webpack5";
-
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin"); //이 부분!!
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin"; //이 부분!!
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
