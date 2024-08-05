@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[React]createPortal"
-categories: react
+title: "[우테코]Level3 createPortal"
+categories: woowacourse
 toc: true
 toc_sticky: true
 ---

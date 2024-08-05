@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]AWS로 프론트 서버 배포하기"
+title: "[우테코]Level3 AWS로 프론트 서버 배포하기"
 categories: woowacourse
 toc: true
 toc_sticky: true

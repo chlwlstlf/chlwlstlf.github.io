@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[React]styled-components 반응형 모듈화"
-categories: react
+title: "[우테코]Level3 styled-components 반응형 모듈화"
+categories: woowacourse
 toc: true
 toc_sticky: true
 ---
