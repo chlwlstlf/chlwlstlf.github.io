@@ -127,3 +127,42 @@ toc_sticky: true
 </div>
 
 <script src="https://gist.github.com/chlwlstlf/249feac8fb8bcc9ee3d2f0994b70a538.js"></script>
+
+<br>
+
+3\. 농장 관리 (골5)
+[1245](https://www.acmicpc.net/problem/1245)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <b>BFS</b>   
+  <p>
+    <div>• 입력 받으면서 max_height를 구한 후 0부터 max_height까지 돌면서 해당 높이를 만날 때 마다 bfs를 호출한다.</div>
+    <div>• bfs의 용도는 '봉우리 존재 여부 반환'과 '방문 처리'이다.</div>
+    <div>• 기본적인 bfs의 코드와 동일하며 '봉우리인지'를 찾기 위해 16, 27, 28번째 줄이 추가되었다.</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/45724d4ecaa71408559de0da67fb5c7b.js"></script>
+
+<br>
+
+4\. 꿈틀꿈틀 호석 애벌레 - 기능성 (실1)
+[20167](https://www.acmicpc.net/problem/20167)
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <b>재귀</b>   
+  <p>
+    <div>dp로 나와있지만 기능성은 재귀로도 시간초과 없이 풀 수 있다. 효율성은 dp로 다시 생각해 봐야 할 듯..?</div>
+  </p>
+  <p>
+    <div>1. 이전 total값이 K보다 큰 경우</div>
+    <div>최소 만족도가 K 이상이면 먹는 것을 멈춘다고 나와있으므로 에너지를 계산한 후 0으로 초기화 한다.</div>
+  </p>
+  <p>
+    <div>2. 이전 total값이 K보다 작은 경우</div>
+    <div>• 이전 total이 0이면, 현재는 안 먹을 수도 안 먹을 수도 있다.</div>
+    <div>• 이전 total이 0이 아니면, 무조건 연속적으로 먹어야 하므로 현재 만족도를 더해준다.</div>
+  </p>
+</div>
+
+<script src="https://gist.github.com/chlwlstlf/8864838dd9ca409816dacaa086fdbeae.js"></script>
