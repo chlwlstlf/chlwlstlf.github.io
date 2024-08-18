@@ -181,12 +181,19 @@ function Hello() {
 - 이 과정에서는 DOM 조작이 수행되며, 화면에 변경된 내용이 실제로 표시된다.
   ![Untitled (13)](https://github.com/chlwlstlf/data/assets/63334368/60f1e32d-9401-4c3d-a5c5-dff744a755a6)
 
+<br>
+
 2\. **부가 작업 수행**
 
 - 실제 DOM 업데이트 후에는 커밋 단계에서 추가적인 작업이 수행될 수 있다. 예를 들어, useEffect나 커스텀 DOM 이벤트 핸들러가 실행될 수 있다.
-  3\. **렌더링 완료**
+
+<br>
+
+3\. **렌더링 완료**
 
 - 모든 업데이트가 완료되면 렌더링 프로세스가 종료됩니다. 화면에는 최신의 UI가 표시됩니다.
+
+<br>
 
 4\. **중요❗**
 
@@ -194,7 +201,10 @@ function Hello() {
 - 렌더링을 수행했으나 커밋 단계까지 갈 필요가 없다면, 즉 변경 사항을 계산했는데 아무런 변경 사항이 감지되지 않는다면 이 커밋 단계는 생략될 수 있다.
 - 커밋 단계가 생략되면 DOM 업데이트가 일어나지 않는다.
 
-## 렌더링 프로세스 정리
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>📌렌더링 프로세스 정리</mark>
 
 리액트는 자제척인 렌더링 프로세스를 가지고 있다.
 
@@ -307,10 +317,10 @@ memo로 래핑되어 있으면 변경된 내용이 없기 때문에 렌더링이
 
 ---
 
-참고자료
+**참고자료**
 
 [React.memo() 현명하게 사용하기](https://ui.toast.com/weekly-pick/ko_20190731)
 
-https://www.youtube.com/watch?v=eBDj0B0HbEQ
+[[10분 테코톡] 솔로스타의 React 렌더링](https://www.youtube.com/watch?v=eBDj0B0HbEQ)
 
-https://www.youtube.com/watch?v=N7qlk_GQRJU
+[React.js의 렌더링 방식 살펴보기](https://www.youtube.com/watch?v=N7qlk_GQRJU)
