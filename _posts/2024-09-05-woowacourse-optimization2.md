@@ -93,7 +93,7 @@ module.exports = {
 
 cloudfront에서 압축할 수 있다.
 
-[그림7]
+![7](https://github.com/user-attachments/assets/e9e930af-cf2f-41ed-a246-2c696dad74e5)
 
 <br>
 <br>
@@ -180,7 +180,7 @@ return (
 
 png, 10.7mb → webp, 111kb
 
-[그림8]
+![8](https://github.com/user-attachments/assets/cf36faf8-1941-4080-af09-418c4ef29311)
 
 **<mark style='background-color: #fff5b1'>gif 크기 줄이기</mark>**
 

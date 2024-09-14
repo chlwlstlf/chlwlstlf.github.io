@@ -50,7 +50,7 @@ toc_sticky: true
 
 Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
-[그림1]
+![1](https://github.com/user-attachments/assets/e0469390-f2c5-4972-980b-22f7b9309c26)
 
 <br>
 
@@ -60,7 +60,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 현재: 70점
 
-[그림2]
+![2](https://github.com/user-attachments/assets/73dfe5f3-53ad-46d1-a942-1b43cdc6a711)
 
 [**Performance**](https://web.dev/performance-scoring/)는 화면에 콘텐츠가 얼마나 빨리 표시되고, 유저가 해당 콘텐츠를 얼마나 빨리 인식하는지에 대한 점수를 나타낸 것이다.
 
@@ -80,7 +80,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 현재: 253kb
 
-[그림3]
+![3](https://github.com/user-attachments/assets/bbbea860-212c-4c18-95b7-457a3a0c4b0e)
 
 <br>
 
@@ -90,7 +90,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 현재: 10.7mb
 
-[그림4]
+![4](https://github.com/user-attachments/assets/83da0932-a72e-487f-b51e-324aa5d7812b)
 
 <br>
 
@@ -100,7 +100,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 환경: 프랑스 파리에서 Fast 3G 환경으로 접속했을 때
 
-[그림6]
+![6](https://github.com/user-attachments/assets/aa23c9ef-c02c-4448-b62d-f1a981951c52)
 
 목표: Home 첫 번째 로드시 LCP < 2.5s, Home 두 번째 이후 로드시 LCP < 1.2s
 
@@ -108,7 +108,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 [현재 결과 페이지](https://www.webpagetest.org/result/240904_BiDcDA_242/)
 
-[그림5]
+![5](https://github.com/user-attachments/assets/42a31a5a-c0b3-41f6-96a0-42ce32179b32)
 
 <br>
 
