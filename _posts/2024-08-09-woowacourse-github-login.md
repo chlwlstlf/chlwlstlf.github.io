@@ -6,9 +6,9 @@ toc: true
 toc_sticky: true
 ---
 
-# Github OAuth로 로그인 구현, refresh token
+# Github OAuth로 로그인 구현
 
-> FE에게 이 글을 바칩니다^\_\_^
+> Fe에게 이 글을 바칩니다^\_\_^
 
 ## <mark style='background-color: #ffdce0'>📌OAuth 2.0 용어</mark>
 
@@ -64,6 +64,8 @@ toc_sticky: true
   </p>
 </div>
 
+![100](https://github.com/user-attachments/assets/dce3c30e-d9a6-4c59-ae0c-38e1c1ac047a)
+
 1\. Resource Owner는 로그인을 한 후 Resource Server로부터 code를 받습니다.
 
 2\. Client는 이 code로 Authorization Server에 `로그인 post` 요청을 합니다.
@@ -73,25 +75,6 @@ toc_sticky: true
 4\. Authorization Server는 받은 access Token, refresh Token, user Info를 Client에 넘겨줍니다.
 
 5\. Client는 이를 기기에 저장한 후 access Token을 header에 담아서 api를 요청하는 데에 사용합니다.
-
-<br>
-<br>
-
-## <mark style='background-color: #ffdce0'>📌OAuth 로그아웃 과정</mark>
-
-**refresh Token이 만료됐을 때**
-
-1\. Client는 localStorage를 clear합니다.
-
-2\. Authorization Server는 자동으로 DB에 있는 refresh Token을 삭제합니다.
-
-<br>
-
-**로그아웃을 눌렀을 때**
-
-1\. Client는 localStorage를 clear한 후 `로그아웃 post`를 요청합니다.
-
-2\. Authorization Server는 로그아웃 post를 요청 받으면 DB에 있는 refresh Token을 삭제합니다.
 
 <br>
 <br>
@@ -152,6 +135,7 @@ Settings > Developer settings > OAuth Apps
 ![6](https://github.com/user-attachments/assets/34578ed3-569a-46aa-813b-e1c02d4007b8)
 
 <br>
+<br>
 
 ## <mark style='background-color: #ffdce0'>📌3. Github로 리다이렉트</mark>
 
@@ -183,6 +167,7 @@ const Header = () => {
 export default Header;
 ```
 
+<br>
 <br>
 
 ## <mark style='background-color: #ffdce0'>📌4. Callback 페이지 화면</mark>
@@ -253,7 +238,31 @@ const postLoginMutation = useMutation({
 });
 ```
 
-## <mark style='background-color: #ffdce0'>📌5. 로그아웃 클릭</mark>
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>📌OAuth 로그아웃 과정</mark>
+
+![101](https://github.com/user-attachments/assets/f6c5a585-9009-4a8c-b69e-0f31b743d1a8)
+
+**refresh Token이 만료됐을 때**
+
+1\. Client는 localStorage를 clear합니다.
+
+2\. Authorization Server는 자동으로 DB에 있는 refresh Token을 삭제합니다.
+
+<br>
+
+**로그아웃을 눌렀을 때**
+
+1\. Client는 localStorage를 clear한 후 `로그아웃 post`를 요청합니다.
+
+2\. Authorization Server는 로그아웃 post를 요청 받으면 DB에 있는 refresh Token을 삭제합니다.
+
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>📌1. 로그아웃 클릭</mark>
 
 1\. Client는 localStorage를 clear한 후 `로그아웃 post`를 요청합니다.
 
