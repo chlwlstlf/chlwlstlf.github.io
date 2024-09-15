@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level4 요청 크기 줄이기"
+title: "[우테코]Level4 1 요청 크기 줄이기"
 categories: woowacourse
 toc: true
 toc_sticky: true
@@ -17,14 +17,15 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥텍스트 컨텐츠 > 소스코드 크기 줄이기</mark>
+## <mark style='background-color: #ffdce0'>🔥소스코드 크기 줄이기</mark>
 
 > 크기 줄일 방법들 다 적용했나?
 
 <br>
 
 **<mark style='background-color: #fff5b1'>압축(Minify)</mark>**
-압축은 전체 소스코드 중 아래와 같은 경우를 제거하는 작업을 말합니다.
+
+압축은 전체 소스코드 중 아래와 같은 경우를 제거하는 작업을 말한다.
 
 - 불필요한 줄바꿈, 공백 밑 들여쓰기
 - 짧게 쓸 수 있는 긴 구문(줄일 수 있는 if 구문, 형 변환 축약 등)
@@ -43,19 +44,38 @@ toc_sticky: true
 - 난독화의 단계를 높일 수록 루틴을 알아보기 어렵게 만들 수 있음
 - 변수, 함수명 등이 줄어 용량이 감소하지만 난독화 단계를 높일수록 코드를 해석하고 실행하는 속도가 느려질 수 있으므로, 프로젝트에 맞게 선택하여 적용하는 것이 좋음
 
-**<mark style='background-color: #fff5b1'>JS 압축</mark>**
+<br>
+
+### <mark style='background-color: #fff5b1'>JS 압축</mark>
 
 webpack 4부터 production 환경에서 기본으로 js minify와 uglify를 해준다.
 
-**<mark style='background-color: #fff5b1'>CSS 압축</mark>**
+<br>
+
+### <mark style='background-color: #fff5b1'>CSS 압축</mark>
 
 자바스크립트와 마찬가지로 CSS에도 해석에 불필요한 공백이 존재한다.
 
-CSS in JS는 babel transpile 과정에서 minify한다.
-
-하지만 CSS는 직접 제거해야 한다.
+CSS in JS는 babel transpile 과정에서 minify한다. 하지만 CSS는 직접 제거해야 한다.
 
 이를 제거하기 위해서 Webpack 공식 문서에서 제시하는 방식은 [CssMinimizerPlugin](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/)을 활용하는 방식이다. 추가적으로 CSS를 별개의 파일로 분리하기 위해서 [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)을 활용하는 설정을 추천한다.
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <b>use: [MiniCssExtractPlugin.loader, "css-loader"]</b>
+    <div>ts-loader와 MiniCssExtractPlugin.loader는 충돌이 나기 때문에 MiniCssExtractPlugin.loader만 남겨두었다.</div>
+    <div>ts-loader를 제거한 이유는 이 규칙이 CSS 파일만 처리하기 때문이다.</div>
+  </p>
+</div>
+
+<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <p>
+    <b>minimizer: [`...`, new CssMinimizerPlugin()]</b>
+    <div>Webpack 5에서는 기본적으로 TerserPlugin(자바스크립트 파일을 최소화하는 플러그인)이 이미 포함되어 있다.</div>
+    <div>minimizer 옵션을 사용하면 기본 설정을 덮어쓴다. 즉, 만약 minimizer 배열에 아무것도 추가하지 않으면 Webpack이 기본 제공하는 TerserPlugin도 비활성화된다.</div>
+    <div>...(spread 연산자)는 Webpack의 기본 minimizer 설정을 확장하는 역할을 한다. 즉, 기본 제공되는 TerserPlugin을 유지하면서, 추가적으로 CssMinimizerPlugin을 사용할 수 있게 한다.</div>
+  </p>
+</div>
 
 ```bash
 npm i mini-css-extract-plugin
@@ -63,7 +83,7 @@ npm i css-minimizer-webpack-plugin
 ```
 
 ```tsx
-···,
+···
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
@@ -78,20 +98,22 @@ module.exports = {
       ···,
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"], //ts-loader 제거
       },
       ···,
     ],
   },
   optimization: {
-    minimizer: [`...`, new CssMinimizerPlugin()],
+    minimizer: [`...`, new CssMinimizerPlugin()], //minimizer: true
   },
 };
 ```
 
-**<mark style='background-color: #fff5b1'>소스코드 압축</mark>**
+### <mark style='background-color: #fff5b1'>소스코드 압축</mark>
 
 cloudfront에서 압축할 수 있다.
+
+자동으로 객체 압축 > Yes
 
 ![7](https://github.com/user-attachments/assets/e9e930af-cf2f-41ed-a246-2c696dad74e5)
 
@@ -104,7 +126,7 @@ cloudfront에서 압축할 수 있다.
 > 해상도는 잘 맞췄는데, 그래도 용량이 크네  
 > PC에선 괜찮았는데, 모바일에선 이렇게까지 큰 거 필요 없는데?
 
-**<mark style='background-color: #fff5b1'>png 크기 줄이기</mark>**
+### <mark style='background-color: #fff5b1'>png 크기 줄이기</mark>
 
 • PNG
 
@@ -142,7 +164,7 @@ webp는 Internet Explorer, Safari 13 이하, iOS Safari 13 이하는 지원하�
 
 3\. Home.tsx에 적용
 
-[source 태그 MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
+[[참고] source 태그 MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
 
 **`<picture>` 태그**
 
@@ -176,13 +198,16 @@ return (
 
 <br>
 
-4\. 결과 확인하기 Network > img
+4\. 결과 확인하기 Network > Img
 
 png, 10.7mb → webp, 111kb
 
 ![8](https://github.com/user-attachments/assets/cf36faf8-1941-4080-af09-418c4ef29311)
 
-**<mark style='background-color: #fff5b1'>gif 크기 줄이기</mark>**
+<br>
+<br>
+
+### <mark style='background-color: #fff5b1'>gif 크기 줄이기</mark>
 
 • GIF
 
@@ -208,7 +233,7 @@ png, 10.7mb → webp, 111kb
 
 1\. WebM과 MP4로 변환
 
-WebM를 지원하지 않는 곳에서는 MP4를 주어야 하기 때문이다.
+WebM를 지원하지 않는 곳에서는 MP4를 보여 줘야 하기 때문에 둘다 변경하였다.
 
 <br>
 
@@ -219,6 +244,8 @@ WebM를 지원하지 않는 곳에서는 MP4를 주어야 하기 때문이다.
 <FeatureItem title="Find gif for free" webmSrc={findWebm} mp4Src={findMp4} />
 <FeatureItem title="Free for everyone" webmSrc={freeWebm} mp4Src={freeMp4} />
 ```
+
+<br>
 
 3\. FeatureItem.tsx
 
@@ -246,6 +273,18 @@ const FeatureItem = ({ title, webmSrc, mp4Src }: FeatureItemProps) => {
 
 export default FeatureItem;
 ```
+
+<br>
+
+4\. 결과 확인하기 Network > Media
+
+webm과 mp4는 Img가 아니라 Media이다.
+
+trending: 1.3MB → 563KB  
+find: 2.0MB → 1.1MB  
+free: 1.7MB → 541KB
+
+[그림10]
 
 <br>
 

@@ -19,7 +19,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌개선 사항 체크</mark>
+## <mark style='background-color: #ffdce0'>📌성능 개선 종류</mark>
 
 **<mark style='background-color: #fff5b1'>로딩 성능 개선</mark>**
 
@@ -38,7 +38,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥로딩 성능 수치</mark>
+## <mark style='background-color: #ffdce0'>📌로딩 성능 수치</mark>
 
 **<mark style='background-color: #fff5b1'>배포 링크</mark>**
 
@@ -54,7 +54,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Lighthouse</mark>**
+**<mark style='background-color: #fff5b1'>1 Lighthouse</mark>**
 
 목표: Lighthouse 페이지 로드시 performance 점수 95점 이상
 
@@ -74,7 +74,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 <br>
 
-**<mark style='background-color: #fff5b1'>스크립트 리소스 크기</mark>**
+**<mark style='background-color: #fff5b1'>2 스크립트 리소스 크기</mark>**
 
 목표: Home 페이지에서 불러오는 스크립트 리소스 크기 < 60kb
 
@@ -84,7 +84,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 <br>
 
-**<mark style='background-color: #fff5b1'>히어로 이미지 크기</mark>**
+**<mark style='background-color: #fff5b1'>3 히어로 이미지 크기</mark>**
 
 목표: 히어로 이미지 크기 < 120kb
 
@@ -94,7 +94,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 <br>
 
-**<mark style='background-color: #fff5b1'>WebPageTest</mark>**
+**<mark style='background-color: #fff5b1'>4 WebPageTest</mark>**
 
 [WebPageTest 사이트](https://www.webpagetest.org/)
 
@@ -102,9 +102,11 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 ![6](https://github.com/user-attachments/assets/aa23c9ef-c02c-4448-b62d-f1a981951c52)
 
+---
+
 목표: Home 첫 번째 로드시 LCP < 2.5s, Home 두 번째 이후 로드시 LCP < 1.2s
 
-현재: Home 첫 번째 로드시 LCP < 2.583s, Home 두 번째 이후 로드시 LCP < 1.225s
+현재: Home 첫 번째 로드시 LCP = 2.583s, Home 두 번째 이후 로드시 LCP = 1.225s
 
 [현재 결과 페이지](https://www.webpagetest.org/result/240904_BiDcDA_242/)
 
@@ -112,7 +114,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 <br>
 
-**<mark style='background-color: #fff5b1'>추가적인 성능 개선</mark>**
+**<mark style='background-color: #fff5b1'>5 추가적인 개선 목표</mark>**
 
 • 화면 버벅임 최소화
 
