@@ -26,7 +26,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌1. 배포용 빌드 준비하기</mark>
+## <mark style='background-color: #ffdce0'>🔥1. 배포용 빌드 준비하기</mark>
 
 ```bash
 npm run build
@@ -37,7 +37,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌2. S3 버킷 생성하기</mark>
+## <mark style='background-color: #ffdce0'>🔥2. S3 버킷 생성하기</mark>
 
 1\. ‘버킷 만들기’를 클릭합니다.
 2\. 리전은 상관없지만 대한민국(서울)으로 지정합니다.
@@ -46,7 +46,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌3. 파일 업로드</mark>
+## <mark style='background-color: #ffdce0'>🔥3. 파일 업로드</mark>
 
 1\. 생성된 버킷을 찾아 들어갑니다.
 2\. 업로드를 눌러서 dist안에 있는 파일들을 모두 업로드합니다.
@@ -56,7 +56,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌4. 권한 설정</mark>
+## <mark style='background-color: #ffdce0'>🔥4. 권한 설정</mark>
 
 1\. 속성 > ARN 주소 복사 후 권한 메뉴로 이동합니다.
 2\. 권한 > 하단 스크롤 > 버킷 정책 > 편집 > 정책 생성기
@@ -71,7 +71,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌5. 정적 웹사이트 호스팅 설정하기</mark>
+## <mark style='background-color: #ffdce0'>🔥5. 정적 웹사이트 호스팅 설정하기</mark>
 
 - 속성 > ARN 복사
 - 정적 웹 사이트 호스팅 > 편집
@@ -132,7 +132,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌6. CloudFront에 S3 연결하기</mark>
+## <mark style='background-color: #ffdce0'>🔥1. CloudFront에 S3 연결하기</mark>
 
 **1\. 원본 세팅하기**
 
@@ -213,11 +213,30 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 ![7](https://github.com/user-attachments/assets/8cb03b81-0b95-4f7a-b82d-58b1354e867f)
 
 <br>
+<br>
+
+## <mark style='background-color: #ffdce0'>🔥2. 오류 응답 생성</mark>
+
+S3와 Cloudfront 연결 후 403 error, Access Denied 에러 메세지가 뜨게 되었다. S3에 SPA(React)를 이용하여 구성을 하면 Redirect가 발생하여 403/404와 같은 Access Denied가 발생하게 된 것이다.
+
+![100](https://github.com/user-attachments/assets/59422d83-5e22-4aec-94ad-bbda77bdc3aa)
+
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>🔥3. 무효화하기</mark>
+
+Cloudfront는 기본적으로 24시간동안(기본 TTL) 오리진의 응답을 캐시한다. 이 동안에 엣지 로케이션에 요청이 오는 경우에는 캐시된 응답을 사용한다. 따라서 S3 버킷에 새로운 객체를 업로드했을 때 무효화를 해줘야 변경된 페이지가 보인다.
+
+![101](https://github.com/user-attachments/assets/b62fd543-aabf-407f-bc99-ab2f8b502fd5)
+![102](https://github.com/user-attachments/assets/2e18b776-fa5e-4bbe-baab-d2d50782c86b)
+
+<br>
 
 참고자료
 
 [https://velog.io/@crab4862/AWS-S3로-프론트엔드정적-웹사이트-배포하기](https://velog.io/@crab4862/AWS-S3%EB%A1%9C-%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EC%A0%95%EC%A0%81-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0)
 
-https://jie0025.tistory.com/554
+[[AWS] 웹 프론트, S3 저장소를 통해 배포하자](https://jie0025.tistory.com/554)
 
-https://inpa.tistory.com/entry/AWS-%F0%9F%93%9A-CloudFront-%EA%B0%9C%EB%85%90-%EC%9B%90%EB%A6%AC-%EC%82%AC%EC%9A%A9-%EC%84%B8%ED%8C%85-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC
+[[AWS] 📚 CloudFront 개념 원리 & 사용 세팅 💯 정리](https://inpa.tistory.com/entry/AWS-%F0%9F%93%9A-CloudFront-%EA%B0%9C%EB%85%90-%EC%9B%90%EB%A6%AC-%EC%82%AC%EC%9A%A9-%EC%84%B8%ED%8C%85-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC)

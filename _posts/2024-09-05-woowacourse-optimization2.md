@@ -284,7 +284,7 @@ trending: 1.3MB → 563KB
 find: 2.0MB → 1.1MB  
 free: 1.7MB → 541KB
 
-[그림10]
+![10](https://github.com/user-attachments/assets/d650fe09-1cf1-4aac-937e-e22c38fd1048)
 
 <br>
 
