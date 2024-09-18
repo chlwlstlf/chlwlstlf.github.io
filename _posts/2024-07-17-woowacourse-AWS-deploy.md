@@ -217,7 +217,9 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 
 ## <mark style='background-color: #ffdce0'>🔥2. 오류 응답 생성</mark>
 
-S3와 Cloudfront 연결 후 403 error, Access Denied 에러 메세지가 뜨게 되었다. S3에 SPA(React)를 이용하여 구성을 하면 Redirect가 발생하여 403/404와 같은 Access Denied가 발생하게 된 것이다.
+S3와 Cloudfront 연결 후 403 error, Access Denied 에러 메세지가 뜨게 되었습니다. S3에 SPA(React)를 이용하여 구성을 하면 Redirect가 발생하여 403/404와 같은 Access Denied가 발생하게 된 것입니다.
+
+cloudfront에서 아래와 같이 `사용자 정의 오류 응답 생성`을 하면 됩니다.
 
 ![100](https://github.com/user-attachments/assets/59422d83-5e22-4aec-94ad-bbda77bdc3aa)
 
@@ -226,9 +228,10 @@ S3와 Cloudfront 연결 후 403 error, Access Denied 에러 메세지가 뜨게 
 
 ## <mark style='background-color: #ffdce0'>🔥3. 무효화하기</mark>
 
-Cloudfront는 기본적으로 24시간동안(기본 TTL) 오리진의 응답을 캐시한다. 이 동안에 엣지 로케이션에 요청이 오는 경우에는 캐시된 응답을 사용한다. 따라서 S3 버킷에 새로운 객체를 업로드했을 때 무효화를 해줘야 변경된 페이지가 보인다.
+Cloudfront는 기본적으로 24시간동안(기본 TTL) 오리진의 응답을 캐시합니다. 이 동안에 엣지 로케이션에 요청이 오는 경우에는 캐시된 응답을 사용합니다. 따라서 S3 버킷에 새로운 객체를 업로드했을 때 무효화를 해줘야 변경된 페이지가 보입니다.
 
 ![101](https://github.com/user-attachments/assets/b62fd543-aabf-407f-bc99-ab2f8b502fd5)
+
 ![102](https://github.com/user-attachments/assets/2e18b776-fa5e-4bbe-baab-d2d50782c86b)
 
 <br>

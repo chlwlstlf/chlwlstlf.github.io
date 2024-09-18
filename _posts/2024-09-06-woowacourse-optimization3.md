@@ -189,7 +189,9 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 ## <mark style='background-color: #ffdce0'>🔥이미지 미리 가져오기</mark>
 
-**<mark style='background-color: #fff5b1'>[preload](https://web.dev/preload-critical-assets/)</mark>**
+**<mark style='background-color: #fff5b1'>preload</mark>**
+
+[https://web.dev/preload-critical-assets/](https://web.dev/preload-critical-assets/)
 
 ```html
 <link rel="preload" href="/style.css" as="style" />
@@ -205,7 +207,9 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[prefetch](hhttps://web.dev/link-prefetch/)</mark>**
+**<mark style='background-color: #fff5b1'>prefetch</mark>**
+
+[https://web.dev/link-prefetch/](https://web.dev/link-prefetch/)
 
 ```html
 <link rel="prefetch" href=“/next-chunk.js” as=“script" />
@@ -221,7 +225,9 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[preconnect](https://web.dev/preconnect-and-dns-prefetch/)</mark>**
+**<mark style='background-color: #fff5b1'>preconnect</mark>**
+
+[https://web.dev/preconnect-and-dns-prefetch/](https://web.dev/preconnect-and-dns-prefetch/)
 
 ```html
 <link rel="preconnect" href=“https://example.com”/>
@@ -239,7 +245,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 [Fetch Priority API로 리소스 로드 최적화](https://web.dev/articles/fetch-priority?hl=ko)
 
-hero 이미지는 화면이 로드되면서 바로 보여야 하는 이미지이고, webm 파일들은 스크롤을 내렸을 때 보이는 리소스들이다. 따라서 이미지는 preload 뿐만 아니라 `fetchpriority="high"`도 지정해 주었다. 기본 우선 순위는 `중간`이며 높이고 싶으면 `high`를 지정해주면 된다.
+hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이고, webm 파일들은 스크롤을 내렸을 때 보이는 리소스들이다. 그래서 이미지에는 preload 뿐만 아니라 `fetchpriority="high"`도 지정해 주었다. 기본 우선 순위는 `중간`이며, 높이고 싶으면 `high`를 지정해주면 된다.
 
 또 화면에 사이즈에 따라 로드되는 이미지를 정하고 싶다면 `imagesrcset` 속성을 활용하면 된다.
 
