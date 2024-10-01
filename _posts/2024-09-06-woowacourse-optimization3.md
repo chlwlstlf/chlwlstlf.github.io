@@ -245,7 +245,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 [Fetch Priority API로 리소스 로드 최적화](https://web.dev/articles/fetch-priority?hl=ko)
 
-hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이고, webm 파일들은 스크롤을 내렸을 때 보이는 리소스들이다. 그래서 이미지에는 preload 뿐만 아니라 `fetchpriority="high"`도 지정해 주었다. 기본 우선 순위는 `중간`이며, 높이고 싶으면 `high`를 지정해주면 된다.
+hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이고, webm 파일들은 스크롤을 내렸을 때 보이는 리소스들이다. 그래서 이미지에는 preload 뿐만 아니라 `fetchpriority="high"`도 지정해 주었다. 이미지의 기본 우선 순위는 `중간`이며, 높이고 싶으면 `high`를 지정해주면 된다.
 
 또 화면에 사이즈에 따라 로드되는 이미지를 정하고 싶다면 `imagesrcset` 속성을 활용하면 된다.
 

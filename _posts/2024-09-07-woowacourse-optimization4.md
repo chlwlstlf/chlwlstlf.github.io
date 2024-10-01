@@ -65,7 +65,7 @@ CloudFront 캐시는 Recommended for S3로 하였다. S3에 원본을 저장하�
 5\. public
 
 - 콘텐츠를 브라우저 및 CDN 모두 캐시할 수 있다.
-- 자주 변경되지 않는 정적 콘텐츠(이미지, CSS, JS)에 주로 사용되며, 모든 캐시 계층에서 재사용할 수 있도록 합니다.
+- 자주 변경되지 않는 정적 콘텐츠(이미지, CSS, JS)에 주로 사용되며, 모든 캐시 계층에서 재사용할 수 있도록 한다.
 
 <br>
 
@@ -77,7 +77,7 @@ CloudFront 캐시는 Recommended for S3로 하였다. S3에 원본을 저장하�
 Cache-Control: no-cache
 ```
 
-캐시는 허용되지만, 브라우저가 콘텐츠를 다시 사용할 때마다 서버에서 유효성을 확인해야 합니다. HTML 파일이 항상 최신 정보를 제공해야 할 때 유용합니다.
+캐시는 허용되지만, 브라우저가 콘텐츠를 다시 사용할 때마다 서버에서 유효성을 확인해야 한다. HTML 파일이 항상 최신 정보를 제공해야 할 때 유용하다.
 
 ---
 
@@ -112,7 +112,7 @@ Cache-Control: no-store
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥CDN 캐시 설정하기</mark>
+## <mark style='background-color: #ffdce0'>🔥API 요청 캐싱하기</mark>
 
 **<mark style='background-color: #fff5b1'>목표</mark>**
 
@@ -126,9 +126,9 @@ GIPHY의 trending API를 Search 페이지에 들어올 때마다 새로 요청�
 
 CacheStorage는 HTTP 응답을 캐싱하도록 설계되어 있어, 외부 API로부터 가져온 데이터를 저장하기에 적합하다. localStorage나 sessionStorage는 단순한 키-값 형태로 데이터를 저장하지만, CacheStorage는 응답 객체 전체(헤더, 상태 코드 포함)를 저장할 수 있기 때문에 CacheStorage를 사용하였다.
 
-1\. 사용자가 매번 접근해야하는 데이터가 있다.
-2\. 그 데이터는 `fetch`를 통해 가져오면 항상 3초가 걸린다고 가정한다.
-3\. `fetch`를 하고 브라우저의 `CacheStorage`를 통해 받아온 데이터를 저장한다.
+1\. 사용자가 매번 접근해야하는 데이터가 있다.  
+2\. 그 데이터는 `fetch`를 통해 가져오면 항상 3초가 걸린다고 가정한다.  
+3\. `fetch`를 하고 브라우저의 `CacheStorage`를 통해 받아온 데이터를 저장한다.  
 4\. 추후에 같은 데이터를 받아오게 된다면, `CacheStorage`의 데이터를 가져온다.
 
 <br>

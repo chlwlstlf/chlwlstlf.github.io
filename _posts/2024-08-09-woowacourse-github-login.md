@@ -60,26 +60,30 @@ toc_sticky: true
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
-    우리 서비스에서는 Authorization Server에 사용자 정보를 저장해야 하기 때문에 Authorization Server가 Resource Server에 Access Token과 Refresh Token를 요청한 후 그 반환값을 Client에게 넘겨줍니다.
+    우리 서비스에서는 Authorization Server에 사용자 정보를 저장해야 하기 때문에 Authorization Server가 Resource Server로부터 발급받은 Access Token으로 사용자 정보를 받은 후 Authorization Server가 자체 생성한 Access Token과 Refresh Token, 그리고 응답 받음 사용자 정보를 Client에게 넘겨줍니다.
   </p>
 </div>
 
-![100](https://github.com/user-attachments/assets/dce3c30e-d9a6-4c59-ae0c-38e1c1ac047a)
+[그림 1002]
 
 1\. Resource Owner는 로그인을 한 후 Resource Server로부터 code를 받습니다.
 
 2\. Client는 이 code로 Authorization Server에 `로그인 post` 요청을 합니다.
 
-3\. Authorization Server는 client ID, client secrets, code를 이용하여 Resource Server에 access Token, refresh Token, user Info를 요청합니다.
+3\. Authorization Server는 client ID, client secrets, code를 이용하여 Resource Server에 access Token을 요청합니다.
 
-4\. Authorization Server는 받은 access Token, refresh Token, user Info를 Client에 넘겨줍니다.
+4\. Authorization Server는 발급 받은 access Token을 header에 담아서 Resource Server에 user Info를 요청합니다.
 
-5\. Client는 이를 기기에 저장한 후 access Token을 header에 담아서 api를 요청하는 데에 사용합니다.
+5\. Authorization Server는 자체 생성한 access Token, refresh Token과 Resource Server로 부터 받은 user Info를 Client에 넘겨줍니다.
+
+6\. Client는 이를 기기에 저장한 후 access Token을 header에 담아서 api를 요청하는 데에 사용합니다.
 
 <br>
 <br>
 
 ## <mark style='background-color: #ffdce0'>📌1. 깃허브 로그인 등록</mark>
+
+[GitHub 앱 등록 공식 문서](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
 
 **<mark style='background-color: #fff5b1'>1. OAuth Apps로 들어가기</mark>**
 
@@ -178,12 +182,19 @@ export default Header;
 
 3\. 이 code를 추출하여 Authorization Server에 로그인 post 요청을 합니다.
 
-4\. 로그인 post 요청을 받은 Authorization Server는 client ID, client secrets, code를 이용하여 Resource Server에 access Token, refresh Token, user Info를 요청합니다.
-
 ![8](https://github.com/user-attachments/assets/8ec505c7-00ca-4e7b-a804-a708194988cb)
-5\. Authorization Server는 받은 access Token, refresh Token, user Info를 Client에 넘겨줍니다.
 
-6\. Client는 이를 기기에 저장한 후 access Token을 header에 담아서 api를 요청하는 데에 사용합니다.
+4\. 로그인 post 요청을 받은 Authorization Server는 client ID, client secrets, code를 이용하여 Resource Server에 [access Token을 요청](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)합니다.
+
+[그림 1000]
+
+5\. Authorization Server는 발급 받은 access Token을 header에 담아서 Resource Server에 [user Info를 요청](https://docs.github.com/ko/rest/users/users?apiVersion=2022-11-28)합니다.
+
+[그림 1001]
+
+6\. Authorization Server는 자체 생성한 access Token, refresh Token 그리고 Resource Server로 부터 받은 user Info를 Client에 넘겨줍니다.
+
+7\. Client는 이를 기기에 저장한 후 access Token을 header에 담아서 api를 요청하는 데에 사용합니다.
 
 ![9](https://github.com/user-attachments/assets/7c294a7b-c2e4-4fd6-8451-26a1b1df349a)
 
@@ -232,9 +243,8 @@ const postLoginMutation = useMutation({
   },
   onError: (error) => {
     localStorage.clear();
-    handleMutateError(error);
+    alert(error);
   },
-  networkMode: "always",
 });
 ```
 
@@ -279,7 +289,7 @@ const LogoutPage = () => {
   const { postLogoutMutation } = useMutateAuth();
 
   const handleLogoutClick = () => {
-    postLogoutMutation.mutate(); // 로그인 post 요청
+    postLogoutMutation.mutate(); // 로그아웃 post 요청
   };
 
   return (
@@ -301,9 +311,8 @@ const postLogoutMutation = useMutation({
   mutationFn: () => postLogout(),
   onSuccess: () => {
     localStorage.clear();
-    navigate("/logout");
+    navigate("/");
   },
-  onError: (error) => handleMutateError(error),
-  networkMode: "always",
+  onError: (error) => alert(error),
 });
 ```
