@@ -64,7 +64,7 @@ toc_sticky: true
   </p>
 </div>
 
-[그림 1002]
+![그림 1002](https://github.com/user-attachments/assets/d2bbe9f1-37cb-47ce-a320-a73cfc13cf97)
 
 1\. Resource Owner는 로그인을 한 후 Resource Server로부터 code를 받습니다.
 
@@ -186,11 +186,11 @@ export default Header;
 
 4\. 로그인 post 요청을 받은 Authorization Server는 client ID, client secrets, code를 이용하여 Resource Server에 [access Token을 요청](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)합니다.
 
-[그림 1000]
+![1000](https://github.com/user-attachments/assets/b85d482d-64b3-4c64-9845-38eab699e4dc)
 
 5\. Authorization Server는 발급 받은 access Token을 header에 담아서 Resource Server에 [user Info를 요청](https://docs.github.com/ko/rest/users/users?apiVersion=2022-11-28)합니다.
 
-[그림 1001]
+![1001](https://github.com/user-attachments/assets/705b911f-a2b4-4bf7-869e-2665a9aec7ae)
 
 6\. Authorization Server는 자체 생성한 access Token, refresh Token 그리고 Resource Server로 부터 받은 user Info를 Client에 넘겨줍니다.
 
