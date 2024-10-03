@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 미션1 - 소스코드, 이미지 크기 줄이기
+# 성능 개선 미션 - 소스코드, 이미지 크기 줄이기
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
@@ -81,6 +81,8 @@ CSS in JS는 babel transpile 과정에서 minify한다. 하지만 CSS는 직접 
 npm i mini-css-extract-plugin
 npm i css-minimizer-webpack-plugin
 ```
+
+<br>
 
 ```tsx
 ···

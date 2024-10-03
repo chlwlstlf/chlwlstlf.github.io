@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 미션1 - 필요한 것만 필요한 때에 요청하기
+# 성능 개선 미션 - 필요한 것만 필요한 때에 요청하기
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
@@ -125,7 +125,7 @@ Tree shaking이란 사용되지 않는 코드를 제거하기 위해 JavaScript 
 
 참고로 webpack5부터는 기본으로 알아서 제거해준다. 그래도 설정을 직접해야한다 싶으면 `"sideEffects": false`를 추가하면 된다. 프로젝트 내의 모든 파일이 부수효과가 없다고 가정하는 설정이다. 이 경우 Webpack은 CSS 파일을 포함한 사용되지 않는 모든 파일을 Tree shaking을 통해 제거하려고 한다. 즉, CSS 파일이 명시적으로 사용되지 않으면 삭제될 위험이 있다.
 
-따라서 `"sideEffects": ["*.css"]`라고 명시하여 CSS 파일을 트리 셰이킹에서 제외한다.
+따라서 `"sideEffects": ["*.css"]`라고 명시하여 CSS 파일을 Tree Shaking에서 제외한다.
 CSS 파일은 코드에서 직접적으로 사용하지 않더라도 전역적으로 스타일을 적용하기 때문에 부수효과를 가질 수 있다.
 
 ```json
@@ -175,7 +175,7 @@ import { AiOutlineInfo, AiOutlineClose } from "react-icons/ai";
 
 **<mark style='background-color: #fff5b1'>최적화 후 - @react-icons/all-file</mark>**
 
-@react-icons/all-files 라이브러리는 아이콘 별로 자바스크립트 파일을 별도로 가지고 있기 때문에, 빌드 시 트리쉐이킹 방식으로 더 적은 크기의 chunk를 만들 수 있다. stat size가 634.84kb에서 8.34kb로 줄어든 것을 볼 수 있다.
+@react-icons/all-files 라이브러리는 아이콘 별로 자바스크립트 파일을 별도로 가지고 있기 때문에, 빌드 시 Tree Shaking 방식으로 더 적은 크기의 chunk를 만들 수 있다. stat size가 634.84kb에서 8.34kb로 줄어든 것을 볼 수 있다.
 
 ```tsx
 import { AiOutlineInfo } from "@react-icons/all-files/ai/AiOutlineInfo";

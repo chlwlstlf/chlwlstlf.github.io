@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 미션1 - 성능 초깃값 측정
+# 성능 개선 미션 - 성능 초깃값 측정
 
 ## <mark style='background-color: #ffdce0'>📌성능 개선 들어가기</mark>
 
@@ -74,6 +74,12 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 <br>
 
+**LCP (Largest Contentful Paint)**는 웹 페이지의 주요 콘텐츠가 로드되는 시간을 측정하는 지표이다. 주로 사용자가 보고자 하는 가장 큰 콘텐츠(예: 이미지, 텍스트 블록 등)가 화면에 렌더링되는 순간까지의 시간을 나타낸다.
+
+**CLS (Cumulative Layout Shift)**는 웹 페이지의 시각적 안정성을 평가하는 지표로, 예상치 못한 레이아웃 변경이 얼마나 발생하는지를 측정한다. 사용자가 페이지를 상호작용하는 동안 갑작스러운 콘텐츠 이동이 발생하는 것은 불편함을 초래할 수 있으며, 이는 CLS가 높은 경우이다.
+
+<br>
+
 **<mark style='background-color: #fff5b1'>2 스크립트 리소스 크기</mark>**
 
 목표: Home 페이지에서 불러오는 스크립트 리소스 크기 < 60kb
@@ -106,7 +112,7 @@ Desktop 기준 CPU 6x slowdown Network Slow 4G 환경
 
 목표: Home 첫 번째 로드시 LCP < 2.5s, Home 두 번째 이후 로드시 LCP < 1.2s
 
-현재: Home 첫 번째 로드시 LCP = 2.583s, Home 두 번째 이후 로드시 LCP = 1.225s
+현재: Home 첫 번째 로드시 LCP = 2.583s, Home 두 번째 이후 로드시 LCP = 1.285s
 
 [현재 결과 페이지](https://www.webpagetest.org/result/240904_BiDcDA_242/)
 
