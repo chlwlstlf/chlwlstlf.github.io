@@ -262,3 +262,53 @@ hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이
 <link rel="preload" href="/static/free.webm" as="video" type="video/webm" />
 <link rel="preload" href="/static/trending.webm" as="video" type="video/webm" />
 ```
+
+<br>
+<br>
+
+## <mark style='background-color: #ffdce0'>🔥JS 소스 가져오기</mark>
+
+- 자바스크립트는 파서 차단 리소스(parser blocking resource)로, 브라우저가 페이지를 파싱하는 중간에 스크립트 리소스를 만나게 되면 기본적으로는 스크립트 다운로드 & 실행이 완료될 때까지 파싱을 멈춘다.
+- 이때 스크립트 다운로드 혹은 실행 시점을 조정하고 싶다면 defer, async와 같은 키워드를 사용한다.
+
+![15](https://techcourse-storage.s3.ap-northeast-2.amazonaws.com/b6383850fa41482481121c697cdd63a3)
+
+<br>
+
+**<mark style='background-color: #fff5b1'>defer</mark>**
+
+- script fetch, script execution 2개 다 HTML parsing에 영향 안 가게 하려면 defer를 쓰면 된다.
+- HTML parsing 끝날 때까지 스크립트 실행을 지연(defer)한다.
+- defer script fetch > DOMContentLoaded > defer script execute
+- 사용 예시: `<script>` 자체는 `<head>` 내에 두고, 실행은 전체 DOM이 구성된 이후에 하게 하는 경우
+
+<br>
+
+**<mark style='background-color: #fff5b1'>async</mark>**
+
+- script fetch 만 HTML parsing이랑 상관없이 하려면 async를 쓰면 된다.
+- script execution은 script fetch 다 되면 HTML parsing 중간에 일어날 수도 있다.
+- DOMContentLoaded, 다른 스크립트들과 독립적으로 동작
+- 사용 예시: Google Analytics, 광고 등 문서 내용이나 앱 자체와는 관련 없이 독립적으로 동작하는 스크립트
+
+<br>
+
+❓ defer를 언제 쓰면 될까
+
+자바스크립트로 돔요소를 조작하려고 할 때 요소를 찾지 못 했다.
+
+querySelector를 통해서 html의 태그에 접근해서 특정한 이벤트를 수행하게 만들려고 했는데 아래와 같은 에러가 발생하였다.
+
+```
+Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+```
+
+html의 해당태그를 찾지 못하는 것에 해당하는 문제점이다.
+
+<br>
+
+❗ 해결 방법: script에 defer를 넣기
+
+defer를 script에 넣으면 html이 다 파싱되고 접근할 수 있을 때 script를 실행한다. (script 다운은 html 파싱할 때 받아놓음!)
+
+추가적으로 defer가 있는 script끼리는 실행 순서가 보장된다.
