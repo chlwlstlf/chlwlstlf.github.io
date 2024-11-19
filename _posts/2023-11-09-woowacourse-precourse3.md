@@ -718,7 +718,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
 
 - **controller > Controller.js**
 
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>quantity를 컨트롤러에서 계산해준 후 OutputView에 넘긴다.</div>
     </p>
@@ -783,7 +783,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
 
 ### 🎯 1-1. 구입 금액 입력 수정
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>문제 중에</div>
     <div>사용자가 잘못된 값을 입력할 경우 `throw`문을 사용해 예외를 발생시킨다. 그런 다음, "[ERROR]"로 시작하는 에러 메시지를 출력하고 해당 부분부터 입력을 다시 받는다.</div>
@@ -792,7 +792,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
 </div>
 
 - **views > InputView.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div> Validate 함수는 그대로 이고, InputView.money() 함수에서 예외가 발생하면 예외 문구를 출력하고 다시 입력 함수를 호출하여 재귀적으로 진행한다.</div>
     </p>
@@ -832,7 +832,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
 
 ### 💣 구조 대공사 - mvc 패턴 없애기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>잘못 입력했을 때 재입력 받으려고 하는데 입력은 view이고 유효성 검사는 model이다. 하지만 mvc 패턴은 무조건 controller에서 관리해야 하므로 이 부분을 해결하지 못 하여 컴포넌트 구조로 바꾸었다.</div>
   </p>

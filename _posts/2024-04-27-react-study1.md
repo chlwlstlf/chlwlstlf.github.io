@@ -573,7 +573,7 @@ function handleDeleteTask(taskId) {
 
 <mark class="yellow">2. reducer 함수 작성하기</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. 첫 번째 인자에 현재 state (tasks) 선언하기</div>
     <div>2. 두 번째 인자에 action 객체 선언하기</div>

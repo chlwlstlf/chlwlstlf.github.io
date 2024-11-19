@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 성능 개선 미션 - 필요한 것만 필요한 때에 요청하기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>Problem: 어떤 타입의 요청이 큰가?</div>
     <div>Problem: 요청 우선순위 조정이 필요해</div>

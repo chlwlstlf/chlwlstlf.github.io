@@ -10,12 +10,12 @@ toc_sticky: true
 
 ## <mark class="pink">📌리액트의 렌더링이란?</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>컴포넌트가 props와 state를 통해 UI를 어떻게 구성할지 컴포넌트에게 <strong>요청</strong>하는 작업</p>
   <p>React의 렌더링 ≠ DOM 업데이트</p>
 </div>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>React의 렌더링: UI를 생성하는 과정, 그 결과물은 가상 DOM에 생성, 즉. render 단계</p>
   <p>DOM 업데이트: 가상 DOM에 대한 변경 사항을 실제 DOM에 적용하는 과정, 즉. commit 단계</p>
   <p>→ React의 렌더링은 일어났지만 DOM 업데이트는 일어나지 않을 수 있다.</p>
@@ -29,7 +29,7 @@ React 내부에서 Render 단계는 더 좁은 의미로, JSX 또는 `React.cre
 
 ## <mark class="pink">📌1. 트리거 단계</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>컴포넌트가 그려지기 위해서는 어떤 액션, 즉 "트리거"가 필요합니다.</div>
 </div>
 
@@ -71,7 +71,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 ## <mark class="pink">📌2. 렌더 단계</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>"트리거"되면 렌더 단계로 넘어가 DOM에 그려질 요소들을 파악하는 과정을 거치게 됩니다.</div>
 </div>
 
@@ -145,7 +145,7 @@ function Hello() {
 
 업데이트가 많이 동시에 발생해도 액츄얼 DOM은 딱 한 번만 수정된다.
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>diffing 알고리즘</b>
   <p>실제 DOM과 Virtual DOM을 비교하여 변경된 부분만 실제 DOM에 반영하는 알고리즘
   </p>
@@ -157,7 +157,7 @@ function Hello() {
   <div>- 업데이트 전파(변경된 부분만 업데이트)</div>
 </div>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>동시성 렌더링</b>
   <p>- 의도된 우선순위로 컴포넌트를 렌더링해 최적화할 수 있는 비동기 렌더링(동시성 렌더링)이 리액트 18에서 도입됐다.
   </p>
@@ -170,7 +170,7 @@ function Hello() {
 
 ## <mark class="pink">📌3. 커밋 단계</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>직전 렌더 단계에서 두 가상 DOM 트리 간 변화를 실제 DOM에 적용하는 단계입니다.</div>
 </div>
 

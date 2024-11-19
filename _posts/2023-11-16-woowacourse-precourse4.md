@@ -376,7 +376,7 @@ src/
 
 ### 🎯 1. 메뉴 상수화
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>애피타이저, 메인, 디저트, 음료 별로 메뉴와 가격을 저장해둔다.</div>
   </p>
@@ -481,7 +481,7 @@ export default errorMessage;
 
 ### 🎯 5. 방문 날짜, 주문 입력
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>저번 과제에서 입력 부분의 유효성 검사를 어느 파일에서 하는 게 옳은지 해결하지 못 하여 mvc 패턴으로 구현하는 데에 어려움이 있었다. 이번엔 MainController안에 InputController를 만들어서 이 컨트롤러 안에서 입력과 유효성 검사를 하려고 한다.</div>
   </p>
@@ -508,7 +508,7 @@ export default errorMessage;
   ```
 
 - **utils > Validate.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>날짜가 바르게 입력되었는지?</div>
       <div>주문 입력이 공백인지?</div>
@@ -622,7 +622,7 @@ export default errorMessage;
   ```
 
 - **utils > CreateOrderList.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>입력 유효성 검사를 충족시킨 후엔 CreateOrderList에서 배열로 만든 후 비즈니스 유효성 검사를 한다.</div>
       <div>이때 유효성 검사는 중복 제거, 음료만 주문 금지, 20개 이하로 주문 세 가지를 한다.</div>
@@ -657,7 +657,7 @@ export default errorMessage;
   ```
 
 - **controllers > InputController.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>올바른 입력을 할 때까지 입력 받는 컨트롤러이다.</div>
     </p>
@@ -723,7 +723,7 @@ export default errorMessage;
 ### 🎯 7. 주문 총합 계산하기
 
 - **controllers > MainController.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>  총합 계산을 할인 전에 해야한다. 증정 이벤트에서 ‘총합이 12만원이 넘을 때’ 라는 조건이 있기 때문이다.</div>
     </p>
@@ -773,7 +773,7 @@ export default errorMessage;
 
 ### 🎯 8. 할인 계산하기
 
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>할인 이름과 가격이 담긴 배열을 resultList 배열에 넣는다. </div>
       <div>resultList는 이차원 배열이 되고 길이는 4이다. 0원이어도 resultList에 ['평일 할인', 0] 이런식으로 삽입된다.</div>
@@ -781,7 +781,7 @@ export default errorMessage;
   </div>
 
 - **controllers > MainController.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>만원 이상 주문 시에만 할인 메소드를 부르게 했다.</div>
     </p>
@@ -837,7 +837,7 @@ export default errorMessage;
   ```
 
 - **models > EventDiscount.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>처음엔 이 클래스에 증정 이벤트 메소드도 있었다. 하지만 증정 이벤트는 주문 금액 총합만 필요했고, date와 order는 필요하지 않았기 때문에 이 메소드에 있기에는 저 두 인자를 사용하지 않아 적합하지 않다고 생각하였다.</div>
     </p>
@@ -895,7 +895,7 @@ export default errorMessage;
   ```
 
 - **models > EventGift.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>  추후에 주문 금액 총합을 출력해야 했기 때문에 EventDiscount의 order 인자로 주문 금액 총합을 계산하여 증정 이벤트 메소드를 하는 것은 계산을 두 번 하는 일이라고 생각하여 주문 금액 총합을 인자로 받는 EventGift를 따로 뺐다. MainController에서 주문 금액 총합을 계산하고 그 총합을 EventGift 메소드에 인자로 넘겨주었다.</div>
     </p>
@@ -922,7 +922,7 @@ export default errorMessage;
 
 ### 🎯 9. 배지 계산하기
 
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>#discountPrice = 0; 으로 초기화 되어있고 총 주문 금액이 만원이 넘었을 때만 0이 다른 값으로 바뀐다. 이 할인 금액으로 배지를 계산한다.</div>
     </p>
@@ -1175,7 +1175,7 @@ export default errorMessage;
 ### ✅ 테스트
 
 - **InputTest.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>날짜와 메뉴를 입력하는 테스트 코드다.</div>
     </p>
@@ -1271,7 +1271,7 @@ export default errorMessage;
   ```
 
 - **EventDiscountTest.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>날짜와 주문에 따른 결괏값을 테스트한다.</div>
     </p>
@@ -1333,7 +1333,7 @@ export default errorMessage;
   ```
 
 - **EventGiftTest.js**
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>총 주문 금액에 따른 결괏값을 테스트한다.</div>
     </p>
@@ -1358,7 +1358,7 @@ export default errorMessage;
   ```
 
 - **EventBadgeTest.js**
-    <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+    <div class="blue-box">
       <p>
         <div>할인 금액에 따른 결괏값을 테스트한다.</div>
       </p>

@@ -103,7 +103,7 @@ npm i -D typescript ts-loader @types/react @types/react-dom
 
 ## <mark class="pink">📌3. Webpack 설정</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>Vite 등의 다른 도구를 도입하는 경우가 늘고는 있으나, 아직까지는 프로덕션에서 Webpack 기반으로 이미 구성된 프로젝트가 많은 것으로 판단하였습니다.</p>
   <p>이에 따라 Vite 대신 Webpack을 기반으로 프로젝트를 빌드하게 되었습니다.</p>
 </div>

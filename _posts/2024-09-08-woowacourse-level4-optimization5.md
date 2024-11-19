@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## <mark class="pink">🔥최소한의 변경만 일으키기</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>Problem: Main Tread 일이 왜 많은데?</div>
   </p>

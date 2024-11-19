@@ -13,7 +13,7 @@ toc_sticky: true
 1\. 달리기 경주(Lv.1)
 [178871](https://school.programmers.co.kr/learn/courses/30/lessons/178871)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>해시</b>   
   <p>
     <div>• 파이썬 내장함수 list.index()를 사용하면 O(n)이기 때문에 시간 초과가 난다.</div>
@@ -34,7 +34,7 @@ toc_sticky: true
 1\. 도서관(골5)
 [1461](https://www.acmicpc.net/problem/1461)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>그리디</b>
   <p>
     <div>음수</div>
@@ -69,7 +69,7 @@ toc_sticky: true
 2\. 결혼식(실2)
 [5567](https://www.acmicpc.net/problem/5567)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>BFS</b>   
   <p>
     <div>• 건너건너 친구까지이기 때문에 depth 2까지만 센다.</div>
@@ -84,7 +84,7 @@ toc_sticky: true
 3\. 점프 ( 실1)
 [1890](https://www.acmicpc.net/problem/1890)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>DP</b>   
   <p>
     <div>• 현재 적혀있는 수만큼 오른쪽, 아래쪽 answer에 현재 위치의 answer를 더한다.</div>
@@ -99,7 +99,7 @@ toc_sticky: true
 4\. 죽음의 비 (골4)
 [22944](https://www.acmicpc.net/problem/22944)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>BFS, 구현</b>   
   <p>
     <div>• visited는 3차원으로 할 필요없이 '체력+우산내구도'를 저장하면 된다.</div>
@@ -118,7 +118,7 @@ toc_sticky: true
 1\. 안정적인 문자열 (실1)
 [4889](https://www.acmicpc.net/problem/4889)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>그리디, 스택</b>   
   <p>
     <div>• '}'인데 stack이 비어있으면 일단 cnt+1을 해주고 stack에 뒤집어서 '{'로 넣어준다.</div>
@@ -133,7 +133,7 @@ toc_sticky: true
 3\. 농장 관리 (골5)
 [1245](https://www.acmicpc.net/problem/1245)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>BFS</b>   
   <p>
     <div>• 입력 받으면서 max_height를 구한 후 0부터 max_height까지 돌면서 해당 높이를 만날 때 마다 bfs를 호출한다.</div>
@@ -149,7 +149,7 @@ toc_sticky: true
 4\. 꿈틀꿈틀 호석 애벌레 - 기능성 (실1)
 [20167](https://www.acmicpc.net/problem/20167)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <b>재귀</b>   
   <p>
     <div>dp로 나와있지만 기능성은 재귀로도 시간초과 없이 풀 수 있다. 효율성은 dp로 다시 생각해 봐야 할 듯..?</div>

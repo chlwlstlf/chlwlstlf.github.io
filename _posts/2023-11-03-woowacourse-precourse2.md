@@ -185,7 +185,7 @@ src/
 
 **App.js**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>- 입력을 받고 ValidateInput 클래스를 통해 유효성 검사를 한다.</div>
     <div>- 유효성 검사를 통과했다면 RacingCar를 실행 시킨다.</div>
@@ -319,7 +319,7 @@ export class RacingCar {
 
 **1\. 기본 문법**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>- 테스트 설명: 명확하고 간결한 설명이 좋다.</div>
     <div>- 검증 대상: 객체, 함수, 메서드, 표현식 등이 올 수 있다. 여기에 코드를 삽입하여 실제 동장을 테스트 한다.</div>
@@ -451,7 +451,7 @@ export class ValidateInput {
 
 **1\. App.js**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>- 처음엔 `await expect(app.play()).rejects.toThrow("[ERROR]");` 이런 코드로 되어있다.</div>
     <div>- 하지만 이름과 횟수 입력을 구분해야한다. 따라서 `app.play()` 가 아닌 각각의 입력 메소드를 불러와야 한다.</div>
@@ -498,7 +498,7 @@ export default App;
 
 **2\. InputTest.js**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>자동차 이름 유효성 검사를 하고 싶을 땐 `expect(app.InputName())` 이렇게 부르고,</div>
     <div>횟수 유효성 검사를 하고 싶을 땐 `expect(app.InputNumber())` 로 부르면 된다.</div>
@@ -608,7 +608,7 @@ describe("문자열 테스트", () => {
 
 **3\. RacingCarTest.js**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>우승자가 여러 명일 때 예시 하나만 만들었다.</div>
   </p>

@@ -58,7 +58,7 @@ toc_sticky: true
 
 ## <mark class="pink">📌OAuth 로그인 과정</mark>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     우리 서비스에서는 Authorization Server에 사용자 정보를 저장해야 하기 때문에 Authorization Server가 Resource Server로부터 발급받은 Access Token으로 사용자 정보를 받은 후 Authorization Server가 자체 생성한 Access Token과 Refresh Token, 그리고 응답 받음 사용자 정보를 Client에게 넘겨줍니다.
   </p>

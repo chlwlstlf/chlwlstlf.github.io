@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 성능 개선 미션 - 소스코드, 이미지 크기 줄이기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>Problem: 어떤 타입의 요청이 큰가?</div>
   </p>
@@ -60,7 +60,7 @@ CSS in JS는 babel transpile 과정에서 minify한다. 하지만 CSS는 직접 
 
 이를 제거하기 위해서 Webpack 공식 문서에서 제시하는 방식은 [CssMinimizerPlugin](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/)을 활용하는 방식이다. 추가적으로 CSS를 별개의 파일로 분리하기 위해서 [MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)을 활용하는 설정을 추천한다.
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <b>use: [MiniCssExtractPlugin.loader, "css-loader"]</b>
     <div>ts-loader와 MiniCssExtractPlugin.loader는 충돌이 나기 때문에 MiniCssExtractPlugin.loader만 남겨두었다.</div>
@@ -68,7 +68,7 @@ CSS in JS는 babel transpile 과정에서 minify한다. 하지만 CSS는 직접 
   </p>
 </div>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <b>minimizer: [`...`, new CssMinimizerPlugin()]</b>
     <div>Webpack 5에서는 기본적으로 TerserPlugin(자바스크립트 파일을 최소화하는 플러그인)이 이미 포함되어 있다.</div>

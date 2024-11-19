@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 성능 개선 미션 - cache 사용하기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>Problem: 같은 걸 매번 원본 서버에 요청</div>
   </p>

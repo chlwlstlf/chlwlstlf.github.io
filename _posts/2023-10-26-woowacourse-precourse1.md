@@ -719,7 +719,7 @@ src/
 
 **1\. 숫자 입력 받기**
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <b>🔔 vscode에서 입력 받기</b>
     <div>- Ctrl+Alt+N은 실행일 뿐 입력을 받을 수 없다. console만 확인할 수 있다.</div>
@@ -743,7 +743,7 @@ src/
   ```
 
 - baseballGame.js 코드
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>- asynce getUserInput 함수를 부르고 await으로 받는다.</div>
       <div>- getUserInput이 비동기 함수이기 때문에 이를 감싸는 start 함수도 비동기여야 한다.</div>

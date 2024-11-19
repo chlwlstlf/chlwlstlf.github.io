@@ -69,7 +69,7 @@ function Counter() {
 }
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>count는 현재 상태 값, setCount는 해당 상태를 업데이트하는 함수</div>
     <div>useState(0)에서 0은 초기 값(null, [] 등 가능)</div>
@@ -109,7 +109,7 @@ function OnceEffectExample() {
 export default OnceEffectExample;
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>useEffect 마지막에 []가 빈 배열이면 처음 화면이 렌더링 될 때만 useEffect 안의 코드를 실행시킨다.</div>
     <div>[count]로 바꾸게 되면 count 값이 바뀔 때마다 코드가 실행된다.</div>
@@ -157,7 +157,7 @@ function Main() {
 export default App;
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. `ThemeContext`라는 컨텍스트를 생성(공유하려는 데이터를 정의하는 역할)</div>
     <div>2. `App` 컴포넌트에서 `ThemeContext.Provider`를 사용하여 컨텍스트 값을 제공한다. 이 컴포넌트 내에서 자식 컴포넌트들은 theme 값을 공유할 수 있다.</div>
@@ -218,7 +218,7 @@ useEffect(() => {
 }, [checkedStore, searchResult]);
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>inputRef.current.focus();는 input에 focus 시킴</div>
     <div>storeListRef.current.scrollTo에는 top과 behavior를 지정할 수 있으며, top은 스크롤을 어디까지 내릴건지 지정하는 것이고, behavior은 스크롤 움직임을 어떻게 할 건지 지정하는 것이다.</div>
@@ -261,7 +261,7 @@ function Counter() {
 export default Counter;
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>useReducer에 첫 번째 인자로 counterReducer를, 두 번째 인자로 초기 상태인 { count: 0 }를 전달한다.</div>
     <div>addTodo 함수와 removeTodo 함수를 통해 상태를 변경한다.</div>
@@ -302,7 +302,7 @@ function App() {
 export default App;
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>App 컴포넌트에서 useState를 사용하여 count 상태를 관리한다.</div>
     <div>useCallback을 사용하여 handleClick 함수를 정의한다. 의존성으로 count를 지정하여, count가 변경될 때만 함수가 다시 생성되도록 한다.</div>
@@ -355,7 +355,7 @@ function App() {
 export default App;
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>useMemo를 사용하면 팩토리얼 계산이 메모이제이션되어, number 입력이 변경될 때만 재계산된다. 이를 통해 불필요한 계산을 방지하고 컴포넌트의 성능을 향상시킬 수 있다.</div>
   </p>

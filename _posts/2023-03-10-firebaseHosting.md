@@ -10,13 +10,13 @@ toc_sticky: true
 
 ## 프로젝트 만들기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>1. firebase에 회원가입 & 로그인</div>
 </div>
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>2. 프로젝트 추가 클릭</div>
 </div>
 
@@ -24,7 +24,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>3. 프로젝트 이름 지정</p>
   <div>※아래에 연필 아이콘 뒤에 나오는 것이 링크 이름</div>
   <div>파이어베이스에서 생성한 적이 없는 프로젝트 이름이면 프로젝트 이름이 링크 이름이지만,</div>
@@ -35,7 +35,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>4. 애널리틱스 사용은 본인 선택, `계속` 버튼 클릭</div>
 </div>
 
@@ -43,7 +43,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>5. 구글 계정 선택 후 `프로젝트 만들기` 클릭</div>
 </div>
 
@@ -51,7 +51,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>6. 로딩 후 프로젝트가 생성됨</div>
 </div>
 
@@ -61,7 +61,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>7. 프로젝트가 생성되면 프로젝트의 첫 화면으로 옴</div>
 </div>
 
@@ -69,7 +69,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>8. 좌측 메뉴 칸에서 `빌드-Hosting`을 누른 후 `시작하기` 버튼 클릭</div>
 </div>
 
@@ -79,7 +79,7 @@ toc_sticky: true
 
 ## 호스팅 설정하기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>1. npm install -g firebase-tools 복붙하기</div>
 </div>
 
@@ -89,7 +89,7 @@ toc_sticky: true
 
 <br>
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>2. firebase login 복붙하기</p>
   <div>yes → 프로젝트 만든 계정 선택 → 성공 창 뜸</div>
 </div>
@@ -102,7 +102,7 @@ toc_sticky: true
 
 ![13](https://github.com/chlwlstlf/portfolio/assets/63334368/392ff76b-825e-4dec-8b31-81eaf5a32341)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>3. firebase init 복붙하기</p>
   <div>1) 진행할 준비 되었나요? yes</div>
   <div>2) 밑으로 내리는건 방향키 ↓, 선택은 space bar → hosting 두 개를 선택한다</div>
@@ -116,14 +116,14 @@ toc_sticky: true
 
 ## 배포하기
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>1. npm run build</p>
   <div>수정한 내용을 배포할 파일에 빌드하기</div>
 </div>
 
 ![17](https://github.com/chlwlstlf/portfolio/assets/63334368/c26230ba-24d7-4d27-862f-83a226139968)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>2. firebase deploy --only hosting</p>
   <div>firebase deploy로 하면 요금제로 전환하라는 문구가 뜸</div>
   <div>hosting은 무료 서비스이기 때문에 요금제가 필요 없으므로 hosting만 배포하면 됨</div>
@@ -133,7 +133,7 @@ toc_sticky: true
 
 ![18](https://github.com/chlwlstlf/portfolio/assets/63334368/d6bc9ff5-9899-4531-bc48-17719bffc8b8)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>3. Hosting URL에 있는 링크를 누르면 배포가 된 걸 볼 수 있음</p>
   <a href="https://choijinsilportfolio.web.app">https://choijinsilportfolio.web.app</a>
 </div>

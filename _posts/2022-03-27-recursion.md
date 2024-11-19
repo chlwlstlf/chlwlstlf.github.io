@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## 기본 규칙
 
-  <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+  <div class="blue-box">
     <p>
       <div>베이스 케이스</div>
       <div>베이스 케이스를 항상 가져야 하며, 이는 재귀 없이 해결될 수 있어야 한다</div>

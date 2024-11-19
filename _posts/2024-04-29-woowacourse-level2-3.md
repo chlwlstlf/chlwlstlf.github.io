@@ -182,7 +182,7 @@ const ParentComponent = () => {
 const isNextVisible = userNameState.isNextVisible || isValid;
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. isNextVisible와 isValid의 초깃값은 둘다 false</div>
     <div>2. isValid가 true가 되면 isNextVisible는 true가 되면서 다음 섹션이 열린다.</div>

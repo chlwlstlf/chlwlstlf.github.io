@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## 이진 탐색
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>1. start, end 범위 정하기</p>
   <p>2. while start <= end: 후 mid = (start+end)//2</p>
   <p>3. 보통 for문을 포함한 코드를 짬</p>
@@ -79,7 +79,7 @@ print(result)
 
 ## dfs
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>1. graph 생성하기(단방향, 양방향 구분)</p>
   <p>2. visited 배열 0으로 초기화(배열은 전역 변수임)</p>
   <p>3. dfs(v): 후 visited[v] = 1로 갱신</p>
@@ -152,7 +152,7 @@ print(visited.count(1)-1)
 
 ## bfs
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>1. from collections import deque</p>
   <p>2. q = deque() 후 q.append(bfs 인자)</p>
   <p>3. while q: q.popleft()</p>

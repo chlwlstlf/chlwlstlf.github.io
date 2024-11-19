@@ -12,7 +12,7 @@ toc_sticky: true
 
 1\. 숫자의 표현 (Lv. 2) [12924](https://school.programmers.co.kr/learn/courses/30/lessons/12924)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     0부터 n까지 숫자 하나씩 올려서 돌리면서 n이면 answer += 1, n보다 커지면 break
   </p>
@@ -24,7 +24,7 @@ toc_sticky: true
 
 2\. 스킬트리 (Lv. 2) [49993](https://school.programmers.co.kr/learn/courses/30/lessons/49993)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>skill이 "CBD"이면 C를 무조건 해야 B를 할 수 있음.</div>
     <div>문자열에서 C를 발견하면 i+=1을 하여 문자열 B가 나올 때까지 문자열 돌림</div>
@@ -37,7 +37,7 @@ toc_sticky: true
 
 3\. 예상 대진표 (Lv. 2) [12985](https://school.programmers.co.kr/learn/courses/30/lessons/12985)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     (4, 7) → ((4+1)//2=2, (7+1)//2=4) → ((2+1)//2=1, (4+1)//2=2) → ((1+1)//2=1, (2+1)//2=1), cnt는 3
   </p>
@@ -49,7 +49,7 @@ toc_sticky: true
 
 4\. [1차] 뉴스 클러스터링 (Lv. 2) [17677](https://school.programmers.co.kr/learn/courses/30/lessons/17677)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. str.lower()로 모두 소문자로 바꾼 후 비교</div>
     <div>2. 교집합은 set1 원소가 set2에 있으면 교집합 배열에 넣은 후 set2에서 해당 원소 삭제</div>
@@ -63,7 +63,7 @@ toc_sticky: true
 
 5\. [1차] 캐시 (Lv. 2) [17680](https://school.programmers.co.kr/learn/courses/30/lessons/17680)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>최근 사용한 것을 제일 처음에 넣어주고</div>
     <div>개수가 넘어가면 제일 뒤에 있는 원소 pop하기</div>
@@ -76,7 +76,7 @@ toc_sticky: true
 
 1\. 주차 요금 계산 (Lv. 2) [92341](https://school.programmers.co.kr/learn/courses/30/lessons/92341)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>dict1: 입차 딕셔너리</div>
     <div>dict2: 시간 계산 결과 딕셔너리</div>
@@ -89,7 +89,7 @@ toc_sticky: true
 
 2\. k진수에서 소수 개수 구하기 (Lv. 2) [92335](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>범위를 (2, int(math.sqrt(n))+1) 이렇게 안 해주면 시간초과남</div>
   </p>
@@ -101,7 +101,7 @@ toc_sticky: true
 
 3\. 두 큐 합 같게 만들기 (Lv. 2) [118667](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>9번째 줄 *3인 이유</div>
     <div>length가 최대일 때는</div>
@@ -117,7 +117,7 @@ toc_sticky: true
 
 1\. 튜플 (Lv. 2) [64065](https://school.programmers.co.kr/learn/courses/30/lessons/64065)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>eval: 문자열로 식을 입력하면 해당식을 실행한 결과값을 반환</div>
     <div>{} 기호는 인식 못 함(TypeError: unhashable type: 'set')</div>
@@ -135,7 +135,7 @@ toc_sticky: true
 
 2\. [3차] 압축 (Lv. 2) [17684](https://school.programmers.co.kr/learn/courses/30/lessons/17684)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. A~Z 까지의 딕셔너리 만들기</div>
     <div>2. 현재 입력 W는 이전 반복문의 다음 글자(c)임</div>
@@ -153,7 +153,7 @@ toc_sticky: true
 
 3\. [3차] n진수 게임 (Lv. 2) [17687](https://school.programmers.co.kr/learn/courses/30/lessons/17687)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>notation은 진법 바꾸는 함수</div>
     <div>answer2는 전체 학생들이 말하는 수</div>
@@ -167,7 +167,7 @@ toc_sticky: true
 
 4\. 오픈채팅방 (Lv. 2) [42888](https://school.programmers.co.kr/learn/courses/30/lessons/42888)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>Enter, Change일 떄 세번째 값이 닉네임이므로 같은 아이디에 닉네임을 갱신해줌(안 바껴도 갱신해줌)</div>
   </p>
@@ -179,7 +179,7 @@ toc_sticky: true
 
 5\. [3차] 파일명 정렬 (Lv. 2) [17686](https://school.programmers.co.kr/learn/courses/30/lessons/17686)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>무조건 영문자로 시작하고 숫자가 있으므로</div>
     <div>처음부터 돌다가 숫자가 나오면 그 이전 글자까지 소문자로 바꾼 후 배열 두 번째 값에 넣고,</div>
@@ -197,7 +197,7 @@ toc_sticky: true
 
 6\. [1차] 프렌즈4블록 (Lv. 2) [17679](https://school.programmers.co.kr/learn/courses/30/lessons/17679)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. 세로로 내려오게 하는 건 매우 힘듦 -> 전치 행렬로 바꾸자</div>
     <div>2. 2x2를 찾은 후 바로 삭제하면 여러 2×2에 포함되는 부분은 지워지지 않을 수도 있음 -> 지워야하는 부분의 인덱스를 모두 집합에 추가한 후 나중에 지우기</div>
@@ -211,7 +211,7 @@ toc_sticky: true
 
 1\. 숫자 문자열과 영단어 (Lv. 1) [81301](https://school.programmers.co.kr/learn/courses/30/lessons/81301)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>문자열의 영어를 숫자로 바꾸면 됨</div>
     <div>replace를 연쇄적으로 써도 되지만 for문 쓰면 편함</div>
@@ -229,7 +229,7 @@ toc_sticky: true
 
 2\. [1차] 비밀지도 (Lv. 1) [17681](https://school.programmers.co.kr/learn/courses/30/lessons/17681)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>notation함수는 모든 진법으로 바꿀 수 있음</div>
     <div>2진수, 8진수, 16진수는 내장함수를 쓸 수 있음</div>
@@ -259,7 +259,7 @@ toc_sticky: true
 
 3\. 실패율 (Lv. 1) [42889](https://school.programmers.co.kr/learn/courses/30/lessons/42889)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>• 계수 정렬(O(N) 정렬)</div>
     <div>조건: 0이상의 정수, 범위가 정해져 있어야함</div>
@@ -281,7 +281,7 @@ toc_sticky: true
 
 4\. [1차] 다트 게임 (Lv. 1) [17682](https://school.programmers.co.kr/learn/courses/30/lessons/17682)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>• 0~10이므로 10일 때 예외처리 해줘야 함</div>
     <div>• 스타상일 때만 저번 값 포함임(아차상일 땐 x)</div>
@@ -294,7 +294,7 @@ toc_sticky: true
 
 5\. 로또의 최고 순위와 최저 순위 (Lv. 1) [77484](https://school.programmers.co.kr/learn/courses/30/lessons/77484)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>rank 배열 만들어서 풀면 편함</div>
   </p>
@@ -306,7 +306,7 @@ toc_sticky: true
 
 1\. 크레인 인형뽑기 게임 (Lv. 1) [64061](https://school.programmers.co.kr/learn/courses/30/lessons/64061)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>zip 내장함수</div>
     <div>zip은 여러 개의 배열들을 첫 번째 요소끼리, 두 번째 요소끼리 묶어주는 함수</div>
@@ -320,7 +320,7 @@ toc_sticky: true
 
 2\. [카카오 인턴] 키패드 누르기 (Lv. 1) [67256](https://school.programmers.co.kr/learn/courses/30/lessons/67256)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>keypad 딕셔너리에 각 숫자의 버튼을 저장하면 바로 거리를 계산 할 수 있음</div>
   </p>
@@ -332,7 +332,7 @@ toc_sticky: true
 
 3\. 신규 아이디 추천 (Lv. 1) [72410](https://school.programmers.co.kr/learn/courses/30/lessons/72410)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>정규표현식 쓰면 됨</div>
     <a herf='https://chlwlstlf.github.io/cote/regex'>👉🏻 정규표현식이란?</a>
@@ -345,7 +345,7 @@ toc_sticky: true
 
 4\. 불량 사용자 (Lv. 3) [64064](https://school.programmers.co.kr/learn/courses/30/lessons/64064)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>result는 각 banned_id에 해당하는 user_id를 저장한 배열이다</div>
     <div>백트래킹에서는 재귀함수를 돌고 나오면 원래 값으로 돌려주어야 함</div>
@@ -358,7 +358,7 @@ toc_sticky: true
 
 1\. 메뉴 리뉴얼 (Lv. 1) [72411](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>course에 있는 숫자로 모든 메뉴의 조합을 만듦</div>
     <div>가장 빈도가 많은 것 출력하면 됨</div>
@@ -371,7 +371,7 @@ toc_sticky: true
 
 2\. [카카오 인턴] 보석 쇼핑 (Lv. 3) [67258](https://school.programmers.co.kr/learn/courses/30/lessons/67258)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>- current는 모든 보석을 다 살 수 있는 조건을 만족하면 계속 갱신됨. (예제 1에서 [B C A] 구간도 위 조건을 만족하므로 current가 1로 갱신됨)</div>
     <div>- length의 초깃값은 전체 보석의 개수이고 `현위치-start`가 현재 length보다 작아질 때마다 start는 current로, end는 현위치로 갱신함</div>
@@ -385,7 +385,7 @@ toc_sticky: true
 
 3\. 성격 유형 검사하기 (Lv. 1) [118666](https://school.programmers.co.kr/learn/courses/30/lessons/118666)
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>점수 배열을 새롭게 만들어서 점수를 매기면 쉬움</div>
   </p>

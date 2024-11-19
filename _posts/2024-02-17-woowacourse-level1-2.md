@@ -78,7 +78,7 @@ git branch -a //remotes/upstream/chlwlstlf 브랜치 생성 확인
 git rebase upstream/chlwlstlf
 ```
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <p>⚠️ rebase에서 충돌이 떴다. 커밋 충돌인 것 같다.</p>
     <div><<<<<< HEAD 위에 있는 글씨들이 버튼이다.</div>

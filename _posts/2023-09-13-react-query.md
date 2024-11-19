@@ -20,7 +20,7 @@ npm install react-query
 
 ## 폴더 구조
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>index.tsx 파일</div>
     <div>React Query를 애플리케이션에 통합하고 데이터 요청 및 상태 관리를 수행할 수 있게 한다.</div>
@@ -54,7 +54,7 @@ src/
 
 > react-query 세팅
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     1. QueryClient: React Query의 핵심이며 데이터 요청과 상태 관리를 처리하는 객체이다. 이 객체를 사용하여 데이터를 가져오고 캐싱하며 상태를 관리한다.
   </p>
@@ -94,7 +94,7 @@ root.render(
 
 > 인스턴스 생성
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     1. axios.create로 Axios 인스턴스를 생성한다. 이 인스턴스는 특정 baseURL을 기반으로 HTTP 요청을 보낼 수 있게 한다. withCredentials 옵션은 요청에 쿠키를 포함하도록 허용한다.
   </p>
@@ -144,7 +144,7 @@ goHigerApi.interceptors.request.use(
 
 > 쿼리키 관리
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>
     queryKey는 쿼리 결과를 캐싱하고 관리하는 데 사용된다.
   </div>
@@ -161,7 +161,7 @@ export const queryKey = {
 
 > api 호출 & 결괏값 반환
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <div>goHigerApi 인스턴스를 import 후에</div>
   <div>메소드에 맞게 api를 호출한 후</div>
   <div>react-query로 바로 사용할 수 있는 데이터를 반환한다.</div>
@@ -189,7 +189,7 @@ export const fetchDetailCalendar = async (date: string) => {
 
 ### Calendar.tsx
 
-<div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
+<div class="blue-box">
   <p>
     <div>1. import</div>
     <div>• apis/calendar에서 api 호출 함수를 가져온다.</div>
