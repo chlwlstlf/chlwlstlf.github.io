@@ -8,7 +8,7 @@ toc_sticky: true
 
 # createPortal을 이용해 모달 만들기
 
-## <mark style='background-color: #ffdce0'>📌createPortal이란?</mark>
+## <mark class="pink">📌createPortal이란?</mark>
 
 - 일부 자식들을 DOM의 다른 부분으로 렌더링할 수 있는 기능을 제공합니다.
 - 이벤트 버블링 문제를 해결할 수 있습니다.
@@ -17,7 +17,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌createPortal로 모달 만들기</mark>
+## <mark class="pink">📌createPortal로 모달 만들기</mark>
 
 **index.html**
 

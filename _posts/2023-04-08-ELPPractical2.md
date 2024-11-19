@@ -12,19 +12,19 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. UI 요구사항 확인</mark>
 
-### <mark style='background-color: #ffdce0'>(1) UI 개념</mark>
+### <mark class="pink">(1) UI 개념</mark>
 
 - UI: 사용자와 시스템 사이에서 의사소통할 수 있도록 고안된 물리적, 가상의 매개체
 - UX: 제품과 시스템, 서비스 등을 사용자가 직/간접적으로 경험하면서 느끼고 생각하는 총체적 경험을 의미
 
-### <mark style='background-color: #ffdce0'>(2) UI 유형</mark>
+### <mark class="pink">(2) UI 유형</mark>
 
 - CLI: 명령어
 - GUI: 마우스, 전자펜
 - NUI: 터치, 음성
 - OUI: 모든 사물
 
-### <mark style='background-color: #ffdce0'>(4) UI 설계 원칙</mark>
+### <mark class="pink">(4) UI 설계 원칙</mark>
 
 - 직관성: 쉽게 이해, 쉽게 사용
 - 유효성: 정확, 완벽
@@ -35,7 +35,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. UI 설계를 위한 UML</mark>
 
-### <mark style='background-color: #ffdce0'>(1) UML</mark>
+### <mark class="pink">(1) UML</mark>
 
 1\. 개념  
 객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어
@@ -66,7 +66,7 @@ toc_sticky: true
 - 활동: 처리 로직, 조건
 - 타이밍: 상태 변화, 시간 제약
 
-### <mark style='background-color: #ffdce0'>(2) UML의 유형</mark>
+### <mark class="pink">(2) UML의 유형</mark>
 
 <mark style='background-color: #fff5b1'>1. 클래스 다이어그램</mark>
 

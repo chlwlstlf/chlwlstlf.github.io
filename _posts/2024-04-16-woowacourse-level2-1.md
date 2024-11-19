@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 미션1 LMS 강의 자료1
 
-## <mark style='background-color: #ffdce0'>🧩 Component</mark>
+## <mark class="pink">🧩 Component</mark>
 
 **리액트에서의 컴포넌트**
 
@@ -17,7 +17,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>🎨 Storybook</mark>
+## <mark class="pink">🎨 Storybook</mark>
 
 **1\. 정의**
 

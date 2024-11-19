@@ -8,7 +8,7 @@ toc_sticky: true
 
 # storybook 사용하면서 겪었던 시행착오
 
-## <mark style='background-color: #ffdce0'>🔥storybook에 theme 적용하기</mark>
+## <mark class="pink">🔥storybook에 theme 적용하기</mark>
 
 **<mark style='background-color: #fff5b1'>[ 문제상황 ]</mark>**
 
@@ -83,7 +83,7 @@ export default preview;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥storybook에 절대 경로 적용하기</mark>
+## <mark class="pink">🔥storybook에 절대 경로 적용하기</mark>
 
 **<mark style='background-color: #fff5b1'>[ 문제상황 ]</mark>**
 
@@ -151,7 +151,7 @@ export default config;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥createPortal 사용하는 컴포넌트 띄우기</mark>
+## <mark class="pink">🔥createPortal 사용하는 컴포넌트 띄우기</mark>
 
 **<mark style='background-color: #fff5b1'>[ 문제상황 ]</mark>**
 

@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 1단계, 2단계 제출 방법
 
-## <mark style='background-color: #ffdce0'>🔌 pair와 구현한 코드 내보내기</mark>
+## <mark class="pink">🔌 pair와 구현한 코드 내보내기</mark>
 
 (내 vscode에서 구현했다고 가정)
 
@@ -31,7 +31,7 @@ git push second step1 //pair의 step1 브랜치에 push
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📝 Pull Request에 들어갈 내용</mark>
+## <mark class="pink">📝 Pull Request에 들어갈 내용</mark>
 
 1\. 어떻게 해결하려고 했는 지  
 2\. (덜 됐다면) 덜 된 이유  
@@ -40,7 +40,7 @@ git push second step1 //pair의 step1 브랜치에 push
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📁 미션 2단계 제출 방법</mark>
+## <mark class="pink">📁 미션 2단계 제출 방법</mark>
 
 1\. merge를 완료했다는 통보를 받으면 브랜치 변경 및 작업 브랜치 삭제(option)한다.
 

@@ -17,7 +17,7 @@ toc_sticky: true
 
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥해당 스크립트 리소스만 가져오기</mark>
+## <mark class="pink">🔥해당 스크립트 리소스만 가져오기</mark>
 
 **<mark style='background-color: #fff5b1'>목표</mark>**
 
@@ -82,7 +82,7 @@ Home 페이지에서는 Home.tsx 만 불러오는 것을 볼 수 있다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥아이콘 패키지 Tree Shaking</mark>
+## <mark class="pink">🔥아이콘 패키지 Tree Shaking</mark>
 
 **<mark style='background-color: #fff5b1'>목표</mark>**
 
@@ -187,7 +187,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥이미지 미리 가져오기</mark>
+## <mark class="pink">🔥이미지 미리 가져오기</mark>
 
 **<mark style='background-color: #fff5b1'>preload</mark>**
 
@@ -266,7 +266,7 @@ hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥JS 소스 가져오기</mark>
+## <mark class="pink">🔥JS 소스 가져오기</mark>
 
 - 자바스크립트는 파서 차단 리소스(parser blocking resource)로, 브라우저가 페이지를 파싱하는 중간에 스크립트 리소스를 만나게 되면 기본적으로는 스크립트 다운로드 & 실행이 완료될 때까지 파싱을 멈춘다.
 - 이때 스크립트 다운로드 혹은 실행 시점을 조정하고 싶다면 defer, async와 같은 키워드를 사용한다.
@@ -303,7 +303,7 @@ querySelector를 통해서 html의 태그에 접근해서 특정한 이벤트를
 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
 ```
 
-html의 해당태그를 찾지 못하는 것에 해당하는 문제점이다.
+html의 해당 태그를 찾지 못하여 오류가 뜬 것이다.
 
 <br>
 

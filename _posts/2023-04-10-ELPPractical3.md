@@ -16,7 +16,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 데이터 모델</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 데이터 모델 개념</mark>
+### <mark class="pink">(1) 데이터 모델 개념</mark>
 
 현실 세계의 정보를 인간과 컴퓨터가 이해할 수 있도록 추상화하여 표현한 모델
 
@@ -26,7 +26,7 @@ toc_sticky: true
 - 구조: 논리적으로 표현될 대상
 - 제약 조건: 무결성 유지
 
-### <mark style='background-color: #ffdce0'>(2) 데이터 모델 절차</mark>
+### <mark class="pink">(2) 데이터 모델 절차</mark>
 
 1. 요구사항 분석: 데이터에 대한 요구 분석
 
@@ -38,17 +38,17 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 논리 데이터 모델 검증</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 논리 데이터 모델링 개념</mark>
+### <mark class="pink">(1) 논리 데이터 모델링 개념</mark>
 
 업무의 모습을 모델링 표기법으로 형상화하여 사람이 이해하기 쉽게 표현하는 프로세스
 
-### <mark style='background-color: #ffdce0'>(2) 논리 데이터 모델링 종류</mark>
+### <mark class="pink">(2) 논리 데이터 모델링 종류</mark>
 
 - 관계 데이터 모델: 2차원 테이블, PK/FK
 - 계층 데이터 모델: 트리 형태, 부모-자식, 1:N만
 - 네트워크 데이터 모델: 그래프 형태, N:M
 
-### <mark style='background-color: #ffdce0'>(3) 관계 데이터 모델</mark>
+### <mark class="pink">(3) 관계 데이터 모델</mark>
 
 > 중요!!
 
@@ -79,7 +79,7 @@ toc_sticky: true
 
 1. 개념: 튜플 관계 해석과 도메인 관계 해석을 하는 비절차적 언어
 
-### <mark style='background-color: #ffdce0'>(4) 논리 데이터 모델링 속성</mark>
+### <mark class="pink">(4) 논리 데이터 모델링 속성</mark>
 
 1\. 개체: 관리할 대상이 되는 실체(□)
 
@@ -87,7 +87,7 @@ toc_sticky: true
 
 3\. 관계: 개체 간의 대응 관계(---, >-<)
 
-### <mark style='background-color: #ffdce0'>(5) 개체-관계(E-R) 모델</mark>
+### <mark class="pink">(5) 개체-관계(E-R) 모델</mark>
 
 <mark style='background-color: #fff5b1'>2) 기호</mark>
 
@@ -99,7 +99,7 @@ toc_sticky: true
 - 개체 집합-속성 연결: ---
 - 관계 집합-속성 연결: - - -
 
-### <mark style='background-color: #ffdce0'>(6) 정규화</mark>
+### <mark class="pink">(6) 정규화</mark>
 
 1\. 개념  
 중복성 제거, 이상 현상 방지, 일관성과 정확성 유지, 무손실 분해
@@ -127,7 +127,7 @@ toc_sticky: true
 - 완전 함수 종속: X→Y 인 경우, Y는 X의 전체 속성에 대해 종속, 부분 집합 속성에 종속하지 않은 경우
 - 이행 함수 종속: X→Y, Y→Z 일 때, X→Z 성립
 
-### <mark style='background-color: #ffdce0'>(7) 반 정규화</mark>
+### <mark class="pink">(7) 반 정규화</mark>
 
 - 테이블
   - 테이블 병합: 1:1, 1:M 관계를 통합, 조인 횟수 줄이기
@@ -140,7 +140,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 물리 데이터 저장소 구성</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 데이터베이스 무결성</mark>
+### <mark class="pink">(1) 데이터베이스 무결성</mark>
 
 무결성 종류
 
@@ -150,7 +150,7 @@ toc_sticky: true
 - 사용자 정의 무결성
 - 키 무결정: 같은 튜플 안 됨
 
-### <mark style='background-color: #ffdce0'>(2) 키</mark>
+### <mark class="pink">(2) 키</mark>
 
 1\. 특성: 유일성, 최소성
 

@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 성능 개선 미션 - 성능 초깃값 측정
 
-## <mark style='background-color: #ffdce0'>📌성능 개선 들어가기</mark>
+## <mark class="pink">📌성능 개선 들어가기</mark>
 
 > "성능이 곧 사용자 경험이다"
 
@@ -19,7 +19,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌성능 개선 종류</mark>
+## <mark class="pink">📌성능 개선 종류</mark>
 
 **<mark style='background-color: #fff5b1'>로딩 성능 개선</mark>**
 
@@ -38,7 +38,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌로딩 성능 수치</mark>
+## <mark class="pink">📌로딩 성능 수치</mark>
 
 **<mark style='background-color: #fff5b1'>배포 링크</mark>**
 

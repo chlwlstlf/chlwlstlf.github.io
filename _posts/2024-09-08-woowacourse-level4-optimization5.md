@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 성능 개선 미션 - 리렌더링 적게 일으키기
 
-## <mark style='background-color: #ffdce0'>🔥4 최소한의 변경만 일으키기</mark>
+## <mark class="pink">🔥최소한의 변경만 일으키기</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
@@ -29,7 +29,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥새로 추가된 요소들만 렌더</mark>
+## <mark class="pink">🔥새로 추가된 요소들만 렌더</mark>
 
 검색 결과 > 추가 로드시 추가되는 결과에 대해서만 화면 업데이트가 새로 일어나야 한다. React DevTools의 Profiler 기준으로 기존에 있던 아이템이 다시 렌더되지 않는지 확인한다.
 
@@ -89,7 +89,7 @@ export default GifItem;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥Layout Shift 없애기</mark>
+## <mark class="pink">🔥Layout Shift 없애기</mark>
 
 Layout Shift 없이 애니메이션이 일어나야 한다. (대상) CustomCursor, 검색 결과 > hover, 도움말 패널 열고닫기 애니메이션
 
@@ -253,7 +253,7 @@ HelpPanel.module.css 최적화 후
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥Frame Drop 없애기</mark>
+## <mark class="pink">🔥Frame Drop 없애기</mark>
 
 Frame Drop이 일어나지 않아야 한다. (Chrome DevTools 기준) Partially Presented Frame 역시 최소로 발생해야 한다. (대상) 메인 페이지의 CustomCursor, 스크롤 애니메이션
 

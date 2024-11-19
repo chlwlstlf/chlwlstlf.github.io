@@ -16,7 +16,7 @@ toc_sticky: true
 
 > 중요!
 
-### <mark style='background-color: #ffdce0'>(1) SW 개발 보안 개념</mark>
+### <mark class="pink">(1) SW 개발 보안 개념</mark>
 
 - 요구사항 명세
 - 설계
@@ -24,7 +24,7 @@ toc_sticky: true
 - 테스트
 - 유지보수
 
-### <mark style='background-color: #ffdce0'>(2) SW 개발 보안 구성요소</mark>
+### <mark class="pink">(2) SW 개발 보안 구성요소</mark>
 
 1\. 3대 요소
 
@@ -39,7 +39,7 @@ toc_sticky: true
 - 취약점: 사전 조건
 - 위험: 피해 가능성
 
-### <mark style='background-color: #ffdce0'>(3) SW 개발 보안 공격기법</mark>
+### <mark class="pink">(3) SW 개발 보안 공격기법</mark>
 
 1\. DoS 공격
 
@@ -170,7 +170,7 @@ toc_sticky: true
 - 트러스트존: 독립적인 보안 구역 두는 기술
 - 타이포스쿼팅: 주소 잘못 입력, 도메인 미리 등록
 
-### <mark style='background-color: #ffdce0'>(4) 서버 인증 및 접근 통제</mark>
+### <mark class="pink">(4) 서버 인증 및 접근 통제</mark>
 
 2\. 서버 인증 기능
 
@@ -213,7 +213,7 @@ toc_sticky: true
 - SSO: 한 번의 인증으로 여러 컴퓨터상 자원 이용
 - 커버로스: 대칭키 암호 기법, 티켓 기반의 프로토콜
 
-### <mark style='background-color: #ffdce0'>(5) 암호화 알고리즘</mark>
+### <mark class="pink">(5) 암호화 알고리즘</mark>
 
 1\. 양방향 방식
 
@@ -236,7 +236,7 @@ toc_sticky: true
 - MAC: 메시지 인증 코드
 - MDC: 새로운 MDC 생성
 
-### <mark style='background-color: #ffdce0'>(6) 데이터 암호화 전송</mark>
+### <mark class="pink">(6) 데이터 암호화 전송</mark>
 
 1\. IPSec  
 IP 계층에서 무결성과 인증을 보장하는 인증 헤더와  
@@ -246,7 +246,7 @@ IP 계층에서 무결성과 인증을 보장하는 인증 헤더와
 
 ## <mark style='background-color: #fdb5bd'>1. SW 개발 보안 구현</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 시큐어 코딩 가이드</mark>
+### <mark class="pink">(1) 시큐어 코딩 가이드</mark>
 
 - 입력데이터 검증 및 표현 → 유효성 검증
 - 보안 기능 → 정책 반영
@@ -256,7 +256,7 @@ IP 계층에서 무결성과 인증을 보장하는 인증 헤더와
 - 캡슐화 → 프라이빗 접근자
 - API 오용 → 취약 API 확보
 
-### <mark style='background-color: #ffdce0'>(2) 입력 데이터 검증 및 표현</mark>
+### <mark class="pink">(2) 입력 데이터 검증 및 표현</mark>
 
 1\. XSS
 
@@ -275,7 +275,7 @@ IP 계층에서 무결성과 인증을 보장하는 인증 헤더와
 
 ## <mark style='background-color: #fdb5bd'>2. 시스템 보안 구현</mark>
 
-### <mark style='background-color: #ffdce0'>(2) 보안 솔루션</mark>
+### <mark class="pink">(2) 보안 솔루션</mark>
 
 1\. 네트워크 보안 솔루션
 
@@ -303,14 +303,14 @@ IP 계층에서 무결성과 인증을 보장하는 인증 헤더와
 
 ## <mark style='background-color: #fdb5bd'>3. SW 개발 보안 테스트와 결함 관리</mark>
 
-### <mark style='background-color: #ffdce0'>(2) SW 개발 보안 테스트 유형</mark>
+### <mark class="pink">(2) SW 개발 보안 테스트 유형</mark>
 
 - 정적 분석: 실행x, 개발 단계, 취약점 초기 발견
 - 동적 분석: 실행o, 시험 단계, 정확도
 
 ## <mark style='background-color: #fdb5bd'>4. 비즈니스 연속성 계획(BCP)</mark>
 
-### <mark style='background-color: #ffdce0'>(2) BCP 관련 주요 용어</mark>
+### <mark class="pink">(2) BCP 관련 주요 용어</mark>
 
 - BIA: 시간에 따른 영향도, 손실평가
 - RTO: 중단부터 복구까지 시간(Time)

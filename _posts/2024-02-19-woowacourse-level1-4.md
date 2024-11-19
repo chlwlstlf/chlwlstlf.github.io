@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 🚗 자동차 경주 게임
 
-## <mark style='background-color: #ffdce0'>1단계 PR 메세지</mark>
+## <mark class="pink">1단계 PR 메세지</mark>
 
 **1\. 모델에서 유효성 검사하기**
 
@@ -29,7 +29,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>1단계 피드백</mark>
+## <mark class="pink">1단계 피드백</mark>
 
 **1\. regex 대신 isNan 사용하기**
 
@@ -65,7 +65,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>1단계 수정 사항</mark>
+## <mark class="pink">1단계 수정 사항</mark>
 
 **1\. 상수화 변경하기**
 
@@ -96,7 +96,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>2단계 피드백</mark>
+## <mark class="pink">2단계 피드백</mark>
 
 **1\. 에러 핸들러 함수 만들기**
 

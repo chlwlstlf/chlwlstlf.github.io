@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 리액트 스터디3 - useRef, useEffect
 
-## <mark style='background-color: #ffdce0'>1. useEffect란?</mark>
+## <mark class="pink">1. useEffect란?</mark>
 
 **1\. useEffect의 목적**
 
@@ -40,7 +40,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>2. useEffect의 동작 원리</mark>
+## <mark class="pink">2. useEffect의 동작 원리</mark>
 
 **1\. 컴포넌트의 생명주기**
 
@@ -98,7 +98,7 @@ export default ComponentLifecycleExample;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>3. useEffect의 사용법</mark>
+## <mark class="pink">3. useEffect의 사용법</mark>
 
 <mark style='background-color: #fff5b1'>Effect</mark>
 
@@ -139,7 +139,7 @@ export default ComponentLifecycleExample;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>4. useEffect의 활용</mark>
+## <mark class="pink">4. useEffect의 활용</mark>
 
 - 데이터 가져오기
 - 구독 설정
@@ -207,7 +207,7 @@ export default ExampleComponent;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>5. useEffect 주의할 점</mark>
+## <mark class="pink">5. useEffect 주의할 점</mark>
 
 **1\. Effect가 두 번 실행되는 경우**
 
@@ -353,7 +353,7 @@ useEffect(() => {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>6. useLayoutEffect</mark>
+## <mark class="pink">6. useLayoutEffect</mark>
 
 - 대부분의 Side Effect는 useEffect를 통한 비동기 처리가 권장된다.
 - 하지만 DOM의 업데이트로 인해 발생하는 화면 깜빡임은 사용자 경험에 좋지 않다.

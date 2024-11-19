@@ -14,7 +14,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 외부 및 내부 모듈 연계를 위한 인터페이스 기능 식별</mark>
 
-### <mark style='background-color: #ffdce0'>(1) EAI, ESB 연계 방법</mark>
+### <mark class="pink">(1) EAI, ESB 연계 방법</mark>
 
 1\. EAI 방식: 정보를 전달, 연계, 통합이 가능하도록 해주는 솔루션
 
@@ -29,7 +29,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 인터페이스 기능 구현</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 인터페이스 기능 구현 기술</mark>
+### <mark class="pink">(1) 인터페이스 기능 구현 기술</mark>
 
 <mark style='background-color: #fff5b1'>1. JSON(JavaScript Object Notation)</mark>
 
@@ -70,7 +70,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 인터페이스 보안 기능 적용</mark>
 
-### <mark style='background-color: #ffdce0'>(2) 인터페이스 보안 구현 방안</mark>
+### <mark class="pink">(2) 인터페이스 보안 구현 방안</mark>
 
 1\. 시큐어 코딩 가이드
 
@@ -99,7 +99,7 @@ toc_sticky: true
 
 # <mark style='background-color: #fed3fe'>03 인터페이스 구현 검증</mark>
 
-### <mark style='background-color: #ffdce0'>(2) 인터페이스 구현 검증 도구</mark>
+### <mark class="pink">(2) 인터페이스 구현 검증 도구</mark>
 
 - xUnit: 다양한 언어를 지원하는 단위테스트 프레임워크
 - STAF: 서비스 호출, 컴포넌트 재사용 등 다양한 환경을 지원하는 테스트 프레임워크

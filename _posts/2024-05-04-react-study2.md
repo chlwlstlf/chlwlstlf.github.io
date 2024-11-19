@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 리액트 스터디2 - 가상 DOM, 리액트 파이버, 렌더링 과정
 
-## <mark style='background-color: #ffdce0'>📌리액트의 렌더링이란?</mark>
+## <mark class="pink">📌리액트의 렌더링이란?</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>컴포넌트가 props와 state를 통해 UI를 어떻게 구성할지 컴포넌트에게 <strong>요청</strong>하는 작업</p>
@@ -27,7 +27,7 @@ React 내부에서 Render 단계는 더 좁은 의미로, JSX 또는 `React.cre
 
 ![Untitled (8)](https://github.com/chlwlstlf/data/assets/63334368/0e00d9a0-dad3-4fcf-be37-dabbfc1d6f11)
 
-## <mark style='background-color: #ffdce0'>📌1. 트리거 단계</mark>
+## <mark class="pink">📌1. 트리거 단계</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>컴포넌트가 그려지기 위해서는 어떤 액션, 즉 "트리거"가 필요합니다.</div>
@@ -69,7 +69,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌2. 렌더 단계</mark>
+## <mark class="pink">📌2. 렌더 단계</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>"트리거"되면 렌더 단계로 넘어가 DOM에 그려질 요소들을 파악하는 과정을 거치게 됩니다.</div>
@@ -168,7 +168,7 @@ function Hello() {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌3. 커밋 단계</mark>
+## <mark class="pink">📌3. 커밋 단계</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <div>직전 렌더 단계에서 두 가상 DOM 트리 간 변화를 실제 DOM에 적용하는 단계입니다.</div>
@@ -204,7 +204,7 @@ function Hello() {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌렌더링 프로세스 정리</mark>
+## <mark class="pink">📌렌더링 프로세스 정리</mark>
 
 리액트는 자제척인 렌더링 프로세스를 가지고 있다.
 
@@ -219,7 +219,7 @@ function Hello() {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌예제 코드</mark>
+## <mark class="pink">📌예제 코드</mark>
 
 ```jsx
 import { useState } from "react";
@@ -278,7 +278,7 @@ function D() {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌최적화: React.memo()</mark>
+## <mark class="pink">📌최적화: React.memo()</mark>
 
 ```jsx
 const D = memo(() => {

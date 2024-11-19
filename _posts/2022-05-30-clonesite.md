@@ -8,7 +8,7 @@ toc_sticky: true
 
 # MegaBox 사이트 클론
 
-## <mark style='background-color: #ffdce0'>헤더 만들기</mark>
+## <mark class="pink">헤더 만들기</mark>
 
 2022-04-13
 
@@ -33,7 +33,7 @@ toc_sticky: true
 2. 필요하지 않은 css를 지우고 싶은데 아직 개발자 도구 보는 실력이 낮은거 같다.
 3. :after 와 :before 을 아직도 잘 모르겠다.
 
-## <mark style='background-color: #ffdce0'>섹션01 만들기</mark>
+## <mark class="pink">섹션01 만들기</mark>
 
 2022-04-26
 

@@ -10,7 +10,7 @@ toc_sticky: true
 
 <mark style='color: red'>※ 진블로그는 링크가 있는 사람만 조회할 수 있어서 저만의 기록 공간으로 활용하고 있습니다.</mark>
 
-## <mark style='background-color: #ffdce0'>2023.11.10(금)</mark>
+## <mark class="pink">2023.11.10(금)</mark>
 
 ### 🧐 3주차 공통 피드백
 
@@ -255,7 +255,7 @@ toc_sticky: true
 - Controller 내부에는 Model과 View에 대한 코드가 있어도 된다.
 - View가 Model로부터 데이터를 받을 때, 반드시 Controller에서 받아야 한다.
 
-## <mark style='background-color: #ffdce0'>2023.11.11(토)</mark>
+## <mark class="pink">2023.11.11(토)</mark>
 
 ### 🎯 프로젝트 기능 명세서
 
@@ -477,7 +477,7 @@ const errorMessage = Object.freeze({
 export default errorMessage;
 ```
 
-## <mark style='background-color: #ffdce0'>2023.11.12(일)</mark>
+## <mark class="pink">2023.11.12(일)</mark>
 
 ### 🎯 5. 방문 날짜, 주문 입력
 
@@ -769,7 +769,7 @@ export default errorMessage;
   export default CalculatelPrice;
   ```
 
-## <mark style='background-color: #ffdce0'>2023.11.13(월)</mark>
+## <mark class="pink">2023.11.13(월)</mark>
 
 ### 🎯 8. 할인 계산하기
 
@@ -1013,7 +1013,7 @@ export default errorMessage;
   }
   ```
 
-## <mark style='background-color: #ffdce0'>2023.11.14(화)</mark>
+## <mark class="pink">2023.11.14(화)</mark>
 
 ### 🎯 10. 결괏값 출력하기
 
@@ -1382,7 +1382,7 @@ export default errorMessage;
   });
   ```
 
-## <mark style='background-color: #ffdce0'>2023.11.15(수)</mark>
+## <mark class="pink">2023.11.15(수)</mark>
 
 **과제 소감**
 

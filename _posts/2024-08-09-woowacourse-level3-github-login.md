@@ -10,7 +10,7 @@ toc_sticky: true
 
 > Fe에게 이 글을 바칩니다^\_\_^
 
-## <mark style='background-color: #ffdce0'>📌OAuth 2.0 용어</mark>
+## <mark class="pink">📌OAuth 2.0 용어</mark>
 
 **<mark style='background-color: #fff5b1'>Resource Owner</mark>**
 
@@ -56,7 +56,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌OAuth 로그인 과정</mark>
+## <mark class="pink">📌OAuth 로그인 과정</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
@@ -81,7 +81,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌1. 깃허브 로그인 등록</mark>
+## <mark class="pink">📌1. 깃허브 로그인 등록</mark>
 
 [GitHub 앱 등록 공식 문서](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
 
@@ -131,7 +131,7 @@ Settings > Developer settings > OAuth Apps
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌2. 로그인 클릭</mark>
+## <mark class="pink">📌2. 로그인 클릭</mark>
 
 - 로그인을 클릭합니다.
 - 현재 localStorage는 비어있습니다.
@@ -141,7 +141,7 @@ Settings > Developer settings > OAuth Apps
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌3. Github로 리다이렉트</mark>
+## <mark class="pink">📌3. Github로 리다이렉트</mark>
 
 - Resource Owner(사용자)에게 인증을 요청합니다.
 - 발급 받은 client_id와 백엔드와 정한 scope로 Github OAuth URL를 생성합니다.
@@ -174,7 +174,7 @@ export default Header;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌4. Callback 페이지 화면</mark>
+## <mark class="pink">📌4. Callback 페이지 화면</mark>
 
 1\. Github Authorization callback URL에 지정한 callback 페이지로 넘어갑니다.
 
@@ -251,7 +251,7 @@ const postLoginMutation = useMutation({
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌OAuth 로그아웃 과정</mark>
+## <mark class="pink">📌OAuth 로그아웃 과정</mark>
 
 ![101](https://github.com/user-attachments/assets/f6c5a585-9009-4a8c-b69e-0f31b743d1a8)
 
@@ -272,7 +272,7 @@ const postLoginMutation = useMutation({
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌1. 로그아웃 클릭</mark>
+## <mark class="pink">📌1. 로그아웃 클릭</mark>
 
 1\. Client는 localStorage를 clear한 후 `로그아웃 post`를 요청합니다.
 

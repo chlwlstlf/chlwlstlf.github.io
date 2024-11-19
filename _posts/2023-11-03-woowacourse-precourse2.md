@@ -10,7 +10,7 @@ toc_sticky: true
 
 <mark style='color: red'>※ 진블로그는 링크가 있는 사람만 조회할 수 있어서 저만의 기록 공간으로 활용하고 있습니다.</mark>
 
-## <mark style='background-color: #ffdce0'>2023.10.26(목)</mark>
+## <mark class="pink">2023.10.26(목)</mark>
 
 ### 🧐 1주차 공통 피드백
 
@@ -77,7 +77,7 @@ toc_sticky: true
 - Jest를 이용하여 본인이 정리한 기능 목록이 정상 동작함을 테스트 코드로 확인한다.
   - 테스트 도구 사용법이 익숙하지 않다면 `__tests__/StringTest.js`를 참고하여 학습한 후 테스트를 구현한다.
 
-## <mark style='background-color: #ffdce0'>2023.10.27(금)</mark>
+## <mark class="pink">2023.10.27(금)</mark>
 
 ### 💻 개발 시작
 
@@ -124,7 +124,7 @@ app.play();
 
 ---
 
-## <mark style='background-color: #ffdce0'>2023.10.28(토)</mark>
+## <mark class="pink">2023.10.28(토)</mark>
 
 ### 💻 개발
 
@@ -179,7 +179,7 @@ src/
   export default Messages;
   ```
 
-## <mark style='background-color: #ffdce0'>2023.10.29(일)</mark>
+## <mark class="pink">2023.10.29(일)</mark>
 
 ### 💻 개발
 
@@ -311,7 +311,7 @@ export class RacingCar {
 }
 ```
 
-## <mark style='background-color: #ffdce0'>2023.10.30(월)</mark>
+## <mark class="pink">2023.10.30(월)</mark>
 
 ### 📝 공부한 것
 

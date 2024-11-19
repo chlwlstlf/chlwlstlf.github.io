@@ -14,7 +14,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 애플리케이션 테스트 케이스 작성</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 소프트웨어 테스트의 이해</mark>
+### <mark class="pink">(1) 소프트웨어 테스트의 이해</mark>
 
 2\. 소프트웨어 테스트 필요성
 
@@ -52,7 +52,7 @@ toc_sticky: true
 - 테스트 스크립트: 케이스 실행 순서
 - 테스트 결과서: 결과 평가, 리포팅
 
-### <mark style='background-color: #ffdce0'>(2) 소프트웨어 테스트 유형</mark>
+### <mark class="pink">(2) 소프트웨어 테스트 유형</mark>
 
 1\. 프로그램 실행 여부에 따른 분류
 
@@ -111,7 +111,7 @@ toc_sticky: true
 - 구조 기반 테스트(화이트박스)
 - 경험 기반 테스트(블랙박스)
 
-### <mark style='background-color: #ffdce0'>(3) 정적 테스트</mark>
+### <mark class="pink">(3) 정적 테스트</mark>
 
 1\. 리뷰: 수작업
 
@@ -121,7 +121,7 @@ toc_sticky: true
 
 2\. 정적 분석: 도구
 
-### <mark style='background-color: #ffdce0'>(4) 동적 테스트</mark>
+### <mark class="pink">(4) 동적 테스트</mark>
 
 1\. 화이트박스
 
@@ -145,7 +145,7 @@ toc_sticky: true
 - 탐색적 테스트: 경험
 - 오류 추정: 실수 추정
 
-### <mark style='background-color: #ffdce0'>(5) 테스트 케이스</mark>
+### <mark class="pink">(5) 테스트 케이스</mark>
 
 3\. 테스트 케이스 필요 항목
 
@@ -166,7 +166,7 @@ toc_sticky: true
   - 성공/실패 기준
   - 기타 요소
 
-### <mark style='background-color: #ffdce0'>(6) 테스트 오라클</mark>
+### <mark class="pink">(6) 테스트 오라클</mark>
 
 1\. 개념  
 결과가 참인지 거짓인지 판단하기 위해 참값 입력하여 비교
@@ -180,7 +180,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 애플리케이션 테스트 시나리오 작성</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 테스트 레벨</mark>
+### <mark class="pink">(1) 테스트 레벨</mark>
 
 2\. 테스트 레벨 종류
 
@@ -193,14 +193,14 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 애플리케이션 테스트 수행</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 단위 테스트</mark>
+### <mark class="pink">(1) 단위 테스트</mark>
 
 1\. 단위 테스트 수행 도구
 
 - 테스트 드라이버: 수행 후 결과 도출, 상위 모듈
 - 테스트 스텁: 조건 수행, 하위 모듈
 
-### <mark style='background-color: #ffdce0'>(2) 통합 테스트</mark>
+### <mark class="pink">(2) 통합 테스트</mark>
 
 1\. 점증적인 방식
 
@@ -212,7 +212,7 @@ toc_sticky: true
 
 - 빅뱅 테스트
 
-### <mark style='background-color: #ffdce0'>(3) 테스트 자동화 도구</mark>
+### <mark class="pink">(3) 테스트 자동화 도구</mark>
 
 3\. 테스트 자동화 도구 유형
 
@@ -241,7 +241,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 애플리케이션 테스트 결과 분석</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 테스트 결과 분석</mark>
+### <mark class="pink">(1) 테스트 결과 분석</mark>
 
 1\. 소프트웨어 결함
 
@@ -250,7 +250,7 @@ toc_sticky: true
 - 버그: 프로그램 오류
 - 고장/문제: 결함이 실행될 때
 
-### <mark style='background-color: #ffdce0'>(2) 결함 관리</mark>
+### <mark class="pink">(2) 결함 관리</mark>
 
 2\. 결함 관리 프로세스
 
@@ -275,7 +275,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>3. 애플리케이션 개선 조치사항 작성</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 테스트 커버리지</mark>
+### <mark class="pink">(1) 테스트 커버리지</mark>
 
 1\. 개념
 
@@ -288,7 +288,7 @@ toc_sticky: true
 - 라인 커버리지: 라인 수
 - 코드 커버리지: 구조 코드(일반적)
 
-### <mark style='background-color: #ffdce0'>(2) 결함의 식별 및 관리</mark>
+### <mark class="pink">(2) 결함의 식별 및 관리</mark>
 
 1\. 결함 심각도별 분류
 
@@ -302,7 +302,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 애플리케이션 성능 분석</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 애플리케이션 성능 분석</mark>
+### <mark class="pink">(1) 애플리케이션 성능 분석</mark>
 
 1\. 애플리케이션 성능 측정 지표
 
@@ -313,7 +313,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 애플리케이션 성능 개선</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 소스 코드 최적화의 이해</mark>
+### <mark class="pink">(1) 소스 코드 최적화의 이해</mark>
 
 1\. 배드 코드
 
@@ -324,7 +324,7 @@ toc_sticky: true
 
 2\. 클린 코드: 깔끔하게 잘 정리된 코드
 
-### <mark style='background-color: #ffdce0'>(3) 애플리케이션 성능 개선 방안</mark>
+### <mark class="pink">(3) 애플리케이션 성능 개선 방안</mark>
 
 5\. 리팩토링
 

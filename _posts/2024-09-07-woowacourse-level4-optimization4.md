@@ -14,7 +14,7 @@ toc_sticky: true
   </p>
 </div>
 
-## <mark style='background-color: #ffdce0'>🔥CDN 캐시 설정하기</mark>
+## <mark class="pink">🔥CDN 캐시 설정하기</mark>
 
 **<mark style='background-color: #fff5b1'>목표</mark>**
 
@@ -112,7 +112,7 @@ Cache-Control: no-store
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥API 요청 캐싱하기</mark>
+## <mark class="pink">🔥API 요청 캐싱하기</mark>
 
 **<mark style='background-color: #fff5b1'>목표</mark>**
 

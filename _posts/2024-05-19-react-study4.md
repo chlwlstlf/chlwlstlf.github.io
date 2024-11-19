@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 리액트 스터디4 - webpack
 
-## <mark style='background-color: #ffdce0'>📌모듈이란?</mark>
+## <mark class="pink">📌모듈이란?</mark>
 
 - 개발하면서 작성한 모든 파일
 - 자바스크립트에서의 모듈: 특정 기능을 가진 코드들을 하나의 파일로 관리하는 것
@@ -17,7 +17,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌자바스크립트 모듈 관리의 필요성</mark>
+## <mark class="pink">📌자바스크립트 모듈 관리의 필요성</mark>
 
 **과거**
 
@@ -32,7 +32,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌로딩 시간 줄이는 법?</mark>
+## <mark class="pink">📌로딩 시간 줄이는 법?</mark>
 
 브라우저 요청하는 http 개수를 줄이는 것
 
@@ -41,7 +41,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌Webpack의 등장 배경</mark>
+## <mark class="pink">📌Webpack의 등장 배경</mark>
 
 1\. 파일 단위의 자바스크립트 모듈 관리의 필요성
 2\. 웹 개발 작업 자동화 도구
@@ -50,7 +50,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌Webpack: 모듈 번들러</mark>
+## <mark class="pink">📌Webpack: 모듈 번들러</mark>
 
 - 웹 애플리케이션에서 사용하는 수많은 리소스를 하나의 파일로 병합 및 압축해주는 “모듈 번들러”
 - 번들링과 컴파일을 결합하는 “정적 모듈 번들러”
@@ -66,7 +66,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌Webpack 이용시 장단점</mark>
+## <mark class="pink">📌Webpack 이용시 장단점</mark>
 
 **단점**
 
@@ -87,7 +87,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌Webpck 설치</mark>
+## <mark class="pink">📌Webpck 설치</mark>
 
 ```powershell
 npm i webpack webpack-cli webpack-dev-server -D
@@ -99,7 +99,7 @@ npm i webpack webpack-cli webpack-dev-server -D
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌Config 파일들 조정</mark>
+## <mark class="pink">📌Config 파일들 조정</mark>
 
 **package.json 코드 수정**
 

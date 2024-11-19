@@ -10,7 +10,7 @@ toc_sticky: true
 
 <mark style='color: red'>※ 진블로그는 링크가 있는 사람만 조회할 수 있어서 저만의 기록 공간으로 활용하고 있습니다.</mark>
 
-## <mark style='background-color: #ffdce0'>2023.10.18(수)</mark>
+## <mark class="pink">2023.10.18(수)</mark>
 
 디스코드에 초대됐다.
 
@@ -25,7 +25,7 @@ toc_sticky: true
 
 ---
 
-## <mark style='background-color: #ffdce0'>2023.10.19(목)</mark>
+## <mark class="pink">2023.10.19(목)</mark>
 
 3시에 과제가 메일로 왔다. 이미 10분 전부터 디스코드는 뜨거웠다. 내 메일은 3시 13분에 왔다. 지원자가 많아서 그런 것 같은데 디스코드에 초대된 인원만 봐도 4555명이다. 오늘은 4시부터 11시 알바니까 내일부터 해야지
 
@@ -33,7 +33,7 @@ toc_sticky: true
 
 ---
 
-## <mark style='background-color: #ffdce0'>2023.10.20(금)</mark>
+## <mark class="pink">2023.10.20(금)</mark>
 
 ### 🔥 설치하기
 
@@ -250,7 +250,7 @@ found 0 vulnerabilities
 
 → 이번 과제를 MVC 패턴으로 짜는 게 의미가 있을까? View를 안 만들어도 되는데..?
 
-## <mark style='background-color: #ffdce0'>2023.10.21(토)</mark>
+## <mark class="pink">2023.10.21(토)</mark>
 
 시작도 못 하고 있었기 때문에.. 디스코드 `함께 나누기`를 들어가봤다. 오늘 2시에 프론트 분께서 js에 대해 자세히 설명한 링크를 올려주셨다😀 이 글을 보면서 공부한 내용을 적어두려고 한다.
 
@@ -650,7 +650,7 @@ src/
   export default Messages;
   ```
 
-## <mark style='background-color: #ffdce0'>2023.10.22(일)</mark>
+## <mark class="pink">2023.10.22(일)</mark>
 
 ### 🎯 1. 랜덤 3자리 수 만들기
 
@@ -949,7 +949,7 @@ src/
   export default App;
   ```
 
-## <mark style='background-color: #ffdce0'>2023.10.25(수)</mark>
+## <mark class="pink">2023.10.25(수)</mark>
 
 **과제 제출 오류**
 

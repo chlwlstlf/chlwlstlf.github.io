@@ -10,7 +10,7 @@ toc_sticky: true
 
 [참고 자료-state 관리](https://ko.react.dev/learn/managing-state){: .btn .btn--primary}
 
-## <mark style='background-color: #ffdce0'>1. state로 입력에 반응하기</mark>
+## <mark class="pink">1. state로 입력에 반응하기</mark>
 
 **1\. 선언형 UI 프로그래밍과 명령형 UI 프로그래밍의 차이점**
 
@@ -228,7 +228,7 @@ state 를 생성할 떄는 ‘반드시 필요한’ ‘핵심적인’ state �
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>2. State 구조 선택</mark>
+## <mark class="pink">2. State 구조 선택</mark>
 
 > “state를 최대한 단순하게 만들되, 그보다 더 단순해서는 안 됩니다.”
 
@@ -314,7 +314,7 @@ export const initialTravelPlan = {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>3. 컴포넌트 간의 state 공유</mark>
+## <mark class="pink">3. 컴포넌트 간의 state 공유</mark>
 
 **state 끌어올리기**
 
@@ -338,7 +338,7 @@ export const initialTravelPlan = {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>4. state 보존 및 재설정</mark>
+## <mark class="pink">4. state 보존 및 재설정</mark>
 
 **1\. state는 트리의 한 위치에 묶인다**
 
@@ -493,7 +493,7 @@ export default function Scoreboard() {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>5. state 로직을 reducer로 작성하기</mark>
+## <mark class="pink">5. state 로직을 reducer로 작성하기</mark>
 
 **1\. reducer 함수란?**
 
@@ -625,7 +625,7 @@ const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>6. Context를 사용해 데이터를 깊게 전달하기</mark>
+## <mark class="pink">6. Context를 사용해 데이터를 깊게 전달하기</mark>
 
 **1\. "Prop drilling" 이란?**
 

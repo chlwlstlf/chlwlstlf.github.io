@@ -11,7 +11,7 @@ toc_sticky: true
 [공모전 사이트](https://data.mafra.go.kr/contest/introduction/introductionNew/screen.do){: .btn .btn--primary}
 [공모전 깃허브](https://github.com/farmfarmfarmfarm){: .btn .btn--primary}
 
-## <mark style='background-color: #ffdce0'> 소개 </mark>
+## <mark class="pink"> 소개 </mark>
 
 ‘치유농업 연구개발 및 육성에 관한 법률(이하 치유농업법)’이 국회를 통과할 만큼 치유농업에 대해 국가가 관심을 가지며 치유농업을 알리고 있지만, 치유농업의 개념조차도 인식하지 못하는 사람들이 많습니다. 이에 농업 활동으로 힐링하는 시간을 얻을 수 있도록 도와주는 서비스를 기획하였습니다.
 
@@ -23,7 +23,7 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 
 ---
 
-## <mark style='background-color: #ffdce0'> 기술 </mark>
+## <mark class="pink"> 기술 </mark>
 
 1. React
 2. Typescript
@@ -32,7 +32,7 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 
 ---
 
-## <mark style='background-color: #ffdce0'> 트러블 슈팅 </mark>
+## <mark class="pink"> 트러블 슈팅 </mark>
 
 1\. <mark style='background-color: #fff5b1'>전역 변수 필요 (useState)</mark>
 
@@ -72,7 +72,7 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 </div>
 </details>
 
-## <mark style='background-color: #ffdce0'> 후기 </mark>
+## <mark class="pink"> 후기 </mark>
 
 리액트를 2주 공부하고 바로 공모전을 준비했던 시기라 코드를 "잘" 짠다는 게 뭔지 몰랐다.
 파이썬처럼 시간 복잡도가 눈으로 보이는 것도 아니고 리액트적인 코드가 뭔지 감도 오지 않았다.

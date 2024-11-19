@@ -16,14 +16,14 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 운영체제 종류</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 운영체제의 개념</mark>
+### <mark class="pink">(1) 운영체제의 개념</mark>
 
 1\. 쉘과 커널
 
 - 쉘: 명령어 해석기
 - 커널: 핵심 기능 컴퓨터 프로그램
 
-### <mark style='background-color: #ffdce0'>(2) 운영체제의 종류</mark>
+### <mark class="pink">(2) 운영체제의 종류</mark>
 
 1\. 윈도즈
 
@@ -42,7 +42,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 운영체제 기본 명령어 활용</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 운영체제 제어</mark>
+### <mark class="pink">(1) 운영체제 제어</mark>
 
 - CLI: 명령어
 - GUI: 마우스
@@ -169,7 +169,7 @@ toc_sticky: true
 - N-STEP SCAN: 요청들만 한 진행 방향
 - SLTF: 회전지연시간
 
-### <mark style='background-color: #ffdce0'>(2) 가상화, 클라우드</mark>
+### <mark class="pink">(2) 가상화, 클라우드</mark>
 
 1\. 가상화 개념
 
@@ -207,7 +207,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 네트워크 계층 구조 파악</mark>
 
-### <mark style='background-color: #ffdce0'>(2) OSI 7계층</mark>
+### <mark class="pink">(2) OSI 7계층</mark>
 
 7\. 응용 계층: 사용자, 네트워크(데이터)
 6\. 표현 계층: 데이터 형식, 암/복호화(데이터)
@@ -217,7 +217,7 @@ toc_sticky: true
 2\. 데이터링크 계층: 인접 시스템 간 데이터 전송(프레임)
 1\. 물리 계층: 0과 1(비트)
 
-### <mark style='background-color: #ffdce0'>(4) 네트워크 장비</mark>
+### <mark class="pink">(4) 네트워크 장비</mark>
 
 1\. 1계층 장비
 
@@ -246,7 +246,7 @@ toc_sticky: true
 
 > 중요!!
 
-### <mark style='background-color: #ffdce0'>(1) 프로토콜</mark>
+### <mark class="pink">(1) 프로토콜</mark>
 
 1\. 프로토콜 개념  
 서로 다른 시스템이나 기기들 간의 데이터 교환을 원활히 하기 위한 표준화된 통신규약
@@ -257,7 +257,7 @@ toc_sticky: true
 - 의미: 제어 정보, 조정과 에러 처리
 - 타이밍: 속도 조절, 순서 관리
 
-### <mark style='background-color: #ffdce0'>(2) 네트워크 프로토콜</mark>
+### <mark class="pink">(2) 네트워크 프로토콜</mark>
 
 1\. 네트워크 프로토콜 개념  
 컴퓨터나 원거리 통신 장비 사이에서 메세지를 주고받는 양식과 규칙의 체계
@@ -273,12 +273,12 @@ toc_sticky: true
 - 다중화: 하나 회선에 여러 기기 접속
 - 주소 지정: 정확한 데이터 전송 보장
 
-### <mark style='background-color: #ffdce0'>(3) 데이터 링크 계층(2)</mark>
+### <mark class="pink">(3) 데이터 링크 계층(2)</mark>
 
 1\. 데이터 링크 계층 개념  
 링크의 설정, 유지, 종료 담당
 
-### <mark style='background-color: #ffdce0'>(4) 네트워크 계층(3)</mark>
+### <mark class="pink">(4) 네트워크 계층(3)</mark>
 
 2\. 네트워크 계층 프로토콜
 
@@ -321,7 +321,7 @@ toc_sticky: true
 | 헤더 크기 |     가변 길이      |   고정된 길이    |
 | 전송 방식 | 유니, 멀티, 브로드 | 유니, 멀티, 애니 |
 
-### <mark style='background-color: #ffdce0'>(5) 전송 계층(4)</mark>
+### <mark class="pink">(5) 전송 계층(4)</mark>
 
 1\. TCP
 
@@ -331,17 +331,17 @@ toc_sticky: true
 
 - 특징: 비신뢰성, 순서화되지 않은 데이터그램 서비스 제공, 실시간 응용 및 멀티캐스팅 가능, 단순 헤더
 
-### <mark style='background-color: #ffdce0'>(6) 세션 계층(5)</mark>
+### <mark class="pink">(6) 세션 계층(5)</mark>
 
 - RPC
 - NetBIOS
 
-### <mark style='background-color: #ffdce0'>(7) 표현 계층(6)</mark>
+### <mark class="pink">(7) 표현 계층(6)</mark>
 
 - JPEG
 - MPEG
 
-### <mark style='background-color: #ffdce0'>(8) 응용 계층(7)</mark>
+### <mark class="pink">(8) 응용 계층(7)</mark>
 
 - HTTP(80): 하이퍼텍스트
 - FTP(21): TCP/IP
@@ -354,7 +354,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>3. 네트워크 전달 방식</mark>
 
-### <mark style='background-color: #ffdce0'>(3) 패킷 교환 방식 vs 서킷 교환 방식</mark>
+### <mark class="pink">(3) 패킷 교환 방식 vs 서킷 교환 방식</mark>
 
 | **구분** | **패킷 교환 방식** | **서킷 교환 방식** |
 | :------: | :----------------: | :----------------: |
@@ -370,11 +370,11 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>4. 네트워크 구조</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 애드 혹 네트워크</mark>
+### <mark class="pink">(1) 애드 혹 네트워크</mark>
 
 노드들에 의해 자율적으로 구성되는 기반 구조가 없는 네트워크
 
-### <mark style='background-color: #ffdce0'>(2) 네트워크 설치 구조</mark>
+### <mark class="pink">(2) 네트워크 설치 구조</mark>
 
 1\. 버스형 구조: 하나 네트워크에 여러 대 노드
 

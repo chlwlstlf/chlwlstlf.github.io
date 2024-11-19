@@ -10,7 +10,7 @@ toc_sticky: true
 
 <mark style='color: red'>※ 진블로그는 링크가 있는 사람만 조회할 수 있어서 저만의 기록 공간으로 활용하고 있습니다.</mark>
 
-## <mark style='background-color: #ffdce0'>2023.11.03(금)</mark>
+## <mark class="pink">2023.11.03(금)</mark>
 
 ### 🧐 2주차 공통 피드백
 
@@ -304,7 +304,7 @@ person.setName = "Bob";
 console.log(person.getName); // 'Bob'
 ```
 
-## <mark style='background-color: #ffdce0'>2023.11.04(토)</mark>
+## <mark class="pink">2023.11.04(토)</mark>
 
 ### 🛠️ 고려할 점
 
@@ -506,7 +506,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
 
 5\. 당첨 내역 출력
 
-## <mark style='background-color: #ffdce0'>2023.11.05(일)</mark>
+## <mark class="pink">2023.11.05(일)</mark>
 
 ### 🛠️ eslint 적용된 내용
 
@@ -712,7 +712,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
   export default Validate;
   ```
 
-## <mark style='background-color: #ffdce0'>2023.11.06(월)</mark>
+## <mark class="pink">2023.11.06(월)</mark>
 
 ### 🎯 2. 구매 개수와 랜덤 로또 번호 출력
 
@@ -828,7 +828,7 @@ MVC 패턴에 맞추어 폴더를 대략적으로 나눠보고 그 안의 파일
   export default InputView;
   ```
 
-## <mark style='background-color: #ffdce0'>2023.11.07(화)</mark>
+## <mark class="pink">2023.11.07(화)</mark>
 
 ### 💣 구조 대공사 - mvc 패턴 없애기
 
@@ -1071,7 +1071,7 @@ src/
   }
   ```
 
-## <mark style='background-color: #ffdce0'>2023.11.08(수)</mark>
+## <mark class="pink">2023.11.08(수)</mark>
 
 ### ✅ 테스트
 

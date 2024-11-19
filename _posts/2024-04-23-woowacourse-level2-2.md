@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 미션1 LMS 강의 자료2
 
-## <mark style='background-color: #ffdce0'>⛓ Controlled & Uncontrolled Components</mark>
+## <mark class="pink">⛓ Controlled & Uncontrolled Components</mark>
 
 **1\. Controlled Component (제어 컴포넌트)**
 
@@ -31,7 +31,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>⚓️ Hooks API</mark>
+## <mark class="pink">⚓️ Hooks API</mark>
 
 **React 과거의 문제**
 

@@ -8,7 +8,7 @@ toc_sticky: true
 
 # CRA없이 React 세팅하기
 
-## <mark style='background-color: #ffdce0'>📌들어가기</mark>
+## <mark class="pink">📌들어가기</mark>
 
 - 보통 `npx create-react-app 프로젝트명`으로 리액트 초기 세팅을 쉽게 한 후 프로젝트를 시작합니다.
 - 위와 같은 방법을 CRA라고 하는데 우테코에서는 CRA를 사용하지 않고 프로젝트를 시작하는 것이 미션이었습니다.
@@ -17,7 +17,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌1. React 설정</mark>
+## <mark class="pink">📌1. React 설정</mark>
 
 **1\. 프로젝트 디렉토리 설정**
 
@@ -52,7 +52,7 @@ npm install react react-dom
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌2. Typescript 설정</mark>
+## <mark class="pink">📌2. Typescript 설정</mark>
 
 **1\. typescript 설치**
 
@@ -101,7 +101,7 @@ npm i -D typescript ts-loader @types/react @types/react-dom
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌3. Webpack 설정</mark>
+## <mark class="pink">📌3. Webpack 설정</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>Vite 등의 다른 도구를 도입하는 경우가 늘고는 있으나, 아직까지는 프로덕션에서 Webpack 기반으로 이미 구성된 프로젝트가 많은 것으로 판단하였습니다.</p>
@@ -229,7 +229,7 @@ npm run build
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌4. ESlint 설정</mark>
+## <mark class="pink">📌4. ESlint 설정</mark>
 
 **1\. eslint 관련 패키지 설치**
 
@@ -291,7 +291,7 @@ npm install -D eslint eslint-plugin-react eslint-plugin-prettier @typescript-esl
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌5. Prettier 설정</mark>
+## <mark class="pink">📌5. Prettier 설정</mark>
 
 **1\. prettier 설치**
 
@@ -337,7 +337,7 @@ npm install -D prettier @trivago/prettier-plugin-sort-imports
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌6. Jest 설정</mark>
+## <mark class="pink">📌6. Jest 설정</mark>
 
 **1\. jest 설치**
 

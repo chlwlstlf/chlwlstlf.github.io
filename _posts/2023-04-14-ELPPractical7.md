@@ -14,7 +14,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 트랜잭션</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 트랜잭션</mark>
+### <mark class="pink">(1) 트랜잭션</mark>
 
 2\. 특성
 
@@ -42,7 +42,7 @@ toc_sticky: true
 - 체크 포인트 회복 기법: 검사점 이후에 처리된 트랜잭션만 복원
 - 그림자 페이징 회복 기법: 복제본 생성
 
-### <mark style='background-color: #ffdce0'>(2) DDL</mark>
+### <mark class="pink">(2) DDL</mark>
 
 1\. 데이터 정의어: 구조 생성, 변경, 삭제
 
@@ -149,7 +149,7 @@ toc_sticky: true
   DROP INDEX 인덱스명;
   ```
 
-### <mark style='background-color: #ffdce0'>(3) DML</mark>
+### <mark class="pink">(3) DML</mark>
 
 2\. DML 명령어
 
@@ -175,7 +175,7 @@ toc_sticky: true
   WHERE 조건;
   ```
 
-### <mark style='background-color: #ffdce0'>(4) DCL</mark>
+### <mark class="pink">(4) DCL</mark>
 
 1\. DCL 명령어
 

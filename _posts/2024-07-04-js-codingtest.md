@@ -17,7 +17,7 @@ const input = fs.readFileSync("/dev/stdin");
 
 <br>
 
-<mark style='background-color: #ffdce0'>1-1. 입력값이 한 개일 때(문자)</mark>
+<mark class="pink">1-1. 입력값이 한 개일 때(문자)</mark>
 
 ```js
 const input = fs.readFileSync("/dev/stdin").toString().trim();
@@ -28,7 +28,7 @@ const input = fs.readFileSync("/dev/stdin").toString().trim();
 
 <br>
 
-<mark style='background-color: #ffdce0'>1-2. 입력값이 한 개일 때(숫자)</mark>
+<mark class="pink">1-2. 입력값이 한 개일 때(숫자)</mark>
 
 ```js
 const input = +fs.readFileSync("/dev/stdin").toString().trim();
@@ -39,7 +39,7 @@ const input = +fs.readFileSync("/dev/stdin").toString().trim();
 
 <br>
 
-<mark style='background-color: #ffdce0'>2-1. 입력값이 띄어쓰기로 구분된 한 줄의 값들인 경우(문자)</mark>
+<mark class="pink">2-1. 입력값이 띄어쓰기로 구분된 한 줄의 값들인 경우(문자)</mark>
 
 ```js
 const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ");
@@ -50,7 +50,7 @@ const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ");
 
 <br>
 
-<mark style='background-color: #ffdce0'>2-2. 입력값이 띄어쓰기로 구분된 한 줄의 값들인 경우(숫자)</mark>
+<mark class="pink">2-2. 입력값이 띄어쓰기로 구분된 한 줄의 값들인 경우(숫자)</mark>
 
 ```js
 const input = fs
@@ -66,7 +66,7 @@ const input = fs
 
 <br>
 
-<mark style='background-color: #ffdce0'>3-1. 입력값이 여러 줄의 값들인 경우(문자)</mark>
+<mark class="pink">3-1. 입력값이 여러 줄의 값들인 경우(문자)</mark>
 
 ```js
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
@@ -81,7 +81,7 @@ const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
 <br>
 
-<mark style='background-color: #ffdce0'>3-2. 입력값이 여러 줄의 값들인 경우(숫자)</mark>
+<mark class="pink">3-2. 입력값이 여러 줄의 값들인 경우(숫자)</mark>
 
 ```js
 const input = fs
@@ -102,7 +102,7 @@ const input = fs
 
 <br>
 
-<mark style='background-color: #ffdce0'>4-1. 입력값이 여러 줄의 값들이 띄어쓰기로 구분되어 있는 경우(문자)</mark>
+<mark class="pink">4-1. 입력값이 여러 줄의 값들이 띄어쓰기로 구분되어 있는 경우(문자)</mark>
 
 ```js
 const input = fs
@@ -127,7 +127,7 @@ const input = fs
 
 <br>
 
-<mark style='background-color: #ffdce0'>4-2. 입력값이 여러 줄의 값들이 띄어쓰기로 구분되어 있는 경우(모두 숫자)</mark>
+<mark class="pink">4-2. 입력값이 여러 줄의 값들이 띄어쓰기로 구분되어 있는 경우(모두 숫자)</mark>
 
 ```js
 const input = fs

@@ -14,7 +14,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 연계 메커니즘 정의</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 연계 메커니즘 개념</mark>
+### <mark class="pink">(1) 연계 메커니즘 개념</mark>
 
 1\. 연계 방식
 
@@ -29,7 +29,7 @@ toc_sticky: true
 
 # <mark style='background-color: #fed3fe'>02 내외부 연계 모듈 구현</mark>
 
-### <mark style='background-color: #ffdce0'>(2) EAI</mark>
+### <mark class="pink">(2) EAI</mark>
 
 1\. 개념  
 기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션 간의 정보를 전달, 연계, 통합이 가능하도록 해주는 솔루션
@@ -49,7 +49,7 @@ toc_sticky: true
 - 메시지 버스: 미들웨어 통합, 확장성, 대용량 처리
 - 하이브리드: 그룹 내-허브 앤 스포크 / 그룹 간-메시지 버스
 
-### <mark style='background-color: #ffdce0'>(4) 웹 서비스 방식</mark>
+### <mark class="pink">(4) 웹 서비스 방식</mark>
 
 1\. 용어
 
@@ -63,7 +63,7 @@ toc_sticky: true
 - WSDL: 웹 서비스에 대한 상세 정보가 기술된 XML 형식으로 구현되어 있는 언어
 - UDDI: 웹 서비스에 대한 정보인 WSDL을 등록하고 검색하기 위한 저장소로 공개적으로 접근, 검색이 가능한 레지스트리이자 표준
 
-### <mark style='background-color: #ffdce0'>(5) IPC 방식</mark>
+### <mark class="pink">(5) IPC 방식</mark>
 
 주요 기법
 

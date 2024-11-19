@@ -14,7 +14,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 사용자 중심의 패키징 수행</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 제품 소프트웨어 패키징</mark>
+### <mark class="pink">(1) 제품 소프트웨어 패키징</mark>
 
 1\. 모듈화
 
@@ -23,7 +23,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>2. 버전을 고려한 제품 릴리즈 노트 작성</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 릴리즈 노트</mark>
+### <mark class="pink">(1) 릴리즈 노트</mark>
 
 1\. 릴리즈 노트 작성 항목
 

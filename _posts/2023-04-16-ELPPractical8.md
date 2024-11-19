@@ -14,7 +14,7 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 개발환경 구축</mark>
 
-### <mark style='background-color: #ffdce0'>(2) 개발 도구 분류</mark>
+### <mark class="pink">(2) 개발 도구 분류</mark>
 
 - 구현 도구
 
@@ -43,7 +43,7 @@ toc_sticky: true
   - Maven
   - Gradle
 
-### <mark style='background-color: #ffdce0'>(2) 개발환경 구성요소</mark>
+### <mark class="pink">(2) 개발환경 구성요소</mark>
 
 1\. 하드웨어 개발환경
 
@@ -95,11 +95,11 @@ toc_sticky: true
 
 ## <mark style='background-color: #fdb5bd'>1. 공통 모듈 구현</mark>
 
-### <mark style='background-color: #ffdce0'>(2) 공통 모듈 구현의 개념</mark>
+### <mark class="pink">(2) 공통 모듈 구현의 개념</mark>
 
 2\. 모듈의 독립성을 높이려면 결합도는 약하게, 응집도는 강하게, 모듈의 크기는 작게 해야함
 
-### <mark style='background-color: #ffdce0'>(3) 소프트웨어 모듈 응집도</mark>
+### <mark class="pink">(3) 소프트웨어 모듈 응집도</mark>
 
 <mark style='background-color: #fff5b1'>1. 응집도 개념</mark>
 
@@ -120,7 +120,7 @@ toc_sticky: true
 
 (좋음)
 
-### <mark style='background-color: #ffdce0'>(4) 소프트웨어 모듈 결합도</mark>
+### <mark class="pink">(4) 소프트웨어 모듈 결합도</mark>
 
 <mark style='background-color: #fff5b1'>1. 결합도 개념</mark>
 
@@ -140,14 +140,14 @@ toc_sticky: true
 
 (좋음)
 
-### <mark style='background-color: #ffdce0'>(5) 팬인 팬아웃</mark>
+### <mark class="pink">(5) 팬인 팬아웃</mark>
 
 - 팬인: 자신을 기준으로 모듈에 들어오는 것
 - 팬아웃: 자신을 기준으로 모듈에서 나가는 것
 
 ## <mark style='background-color: #fdb5bd'>2. 공통 모듈 테스트</mark>
 
-### <mark style='background-color: #ffdce0'>(1) 공통 모듈 테스트의 개념</mark>
+### <mark class="pink">(1) 공통 모듈 테스트의 개념</mark>
 
 - 화이트박스 기법
 - xUnit : 대표적인 단위 테스트 도구

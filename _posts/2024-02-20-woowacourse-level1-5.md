@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 미션2 LMS 강의 자료1
 
-## <mark style='background-color: #ffdce0'>📖 TDD와 리팩터링</mark>
+## <mark class="pink">📖 TDD와 리팩터링</mark>
 
 **1\. Test Driven Development(테스트 주도 개발, TDD)**
 
@@ -33,7 +33,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📖 프로그래밍 패러다임 종류</mark>
+## <mark class="pink">📖 프로그래밍 패러다임 종류</mark>
 
 **1\. 명령형 프로그래밍**
 
@@ -89,7 +89,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📖 객체</mark>
+## <mark class="pink">📖 객체</mark>
 
 **1\. 모듈화**
 
@@ -101,7 +101,7 @@ toc_sticky: true
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📖 유효성 검사 중복될 때</mark>
+## <mark class="pink">📖 유효성 검사 중복될 때</mark>
 
 > 상속보다는 조합을 사용하자
 

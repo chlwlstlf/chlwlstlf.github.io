@@ -8,7 +8,7 @@ toc_sticky: true
 
 # styled-components 반응형 유틸리티 함수
 
-## <mark style='background-color: #ffdce0'>📌Breakpoints</mark>
+## <mark class="pink">📌Breakpoints</mark>
 
 - 디바이스의 해상도 사이즈는 변동 가능성이 크므로, 원치 않는 결과를 초래할 수 있습니다.
 - 따라서 ‘small’, ‘medium’, ‘large’와 같이 더 명확한 이름을 사용하는 것이 좋습니다.
@@ -32,7 +32,7 @@ export const breakpoints: Record<Breakpoints, string> = {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌Media Queries</mark>
+## <mark class="pink">📌Media Queries</mark>
 
 **styles > media.ts**
 
@@ -65,7 +65,7 @@ export default media;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌사용 예시</mark>
+## <mark class="pink">📌사용 예시</mark>
 
 ```tsx
 import styled from "styled-components";

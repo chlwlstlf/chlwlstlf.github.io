@@ -8,7 +8,7 @@ toc_sticky: true
 
 # S3+CloudFront로 프론트 서버 배포하기
 
-## <mark style='background-color: #ffdce0'>📌S3란?</mark>
+## <mark class="pink">📌S3란?</mark>
 
 - S3 AWS의 가장 초기 서비스 중 하나로, AWS에서 제공하는 스토리지 서비스입니다.
 - React같이 SPA로 된 프로젝트의 경우는 자바스크립트만 동작하면 되기 때문에 서버가 필요 없습니다.
@@ -17,7 +17,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌객체 & 버킷</mark>
+## <mark class="pink">📌객체 & 버킷</mark>
 
 - S3에 저장된 데이터 하나 하나를 객체라고 명명하는데, 저장된 파일이라고 생각하면 됩니다.
 - 객체가 파일이라면 버킷은 연관된 객체들을 그룹핑한 최상위 디렉토리라고 할 수 있습니다.
@@ -26,7 +26,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥1. 배포용 빌드 준비하기</mark>
+## <mark class="pink">🔥1. 배포용 빌드 준비하기</mark>
 
 ```bash
 npm run build
@@ -37,7 +37,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥2. S3 버킷 생성하기</mark>
+## <mark class="pink">🔥2. S3 버킷 생성하기</mark>
 
 1\. ‘버킷 만들기’를 클릭합니다.
 2\. 리전은 상관없지만 대한민국(서울)으로 지정합니다.
@@ -46,7 +46,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥3. 파일 업로드</mark>
+## <mark class="pink">🔥3. 파일 업로드</mark>
 
 1\. 생성된 버킷을 찾아 들어갑니다.
 2\. 업로드를 눌러서 dist안에 있는 파일들을 모두 업로드합니다.
@@ -56,7 +56,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥4. 권한 설정</mark>
+## <mark class="pink">🔥4. 권한 설정</mark>
 
 1\. 속성 > ARN 주소 복사 후 권한 메뉴로 이동합니다.
 2\. 권한 > 하단 스크롤 > 버킷 정책 > 편집 > 정책 생성기
@@ -71,7 +71,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥5. 정적 웹사이트 호스팅 설정하기</mark>
+## <mark class="pink">🔥5. 정적 웹사이트 호스팅 설정하기</mark>
 
 - 속성 > ARN 복사
 - 정적 웹 사이트 호스팅 > 편집
@@ -82,7 +82,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌CloudFront란?</mark>
+## <mark class="pink">📌CloudFront란?</mark>
 
 **1\. 설명**
 
@@ -104,7 +104,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌CDN이란?</mark>
+## <mark class="pink">📌CDN이란?</mark>
 
 **1\. 설명**
 
@@ -122,7 +122,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>📌엣지 로케이션이란?</mark>
+## <mark class="pink">📌엣지 로케이션이란?</mark>
 
 - 컨텐츠가 캐싱되고 유저에게 제공되는 지점입니다.
 - CloudFront 서비스는 엣지 로케이션을 통해 콘텐츠를 제공합니다.
@@ -132,7 +132,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥1. CloudFront에 S3 연결하기</mark>
+## <mark class="pink">🔥1. CloudFront에 S3 연결하기</mark>
 
 **1\. 원본 세팅하기**
 
@@ -215,7 +215,7 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥2. 오류 응답 생성</mark>
+## <mark class="pink">🔥2. 오류 응답 생성</mark>
 
 S3와 Cloudfront 연결 후 403 error, Access Denied 에러 메세지가 뜨게 되었습니다. S3에 SPA(React)를 이용하여 구성을 하면 Redirect가 발생하여 403/404와 같은 Access Denied가 발생하게 된 것입니다.
 
@@ -226,7 +226,7 @@ cloudfront에서 아래와 같이 `사용자 정의 오류 응답 생성`을 하
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥3. 무효화하기</mark>
+## <mark class="pink">🔥3. 무효화하기</mark>
 
 Cloudfront는 기본적으로 24시간동안(기본 TTL) 오리진의 응답을 캐시합니다. 이 동안에 엣지 로케이션에 요청이 오는 경우에는 캐시된 응답을 사용합니다. 따라서 S3 버킷에 새로운 객체를 업로드했을 때 무효화를 해줘야 변경된 페이지가 보입니다.
 

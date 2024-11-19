@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 💳 페이먼츠
 
-## <mark style='background-color: #ffdce0'>git action 배포 방법</mark>
+## <mark class="pink">git action 배포 방법</mark>
 
 1\. 깃허브 토큰 생성
 
@@ -61,17 +61,17 @@ jobs:
 
 Settings > Pages에 들어가서 `Build and deployment`의 `Branch`를 gh-pages로 변경하면 몇 분 뒤에 사이트 주소가 만들어집니다.
 
-## <mark style='background-color: #ffdce0'>배포 사이트</mark>
+## <mark class="pink">배포 사이트</mark>
 
 [페이먼츠 배포 사이트](https://chlwlstlf.github.io/react-payments/)
 
 [스토리북 배포 사이트](https://chlwlstlf.github.io/react-payments/storybook/)
 
-## <mark style='background-color: #ffdce0'>1단계 구조 설명</mark>
+## <mark class="pink">1단계 구조 설명</mark>
 
 ![KakaoTalk_20240418_175719919](https://github.com/woowacourse/react-payments/assets/63334368/f4524ea7-d960-4a01-a3ef-887e75c631ec)
 
-## <mark style='background-color: #ffdce0'>1단계 피드백</mark>
+## <mark class="pink">1단계 피드백</mark>
 
 **[ 질문 사항 ]**
 
@@ -160,7 +160,7 @@ const ParentComponent = () => {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>2단계 구현 설명</mark>
+## <mark class="pink">2단계 구현 설명</mark>
 
 **1. 커스텀 훅**
 
@@ -194,7 +194,7 @@ const isNextVisible = userNameState.isNextVisible || isValid;
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>2단계 UI/UX 고려사항</mark>
+## <mark class="pink">2단계 UI/UX 고려사항</mark>
 
 **1. 자동 포커싱**
 
@@ -297,7 +297,7 @@ const handleKeyDown = (e) => {
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>2단계 피드백</mark>
+## <mark class="pink">2단계 피드백</mark>
 
 **빈 문자열 처리**
 

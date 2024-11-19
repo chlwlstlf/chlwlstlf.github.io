@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 미션1 LMS 강의 자료2
 
-## <mark style='background-color: #ffdce0'>📚 JavsScript Data Type</mark>
+## <mark class="pink">📚 JavsScript Data Type</mark>
 
 **1\. Primitive Type(원시 값, 기본형)**
 
@@ -40,7 +40,7 @@ console.log(copy); // 30
 - 객체는 메모리에 저장된 객체를 직접 수정할 수 있다.
 - 참조에 의한 전달: 여러 개의 식별자가 하나의 객체를 공유
 
-## <mark style='background-color: #ffdce0'>📚 Execution Context & Scope</mark>
+## <mark class="pink">📚 Execution Context & Scope</mark>
 
 **1\. Execution Context (실행 컨텍스트)**
 
@@ -76,7 +76,7 @@ Scope Chain
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📚 Object</mark>
+## <mark class="pink">📚 Object</mark>
 
 **1\. Object**
 
@@ -121,7 +121,7 @@ Scope Chain
 <br/>
 <br/>
 
-## <mark style='background-color: #ffdce0'>📚 Prototype</mark>
+## <mark class="pink">📚 Prototype</mark>
 
 **1\. 프로토타입**
 

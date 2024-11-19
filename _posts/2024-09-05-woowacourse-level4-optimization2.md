@@ -17,7 +17,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥소스코드 크기 줄이기</mark>
+## <mark class="pink">🔥소스코드 크기 줄이기</mark>
 
 > 크기 줄일 방법들 다 적용했나?
 
@@ -122,7 +122,7 @@ cloudfront에서 압축할 수 있다.
 <br>
 <br>
 
-## <mark style='background-color: #ffdce0'>🔥이미지 크기 줄이기</mark>
+## <mark class="pink">🔥이미지 크기 줄이기</mark>
 
 > 이미지 해상도가 화면에 보이는 크기보다 크네  
 > 해상도는 잘 맞췄는데, 그래도 용량이 크네  
