@@ -37,13 +37,13 @@ export const breakpoints: Record<Breakpoints, string> = {
 **styles > media.ts**
 
 ```tsx
-import { type CSSObject, type Interpolation, css } from "styled-components";
+import { CSSObject, Interpolation, css } from "styled-components";
 
 export type Breakpoints = "small" | "medium" | "large";
 
 export const breakpoints: Record<Breakpoints, string> = {
   small: "@media (max-width: 639px)",
-  medium: "@media (max-width: 1047px)",
+  medium: "@media (min-width: 639px) and (max-width: 1048px)",
   large: "@media (min-width: 1048px)",
 };
 
@@ -93,6 +93,5 @@ const Form = styled.form`
 <br>
 <br>
 
-참고
-
+참고  
 [https://medium.com/@duchanjo/styled-components로-반응형-작업하기-32a41d3966eb](https://medium.com/@duchanjo/styled-components%EB%A1%9C-%EB%B0%98%EC%9D%91%ED%98%95-%EC%9E%91%EC%97%85%ED%95%98%EA%B8%B0-32a41d3966eb)
