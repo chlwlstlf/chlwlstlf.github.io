@@ -12,27 +12,27 @@ toc_sticky: true
 
 ## <mark class="pink">📌OAuth 2.0 용어</mark>
 
-**<mark style='background-color: #fff5b1'>Resource Owner</mark>**
+**<mark class="yellow">Resource Owner</mark>**
 
 - OAuth 2.0을 사용하여 보호되는 리소스에 대한 엑세스 권한을 부여하는 사용자
 - 만약 Github 계정으로 로그인해서 현재 서비스를 사용한다면 서비스 관점에서 사용자는 Resource Owner라고 할 수 있습니다
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Client</mark>**
+**<mark class="yellow">Client</mark>**
 
 - Resource Server의 자원을 이용하고자 하는 서비스
 - 개발자가 OAuth를 사용해 개발하려는 서비스
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Resource Server</mark>**
+**<mark class="yellow">Resource Server</mark>**
 
 - 구글, 페이스북, 깃허브 등 리소스를 가지고 있는 서버
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Authorization Server</mark>**
+**<mark class="yellow">Authorization Server</mark>**
 
 - Resource Owner를 인증하고, client에게 액세스 토큰을 발급해주는 서버
 - 백엔드가 배포한 서버가 이에 해당합니다
@@ -40,7 +40,7 @@ toc_sticky: true
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Access Token</mark>**
+**<mark class="yellow">Access Token</mark>**
 
 - Client가 Resource server에 접근하기 위한 권한을 부여받는 토큰
 - 이 토큰을 header에 담아서 api 요청을 하면 Authorization server에서 사용자를 식별할 수 있습니다
@@ -48,7 +48,7 @@ toc_sticky: true
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Refresh Token</mark>**
+**<mark class="yellow">Refresh Token</mark>**
 
 - Access Token의 유효 기간이 만료된 후 새로운 Access token을 받기 위한 토큰
 - Access Token에 비해 비교적 긴 유효 기간을 가지고 있습니다(일주일 ~ 1년)
@@ -85,13 +85,13 @@ toc_sticky: true
 
 [GitHub 앱 등록 공식 문서](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
 
-**<mark style='background-color: #fff5b1'>1. OAuth Apps로 들어가기</mark>**
+**<mark class="yellow">1. OAuth Apps로 들어가기</mark>**
 
 Settings > Developer settings > OAuth Apps
 
 <br>
 
-**<mark style='background-color: #fff5b1'>2. New OAuth App</mark>**
+**<mark class="yellow">2. New OAuth App</mark>**
 
 **Application name**
 
@@ -111,7 +111,7 @@ Settings > Developer settings > OAuth Apps
 
 <br>
 
-**<mark style='background-color: #fff5b1'>3. Client ID, Client secrets</mark>**
+**<mark class="yellow">3. Client ID, Client secrets</mark>**
 
 > OAuth App을 생성하면 Client ID, Client secrets를 발급 받습니다.
 
@@ -150,7 +150,7 @@ Settings > Developer settings > OAuth Apps
 
 <br>
 
-**<mark style='background-color: #fff5b1'>로그인 코드</mark>**
+**<mark class="yellow">로그인 코드</mark>**
 
 ```tsx
 const Header = () => {
@@ -200,7 +200,7 @@ export default Header;
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Callback 페이지 코드</mark>**
+**<mark class="yellow">Callback 페이지 코드</mark>**
 
 ```tsx
 const CallbackPage = () => {
@@ -222,7 +222,7 @@ const CallbackPage = () => {
 
 <br>
 
-**<mark style='background-color: #fff5b1'>로그인 요청 mutation 코드</mark>**
+**<mark class="yellow">로그인 요청 mutation 코드</mark>**
 
 ```ts
 const postLoginMutation = useMutation({
@@ -282,7 +282,7 @@ const postLoginMutation = useMutation({
 
 <br>
 
-**<mark style='background-color: #fff5b1'>로그아웃 코드</mark>**
+**<mark class="yellow">로그아웃 코드</mark>**
 
 ```tsx
 const LogoutPage = () => {
@@ -304,7 +304,7 @@ export default LogoutPage;
 
 <br>
 
-**<mark style='background-color: #fff5b1'>로그아웃 요청 mutation 코드</mark>**
+**<mark class="yellow">로그아웃 요청 mutation 코드</mark>**
 
 ```ts
 const postLogoutMutation = useMutation({

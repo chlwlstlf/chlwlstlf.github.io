@@ -34,33 +34,33 @@ Therapia는 라틴어로 '치료'를 의미합니다. 저희 서비스에서 이
 
 ## <mark class="pink"> 트러블 슈팅 </mark>
 
-1\. <mark style='background-color: #fff5b1'>전역 변수 필요 (useState)</mark>
+1\. <mark class="yellow">전역 변수 필요 (useState)</mark>
 
 - 문제 : function 안에서 `const num = 1` 이라고 선언하면 함수 밖에서는 그 변수를 사용하지 못 한다
 - 해결 : `const [num, setNum] = useState(0);` 은 전역변수처럼 사용 가능
 
-2\. <mark style='background-color: #fff5b1'>비동기 해결 (useEffect)</mark>
+2\. <mark class="yellow">비동기 해결 (useEffect)</mark>
 
 - 문제 : api를 여러개 불러올수록 비동기의 문제점이 커진다  
   화면이 뜨자마자 데이터를 불러오고 싶으면?
 - 해결 : useEffect 안에 불러오고 싶은 api 코드를 넣으면 된다
 
-3\. <mark style='background-color: #fff5b1'>api null ({ && })</mark>
+3\. <mark class="yellow">api null ({ && })</mark>
 
 - 문제 : api로 받아온 값이 잘 들어가 있는데 null값이라고 에러가 뜬다
 - 해결 : `{변수 && }` 이런식으로 변수가 null이 아닐 때 출력한다고 조건을 걸어주면 잘 실행된다
 
-4\. <mark style='background-color: #fff5b1'>고유 주소 (useParams)</mark>
+4\. <mark class="yellow">고유 주소 (useParams)</mark>
 
 - 문제 : 각 작물을 누르면 그 작물의 레시피로 넘어가고 싶은데 작물id를 어떻게 넘겨야할 지 고민했다
 - 해결 : `/:cropId`로 넘겨주고 `params = useParams()`로 받는다
 
-5\. <mark style='background-color: #fff5b1'>props가 안 될 때(Recoil)</mark>
+5\. <mark class="yellow">props가 안 될 때(Recoil)</mark>
 
 - 문제 : 형제/자식->부모 컴포넌트에서는 props 전달이 안된다
 - 해결 : Redux를 사용하려 했지만 코드짜는 데 어려움이 있어서 최신 라이브러리인 Recoil을 사용했다
 
-6\. <mark style='background-color: #fff5b1'>cors에러 (프록시 방식)</mark>
+6\. <mark class="yellow">cors에러 (프록시 방식)</mark>
 
 - 문제 : 개발할 때 무조건 한번씩 보는 cors에러가 어김없이 등장했다
 - 해결 : setupProxy.js 파일을 만들어서 사람들의 코드를 그대로 넣었다

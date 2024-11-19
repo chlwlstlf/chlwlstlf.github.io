@@ -10,13 +10,13 @@ toc_sticky: true
 
 ## <mark class="pink">🔥storybook에 theme 적용하기</mark>
 
-**<mark style='background-color: #fff5b1'>[ 문제상황 ]</mark>**
+**<mark class="yellow">[ 문제상황 ]</mark>**
 
 storybook에서 theme이 적용이 안된다!!!!!
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[ 원인 ]</mark>**
+**<mark class="yellow">[ 원인 ]</mark>**
 
 ThemeProvider를 사용하여 공통 theme을 관리하고 있었는데 이걸 storybook 인식하지 못 하여 오류가 발생했습니다.
 
@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[ 해결방안 ]</mark>**
+**<mark class="yellow">[ 해결방안 ]</mark>**
 
 **.storybook > preview.tsx 코드 수정**
 
@@ -85,13 +85,13 @@ export default preview;
 
 ## <mark class="pink">🔥storybook에 절대 경로 적용하기</mark>
 
-**<mark style='background-color: #fff5b1'>[ 문제상황 ]</mark>**
+**<mark class="yellow">[ 문제상황 ]</mark>**
 
 storybook에서 절대경로를 인식하지 못 하여 import 오류가 떴습니다.
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[ 해결방안 ]</mark>**
+**<mark class="yellow">[ 해결방안 ]</mark>**
 
 **1\. 패키지 설치**
 
@@ -153,7 +153,7 @@ export default config;
 
 ## <mark class="pink">🔥createPortal 사용하는 컴포넌트 띄우기</mark>
 
-**<mark style='background-color: #fff5b1'>[ 문제상황 ]</mark>**
+**<mark class="yellow">[ 문제상황 ]</mark>**
 
 “Target container is not a DOM element”
 
@@ -161,7 +161,7 @@ createPortal를 사용하면 스토리북을 쓸 때 위와 같은 에러 문구
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[ 원인 ]</mark>**
+**<mark class="yellow">[ 원인 ]</mark>**
 
 createPortal은 먼저 index.html 파일에 element를 적은 후 그 곳에 자식 요소를 띄우는 것입니다. 이 index.html 파일은 public에 있으며 storybook이 인식할 수 없기 때문에 에러가 발생합니다.
 
@@ -169,7 +169,7 @@ createPortal은 먼저 index.html 파일에 element를 적은 후 그 곳에 자
 
 <br>
 
-**<mark style='background-color: #fff5b1'>[ 해결방안 ]</mark>**
+**<mark class="yellow">[ 해결방안 ]</mark>**
 
 **.storybook > preview-body.html**
 

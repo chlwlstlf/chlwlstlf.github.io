@@ -101,12 +101,12 @@ toc_sticky: true
 
 ### <mark class="pink">(3) 소프트웨어 모듈 응집도</mark>
 
-<mark style='background-color: #fff5b1'>1. 응집도 개념</mark>
+<mark class="yellow">1. 응집도 개념</mark>
 
 - 모듈의 독립성을 나타내는 정도
 - 모듈 내부 구성요소 간 연관 정도
 
-<mark style='background-color: #fff5b1'>2. 응집도 유형</mark>
+<mark class="yellow">2. 응집도 유형</mark>
 
 (나쁨)
 
@@ -122,12 +122,12 @@ toc_sticky: true
 
 ### <mark class="pink">(4) 소프트웨어 모듈 결합도</mark>
 
-<mark style='background-color: #fff5b1'>1. 결합도 개념</mark>
+<mark class="yellow">1. 결합도 개념</mark>
 
 - 외부의 모듈과의 연관도, 모듈 간의 상호의존성
 - 모듈 간의 관련성을 측정하는 척도
 
-<mark style='background-color: #fff5b1'>2. 결합도 유형</mark>
+<mark class="yellow">2. 결합도 유형</mark>
 
 (나쁨)
 

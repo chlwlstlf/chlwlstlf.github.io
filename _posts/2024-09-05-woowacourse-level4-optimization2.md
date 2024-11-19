@@ -23,7 +23,7 @@ toc_sticky: true
 
 <br>
 
-**<mark style='background-color: #fff5b1'>압축(Minify)</mark>**
+**<mark class="yellow">압축(Minify)</mark>**
 
 압축은 전체 소스코드 중 아래와 같은 경우를 제거하는 작업을 말한다.
 
@@ -36,7 +36,7 @@ toc_sticky: true
 
 <br>
 
-**<mark style='background-color: #fff5b1'>난독화(Uglify)</mark>**
+**<mark class="yellow">난독화(Uglify)</mark>**
 
 - 자바스크립트코드 자체를 분석하기 어렵게 만드는 과정
 - 난독화를 했다고 보안처리 없이 중요 정보나 루틴을 자바스크립트에 넣는 것은 매우 위험
@@ -46,13 +46,13 @@ toc_sticky: true
 
 <br>
 
-### <mark style='background-color: #fff5b1'>JS 압축</mark>
+### <mark class="yellow">JS 압축</mark>
 
 webpack 4부터 production 환경에서 기본으로 js minify와 uglify를 해준다.
 
 <br>
 
-### <mark style='background-color: #fff5b1'>CSS 압축</mark>
+### <mark class="yellow">CSS 압축</mark>
 
 자바스크립트와 마찬가지로 CSS에도 해석에 불필요한 공백이 존재한다.
 
@@ -111,7 +111,7 @@ module.exports = {
 };
 ```
 
-### <mark style='background-color: #fff5b1'>소스코드 압축</mark>
+### <mark class="yellow">소스코드 압축</mark>
 
 cloudfront에서 압축할 수 있다.
 
@@ -128,7 +128,7 @@ cloudfront에서 압축할 수 있다.
 > 해상도는 잘 맞췄는데, 그래도 용량이 크네  
 > PC에선 괜찮았는데, 모바일에선 이렇게까지 큰 거 필요 없는데?
 
-### <mark style='background-color: #fff5b1'>png 크기 줄이기</mark>
+### <mark class="yellow">png 크기 줄이기</mark>
 
 • PNG
 
@@ -209,7 +209,7 @@ png, 10.7mb → webp, 111kb
 <br>
 <br>
 
-### <mark style='background-color: #fff5b1'>gif 크기 줄이기</mark>
+### <mark class="yellow">gif 크기 줄이기</mark>
 
 • GIF
 

@@ -22,7 +22,7 @@ toc_sticky: true
 - 오류 예방 관점: 동료 검토, 워크 스루, 인스펙션
 - 품질 향상 관점: 신뢰도 향상
 
-<mark style='background-color: #fff5b1'>3. 소프트웨어 테스트 기본 원칙</mark>
+<mark class="yellow">3. 소프트웨어 테스트 기본 원칙</mark>
 
 1\) 소프트웨어 테스트 원리
 
@@ -61,7 +61,7 @@ toc_sticky: true
 
 2\. 테스트 기법에 따른 분류
 
-<mark style='background-color: #fff5b1'>1) 화이트박스 테스트</mark>
+<mark class="yellow">1) 화이트박스 테스트</mark>
 
 - 구문 커버리지: 명령문 모두 수행, 구문 실행 개수
 - 결정 커버리지: 전체 조건식 참과 거짓 수행, 구문 포함
@@ -74,7 +74,7 @@ toc_sticky: true
 - 데이터 흐름 테스트: 그래프+데이터
 - 루프 테스트: 반복 구조
 
-<mark style='background-color: #fff5b1'>2) 블랙박스 테스트</mark>
+<mark class="yellow">2) 블랙박스 테스트</mark>
 
 - 동등분할 테스트: 그룹핑, 대푯값
 - 경곗값 분석 테스트: 경곗값

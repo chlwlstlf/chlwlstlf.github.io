@@ -42,8 +42,8 @@ toc_sticky: true
     <div>• M으로 나눈 나머지가 0인 곳만 더해준다.</div>
     <div>• 나머지가 0인 곳만 궁금하고 나머지는 궁금하지 않기 때문</div>
     <div>ex)
-      <mark style='background-color: #fff5b1'>-45</mark> -26 -18
-      <mark style='background-color: #fff5b1'>-9</mark> -4 22 40 50
+      <mark class="yellow">-45</mark> -26 -18
+      <mark class="yellow">-9</mark> -4 22 40 50
     </div>
 
   </p>
@@ -52,7 +52,7 @@ toc_sticky: true
     <div>• 양수는 내림차순으로 정렬하면 0번째가 제일 멀리있다.</div>
     <div>• M으로 나눈 나머지가 0인 곳만 더해준다.</div>
     <div>ex)
-      <mark style='background-color: #fff5b1'>50</mark> 40 22 -4 -9 -18 -26 -45
+      <mark class="yellow">50</mark> 40 22 -4 -9 -18 -26 -45
     </div>
   </p>
   <p>

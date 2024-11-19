@@ -34,7 +34,7 @@ toc_sticky: true
 
 ### 🚀 기능 요구사항
 
-<mark style='background-color: #fff5b1'>‘12월 이벤트 플래너’를 만들어 보자.</mark>
+<mark class="yellow">‘12월 이벤트 플래너’를 만들어 보자.</mark>
 
 **1\. 시작 입력**
 

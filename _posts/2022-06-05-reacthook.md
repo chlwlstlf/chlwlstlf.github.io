@@ -47,7 +47,7 @@ import React from "react";
 
 ## <mark class="pink">1. useState</mark>
 
-- 구성 요소 <mark style='background-color: #fff5b1'>상태를 관리</mark>하는 데 사용된다.
+- 구성 요소 <mark class="yellow">상태를 관리</mark>하는 데 사용된다.
 - 현재 상태 값과 해당 상태를 업데이트하는 함수가 포함된 배열을 반환한다.
 
 ```jsx
@@ -81,7 +81,7 @@ function Counter() {
 
 ## <mark class="pink">2. useEffect</mark>
 
-- 데이터 가져오기, 구독, DOM 조작과 같은 구성 요소의 <mark style='background-color: #fff5b1'>특정 상태를 관리</mark>하는 데 사용된다.
+- 데이터 가져오기, 구독, DOM 조작과 같은 구성 요소의 <mark class="yellow">특정 상태를 관리</mark>하는 데 사용된다.
 - 효과가 실행되는 시점을 제어하기 위해 함수와 선택적 종속성 배열을 허용한다.
 
 ```jsx
@@ -120,7 +120,7 @@ export default OnceEffectExample;
 
 ## <mark class="pink">3. useContext</mark>
 
-- 기능 구성요소의 <mark style='background-color: #fff5b1'>컨텍스트 값</mark>에 액세스하는 데 사용된다.
+- 기능 구성요소의 <mark class="yellow">컨텍스트 값</mark>에 액세스하는 데 사용된다.
 - 구성 요소가 컨텍스트 변경 사항을 구독하고 컨텍스트 값에 액세스할 수 있도록 한다.
 
 ```jsx
@@ -179,7 +179,7 @@ export default App;
 
 ## <mark class="pink">4. useRef</mark>
 
-- 렌더링 전반에 걸쳐 지속되는 <mark style='background-color: #fff5b1'>DOM 요소</mark> 또는 값에 대한 변경 가능한 참조를 생성하는 데 사용된다.
+- 렌더링 전반에 걸쳐 지속되는 <mark class="yellow">DOM 요소</mark> 또는 값에 대한 변경 가능한 참조를 생성하는 데 사용된다.
 - 참조된 값에 접근하기 위한 .current 속성을 제공한다.
 
 ```jsx
@@ -227,7 +227,7 @@ useEffect(() => {
 
 ## <mark class="pink">5. useReducer</mark>
 
-- 보다 복잡한 상태 로직을 관리하기 위한 <mark style='background-color: #fff5b1'>useState의 대안</mark>이다.
+- 보다 복잡한 상태 로직을 관리하기 위한 <mark class="yellow">useState의 대안</mark>이다.
 - 리듀서 함수와 초기 상태를 취하고 현재 상태와 디스패치 함수를 반환한다.
 
 ```jsx
@@ -273,7 +273,7 @@ export default Counter;
 
 ## <mark class="pink">6. useCallback</mark>
 
-- <mark style='background-color: #fff5b1'>함수를 메모</mark>하고 하위 구성 요소가 불필요하게 다시 렌더링되는 것을 방지하는 데 사용된다.
+- <mark class="yellow">함수를 메모</mark>하고 하위 구성 요소가 불필요하게 다시 렌더링되는 것을 방지하는 데 사용된다.
 - 함수와 종속성 배열이 필요하다.
 
 ```jsx
@@ -311,7 +311,7 @@ export default App;
 
 ## <mark class="pink">7. useMemo</mark>
 
-- <mark style='background-color: #fff5b1'>계산된 값을 메모</mark>하고 불필요한 재계산을 방지하는 데 사용된다.
+- <mark class="yellow">계산된 값을 메모</mark>하고 불필요한 재계산을 방지하는 데 사용된다.
 - 값과 종속성 배열을 계산하는 함수가 필요하다.
 
 ```jsx
@@ -363,7 +363,7 @@ export default App;
 
 ## <mark class="pink">8. useLayoutEffect</mark>
 
-- useEffect와 유사하지만 모든 DOM 변형 후에 <mark style='background-color: #fff5b1'>동기적</mark>으로 실행된다.
+- useEffect와 유사하지만 모든 DOM 변형 후에 <mark class="yellow">동기적</mark>으로 실행된다.
 - 거의 필요하지 않으며 종종 useEffect로 충분하다.
 
 ## <mark class="pink">9. useImperativeHandle</mark>
@@ -372,5 +372,5 @@ export default App;
 
 ## <mark class="pink">10. useDebugValue</mark>
 
-- <mark style='background-color: #fff5b1'>사용자 정의 후크 디버깅</mark>에 사용된다.
+- <mark class="yellow">사용자 정의 후크 디버깅</mark>에 사용된다.
 - React DevTools의 사용자 정의 후크에 대한 레이블을 제공할 수 있다.

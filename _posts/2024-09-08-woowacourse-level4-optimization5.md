@@ -35,7 +35,7 @@ toc_sticky: true
 
 <br>
 
-**<mark style='background-color: #fff5b1'>개선 전 결과</mark>**
+**<mark class="yellow">개선 전 결과</mark>**
 
 모든 곳에 색이 칠해져 있으며 모두 렌더링이 반복되는 것을 알 수 있다.
 
@@ -45,7 +45,7 @@ toc_sticky: true
 
 <br>
 
-**<mark style='background-color: #fff5b1'>React.memo로 해결</mark>**
+**<mark class="yellow">React.memo로 해결</mark>**
 
 React.memo는 React에서 컴포넌트의 불필요한 리렌더링을 방지하기 위한 **고차 컴포넌트(Higher Order Component)**이다. props가 변경되지 않는 한 컴포넌트를 리렌더링하지 않도록 메모이제이션을 적용하여 성능을 최적화한다.
 
@@ -78,7 +78,7 @@ export default GifItem;
 
 <br>
 
-**<mark style='background-color: #fff5b1'>개선 후 결과</mark>**
+**<mark class="yellow">개선 후 결과</mark>**
 
 빗금 되어 있는 부분이 memo 되어서 리렌더링이 일어나지 않는 부분이다.
 
@@ -95,7 +95,7 @@ Layout Shift 없이 애니메이션이 일어나야 한다. (대상) CustomCurso
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Layout Shift 해결 방법</mark>**
+**<mark class="yellow">Layout Shift 해결 방법</mark>**
 
 애니메이션이 레이아웃 시프트(Layout Shift) 없이 발생하도록 하려면, 레이아웃 재계산(레이플로우)를 최소화하고 **transform, translate**과 **opacity**를 활용하는 것이 중요하다. 이러한 속성은 레이아웃 재계산을 발생시키지 않기 때문에 레이아웃 시프트 없이 부드러운 애니메이션을 구현할 수 있다.
 
@@ -105,7 +105,7 @@ Layout Shift 없이 애니메이션이 일어나야 한다. (대상) CustomCurso
 
 <br>
 
-**<mark style='background-color: #fff5b1'>1. CustomCursor.tsx</mark>**
+**<mark class="yellow">1. CustomCursor.tsx</mark>**
 
 CustomCursor.tsx 최적화 전
 
@@ -136,7 +136,7 @@ useEffect(() => {
 
 <br>
 
-**<mark style='background-color: #fff5b1'>2. search 페이지 > hover</mark>**
+**<mark class="yellow">2. search 페이지 > hover</mark>**
 
 GifItem.module.css 최적화 전
 
@@ -192,7 +192,7 @@ GifItem.module.css 최적화 후
 
 <br>
 
-**<mark style='background-color: #fff5b1'>3. search 페이지 > 도움말 패널 열고닫기 애니메이션</mark>**
+**<mark class="yellow">3. search 페이지 > 도움말 패널 열고닫기 애니메이션</mark>**
 
 HelpPanel.module.css 최적화 전
 
@@ -263,7 +263,7 @@ Frame drop은 애니메이션이나 동영상 재생 등에서 발생하는 현�
 
 <br>
 
-**<mark style='background-color: #fff5b1'>1. CustomCursor</mark>**
+**<mark class="yellow">1. CustomCursor</mark>**
 
 빨간색이 없으므로 Partially Presented Frame가 일어나지 않고 있다.
 
@@ -271,7 +271,7 @@ Frame drop은 애니메이션이나 동영상 재생 등에서 발생하는 현�
 
 <br>
 
-**<mark style='background-color: #fff5b1'>2. 스크롤 애니메이션</mark>**
+**<mark class="yellow">2. 스크롤 애니메이션</mark>**
 
 빨간색이 없으므로 Partially Presented Frame가 일어나지 않고 있다
 

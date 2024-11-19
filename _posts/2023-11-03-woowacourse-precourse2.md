@@ -32,7 +32,7 @@ toc_sticky: true
 
 ### 🚀 기능 요구사항
 
-<mark style='background-color: #fff5b1'>초간단 자동차 경주 게임을 구현한다.</mark>
+<mark class="yellow">초간단 자동차 경주 게임을 구현한다.</mark>
 
 - 주어진 횟수 동안 n대의 자동차는 전진 또는 멈출 수 있다.
 - 각 자동차에 이름을 부여할 수 있다. 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.

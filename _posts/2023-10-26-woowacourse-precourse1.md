@@ -133,7 +133,7 @@ found 0 vulnerabilities
 
 ### 🚀 기능 요구사항
 
-<mark style='background-color: #fff5b1'>숫자야구 - 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.</mark>
+<mark class="yellow">숫자야구 - 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.</mark>
 
 1\. 게임 시작 문구 출력  
  `숫자 야구 게임을 시작합니다.`

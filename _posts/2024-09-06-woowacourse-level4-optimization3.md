@@ -19,13 +19,13 @@ toc_sticky: true
 
 ## <mark class="pink">🔥해당 스크립트 리소스만 가져오기</mark>
 
-**<mark style='background-color: #fff5b1'>목표</mark>**
+**<mark class="yellow">목표</mark>**
 
 Home 페이지에서 불러오는 스크립트 리소스에 Search 페이지의 소스 코드가 포함되지 않아야 한다.
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Code Splitting</mark>**
+**<mark class="yellow">Code Splitting</mark>**
 
 코드의 양이 너무 많아지는 경우, 하나의 번들 파일이 너무 커져, 그 파일을 불러오고 실행하는데 많은 시간이 소요될 수 있다. 그래서 코드 스플릿팅이 필요하다. 코드 스플릿팅의 장점은 반드시 필요한 코드만 불러오고 요청을 병렬적으로 처리해서 로딩 속도를 개선할 수 있다는 점이다.
 
@@ -33,7 +33,7 @@ Home 페이지에서 불러오는 스크립트 리소스에 Search 페이지의 
 
 <br>
 
-**<mark style='background-color: #fff5b1'>App.tsx</mark>**
+**<mark class="yellow">App.tsx</mark>**
 
 ```tsx
 import { lazy, Suspense } from "react";
@@ -67,7 +67,7 @@ export default App;
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Code Splitting 결과</mark>**
+**<mark class="yellow">Code Splitting 결과</mark>**
 
 Home 페이지에서는 Home.tsx 만 불러오는 것을 볼 수 있다.
 
@@ -84,13 +84,13 @@ Home 페이지에서는 Home.tsx 만 불러오는 것을 볼 수 있다.
 
 ## <mark class="pink">🔥아이콘 패키지 Tree Shaking</mark>
 
-**<mark style='background-color: #fff5b1'>목표</mark>**
+**<mark class="yellow">목표</mark>**
 
 `react-icons` 패키지에서 실제로 사용하는 아이콘 리소스만 빌드 결과에 포함되어야 한다.
 
 <br>
 
-**<mark style='background-color: #fff5b1'>webpack bundle analyzer</mark>**
+**<mark class="yellow">webpack bundle analyzer</mark>**
 
 번들 파일이 어떻게 구성되었는지 쉽게 파악하게 해주는 시각화 도구이다.
 
@@ -119,7 +119,7 @@ module.exports = {
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Tree Shaking</mark>**
+**<mark class="yellow">Tree Shaking</mark>**
 
 Tree shaking이란 사용되지 않는 코드를 제거하기 위해 JavaScript 컨텍스트에서 일반적으로 사용되는 용어이다. 우선 Tree Shaking은 CommonJS 모듈이 아닌 **ES Module** 방식에서 동작한다. 때문에 빌드되는 과정에서 ES Module로 변환되지 않도록 해야 한다.
 
@@ -151,7 +151,7 @@ CSS 파일은 코드에서 직접적으로 사용하지 않더라도 전역적�
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Tree Shaking 확인하기</mark>**
+**<mark class="yellow">Tree Shaking 확인하기</mark>**
 
 Tree shaking은 주로 production 환경에서 작동하는 최적화 기법이다. 개발하는 도중 prod로 빌드 된 파일의 Tree shaking을 확인하고 싶다면 아래와 같이 명령하면 된다.
 
@@ -161,7 +161,7 @@ npm run build:prod && npx webpack-bundle-analyzer dist/stats.json
 
 <br>
 
-**<mark style='background-color: #fff5b1'>최적화 전 - react-icons</mark>**
+**<mark class="yellow">최적화 전 - react-icons</mark>**
 
 react-icons 패키지에서 실제로 사용하는 아이콘 뿐만 아니라 모든 리소스가 빌드 결과에 포함된다. 아이콘을 3개만 import하고 있는데 stat size가 매우 큰 것을 볼 수 있다.
 
@@ -173,7 +173,7 @@ import { AiOutlineInfo, AiOutlineClose } from "react-icons/ai";
 
 <br>
 
-**<mark style='background-color: #fff5b1'>최적화 후 - @react-icons/all-file</mark>**
+**<mark class="yellow">최적화 후 - @react-icons/all-file</mark>**
 
 @react-icons/all-files 라이브러리는 아이콘 별로 자바스크립트 파일을 별도로 가지고 있기 때문에, 빌드 시 Tree Shaking 방식으로 더 적은 크기의 chunk를 만들 수 있다. stat size가 634.84kb에서 8.34kb로 줄어든 것을 볼 수 있다.
 
@@ -189,7 +189,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 ## <mark class="pink">🔥이미지 미리 가져오기</mark>
 
-**<mark style='background-color: #fff5b1'>preload</mark>**
+**<mark class="yellow">preload</mark>**
 
 [https://web.dev/preload-critical-assets/](https://web.dev/preload-critical-assets/)
 
@@ -207,7 +207,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 <br>
 
-**<mark style='background-color: #fff5b1'>prefetch</mark>**
+**<mark class="yellow">prefetch</mark>**
 
 [https://web.dev/link-prefetch/](https://web.dev/link-prefetch/)
 
@@ -225,7 +225,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 <br>
 
-**<mark style='background-color: #fff5b1'>preconnect</mark>**
+**<mark class="yellow">preconnect</mark>**
 
 [https://web.dev/preconnect-and-dns-prefetch/](https://web.dev/preconnect-and-dns-prefetch/)
 
@@ -241,7 +241,7 @@ import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 <br>
 
-**<mark style='background-color: #fff5b1'>hero 사이즈 별로 preload하기</mark>**
+**<mark class="yellow">hero 사이즈 별로 preload하기</mark>**
 
 [Fetch Priority API로 리소스 로드 최적화](https://web.dev/articles/fetch-priority?hl=ko)
 
@@ -275,7 +275,7 @@ hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이
 
 <br>
 
-**<mark style='background-color: #fff5b1'>defer</mark>**
+**<mark class="yellow">defer</mark>**
 
 - script fetch, script execution 2개 다 HTML parsing에 영향 안 가게 하려면 defer를 쓰면 된다.
 - HTML parsing 끝날 때까지 스크립트 실행을 지연(defer)한다.
@@ -284,7 +284,7 @@ hero 이미지는 화면이 로드되면서 바로 보여야 하는 리소스이
 
 <br>
 
-**<mark style='background-color: #fff5b1'>async</mark>**
+**<mark class="yellow">async</mark>**
 
 - script fetch 만 HTML parsing이랑 상관없이 하려면 async를 쓰면 된다.
 - script execution은 script fetch 다 되면 HTML parsing 중간에 일어날 수도 있다.

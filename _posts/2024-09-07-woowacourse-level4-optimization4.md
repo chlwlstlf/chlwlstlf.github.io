@@ -16,13 +16,13 @@ toc_sticky: true
 
 ## <mark class="pink">🔥CDN 캐시 설정하기</mark>
 
-**<mark style='background-color: #fff5b1'>목표</mark>**
+**<mark class="yellow">목표</mark>**
 
 CDN을 적용하고, 한 번 요청한 리소스는 CDN 캐시에서 불러와야 한다. S3, CloudFront 캐시 설정을 적용한다.
 
 <br>
 
-**<mark style='background-color: #fff5b1'>캐시 정책</mark>**
+**<mark class="yellow">캐시 정책</mark>**
 
 ![100](https://github.com/user-attachments/assets/aeafdefb-e023-4415-b0cb-c0d3fe961c8b)
 
@@ -32,7 +32,7 @@ CloudFront 캐시는 Recommended for S3로 하였다. S3에 원본을 저장하�
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Cache-Control 주요 설정</mark>**
+**<mark class="yellow">Cache-Control 주요 설정</mark>**
 
 1\. max-age
 
@@ -69,7 +69,7 @@ CloudFront 캐시는 Recommended for S3로 하였다. S3에 원본을 저장하�
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Cache-Control 사용 예시</mark>**
+**<mark class="yellow">Cache-Control 사용 예시</mark>**
 
 1\. html
 
@@ -114,13 +114,13 @@ Cache-Control: no-store
 
 ## <mark class="pink">🔥API 요청 캐싱하기</mark>
 
-**<mark style='background-color: #fff5b1'>목표</mark>**
+**<mark class="yellow">목표</mark>**
 
 GIPHY의 trending API를 Search 페이지에 들어올 때마다 새로 요청하지 않아야 한다. '검색'을 더 주요 기능으로 취급하여, trending 정보가 '실시간으로' 업데이트될 필요는 없다고 가정한다.
 
 <br>
 
-**<mark style='background-color: #fff5b1'>CacheStorage</mark>**
+**<mark class="yellow">CacheStorage</mark>**
 
 [CacheStorage MDN](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)
 
@@ -133,21 +133,21 @@ CacheStorage는 HTTP 응답을 캐싱하도록 설계되어 있어, 외부 API�
 
 <br>
 
-**<mark style='background-color: #fff5b1'>Cache API</mark>**
+**<mark class="yellow">Cache API</mark>**
 
 - Cache API는 단일 캐시 인스턴스를 조작하는 API이다. 즉, 하나의 캐시에서 항목을 추가, 가져오기, 삭제하는 작업을 할 수 있다.
 - cache.add(), cache.match(), cache.put(), cache.delete()
 
 <br>
 
-**<mark style='background-color: #fff5b1'>CacheStorage API</mark>**
+**<mark class="yellow">CacheStorage API</mark>**
 
 - CacheStorage API는 캐시 객체들(Cache API로 관리되는 여러 캐시의 집합)을 관리하기 위한 API이다. 즉, 여러 개의 Cache API 인스턴스를 저장하고 관리할 수 있는 상위 API이다.
 - caches.open(), caches.match(), caches.has(), caches.delete()
 
 <br>
 
-**<mark style='background-color: #fff5b1'>코드</mark>**
+**<mark class="yellow">코드</mark>**
 
 - Cache, Cache Storages는 Promise를 반환한다.
 - caches.match()는 request와 일치하는 response를 반환해준다. 만약 일치하는 반환값이 없다면 undefined를 반환한다. (promise resolves with undefined)
@@ -206,7 +206,7 @@ const getTrending: async function (): Promise<GifImageModel[]> {
 
 <br>
 
-**<mark style='background-color: #fff5b1'>결과</mark>**
+**<mark class="yellow">결과</mark>**
 
 `CACHE_EXPIRATION_TIME`를 30000(30초)으로 두고 확인한 결과
 

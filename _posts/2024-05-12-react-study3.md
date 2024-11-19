@@ -100,7 +100,7 @@ export default ComponentLifecycleExample;
 
 ## <mark class="pink">3. useEffect의 사용법</mark>
 
-<mark style='background-color: #fff5b1'>Effect</mark>
+<mark class="yellow">Effect</mark>
 
 - 특정 이벤트가 아닌 렌더링에 의해 직접 발생한다.
 - 서버 연결 설정은 어떤 상호 작용과도 상관없이 발생해야 하므로 Effect이다.
@@ -110,7 +110,7 @@ export default ComponentLifecycleExample;
 
 <br>
 
-<mark style='background-color: #fff5b1'>의존성 배열</mark>
+<mark class="yellow">의존성 배열</mark>
 
 - 의존성 배열이 없는 경우
 
@@ -216,7 +216,7 @@ export default ExampleComponent;
 - Strict Mode는 켜두고 Effect 함수 내에서 클린업 함수를 구현하는 것을 권장한다.
 - 클린업 함수를 사용하면 메모리 누수를 해결할 수 있다.
 
-<mark style='background-color: #fff5b1'>클린업 함수 예시</mark>
+<mark class="yellow">클린업 함수 예시</mark>
 
 ```jsx
 useEffect(() => {
@@ -238,14 +238,14 @@ useEffect(() => {
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>1) 렌더링을 위해 데이터를 변환할 때</mark>
+<mark class="yellow">1) 렌더링을 위해 데이터를 변환할 때</mark>
 
 - 컴포넌트의 최상위 레벨에서 모든 데이터를 변환한다.
 - 그러면 props나 state가 변경될 때마다 해당 코드가 자동으로 다시 실행된다.
 
 <br>
 
-<mark style='background-color: #fff5b1'>틀린 코드</mark>
+<mark class="yellow">틀린 코드</mark>
 
 ```jsx
 function Form() {
@@ -263,7 +263,7 @@ function Form() {
 
 <br>
 
-<mark style='background-color: #fff5b1'>올바른 코드</mark>
+<mark class="yellow">올바른 코드</mark>
 
 ```jsx
 function Form() {
@@ -278,7 +278,7 @@ function Form() {
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>2) 사용자 이벤트를 핸들링할 때</mark>
+<mark class="yellow">2) 사용자 이벤트를 핸들링할 때</mark>
 
 - 사용자가 제품을 장바구니에 넣을 때마다 알림을 표시하고 싶다.
 - useEffect로 코드 중복을 제거해야할까?
@@ -292,7 +292,7 @@ function Form() {
 
 <br>
 
-<mark style='background-color: #fff5b1'>틀린 코드</mark>
+<mark class="yellow">틀린 코드</mark>
 
 ```jsx
 function ProductPage({ product, addToCart }) {
@@ -317,7 +317,7 @@ function ProductPage({ product, addToCart }) {
 
 <br>
 
-<mark style='background-color: #fff5b1'>올바른 코드</mark>
+<mark class="yellow">올바른 코드</mark>
 
 ```jsx
 function ProductPage({ product, addToCart }) {

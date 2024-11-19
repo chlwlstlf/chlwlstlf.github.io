@@ -57,7 +57,7 @@ toc_sticky: true
 - 하이퍼텍스트: 네트워크, 하이퍼링크
 - HTML: 기초적인 구성요소, 마크업 언어
 
-<mark style='background-color: #fff5b1'>2. 유형</mark>
+<mark class="yellow">2. 유형</mark>
 
 - SOAP: HTTP, HTTPS, SMTP 등을 사용하여 XML 기반의 메시지를 네트워크 상태에서 교환하는 프로토콜
 - WSDL: 웹 서비스에 대한 상세 정보가 기술된 XML 형식으로 구현되어 있는 언어

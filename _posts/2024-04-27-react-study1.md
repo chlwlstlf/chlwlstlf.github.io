@@ -14,7 +14,7 @@ toc_sticky: true
 
 **1\. 선언형 UI 프로그래밍과 명령형 UI 프로그래밍의 차이점**
 
-<mark style='background-color: #fff5b1'>리액트는?</mark>
+<mark class="yellow">리액트는?</mark>
 
 - 리액트는 UI를 조작하는 선언적 방법을 제공하는 라이브러리다.
 - React에서는 직접 UI를 조작하지 않는다.
@@ -23,7 +23,7 @@ toc_sticky: true
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>선언형 UI</mark>
+<mark class="yellow">선언형 UI</mark>
 
 설명
 
@@ -51,7 +51,7 @@ toc_sticky: true
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>명령형 UI</mark>
+<mark class="yellow">명령형 UI</mark>
 
 설명
 
@@ -84,7 +84,7 @@ toc_sticky: true
 
 **2\. state가 왜 필요한가?**
 
-<mark style='background-color: #fff5b1'>state란?</mark>
+<mark class="yellow">state란?</mark>
 
 - state는 간단하게 말해서 변수이다. 하지만 const, let 등으로 선언한 변수와 다르게 값이 변하면 관련 있는 컴포넌트들이 재렌더링되어 화면이 바뀐다.
 
@@ -95,14 +95,14 @@ toc_sticky: true
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>state를 사용하는 이유</mark>
+<mark class="yellow">state를 사용하는 이유</mark>
 
 - 변수는 변경되어도 자동으로 화면이 바뀌지 않는다. 하지만 state는 변경되면 자동으로 화면이 바뀌기 때문에 state를 사용한다.
 
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>setState</mark>
+<mark class="yellow">setState</mark>
 
 state도 결국 객체이기 때문에, 같은 키값을 가진 경우라면 가장 마지막 실행값으로 덮어씌워지는데 이는 객체를 합치는 함수인 Object.assign()에서 확인할 수 있다.
 
@@ -137,7 +137,7 @@ const plus = () => {
 
 예시) 비필수적인 state 변수를 제거
 
-<mark style='background-color: #fff5b1'>리팩토링 전</mark>
+<mark class="yellow">리팩토링 전</mark>
 
 ```jsx
 const [isEmpty, setIsEmpty] = useState(true);
@@ -150,7 +150,7 @@ const [isError, setIsError] = useState(false);
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>리팩토링 과정</mark>
+<mark class="yellow">리팩토링 과정</mark>
 
 1\. state가 모순을 야기하나요?
 
@@ -176,7 +176,7 @@ const [isError, setIsError] = useState(false);
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>리팩토링 후</mark>
+<mark class="yellow">리팩토링 후</mark>
 
 ```jsx
 const [answer, setAnswer] = useState("");
@@ -234,7 +234,7 @@ state 를 생성할 떄는 ‘반드시 필요한’ ‘핵심적인’ state �
 
 **1\. 관련 state 그룹화하기**
 
-<mark style='background-color: #fff5b1'>틀린 코드</mark>
+<mark class="yellow">틀린 코드</mark>
 
 ```jsx
 const [x, setX] = useState(0);
@@ -243,7 +243,7 @@ const [y, setY] = useState(0);
 
 <br>
 
-<mark style='background-color: #fff5b1'>올바른 코드</mark>
+<mark class="yellow">올바른 코드</mark>
 
 ```jsx
 const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -254,7 +254,7 @@ const [position, setPosition] = useState({ x: 0, y: 0 });
 
 **2\. 깊게 중첩된 state 피하기**
 
-<mark style='background-color: #fff5b1'>틀린 코드</mark>
+<mark class="yellow">틀린 코드</mark>
 
 ```jsx
 export const initialTravelPlan = {
@@ -284,7 +284,7 @@ export const initialTravelPlan = {
 
 <br>
 
-<mark style='background-color: #fff5b1'>올바른 코드</mark>
+<mark class="yellow">올바른 코드</mark>
 
 ```jsx
 export const initialTravelPlan = {
@@ -318,20 +318,20 @@ export const initialTravelPlan = {
 
 **state 끌어올리기**
 
-<mark style='background-color: #fff5b1'>설명</mark>
+<mark class="yellow">설명</mark>
 
 - 때로는 두 컴포넌트의 state가 항상 함께 변경되기를 원할 때가 있다.
 - 그렇게 하려면 두 컴포넌트에서 state를 제거하고 가장 가까운 공통 부모로 이동한 다음 props를 통해 전달하면 된다.
 
 <br>
 
-<mark style='background-color: #fff5b1'>틀린 예시</mark>
+<mark class="yellow">틀린 예시</mark>
 
 ![1](https://github.com/chlwlstlf/data/assets/63334368/b3249519-a35c-4800-80a2-4181a97e1135)
 
 <br>
 
-<mark style='background-color: #fff5b1'>올바른 예시</mark>
+<mark class="yellow">올바른 예시</mark>
 
 ![2](https://github.com/chlwlstlf/data/assets/63334368/c1feb463-f362-437c-bfe6-b0e45f668cd2)
 
@@ -342,7 +342,7 @@ export const initialTravelPlan = {
 
 **1\. state는 트리의 한 위치에 묶인다**
 
-<mark style='background-color: #fff5b1'>설명</mark>
+<mark class="yellow">설명</mark>
 
 - 컴포넌트에 state를 부여할 때, state가 컴포넌트 내부에 “존재”한다고 생각할 수 있다.
 - 하지만 state는 실제로 React 내부에서 유지된다.
@@ -350,7 +350,7 @@ export const initialTravelPlan = {
 
 <br>
 
-<mark style='background-color: #fff5b1'>다른 위치</mark>
+<mark class="yellow">다른 위치</mark>
 
 ```jsx
 export default function App() {
@@ -394,7 +394,7 @@ export default function App() {
 
 <br>
 
-<mark style='background-color: #fff5b1'>같은 위치</mark>
+<mark class="yellow">같은 위치</mark>
 
 > React에서 중요한 것은 JSX 마크업이 아니라 UI 트리에서의 위치라는 것을 기억하세요! 이 컴포넌트에는 if 내부와 외부에 서로 다른 <Counter /> JSX 태그가 있는 두 개의 return절이 있습니다
 
@@ -414,7 +414,7 @@ export default function App() {
 
 **2\. 동일한 위치에서 state 재설정하기**
 
-<mark style='background-color: #fff5b1'>잘못된 코드</mark>
+<mark class="yellow">잘못된 코드</mark>
 
 ```jsx
 export default function Scoreboard() {
@@ -436,7 +436,7 @@ export default function Scoreboard() {
 
 <br>
 
-<mark style='background-color: #fff5b1'>올바른 코드</mark>
+<mark class="yellow">올바른 코드</mark>
 
 1\) 컴포넌트를 다른 위치에 렌더링하기
 
@@ -506,7 +506,7 @@ export default function Scoreboard() {
 
 **2\. useState에서 useReducer로 리펙토링 하는 방법**
 
-<mark style='background-color: #fff5b1'>1. state를 설정하는 것에서 action을 dispatch 함수로 전달하는 것으로 바꾸기</mark>
+<mark class="yellow">1. state를 설정하는 것에서 action을 dispatch 함수로 전달하는 것으로 바꾸기</mark>
 
 useState 코드
 
@@ -571,7 +571,7 @@ function handleDeleteTask(taskId) {
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>2. reducer 함수 작성하기</mark>
+<mark class="yellow">2. reducer 함수 작성하기</mark>
 
 <div style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #31708f; background-color: #d9edf7; border-color: #bce8f1;">
   <p>
@@ -616,7 +616,7 @@ function tasksReducer(tasks, action) {
 <br>
 <br>
 
-<mark style='background-color: #fff5b1'>3. 컴포넌트에서 reducer 사용하기</mark>
+<mark class="yellow">3. 컴포넌트에서 reducer 사용하기</mark>
 
 ```jsx
 const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
@@ -645,7 +645,7 @@ const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 
 **3\. Context 사용하기**
 
-<mark style='background-color: #fff5b1'>1. Context 생성하기</mark>
+<mark class="yellow">1. Context 생성하기</mark>
 
 ```jsx
 import { createContext } from "react";
@@ -655,7 +655,7 @@ export const LevelContext = createContext(1);
 
 <br>
 
-<mark style='background-color: #fff5b1'>2. Context 사용하기</mark>
+<mark class="yellow">2. Context 사용하기</mark>
 
 ```jsx
 export default function Heading({ children }) {
@@ -666,7 +666,7 @@ export default function Heading({ children }) {
 
 <br>
 
-<mark style='background-color: #fff5b1'>3. Context 제공하기</mark>
+<mark class="yellow">3. Context 제공하기</mark>
 
 ```jsx
 import { useContext } from "react";

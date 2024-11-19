@@ -33,7 +33,7 @@ toc_sticky: true
 
 ### 🚀 기능 요구사항
 
-<mark style='background-color: #fff5b1'>로또 게임 기능을 구현한다.</mark>
+<mark class="yellow">로또 게임 기능을 구현한다.</mark>
 
 - 로또 번호의 숫자 범위는 1~45까지이다.
 - 1개의 로또를 발행할 때 중복되지 않는 6개의 숫자를 뽑는다.
@@ -55,7 +55,7 @@ toc_sticky: true
 
 ---
 
-<mark style='background-color: #fff5b1'>입출력 순서</mark>
+<mark class="yellow">입출력 순서</mark>
 
 **1\. 구입 금액 입력**  
 구입 금액은 1,000원 단위로 입력 받으며 1,000원으로 나누어 떨어지지 않는 경우 예외 처리한다.

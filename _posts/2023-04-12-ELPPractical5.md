@@ -31,7 +31,7 @@ toc_sticky: true
 
 ### <mark class="pink">(1) 인터페이스 기능 구현 기술</mark>
 
-<mark style='background-color: #fff5b1'>1. JSON(JavaScript Object Notation)</mark>
+<mark class="yellow">1. JSON(JavaScript Object Notation)</mark>
 
 1\) 개념
 
@@ -42,7 +42,7 @@ toc_sticky: true
 
 - AJAX에서 많이 사용되고 XML을 대체하는 주요 데이터 포맷
 
-<mark style='background-color: #fff5b1'>2. XML(eXtensible Markup Language)</mark>
+<mark class="yellow">2. XML(eXtensible Markup Language)</mark>
 
 1\) 개념
 
@@ -53,7 +53,7 @@ toc_sticky: true
 
 - 송, 수신 시스템 간 데이터 연계의 편의성을 위해서 전송되는 데이터 구조를 동일한 형태로 정의
 
-<mark style='background-color: #fff5b1'>3. AJAX(Asynchronous Javascript And Xml)</mark>
+<mark class="yellow">3. AJAX(Asynchronous Javascript And Xml)</mark>
 
 1\) 개념
 

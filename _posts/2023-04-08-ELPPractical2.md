@@ -68,7 +68,7 @@ toc_sticky: true
 
 ### <mark class="pink">(2) UML의 유형</mark>
 
-<mark style='background-color: #fff5b1'>1. 클래스 다이어그램</mark>
+<mark class="yellow">1. 클래스 다이어그램</mark>
 
 2\) 구성요소
 

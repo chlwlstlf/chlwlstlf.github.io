@@ -56,7 +56,7 @@ toc_sticky: true
 
 1\) 개념: 데이터를 행과 열로 구성된 2차원 테이블 형태로 구성한 모델
 
-<mark style='background-color: #fff5b1'>2) 구성요소</mark>
+<mark class="yellow">2) 구성요소</mark>
 
 - 릴레이션: 테이블
 - 튜플: 행
@@ -70,7 +70,7 @@ toc_sticky: true
 
 1\) 개념: 관계형 데이터베이스에서 원하는 정보과 그 정보를 어떻게 유도하는가를 기술하는 절차적 정형 언어
 
-<mark style='background-color: #fff5b1'>2) 관계 대수 연산자의 종류</mark>
+<mark class="yellow">2) 관계 대수 연산자의 종류</mark>
 
 - 일반 집합 연산자: 합집합, 교집합, 차집합, 카티션 프로덕트
 - 순수 관계 연산자: 셀렉트, 프로젝트, 조인, 디비전
@@ -89,7 +89,7 @@ toc_sticky: true
 
 ### <mark class="pink">(5) 개체-관계(E-R) 모델</mark>
 
-<mark style='background-color: #fff5b1'>2) 기호</mark>
+<mark class="yellow">2) 기호</mark>
 
 - 개체 집합: □
 - 관계 집합: ◇
@@ -104,7 +104,7 @@ toc_sticky: true
 1\. 개념  
 중복성 제거, 이상 현상 방지, 일관성과 정확성 유지, 무손실 분해
 
-<mark style='background-color: #fff5b1'>2. 이상 현상</mark>
+<mark class="yellow">2. 이상 현상</mark>
 
 데이터 중복성으로 인해 릴레이션을 조작할 떄 발생
 

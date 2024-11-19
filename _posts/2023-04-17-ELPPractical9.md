@@ -124,7 +124,7 @@ toc_sticky: true
 
 ---
 
-<mark style='background-color: #fff5b1'>6. 네트워크 공격</mark>
+<mark class="yellow">6. 네트워크 공격</mark>
 
 - 스니핑: 공격x, 몰래 들여다봄, 수동적
 - 네트워크 스캐너, 스니퍼: 취약점 탐색

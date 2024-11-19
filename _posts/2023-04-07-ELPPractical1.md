@@ -14,7 +14,7 @@ toc_sticky: true
 
 ### <mark class="pink">(1) 소프트웨어 생명주기 모델</mark>
 
-1\. <mark style='background-color: #fff5b1'>소프트웨어 생명주기(SDLC)</mark>
+1\. <mark class="yellow">소프트웨어 생명주기(SDLC)</mark>
 
 - Software Development Life Cycle
 - 시스템의 요구분석부터 유지보수까지 전 공정을 체계화한 절차
@@ -31,7 +31,7 @@ toc_sticky: true
 
 - 폭포수 모델 (확실히 마무리, 선형 순차)
 - 프로토타이핑 모델 (피드백)
-- 나선형 모델 (점진적, <mark style='background-color: #fff5b1'>위험 감소</mark>)
+- 나선형 모델 (점진적, <mark class="yellow">위험 감소</mark>)
 - 반복적 모델 (일부분을 반복적)
 
 ### <mark class="pink">(2) 소프트웨어 개발 방법론</mark>
@@ -45,14 +45,14 @@ toc_sticky: true
 - 정보공학 방법론 (대형 프로젝트)
 - 객체 지향 방법론 (객체)
 - 컴포넌트 기반 방법론 (확장성, 재사용)
-- <mark style='background-color: #fff5b1'>애자일 방법론 (유연하고 빠르게 개발하는 방법론)</mark>
+- <mark class="yellow">애자일 방법론 (유연하고 빠르게 개발하는 방법론)</mark>
 - 제품 계열 방법론 (공통된 기능)
 
 3\. 애자일 방법론
 
-- <mark style='background-color: #fff5b1'>XP</mark>
+- <mark class="yellow">XP</mark>
   - 5가지 가치(용기, 단순성, 의사소통, 피드백, 존중)
-  - 12가지 기본원리(짝 프로그래밍, 공동 코드 소유, 지속적인 통합, 계획 세우기, 작은 릴리즈, 메타포어, 간단한 디자인, <mark style='background-color: #fff5b1'>테스트 기반 개발(TDD)</mark>, <mark style='background-color: #fff5b1'>리팩토링</mark>, 40시간 작업, 고객 상주, 코드 표준)
+  - 12가지 기본원리(짝 프로그래밍, 공동 코드 소유, 지속적인 통합, 계획 세우기, 작은 릴리즈, 메타포어, 간단한 디자인, <mark class="yellow">테스트 기반 개발(TDD)</mark>, <mark class="yellow">리팩토링</mark>, 40시간 작업, 고객 상주, 코드 표준)
 - 스크럼
 - 린
 
@@ -62,7 +62,7 @@ toc_sticky: true
 실세계의 개체를 속성과 메서드가 결합한 형태의 객체로 표현
 
 2\. 객체 지향 구성요소  
-<mark style='background-color: #fff5b1'>클래스</mark>, 객체, 메서드, 메시지, 인스턴스, 속성
+<mark class="yellow">클래스</mark>, 객체, 메서드, 메시지, 인스턴스, 속성
 
 3\. 객체 지향 기법
 
@@ -144,7 +144,7 @@ toc_sticky: true
 - 관심사
 - 관점
 
-<mark style='background-color: #fff5b1'>3. 소프트웨어 아키텍처 4+1 뷰</mark>
+<mark class="yellow">3. 소프트웨어 아키텍처 4+1 뷰</mark>
 
 - 4
   - 논리 뷰: 설계자, 개발자 관점
@@ -165,7 +165,7 @@ toc_sticky: true
 
 ### <mark class="pink">(4) 디자인 패턴</mark>
 
-<mark style='background-color: #fff5b1'>1. 목적</mark>
+<mark class="yellow">1. 목적</mark>
 
 - 생성
   - Builder: 조립
