@@ -23,7 +23,7 @@ name: "Jinsil"
 description: "진실의 블로그"
 url: "https://chlwlstlf.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
-repository: "https://chlwlstlf.github.io"
+repository: "chlwlstlf/chlwlstlf.github.io"
 teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: "/assets/images/jinsillogo.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
