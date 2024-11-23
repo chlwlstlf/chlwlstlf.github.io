@@ -151,18 +151,21 @@ Header는 토큰의 타입(JWT)과 암호화 알고리즘, Payload는 유저의 
 
 ## <mark class="pink">📌JWT의 문제</mark>
 
-1\. 탈취(Man-in-the-Middle)
+**<mark class="yellow">1. 탈취(Man-in-the-Middle)</mark>**
 
 JWT 토큰이 탈취되면, 공격자는 그 토큰을 사용해 인증된 사용자처럼 서버에 접근할 수 있습니다.
 서버는 JWT의 서명을 검증할 수 있지만, 누가 해당 토큰을 사용 중인지는 구분할 수 없습니다. 따라서 탈취된 토큰을 막을 수 없습니다.
 
-2\. 유효기간 관리의 어려움
+<br>
+
+**<mark class="yellow">2. 유효기간 관리의 어려움</mark>**
 
 JWT는 기본적으로 "무상태(Stateless)"이므로, 서버는 토큰을 생성한 이후 만료 전까지 토큰 자체를 철회하거나 무효화할 수 없습니다(단, 예외적으로 Redis와 같은 저장소를 이용해 블랙리스트를 구현할 수 있습니다).
 
-유효기간이 **짧으면 사용자 경험(UX)**이 저하됩니다(사용자가 로그인을 자주 요구받음).
+<br>
 
-유효기간이 길면 보안 위험이 커집니다(탈취 시 오랜 시간 동안 유효).
+유효기간이 **짧으면 사용자 경험(UX)**이 저하됩니다(사용자가 로그인을 자주 요구받음).  
+유효기간이 **길면 보안 위험**이 커집니다(탈취 시 오랜 시간 동안 유효).
 
 <br>
 <br>
@@ -220,14 +223,16 @@ Refresh Token 요청 시 Refresh Token의 유효성을 검증합니다.
 
 유효하다면, 새로운 Access Token을 생성합니다.
 
-Refresh Token이 유효하지 않다면, 로그아웃을 강제하거나 재로그인을 요구합니다.
+유효하지 않다면, 로그아웃을 강제하거나 재로그인을 요구합니다.
+
+<br>
 
 ![1](https://github.com/user-attachments/assets/199ae9f6-f63c-4abe-984b-a1f72293f49b)
 
 <br>
 <br>
 
-## <mark class="pink">📌Refresh Token을 도입한 이유</mark>
+## <mark class="pink">🔥Refresh Token을 도입한 이유</mark>
 
 프로젝트에 도입한 이유는 사실 다양한 경험을 해보고 싶었기 때문입니다. FE에서 Refresh Token을 구현하는 것이 조금 어렵다는 글을 보았고, 프로젝트에서 그 경험을 하고 싶었습니다.
 
@@ -236,13 +241,14 @@ Refresh Token이 유효하지 않다면, 로그아웃을 강제하거나 재로�
 <br>
 <br>
 
-## <mark class="pink">📌토큰 만료 시간</mark>
+## <mark class="pink">🔥토큰 만료 시간</mark>
 
 Access Token은 30분으로 짧게 설정했습니다. 탈취 시 공격자가 사용할 수 있는 기간을 제한하기 위함이었습니다.
 
 Refresh Token은 1주일로 설정했습니다. 도메인이 코드 리뷰인데 이 활동은 일주일을 넘기지 않을 것으로 판단하고 활동을 마친 사이클일 때마다 로그인을 하는 것이 좋을 것 이라고 판단하였습니다.
 
 <div class="blue-box">
+  <b>참고</b>
   <div>Google OAuth: Access Token은 1시간, Refresh Token은 최대 6개월.</div>
   <div>GitHub: Access Token은 1시간, Refresh Token은 사용자가 설정한 기간.</div>
 </div>
@@ -257,6 +263,8 @@ Refresh Token은 1주일로 설정했습니다. 도메인이 코드 리뷰인데
 
 하지만 두 개 이상의 작업이 동시에 실행되면서 그 실행 순서나 타이밍에 따라 결과가 달라질 수 있는 `Race Condition` 문제가 발생할 수 있습니다.  
 여러 요청이 동시에 발생할 때, Access Token이 localStorage에 저장되기 전에 다른 요청이 401을 반환할 가능성이 있고 여기서 문제가 생길 수 있습니다.
+
+<br>
 
 **apiClient.ts**
 
@@ -332,7 +340,7 @@ const fetchWithToken = async (
 <br>
 <br>
 
-## <mark class="pink">📌개선된 코드</mark>
+## <mark class="pink">🔥개선된 코드</mark>
 
 그럼 어떻게 이 문제를 해결할 수 있을까요?
 
@@ -362,19 +370,19 @@ const fetchWithToken = async (
 4\. refreshAccessToken 실행
 
 **refreshAccessToken 함수**  
-[토큰 갱신 실패했을 때]  
+_[토큰 갱신 실패했을 때]_  
 5\. refresh Token으로 새로운 Access Token 받기  
 6\. refresh token도 만료 됐다면 재로그인 유도, localStorage 초기화, 새로고침  
 7\. processQueue 함수를 실행하여 대기 중이던 모든 요청에 error를 전달, isRefreshing 초기화
 
-[토큰 갱신 성공했을 때]  
+_[토큰 갱신 성공했을 때]_  
 8\. 정상적으로 새로운 Access Token을 받았으면 대기 중이던 모든 요청에 새로운 토큰 전달, isRefreshing 초기화
 
 **다시 fetchWithToken 함수**  
-[첫 번째 api 요청]  
+_[첫 번째 api 요청]_  
 9\. 새로운 Access Token으로 첫 번째 api 재요청
 
-[두 번째 api 요청부터]  
+_[두 번째 api 요청부터]_  
 10\. 토큰 갱신 중인 상태면 요청의 resolve와 reject를 failedQueue에 추가, 두 번째 요청부터 failedQueue에 추가됨, 이 Promise는 processQueue에서 resolve/reject될 때까지 대기  
 11\. processQueue가 호출되어 Promise가 resolve되면 then 블록 실행, token은 새 Access Token이며, 이를 사용해 요청을 재실행
 
@@ -474,8 +482,8 @@ const fetchWithToken = async (
       new Promise<string>((resolve, reject) => {
         failedQueue.push({ resolve, reject });
       }).then(async (token) => {
-        // 11. processQueue가 호출되어 Promise가 resolve되면 then 블록 실행.
-        // token은 새 Access Token이며, 이를 사용해 요청을 재실행.
+        // 11. processQueue가 호출되어 Promise가 resolve되면 then 블록 실행
+        // token은 새 Access Token이며, 이를 사용해 요청을 재실행
         requestInit.headers = {
           ...requestInit.headers,
           Authorization: `Bearer ${token}`,
@@ -531,7 +539,7 @@ const fetchWithToken = async (
 <br>
 <br>
 
-## <mark class="pink">📌코드 추가 설명</mark>
+## <mark class="pink">🔥코드 추가 설명</mark>
 
 **<mark class="yellow">failedQueue는 Promise 형태인가?</mark>**
 
