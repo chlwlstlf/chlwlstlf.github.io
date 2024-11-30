@@ -18,7 +18,7 @@ toc_sticky: true
 - State를 값으로 넘기고 그 State을 다룰 수 있는 핸들러를 콜백으로 넘긴다.
 - 값을 \_\_\_ 으로 받는다
 
-<br/>
+<br>
 
 **2\. Uncontrolled Component (비제어 컴포넌트)**
 
@@ -28,8 +28,8 @@ toc_sticky: true
 - 오직 사용자만 값과 상호작용
 - 값을 \_\_\_ 로 사용한다.
 
-<br/>
-<br/>
+<br>
+<br>
 
 ## <mark class="pink">⚓️ Hooks API</mark>
 
@@ -39,7 +39,7 @@ toc_sticky: true
 - 중복과 관심사 분리에 대한 문제: 라이프사이클 메서드에 다양한 관심사의 로직이 조각조각 흩어지는 일이 자주 발생했다.
 - 개념 자체로 인한 문제: this 바인딩을 이해하기 어렵다.
 
-<br/>
+<br>
 
 **React팀의 Solution, Hooks API**
 

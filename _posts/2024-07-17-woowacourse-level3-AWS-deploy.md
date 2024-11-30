@@ -26,47 +26,38 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark class="pink">🔥1. 배포용 빌드 준비하기</mark>
+## <mark class="pink">🔥1. S3 버킷 만들기</mark>
+
+1\. 버킷 이름에 `-` 외에 다른 특수 기호가 들어가면 안 됩니다. [버킷 이름 지정 규칙 보기](https://docs.aws.amazon.com/console/s3/bucket-naming)
+
+![image (27)](https://github.com/user-attachments/assets/7f9a7646-801e-4e16-b295-5dec87370a7d)
+
+2\. AWS 리전은 대한민국(서울)으로 지정합니다. 오른쪽 상단 드롭다운으로 지정할 수 있습니다.
+
+3\. S3가 호스팅 역할을 하길 원하면 차단을 해제해야 합니다. 지금은 Cloudfront와 연결하여 Cloudfront가 호스팅 역할을 하길 원하기 때문에 차단하였습니다.
+
+![image (23)](https://github.com/user-attachments/assets/d66cdab3-4502-498c-aa8b-4a4e293ce4f2)
+
+![image (25)](https://github.com/user-attachments/assets/5784cdfd-ef9e-40ca-8215-d0a18b08eef7)
+
+![image (26)](https://github.com/user-attachments/assets/814bff51-bae7-49de-ada9-a585bd6cdac9)
+
+<br>
+<br>
+
+## <mark class="pink">🔥2. 버킷에 빌드 파일 업로드하기</mark>
+
+1\. 생성된 버킷을 찾아 들어갑니다.
+
+2\. 터미널 창에 아래 코드를 실행한 후 생성된 빌드 파일을 올립니다.
 
 ```bash
 npm run build
 ```
 
-dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
-
-<br>
-<br>
-
-## <mark class="pink">🔥2. S3 버킷 생성하기</mark>
-
-1\. ‘버킷 만들기’를 클릭합니다.
-2\. 리전은 상관없지만 대한민국(서울)으로 지정합니다.
-3\. 모든 퍼블릭 액세스 차단에는 체크하지 않습니다. 프로젝트를 업로드해서 공개할 예정이기 때문에 퍼블릭 액세스를 허용합니다.
-
-<br>
-<br>
-
-## <mark class="pink">🔥3. 파일 업로드</mark>
-
-1\. 생성된 버킷을 찾아 들어갑니다.
-2\. 업로드를 눌러서 dist안에 있는 파일들을 모두 업로드합니다.
-3\. 만들어진 버킷 이름을 누릅니다.
-4\. 속성 > 정적 웹 사이트 호스팅을 활성화로 변경합니다.
-
-<br>
-<br>
-
-## <mark class="pink">🔥4. 권한 설정</mark>
-
-1\. 속성 > ARN 주소 복사 후 권한 메뉴로 이동합니다.
-2\. 권한 > 하단 스크롤 > 버킷 정책 > 편집 > 정책 생성기
-3\. 아래처럼 세팅
-
-![1](https://github.com/user-attachments/assets/ab8319e5-08a7-4603-be9c-75e89685c7ae)
-
-4\. Add Statement 버튼 클릭하면 Generate Policy 버튼 클릭 > Policy JSON Document 뜨는 코드 모두 복사 후 버킷 정책 편집 내용에 붙여넣습니다.
-
-- 주의!! Resource: 뒤에 주소 /\* 를 붙여줍니다.
+> 💡 주의 1. dist 폴더를 올리는 게 아니라 dist 폴더 안의 **파일**을 업로드해야 합니다.  
+> 💡 주의 2. public 폴더 안의 내용은 빌드가 되지 않으므로 public 폴더 안의 파일도 같이 업로드 합니다.  
+> 💡 주의 3. public과 dist 폴더 안에 index.html이 있습니다. 유효한 파일은 dist에 있는 것이므로 public의 index.html말고 dist의 index.html만 올리면 됩니다.
 
 <br>
 <br>
@@ -215,7 +206,17 @@ dist 폴더 안의 파일을 전부 S3 버킷에 올려야 합니다.
 <br>
 <br>
 
-## <mark class="pink">🔥2. 오류 응답 생성</mark>
+## <mark class="pink">🔥2. S3와 연결하기</mark>
+
+S3와 Cloudfront를 연결하여면 정책을 작성해야 합니다.
+
+`Cloudfront > 원본 > 편집`으로 들어가면 정책을 복사할 수 있습니다. 정책은 JSON 형태입니다.
+![image (28)](https://github.com/user-attachments/assets/ed37843a-529f-4977-b372-4ed3981cf009)
+
+그 후 연결한 버킷에 가서 `권한 > 버킷 정책`에 복사한 정책을 붙여 넣으면 됩니다.
+![image (29)](https://github.com/user-attachments/assets/36f9b2c2-7602-49ba-b973-512ae4b8c2fb)
+
+## <mark class="pink">🔥3. 오류 응답 생성</mark>
 
 S3와 Cloudfront 연결 후 403 error, Access Denied 에러 메세지가 뜨게 되었습니다. S3에 SPA(React)를 이용하여 구성을 하면 Redirect가 발생하여 403/404와 같은 Access Denied가 발생하게 된 것입니다.
 
@@ -226,7 +227,7 @@ cloudfront에서 아래와 같이 `사용자 정의 오류 응답 생성`을 하
 <br>
 <br>
 
-## <mark class="pink">🔥3. 무효화하기</mark>
+## <mark class="pink">🔥4. 무효화하기</mark>
 
 Cloudfront는 기본적으로 24시간동안(기본 TTL) 오리진의 응답을 캐시합니다. 이 동안에 엣지 로케이션에 요청이 오는 경우에는 캐시된 응답을 사용합니다. 따라서 S3 버킷에 새로운 객체를 업로드했을 때 무효화를 해줘야 변경된 페이지가 보입니다.
 

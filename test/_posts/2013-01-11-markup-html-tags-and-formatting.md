@@ -107,8 +107,8 @@ Do It Live
 <form>
   <fieldset>
     <legend>Personalia:</legend>
-    Name: <input type="text" size="30"><br/>
-    Email: <input type="text" size="30"><br/>
+    Name: <input type="text" size="30"><br>
+    Email: <input type="text" size="30"><br>
     Date of birth: <input type="text" size="10">
   </fieldset>
 </form>

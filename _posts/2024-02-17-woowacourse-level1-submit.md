@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 제출 방법"
+title: "[우테코]Level1 페어프로그래밍 제출 방법"
 categories: woowacourse
 toc: true
 toc_sticky: true
@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 1단계, 2단계 제출 방법
 
-## <mark class="pink">🔌 pair와 구현한 코드 내보내기</mark>
+## <mark class="pink">📝pair와 구현한 코드 내보내기</mark>
 
 (내 vscode에서 구현했다고 가정)
 
@@ -17,7 +17,7 @@ toc_sticky: true
 - pair는 본인이 포크한 저장소에 `step1` 브랜치를 생성
 - pair가 저장소에서 나를 colaborator로 추가
 
-<br/>
+<br>
 
 2\. pair 저장소 추가 & push
 
@@ -28,19 +28,19 @@ git remote add second {pair의 저장소 url}
 git push second step1 //pair의 step1 브랜치에 push
 ```
 
-<br/>
-<br/>
+<br>
+<br>
 
-## <mark class="pink">📝 Pull Request에 들어갈 내용</mark>
+## <mark class="pink">📝Pull Request에 들어갈 내용</mark>
 
 1\. 어떻게 해결하려고 했는 지  
 2\. (덜 됐다면) 덜 된 이유  
 3\. 글 다듬어서 쓰기
 
-<br/>
-<br/>
+<br>
+<br>
 
-## <mark class="pink">📁 미션 2단계 제출 방법</mark>
+## <mark class="pink">📝미션 2단계 제출 방법</mark>
 
 1\. merge를 완료했다는 통보를 받으면 브랜치 변경 및 작업 브랜치 삭제(option)한다.
 
@@ -49,7 +49,7 @@ git checkout main
 git branch -D step1
 ```
 
-<br/>
+<br>
 
 2\. 통합(merge)한 woowacourse 저장소와 동기화하기 위해 woowacourse 저장소 추가
 
@@ -59,7 +59,7 @@ git branch -D step1
 git remote add upstream https://github.com/woowacourse/javascript-racingcar.git
 ```
 
-<br/>
+<br>
 
 3\. woowacourse 저장소에서 자기 브랜치 가져오기(또는 갱신하기)
 
@@ -68,7 +68,7 @@ git fetch upstream chlwlstlf
 git branch -a //remotes/upstream/chlwlstlf 브랜치 생성 확인
 ```
 
-<br/>
+<br>
 
 4\. woowacourse 저장소 브랜치와 동기화하기
 
@@ -93,10 +93,10 @@ git rebase upstream/chlwlstlf
   </p>
 </div>
 
-<br/>
+<br>
 
 5\. main 브랜치에 푸시하기
 
-<br/>
+<br>
 
 6\. stetp2 브랜치 만든 후 main 브랜치 풀 받기

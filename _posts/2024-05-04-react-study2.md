@@ -1,12 +1,14 @@
 ---
 layout: single
-title: "[React]리액트 파이버, 렌더링"
+title: "[React]리액트의 렌더링"
 categories: react
 toc: true
 toc_sticky: true
 ---
 
-# 리액트 스터디2 - 가상 DOM, 리액트 파이버, 렌더링 과정
+# 리액트 스터디2 - 가상 DOM, 렌더링 과정
+
+[텐텐의 리액트의 렌더링](https://www.youtube.com/watch?v=oLfh2UZ4JWU&t=167s){: .btn .btn--primary}
 
 ## <mark class="pink">📌리액트의 렌더링이란?</mark>
 

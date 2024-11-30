@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 미션1 LMS 강의 자료1
 
-## <mark class="pink">📖 좋은 코드</mark>
+## <mark class="pink">📖좋은 코드</mark>
 
 1\. 가독성이 좋은 코드  
 다른 사람이 코드를 빠르게 이해할 수 있게 한다.
@@ -28,18 +28,19 @@ toc_sticky: true
 6\. 테스트하기 쉬운 코드  
 정상적으로 동작하는 것을 보장하기 위해 테스트 코드를 작성한다.
 
----
+<br>
+<br>
 
-## <mark class="pink">📖 단위 테스트</mark>
+## <mark class="pink">📖단위 테스트</mark>
 
-**기본 용어**
+**<mark class="yellow">기본 용어</mark>**
 
 - 프로덕션 코드: 실제 코드, 테스트 대상이 되는 코드
 - 테스트 코드: Car.js의 테스트 코드는 Car.test.js
 
-<br/>
+<br>
 
-**테스트 케이스**
+**<mark class="yellow">테스트 케이스</mark>**
 
 - given(arrange): 테스트할 동작을 호출하기 위해 필요한 사전 준비 작업
 - when(act): 테스트 대상 동작 호출
@@ -58,17 +59,21 @@ test("랜덤값이 4이상이면 1칸 전진", () => {
 });
 ```
 
-<br/>
+<br>
 
-**Setup & Teardown**
+**<mark class="yellow">Setup & Teardown</mark>**
+
+[Setup & Teardown](https://jestjs.io/docs/setup-teardown)
 
 - beforeEach, afterEach: 반복적으로 수행해야 하는 작업
 - beforeAll, afterAll: 일회성으로 설정
 - describe: 이 블록 내부에만 before* 과 after* 를 적용할 수도 있다.
 
-<br/>
+<br>
 
-**Jest Matchers**
+**<mark class="yellow">Jest Matchers</mark>**
+
+[Jest Matchers](https://jestjs.io/docs/using-matchers)
 
 정의: 다양한 방식으로 값을 테스트할 수 있게 하는 것
 
@@ -80,9 +85,12 @@ test("랜덤값이 4이상이면 1칸 전진", () => {
 - toContain
 - toThrow
 
-## <mark class="pink">📖 단위 테스트 예시</mark>
+<br>
+<br>
 
-**Calculator.js (프로덕션 코드)**
+## <mark class="pink">📖단위 테스트 예시</mark>
+
+**<mark class="yellow">Calculator.js (프로덕션 코드)</mark>**
 
 ```js
 class Calculator {
@@ -106,7 +114,11 @@ class Calculator {
 export default Calculator;
 ```
 
-**Calculator.test.js** - AAA 패턴 (테스트 코드)
+<br>
+
+**<mark class="yellow">Calculator.test.js</mark>**
+
+AAA 패턴 (테스트 코드)
 
 ```js
 import Calculator from "../src/Calculator";
@@ -126,11 +138,9 @@ describe("계산기 기능 검증", () => {
     expect(result).toBe(3);
   });
 
-  //뺄셈
-  //위와 비슷
+  //뺄셈(위와 비슷)
 
-  //곱셈
-  //위와 비슷
+  //곱셈(위와 비슷)
 
   //나눗셈
   test("두 개의 수를 받아서 나눗셈을 한다.", () => {
@@ -160,7 +170,10 @@ describe("계산기 기능 검증", () => {
 });
 ```
 
-## <mark class="pink">📖 단위 테스트 사용 Tip</mark>
+<br>
+<br>
+
+## <mark class="pink">📖단위 테스트 사용 Tip</mark>
 
 💡 팁1. Jest > docs > getting start 에서 도움받을 수 있음  
 💡 팁2. test.skip(), xtest()는 걔만 빼고 테스트, test.only()는 걔만 테스트

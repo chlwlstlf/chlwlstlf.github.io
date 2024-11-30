@@ -17,7 +17,7 @@ toc_sticky: true
 - `Cars`에서는 문자열로 받은 값을 배열로 바꾼 후 공백과 중복 검사를 한다.
 - 이를 통과했다면 배열 각각의 이름은 `Car` 안에서 이름이 몇 글자인지 확인한다.
 
-<br/>
+<br>
 
 **2\. 도메인에서 도메인으로 값을 내보낼 때: getter**
 
@@ -26,8 +26,8 @@ toc_sticky: true
 - `get name()`은 다른 곳에서 .name으로 값처럼 불러올 수 있는데 이때 name이 name을 불러오는 것인지 할당하는 것인지 다른 사람들이 알기 어렵다.
 - 명확한 이름인 `getName()`으로 바꾼 후 함수를 불러오는 것으로 변경했다.
 
-<br/>
-<br/>
+<br>
+<br>
 
 ## <mark class="pink">1단계 피드백</mark>
 
@@ -36,7 +36,7 @@ toc_sticky: true
 - regex가 읽기 좋은 도구는 아니다.
 - isNan, isNumber 같은 함수를 사용하면 훨씬 직관적인 코드다.
 
-<br/>
+<br>
 
 **2\. 클래스가 필요할 때만 사용하기**
 
@@ -62,8 +62,8 @@ toc_sticky: true
   }
   ```
 
-<br/>
-<br/>
+<br>
+<br>
 
 ## <mark class="pink">1단계 수정 사항</mark>
 
@@ -72,14 +72,14 @@ toc_sticky: true
 - ‘:’ 과 ‘,’ 를 상수화 했었는데 상수 이름이 COLON과 COMMA였기 때문에 만약 ‘:’ 이 ‘-’으로 바뀌게 되면 COLON 이라는 이름도 바꿔야 한다고 생각해서 상수화한 것을 없앴다.
 - 피드백을 반영하여 1을 FORWARD로 상수화하였다.
 
-<br/>
+<br>
 
 **2\. 불필요한 class를 변경하기**
 
 - InputView, OutView, console은 안에 static 밖에 없어서 class 역할을 제대로 하지 못 했다. 따라서 객체로 묶어서 쓰는 방식으로 변경했다.
 - createRandom도 class였는데 여러 메소드나 인자를 묶어서 사용하지 않고 랜덤한 값을 return하는 기능만 하면 되기 때문에 함수로 변경했다. 또 createRandom이 자동차 경주에 직접적인 영향을 주지 않는다고 생각하여 utils 폴더에 넣어주었다. (꼭 랜덤이 아니어도 forward 조건은 문제에 따라 언제든지 바뀔 수 있다고 생각했다.)
 
-<br/>
+<br>
 
 **3\. 재입력 오류 해결하기**
 
@@ -93,8 +93,8 @@ toc_sticky: true
   }
   ```
 
-<br/>
-<br/>
+<br>
+<br>
 
 ## <mark class="pink">2단계 피드백</mark>
 
