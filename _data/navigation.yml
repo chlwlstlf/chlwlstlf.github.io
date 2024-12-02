@@ -11,6 +11,9 @@ docs:
       - title: "React"
         url: /categories/react
         category: "react"
+      - title: "Next.js"
+        url: /categories/next
+        category: "next"
       - title: "UMC세종대"
         url: /categories/umc
         category: "umc"
