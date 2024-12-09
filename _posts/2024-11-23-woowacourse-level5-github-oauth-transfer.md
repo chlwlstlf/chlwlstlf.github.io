@@ -27,7 +27,7 @@ toc_sticky: true
 
 ## <mark class="pink">📌OAuth 앱의 소유권 이전</mark>
 
-[OAuth 앱의 소유권 이전](https://docs.github.com/ko/apps/oauth-apps/maintaining-oauth-apps/transferring-ownership-of-an-oauth-app)
+[깃허브 OAuth 앱의 소유권 이전](https://docs.github.com/ko/apps/oauth-apps/maintaining-oauth-apps/transferring-ownership-of-an-oauth-app)
 
 ![이전1](https://github.com/user-attachments/assets/7703765a-b002-4011-ab8c-68de346acbef)
 

@@ -15,7 +15,7 @@ toc_sticky: true
 **종류**  
 Number, String, Boolean, null, undefined, Symbol
 
-**불변셩**  
+**불변성**  
 한 번 생성된 원시 값은 읽기 전용인 값으로써 변경할 수 없다.  
 어느 한 쪽에서 재할당을 통해 값을 변경하더라고 서로 간섭할 수 없다.
 
@@ -82,13 +82,13 @@ var copy = user;
 2\. let, const
 
 - let, const는 선언만 한다.
-- 유효한 값을 읽어오지 못 해 참조 에러가 뜬다. 그래서 `일시적 사각지대`가 생긴다.
+- 유효한 값을 읽어오지 못 해 참조 에러가 뜬다. 그래서 **일시적 사각지대**가 생긴다.
 
 <br>
 
 **함수 호이스팅**
 
-1\. 함수 표현식 → 변수 호이스팅과 똑같이 동작
+1\. 함수 표현식 (변수 호이스팅과 똑같이 동작)
 
 - var로 선언된 함수 또한 undefined로 초기화 되어있고 함수와 달리 호출될 수 없기 때문에 `undefined is not a function`이라는 타입 에러가 발생한다.
 - let, const로 선언하면 초기화되어 있지 않아 `Cannot read its value yet`이라는 참조 에러가 발생한다.
@@ -102,7 +102,7 @@ var copy = user;
 
 **<mark class="yellow">Execution Context (실행 컨텍스트)</mark>**
 
-[하루의 실행 컨텍스트](https://www.youtube.com/watch?v=EWfujNzSUmw&t=5s)
+[[테코톡] 하루의 실행 컨텍스트](https://www.youtube.com/watch?v=EWfujNzSUmw&t=5s)
 
 **정의**  
 실행할 코드에 제공할 환경 정보들을 모아놓은 객체
@@ -117,8 +117,8 @@ this 값 설정
 
 **<mark class="yellow">Scope</mark>**
 
-[엘라의 Scope & Closure](https://www.youtube.com/watch?v=PVYjfrgZhtU)  
-[루루의 Scope & Closure](https://www.youtube.com/watch?v=xJtVVLPxgco)
+[[테코톡] 엘라의 Scope & Closure](https://www.youtube.com/watch?v=PVYjfrgZhtU)  
+[[테코톡] 루루의 Scope & Closure](https://www.youtube.com/watch?v=xJtVVLPxgco)
 
 **정의**  
 현재 접근할 수 있는 변수들의 범위
@@ -128,21 +128,21 @@ this 값 설정
 블록에 의해서도 스코프 경계가 발생  
 자바스크립트의 모든 함수는 상위 스코프를 기억한다.
 
+**식별자 결정**  
+코드에서 변수나 함수의 값을 결정하는 것
+
 **Scope 레벨**  
-블록 레벨 스코프: if문, for문, 함수 ...(Javascript에서 블록 스코프를 사용하기 위해 let과 const를 도입)  
+블록 레벨 스코프: if문, for문, 함수 ... (Javascript에서 블록 스코프를 사용하기 위해 let과 const를 도입)  
 함수 레벨 스코프: 함수
 
 **Scope 종류**  
 동적 스코프: 함수가 호출되는 시점에 결정  
 정적 스코프(렉시컬 스코프): 함수가 정의되는 시점에 결정, Javascript에서 함수는 생성되면서 자신의 내부 슬롯에 상위 스코프의 참조를 저장한다.
 
-**식별자 결정**  
-코드에서 변수나 함수의 값을 결정하는 것
-
 **Scope Chain**  
 식별자의 유효범위를 안에서부터 바깥으로 차례로 검색해 나가는 것  
 현재 호출된 함수가 선언될 당시의 렉시컬 환경을 참조  
-선언하다라는 행위가 실제로 일어날 수 있는 시점이란 콜 스택 상에서 어떤 실행 컨텍스트가 활성화된 상태일 뿐
+선언하다라는 행위가 실제로 일어날 수 있는 시점이란 콜 스택 상에서 어떤 실행 컨텍스트가 활성화된 상태
 
 <br>
 
@@ -250,7 +250,7 @@ prototype 속성은 Object() 객체라는 사실과 객체 속성 검색 체인(
 ## <mark class="pink">📚Prototype</mark>
 
 [Object prototypes](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes)  
-[아놀드의 프로토타입 뽀개기](https://www.youtube.com/watch?v=TqFwNFTa3c4)
+[[테코톡] 아놀드의 프로토타입 뽀개기](https://www.youtube.com/watch?v=TqFwNFTa3c4)
 
 **<mark class="yellow">프로토타입</mark>**
 
@@ -267,30 +267,36 @@ new 연산자로 constructor를 호출하면 instance가 만들어진다.
 **proto 접근자 프로퍼티**  
 모든 객체는 proto 접근자 프로퍼티를 통해 자신의 프로토타입, 즉 [[Prototype]] 내부 슬롯에 간접적으로 접근할 수 있다.
 
-**프로토타입 체인**
+<br>
 
+**<mark class="yellow">프로토타입 체인</mark>**
+
+**설명**  
 어떤 객체에 특정 프로퍼티나 메서드에 접근할 때 특정 프로퍼티나 메서드가 없다면 내부 링크를 통해 상위 프로토타입으로 접근하는 행위
 
+**Object**  
 자바스크립트의 모든 프로토타입 체인은 Object.prototype에서 끝나게 된다. Object.prototype은 프로토타입의 종점
 
-Object도 결국엔 Object.prototype을 가지는 함수 객체이다. 따라서 `Object.__proto`는 `Function.prototype`이다.
-
-`Function.prototype.__proto__`는 Object 생성자 함수에 의해 생성된 객체이기 때문에 `Object.prototype`이다.
-
 [프로토타입체인2]
+
+**예제 설명**
 
 ```js
 var person1 = new Person("Jinsil", 25);
 person1.valueOf();
 ```
 
-1\. 브라우저는 우선 `person1` 객체가 `valueOf()` 메소드를 가지고 있는지 체크한다.  
-2\. 없으므로 `person1`의 프로토타입 객체(`Person()` 생성자의 프로토타입)에 `valueOf()` 메소드가 있는지 체크한다.
-3\. 여전히 없으므로 `Person()` 생성자의 프로토타입 객체의 프로토타입 객체(`Object()` 생성자의 프로토타입)가 `valueOf()` 메소드를 가지고 있는지 체크한다. 여기에 있으니 호출하며 끝난다.
-
 [프로토타입체인1]
 
-**함수 객체**  
+1\. 브라우저는 우선 `person1` 객체가 `valueOf()` 메소드를 가지고 있는지 체크한다.  
+2\. 없으므로 `person1`의 프로토타입 객체(`Person()` 생성자의 프로토타입)에 `valueOf()` 메소드가 있는지 체크한다.  
+3\. 여전히 없으므로 `Person()` 생성자의 프로토타입 객체의 프로토타입 객체(`Object()` 생성자의 프로토타입)가 `valueOf()` 메소드를 가지고 있는지 체크한다. 여기에 있으니 호출하며 끝난다.
+
+<br>
+
+**<mark class="yellow">함수 객체</mark>**
+
+**설명**  
 함수 객체의 `__proto__`는 `Function.prototype`이다.  
 그리고 `prototype` 프로퍼티도 가지고 생성된다.
 
@@ -299,9 +305,39 @@ person1.valueOf();
 생성자 함수라는 것이 있는데 이는 new 연산자를 붙여 실행하는 함수이다. (함수 첫 글자는 대문자로 시작해야하는 관례도 있다.)  
 그럼 그 함수로 생성된 인스턴스의 `__proto__`는 무엇일까? 상위의 prototype을 가리켜야하고 이는 **생성자 함수 prototype**이다.
 
-예를 들어 `function Person(name) {this.name = name;}` 생성자 함수로  
-`const Jinsil = new Person('jinsil')` 인스턴스를 생성했다고 하자.  
-이때 `Jinsil.__proto__`는 `Person.prototype`이고 이를 위해 생성자 함수 Person의 자체 prototype 프로퍼티도 같이 생성되는 것이다.
+```js
+function Person(name) {
+  this.name = name;
+}
+
+const Jinsil = new Person("jinsil");
+```
+
+위와 같이 `Person` 생성자 함수로 `Jinsil` 인스턴스를 생성했다고 하자.  
+이때`Jinsil.__proto__`는 `Person.prototype`이고 이를 위해 생성자 함수 Person의 **자체 prototype 프로퍼티**도 같이 생성되는 것이다.
+
+<br>
+
+**<mark class="yellow">Object와 Function의 프로토타입</mark>**
+
+Object는 생성자 함수이기 때문에 Object.prototype을 가지는 함수 객체이다. 따라서 `Object.__proto__`는 `Function.prototype`이다.
+
+`Function.prototype.__proto__`는 Object 생성자 함수에 의해 생성된 객체이기 때문에 `Object.prototype`이다.
+
+```
+Object (생성자 함수)
+  └── __proto__ → Function.prototype
+                      └── __proto__ → Object.prototype
+                                          └── __proto__ → null
+
+Function (생성자 함수)
+  └── __proto__ → Function.prototype
+                      └── __proto__ → Object.prototype
+                                          └── __proto__ → null
+
+Object.prototype (일반 객체의 기본 프로토타입)
+  └── __proto__ → null (프로토타입 체인의 최상위)
+```
 
 <br>
 
