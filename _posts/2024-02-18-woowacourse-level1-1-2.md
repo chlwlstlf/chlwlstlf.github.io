@@ -262,6 +262,7 @@ prototype 속성은 Object() 객체라는 사실과 객체 속성 검색 체인(
 
 **동작**  
 new 연산자로 constructor를 호출하면 instance가 만들어진다.  
+`prototype`은 `constructor` 프로퍼티 하나만 있는 객체를 가리키는데, 여기서 `constructor` 프로퍼티는 함수 자신을 가리킨다.  
 이 instance가 가지고 있는 생략 가능한 프로퍼티인 `__proto__`는 constructor의 prototype을 참조한다.
 
 **proto 접근자 프로퍼티**  
@@ -277,7 +278,7 @@ new 연산자로 constructor를 호출하면 instance가 만들어진다.
 **Object**  
 자바스크립트의 모든 프로토타입 체인은 Object.prototype에서 끝나게 된다. Object.prototype은 프로토타입의 종점
 
-[프로토타입체인2]
+![프로토타입체인2](https://github.com/user-attachments/assets/9a036e09-e3da-4439-9b1d-01eb9630c4c2)
 
 **예제 설명**
 
@@ -286,7 +287,7 @@ var person1 = new Person("Jinsil", 25);
 person1.valueOf();
 ```
 
-[프로토타입체인1]
+<img width="676" alt="프로토타입체인1" src="https://github.com/user-attachments/assets/d6054a34-5cc5-432a-83fd-b87e40e0d191" />
 
 1\. 브라우저는 우선 `person1` 객체가 `valueOf()` 메소드를 가지고 있는지 체크한다.  
 2\. 없으므로 `person1`의 프로토타입 객체(`Person()` 생성자의 프로토타입)에 `valueOf()` 메소드가 있는지 체크한다.  
@@ -320,7 +321,7 @@ const Jinsil = new Person("jinsil");
 
 **<mark class="yellow">Object와 Function의 프로토타입</mark>**
 
-Object는 생성자 함수이기 때문에 Object.prototype을 가지는 함수 객체이다. 따라서 `Object.__proto__`는 `Function.prototype`이다.
+Object는 생성자 함수이기 때문에 Object.prototype을 가지는 함수 객체이다. 따라서 `Object.__proto__`는 `Function.prototype`이다.(const obj = new Object())
 
 `Function.prototype.__proto__`는 Object 생성자 함수에 의해 생성된 객체이기 때문에 `Object.prototype`이다.
 
