@@ -183,13 +183,13 @@ export default TryCount;
 Car.js
 
 ```js
-  getName() {
-    return this.#name;
-  }
+getName() {
+  return this.#name;
+}
 
-  getLocation() {
-    return this.#location;
-  }
+getLocation() {
+  return this.#location;
+}
 ```
 
 <br>
@@ -202,15 +202,15 @@ get 접근자는 name과 같이 속성의 이름을 그대로 사용하도록 �
 
 ```js
 get name() {
-return this.#name;
+  return this.#name;
 }
 ```
 
-하지만 다른 곳에서 Car.name 으로 적어두면 이 코드가 getter인지 setter인지 다른 사람들이 이해하기 어렵게 된다. 이렇기 때문에 get 접근자를 생략하여 혼란을 피하고 메서드 호출로 직관적이게 코드를 짜게 된다.
+하지만 다른 곳에서 `Car.name` 으로 적어두면 이 코드가 getter인지 setter인지 다른 사람들이 이해하기 어렵게 된다. 이렇기 때문에 get 접근자를 생략하여 혼란을 피하고 메서드 호출로 직관적이게 코드를 짜게 된다.
 
 ```js
 getName() {
-return this.#name;
+  return this.#name;
 }
 ```
 
@@ -518,7 +518,7 @@ const errorHandler = (err) => {
 <br>
 <br>
 
-### <mark class="yellow">1. 에러 핸들러 함수 만들기</mark>
+### <mark class="yellow">2. 유틸 함수 유연하게 짜기</mark>
 
 **이전 코드**
 
@@ -547,6 +547,9 @@ const createRandom = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 ```
+
+<br>
+<br>
 
 ## <mark class="pink">🔥개념과 함께 채우기</mark>
 
@@ -609,13 +612,13 @@ var notHoisted = function () {
 
 1\. class
 
-- 객체 지향적인 설계 도구: 속성과 메서드를 묶는 데 사용됨
+- 객체 지향적인 설계 도구: 속성과 메서드를 묶는 데 사용된다.
 - `new` 키워드로 인스턴스 생성
 
 2\. 함수
 
-- 특정 동작을 정의하거나 객체를 생성할 수 있음
-- 행동을 정의하는 데 적합함
+- 특정 동작을 정의하거나 객체를 생성할 수 있다.
+- 행동을 정의하는 데 적합하다.
 
 <br>
 <br>
@@ -628,7 +631,7 @@ var notHoisted = function () {
 
 - 초기 자바스크립트 비동기 작업에서 사용
 - 즉각적이고 간단한 비동기 작업을 처리하기에 효율적
-- 깊은 중첩 코드가 생기는 `콜백 지옥`이 생길 수 있음
+- 깊은 중첩 코드가 생기는 `콜백 지옥`이 생길 수 있다.
 
 콜백 지옥 코드
 
@@ -661,8 +664,8 @@ loadScript("1.js", function (error, script) {
 2\. promise
 
 - 체인 형태로 여러 비동기 작업을 연결할 때
-- then과 catch로 코드 가독성과 에러 핸들링을 분리할 수 있음
-- 코드가 길어질 경우 then 체인이 중첩되어 읽기 어려울 수 있음
+- then과 catch로 코드 가독성과 에러 핸들링을 분리할 수 있다.
+- 코드가 길어질 경우 then 체인이 중첩되어 읽기 어려울 수 있다.
 
 <br>
 
@@ -671,8 +674,8 @@ loadScript("1.js", function (error, script) {
 - 내가 선택한 방법
 - 직관적이고 동기식 코드처럼 보이는 비동기 코드를 작성해야 할 때
 - 에러 핸들링이 중요하고 명시적인 `try-catch` 블록이 필요할 때
-- 가독성과 유지보수성이 뛰어남
-- 여러 병렬 작업을 처리할 때 효율성이 떨어질 수 있음(Promise.all로 해결)
+- 가독성과 유지보수성이 뛰어나다.
+- 여러 병렬 작업을 처리할 때 효율성이 떨어질 수 있다.(Promise.all로 해결)
 
 <br>
 
@@ -683,7 +686,7 @@ loadScript("1.js", function (error, script) {
 - 에러를 첫 번째 인수로 콜백에 전달하여 처리
 - 간단한 비동기 작업에서 에러를 즉시 처리 가능
 - 에러 핸들링이 중첩되기 쉬워 콜백 지옥 발생 가능
-- 코드가 복잡해지고 가독성이 떨어짐
+- 코드가 복잡해지고 가독성이 떨어진다.
 
 ```js
 function fetchData(callback) {
@@ -712,7 +715,7 @@ fetchData((err, data) => {
 - `catch` 블록을 사용하여 Promise 체인에서 발생한 모든 에러를 처리
 - `then`에서 던진 에러도 `catch`에서 처리 가능
 - 에러가 자동으로 전달되므로 에러 처리 코드가 간결
-- 특정 단계에서만 에러를 처리하고 싶을 때 분기가 어려울 수 있음
+- 특정 단계에서만 에러를 처리하고 싶을 때 분기가 어려울 수 있다.
 
 ```js
 const fetchData = () => {
@@ -743,9 +746,9 @@ fetchData()
 3\. async/await
 
 - `try-catch` 블록을 사용하여 에러를 명시적으로 처리
-- `await`은 Promise를 반환하므로, 해당 Promise에서 발생한 에러를 `catch`로 잡을 수 있음
+- `await`은 Promise를 반환하므로, 해당 Promise에서 발생한 에러를 `catch`로 잡을 수 있다.
 - 병렬 Promise 작업에서는 `Promise.all`과 결합해 에러를 처리
-- 병렬 작업에서 하나의 에러가 전체 작업을 중단할 수 있음(`Promise.allSetteled`로 각 Promise의 성공/실패를 개별적으로 처리)
+- 병렬 작업에서 하나의 에러가 전체 작업을 중단할 수 있다.(`Promise.allSetteled`로 각 Promise의 성공/실패를 개별적으로 처리)
 - 에러를 `throw`로 호출자나 상위 컨텍스트로 전파
 
 ```js
@@ -780,9 +783,9 @@ fetchData();
 1\. CommonJS
 
 - require/module.exports
-- Node.js에서 사용되는 모듈 시스템으로 동기 방식으로 모듈을 로드함
-- 서버 환경(Node.js)에 최적화되어 있음
-- 동기 방식으로 파일을 로드하기 때문에, 서버 환경에서 적합하지만, 브라우저에서는 사용하기 어려웠음
+- Node.js에서 사용되는 모듈 시스템으로 동기 방식으로 모듈을 로드한다.
+- 서버 환경(Node.js)에 최적화되어 있다.
+- 동기 방식으로 파일을 로드하기 때문에, 서버 환경에서 적합하지만, 브라우저에서는 사용하기 어려웠다.
 
 <br>
 
@@ -792,7 +795,7 @@ fetchData();
 - JavaScript의 공식 표준 모듈 시스템
 - 브라우저와 Node.js 모두 지원
 - 비동기 방식으로 모듈 로드, 정적 분석 가능
-- 반드시 파일 확장자를 명시해야 함
+- 반드시 파일 확장자를 명시해야 한다.
 - 트리 쉐이킹 가능
 
 <br>
@@ -808,7 +811,7 @@ fetchData();
 - 로직을 상세히 정의하고 어떤 순서로 실행할지 명확히 지시
 - 절차지향적 프로그래밍에서 사용
 
-장점: 프로그램 실행 과정과 상태를 정확히 파악할 수 있음
+장점: 프로그램 실행 과정과 상태를 정확히 파악할 수 있다.
 
 단점: 버그 발생 가능성 증가, 병렬 처리나 비동기 처리에서 한계
 
@@ -834,7 +837,7 @@ console.log(sum); // 15
 
 장점: 병렬 처리와 비동기 작업에서 유리
 
-단점: 내부 구현 이해하기 어려움
+단점: 내부 구현 이해하기 어렵다.
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
@@ -858,7 +861,7 @@ console.log(sum); // 15
 
 2\. 선언형 프로그래밍
 
-- UI 구성: 리액트에서 useState 훅과 버튼 태그로 화면을 구성하면 태그의 렌더링 로직, 상태 관리가 내부적으로 추상화 됨
+- UI 구성: 리액트에서 useState 훅과 버튼 태그로 화면을 구성하면 태그의 렌더링 로직, 상태 관리가 내부적으로 추상화 된다.
 
 ```js
 function App() {
@@ -875,7 +878,7 @@ function App() {
 
 - 선언형 메서드(map, filter, reduce) 사용
 
-- `Promise`와 `async/await`은 비동기 작업을 선언형으로 작성할 수 있는 도구를 제공, 세부적인 비동기 작업 실행 흐름은 `fetchData` 내부에서 추상화되었고 우리는 displayData에서 데이터 처리 로직만 작성하면 됨
+- `Promise`와 `async/await`은 비동기 작업을 선언형으로 작성할 수 있는 도구를 제공, 세부적인 비동기 작업 실행 흐름은 `fetchData` 내부에서 추상화되었고 우리는 displayData에서 데이터 처리 로직만 작성하면 된다.
 
 ```js
 const fetchData = () => {

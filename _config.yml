@@ -49,7 +49,7 @@ comments:
     category_id: "DIC_kwDOG8MDQM4CkeZa"
     discussion_term: "pathname"
     reactions_enabled: "1"
-    theme: "preferred_color_scheme"
+    theme: "light"
   staticman:
     branch: # "master"
     endpoint: # "https://{your Staticman v3 API}/v3/entry/github/"
