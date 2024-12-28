@@ -468,5 +468,5 @@ OAuth는 소셜 로그인, API 호출, 인증된 자원 접근 등 다양한 곳
 
 - 모든 이미지는 [GitHub 공식 문서](https://docs.github.com/en)에서 제공된 자료와 [CoReA 사이트](https://code-review-area.com/) 화면 자료를 사용하였습니다.
 - 참고 문서
-  - "Registering a GitHub App": [https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
-  - "Authorizing OAuth Apps": [https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
+  - [Registering a GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
+  - [Authorizing OAuth Apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
