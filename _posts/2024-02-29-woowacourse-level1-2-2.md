@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## <mark class="pink">📚DOM</mark>
 
-**<mark class="yellow">DOM : Document Object Model</mark>**
+### <mark class="yellow">Document Object Model</mark>
 
 문서 객체 모델(Document Object Model)은 HTML, XML 문서의 프로그래밍 interface입니다. DOM은 문서의 구조화된 표현을 제공하며 **프로그래밍 언어가 DOM 구조에 접근할 수 있는 방법을 제공**하여 문서 구조 및 스타일, 내용 등을 변경할 수 있게 도와준다.
 
@@ -18,7 +18,7 @@ DOM은 HTML을 위한 API이면서 HTML을 탐색할 수 있고 HTML의 구조�
 
 <br>
 
-**<mark class="yellow">DOM API</mark>**
+### <mark class="yellow">DOM API</mark>
 
 **설명**  
 DOM이 제공하는 API를 이용해서 검색어에 해당하는 문자열을 보다 쉽게 가져올 수 있다.
@@ -81,7 +81,7 @@ document.querySelectorAll(".search-input-style");
 
 <br>
 
-**<mark class="yellow">추가 학습</mark>**
+### <mark class="yellow">추가 학습</mark>
 
 **1\. 내가 작성한 HTML 코드가 DOM인가?**  
 아니다. 내가 작성한 코드가 브라우저에 의해 파싱되면 DOM이 된다.
@@ -124,7 +124,7 @@ DOM 결과(개발자 도구에서 확인)
 
 ## <mark class="pink">📚BOM</mark>
 
-**<mark class="yellow">BOM : Browser Object Model</mark>**
+### <mark class="yellow">BOM : Browser Object Model</mark>
 
 BOM은 웹 브라우저 환경의 다양한 기능을 객체처럼 다루는 모델이다.
 
@@ -134,7 +134,7 @@ BOM의 역할은 웹 브라우저의 버튼, URL 주소 입력 창, 타이틀 �
 
 <br>
 
-**<mark class="yellow">대표적인 BOM 객체</mark>**
+### <mark class="yellow">대표적인 BOM 객체</mark>
 
 브라우저 전체를 담당하는 게 **window** 객체이고, 웹사이트만 담당하는 게 **document** 객체이다. document 객체도 window 객체 안에 있다.
 
@@ -155,7 +155,7 @@ window 객체는 BOM 객체이지만 그 안의 document 객체는 DOM이고 나
   <p>
     <b>💡Tip</b>
     <div>beforeunload 이벤트를 사용하면 페이지를 벗어날 때 확인 메세지를 표시할 수 있다.</div>
-    <div>단, 크롬에서는 경고창에 문구가 나타나지 않습니다.</div>
+    <div>단, 크롬에서는 경고창에 문구가 나타나지 않는다.</div>
     <img src="https://techcourse-storage.s3.ap-northeast-2.amazonaws.com/2020-04-21T15:31:35.512%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-04-21%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.31.25.png" />
   </p>
 </div>
@@ -171,7 +171,7 @@ window.onbeforeunload = function () {
 
 ## <mark class="pink">📚Event</mark>
 
-**<mark class="yellow">이벤트 종류</mark>**
+### <mark class="yellow">이벤트 종류</mark>
 
 **1\. 사용자 인터페이스 이벤트**
 
@@ -232,7 +232,7 @@ window.onbeforeunload = function () {
 
 <br>
 
-**<mark class="yellow">이벤트 핸들러</mark>**
+### <mark class="yellow">이벤트 핸들러</mark>
 
 **소개**  
 사용자가 웹 페이지의 HTML과 상호작용할 때 이벤트를 핸들링하도록 프로그래밍할 수 있다.
@@ -244,7 +244,7 @@ window.onbeforeunload = function () {
 
 <br>
 
-**<mark class="yellow">이벤트 리스너</mark>**
+### <mark class="yellow">이벤트 리스너</mark>
 
 ![이벤트 리스너](https://user-images.githubusercontent.com/50367798/61576496-ccca8c80-ab15-11e9-8835-caf2b240f65c.png)
 
@@ -267,11 +267,18 @@ $addButton.addEventListener("click", handleButtonClick);
 event는 브라우저가 자동으로 전달하지만, 함수에서 이를 선언하지 않으면 무시된다.
 
 ```js
+// 틀린 함수
+function handleButtonClick() {
+  console.log(event.type);
+}
+
+// 맞는 함수
 function handleButtonClick(event) {
   console.log(event.type);
 }
 
-$addButton.addEventListener("click", handleButtonClick);
+$addButton.addEventListener("click", (event) => handleButtonClick(event));
+$addButton.addEventListener("click", handleButtonClick); // 간결한 버전(추천)
 ```
 
 <br>
@@ -312,7 +319,7 @@ $addButton.addEventListener("click", (event) =>
 
 <br>
 
-**<mark class="yellow">이벤트의 흐름과 제어</mark>**
+### <mark class="yellow">이벤트의 흐름과 제어</mark>
 
 ![이벤트 흐름](https://user-images.githubusercontent.com/50367798/61577456-7f085100-ab22-11e9-9548-f302b2588bd2.jpg)
 
@@ -324,7 +331,7 @@ $addButton.addEventListener("click", (event) =>
 
 <br>
 
-**<mark class="yellow">Event 객체</mark>**
+### <mark class="yellow">Event 객체</mark>
 
 이벤트가 발생했을 때 이벤트를 발생시킨 요소와 발생한 이벤트에 대한 정보를 제공한다. 이벤트 객체가 제공해주는 메서드를 이용하면 이벤트 흐름 관련 문제를 미리 예방할 수 있다.
 
@@ -342,6 +349,8 @@ $addButton.addEventListener("click", (event) =>
 | target | 이벤트가 발생한 요소(사용자가 의도한 가장 명확한 요소) |
 |  type  |                  발생한 이벤트의 종류                  |
 
+<br>
+
 **메서드**
 
 |      메서드       |                                                                                                            목적                                                                                                            |
@@ -351,7 +360,41 @@ $addButton.addEventListener("click", (event) =>
 
 <br>
 
-**<mark class="yellow">이벤트 위임</mark>** |
+### <mark class="yellow">이벤트 위임</mark>
+
+이벤트 리스너를 지정하는 요소가 많으면 많을수록 페이지의 실행 속도는 느려진다.
+
+효율적으로 이벤트를 관리하기 위해서 이벤트의 흐름을 이용한다. 이벤트는 이벤트가 발생한 엘리먼트를 포함하고 있는 부모 요소에도 영향을 미치기 때문에 자식 요소를 포함할 수 있는 요소에 이벤트 핸들러를 지정하고 이벤트의 흐름을 이용해 다룰 수 있다.
+
+이를 이벤트 리스너가 실행할 작업을 요소의 부모 요소에게 **위임**한다고 부른다.
+
+<br>
+
+**장점**
+
+- 동적으로 추가되는 요소들에도 동작한다. DOM트리에 새로운 요소를 추가하더라도 이벤트에 대한 처리는 부모 요소에게 위임되었기 때문에 새로운 요소에 이벤트 핸들러를 다시 지정할 필요가 없다.
+- 함수를 많이 작성할 필요가 없으며 DOM과 코드간의 연결이 간소해져 결과적으로 유지보수에 도움이 된다.
+
+<br>
+
+**예시 코드**
+
+```html
+<ul id="parent-list">
+  <li id="item1">Item 1</li>
+  <li id="item2">Item 2</li>
+  <li id="item3">Item 3</li>
+</ul>
+```
+
+```js
+//상위 노드에 이벤트 설정
+document.getElementById("parent-list").addEventListener("click", function (e) {
+  if (e.target && e.target.nodeName == "LI") {
+    console.log(`List item  ${e.target.id} was clicked!`);
+  }
+});
+```
 
 <br>
 <br>

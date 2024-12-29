@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 🚗 자동차 경주 게임
+# 미션1 🚗자동차 경주 게임
 
 ## <mark class="pink">🔥1단계 구현 사항</mark>
 

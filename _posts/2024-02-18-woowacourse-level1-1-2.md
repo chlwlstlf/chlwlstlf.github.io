@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## <mark class="pink">📚JavaScript Data Type</mark>
 
-**<mark class="yellow">Primitive Type(원시 값, 기본형)</mark>**
+### <mark class="yellow">Primitive Type(원시 값, 기본형)</mark>
 
 **종류**  
 Number, String, Boolean, null, undefined, Symbol
@@ -36,7 +36,7 @@ console.log(copy); // 30(불변성)
 
 <br>
 
-**<mark class="yellow">Reference Type(참조형)</mark>**
+### <mark class="yellow">Reference Type(참조형)</mark>
 
 **종류**  
 Function, Date, Array, RegExp, Map, WeakMap, Set, WeakSet
@@ -63,7 +63,7 @@ var copy = user;
 
 ## <mark class="pink">📚Execution Context & Scope</mark>
 
-**<mark class="yellow">호이스팅</mark>**
+### <mark class="yellow">호이스팅</mark>
 
 **정의**  
 어떤 실행 컨텍스트가 활성화되는 시점에서 선언된 변수를 위로 끌어올리는 것
@@ -100,7 +100,7 @@ var copy = user;
 
 <br>
 
-**<mark class="yellow">Execution Context (실행 컨텍스트)</mark>**
+### <mark class="yellow">Execution Context (실행 컨텍스트)</mark>
 
 [[테코톡] 하루의 실행 컨텍스트](https://www.youtube.com/watch?v=EWfujNzSUmw&t=5s)
 
@@ -115,7 +115,7 @@ this 값 설정
 
 <br>
 
-**<mark class="yellow">Scope</mark>**
+### <mark class="yellow">Scope</mark>
 
 [[테코톡] 엘라의 Scope & Closure](https://www.youtube.com/watch?v=PVYjfrgZhtU)  
 [[테코톡] 루루의 Scope & Closure](https://www.youtube.com/watch?v=xJtVVLPxgco)
@@ -146,13 +146,13 @@ this 값 설정
 
 <br>
 
-**<mark class="yellow">this</mark>**
+### <mark class="yellow">this</mark>
 
 TODO
 
 <br>
 
-**<mark class="yellow">Closure</mark>**
+### <mark class="yellow">Closure</mark>
 
 **정의**  
 한 중첩 함수가 상위 스코프의 식별자를 참조하고 있고 본인의 외부 함수보다 더 오래 살아있는 것  
@@ -162,7 +162,7 @@ TODO
 함수 실행이 끝나면 콜 스택에서 제거되며 메모리에서도 사라진다. 하지만 클로저를 통해 변수가 참조되는 경우, 실행 컨텍스트의 일부 데이터가 여전히 메모리에 유지된다.
 
 **설명**  
-이 생명주기를 마감한 outer 함수 즉 상위 함수의 변수를 inner에서 참조할 수 있다면 inner 함수가 클로저
+이 생명주기를 마감한 outer 함수 즉 상위 함수의 변수를 inner에서 참조할 수 있다면 **inner 함수가 클로저**
 
 inner 함수가 생성될 때, 상위 함수(outer)의 스코프를 기억하는 클로저 객체를 함께 생성한다.
 
@@ -192,7 +192,7 @@ closure(); // outer는 반환된 inner함수이므로 inner함수는 언젠가 �
 
 ## <mark class="pink">📚Object</mark>
 
-**<mark class="yellow">Object</mark>**
+### <mark class="yellow">Object</mark>
 
 자신의 속성을 가지고 있고 다른 것과 식별 가능한 것
 
@@ -252,7 +252,7 @@ prototype 속성은 Object() 객체라는 사실과 객체 속성 검색 체인(
 [Object prototypes](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes)  
 [[테코톡] 아놀드의 프로토타입 뽀개기](https://www.youtube.com/watch?v=TqFwNFTa3c4)
 
-**<mark class="yellow">프로토타입</mark>**
+### <mark class="yellow">프로토타입</mark>
 
 **설명**  
 자바스크립트는 프로토타입 기반 언어  
@@ -270,7 +270,7 @@ new 연산자로 constructor를 호출하면 instance가 만들어진다.
 
 <br>
 
-**<mark class="yellow">프로토타입 체인</mark>**
+### <mark class="yellow">프로토타입 체인</mark>
 
 **설명**  
 어떤 객체에 특정 프로퍼티나 메서드에 접근할 때 특정 프로퍼티나 메서드가 없다면 내부 링크를 통해 상위 프로토타입으로 접근하는 행위
@@ -295,7 +295,7 @@ person1.valueOf();
 
 <br>
 
-**<mark class="yellow">함수 객체</mark>**
+### <mark class="yellow">함수 객체</mark>
 
 **설명**  
 함수 객체의 `__proto__`는 `Function.prototype`이다.  
@@ -319,7 +319,7 @@ const Jinsil = new Person("jinsil");
 
 <br>
 
-**<mark class="yellow">Object와 Function의 프로토타입</mark>**
+### <mark class="yellow">Object와 Function의 프로토타입</mark>
 
 Object는 생성자 함수이기 때문에 Object.prototype을 가지는 함수 객체이다. 따라서 `Object.__proto__`는 `Function.prototype`이다.(const obj = new Object())
 

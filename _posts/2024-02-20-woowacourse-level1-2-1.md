@@ -37,7 +37,7 @@ toc_sticky: true
 
 ## <mark class="pink">📖프로그래밍 패러다임 종류</mark>
 
-**<mark class="yellow">명령형 프로그래밍</mark>**
+### <mark class="yellow">명령형 프로그래밍</mark>
 
 - 문제를 어떻게(HOW) 해결할 것인지에 초점
 - 명령어들로 구성
@@ -63,7 +63,7 @@ toc_sticky: true
 
 <br>
 
-**<mark class="yellow">선언형 프로그래밍</mark>**
+### <mark class="yellow">선언형 프로그래밍</mark>
 
 - 무엇(WHAT)에 초점
 - 함수형, 논리형 프로그래밍
@@ -143,3 +143,14 @@ class WinningLotto extends Lotto {
 
 new WinningLotto([1, 2, 3, 4, 5, 6], 7);
 ```
+
+<br>
+<br>
+
+## <mark class="pink">📖함수</mark>
+
+**JavaScript는**
+
+- **멀티 패러다임** 프로그래밍 언어: 명령형, 함수형, 프로토타입 기반 객체지향 프로그래밍을 지원
+- 일반적인 호스트 환경은 브라우저이지만, 서버 사이드, 데스크탑 앱 등 점차 다양한 호스트 환경에서 사용되고 있다.
+- 함수 역시 하나의 객체
