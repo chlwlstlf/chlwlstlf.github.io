@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 DOM, BOM, Event, CSS"
+title: "[우테코]Level1 DOM, BOM, Event"
 categories: woowacourse
 toc: true
 toc_sticky: true
@@ -124,7 +124,7 @@ DOM 결과(개발자 도구에서 확인)
 
 ## <mark class="pink">📚BOM</mark>
 
-### <mark class="yellow">BOM : Browser Object Model</mark>
+### <mark class="yellow">Browser Object Model</mark>
 
 BOM은 웹 브라우저 환경의 다양한 기능을 객체처럼 다루는 모델이다.
 

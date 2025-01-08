@@ -422,7 +422,7 @@ element.insertAdjacentHTML("afterend", "<div>다음에 추가</div>");
 
 <br>
 
-이전 코드
+**이전 코드**
 
 ```js
 $lottosList.innerHTML = `${lottos
@@ -435,7 +435,7 @@ $lottosList.innerHTML = `${lottos
 
 <br>
 
-개선된 코드
+**개선된 코드**
 
 ```js
 $lottosList.textContent = ""; // 기존 내용 초기화
@@ -466,7 +466,7 @@ lottos.forEach((lotto) => {
 
 <br>
 
-개선된 코드
+**개선된 코드**
 
 ```js
 const fragment = document.createDocumentFragment();
@@ -556,7 +556,7 @@ renderPurchasedLottos(lottos) {
 
 **src/controller/LottoGameController2.js**
 
-`#checkBonusNumber`가 try 됐을 때 `this.#showResult();`를 실행해서 당첨 번호의 유효성 검사가 통과하지 못 해도 보너스 번호의 유효성 검사가 통과한다면 모달창이 뜨는 것을 확인 했다.
+`#checkBonusNumber`가 try 됐을 때 `this.#showResult();`를 실행해서 당첨 번호의 유효성 검사가 통과하지 못 해도 보너스 번호의 유효성 검사가 통과한다면 모달창이 뜨는 오류가 발생했다.
 
 ```js
 #inputWinningLotto() {

@@ -62,7 +62,7 @@ npm run build
 <br>
 <br>
 
-## <mark class="pink">🔥5. 정적 웹사이트 호스팅 설정하기</mark>
+## <mark class="pink">🔥3. 정적 웹사이트 호스팅 설정하기</mark>
 
 - 속성 > ARN 복사
 - 정적 웹 사이트 호스팅 > 편집
@@ -123,7 +123,7 @@ npm run build
 <br>
 <br>
 
-## <mark class="pink">🔥1. CloudFront에 S3 연결하기</mark>
+## <mark class="pink">🔥1. CloudFront 세팅하기</mark>
 
 **1\. 원본 세팅하기**
 
@@ -208,7 +208,7 @@ npm run build
 
 ## <mark class="pink">🔥2. S3와 연결하기</mark>
 
-S3와 Cloudfront를 연결하여면 정책을 작성해야 합니다.
+S3와 Cloudfront를 연결하려면 정책을 작성해야 합니다.
 
 `Cloudfront > 원본 > 편집`으로 들어가면 정책을 복사할 수 있습니다. 정책은 JSON 형태입니다.
 ![image (28)](https://github.com/user-attachments/assets/ed37843a-529f-4977-b372-4ed3981cf009)
