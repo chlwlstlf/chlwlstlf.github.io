@@ -250,7 +250,7 @@ const View = {
 
 ### <mark class="yellow">1. 시맨틱 태그 사용하기</mark>
 
-**이전 코드**
+**[이전 코드]**
 
 ```html
 <header></header>
@@ -264,13 +264,13 @@ const View = {
 
 <br>
 
-**피드백**
+**[피드백]**
 
 modal은 `<dialog>`, main 영역은 `<main>` 태그를 쓰면 더 좋을 것 같다.
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 ```html
 <header></header>
@@ -284,7 +284,7 @@ modal은 `<dialog>`, main 영역은 `<main>` 태그를 쓰면 더 좋을 것 같
 
 <br>
 
-**dialog 태그 알아보기**
+**[dialog 태그 알아보기]**
 
 1\. 주요 특징
 
@@ -384,7 +384,7 @@ const View = {
 
 ### <mark class="yellow">2. innerHTML vs insertAdjacentHTML vs createElement</mark>
 
-**insertAdjacentHTML**
+**[insertAdjacentHTML]**
 
 1\. 성능상의 이점: innerHTML은 전체 DOM을 다시 파싱하고 렌더링하지만, insertAdjacentHTML은 지정된 위치에만 새로운 요소를 삽입하므로 더 효율적이다.(채팅 등)
 
@@ -422,7 +422,7 @@ element.insertAdjacentHTML("afterend", "<div>다음에 추가</div>");
 
 <br>
 
-**이전 코드**
+**[이전 코드]**
 
 ```js
 $lottosList.innerHTML = `${lottos
@@ -435,7 +435,7 @@ $lottosList.innerHTML = `${lottos
 
 <br>
 
-**개선된 코드**
+**[개선된 코드]**
 
 ```js
 $lottosList.textContent = ""; // 기존 내용 초기화
@@ -449,7 +449,7 @@ lottos.forEach((lotto) => {
 
 <br>
 
-**createElement**
+**[createElement]**
 
 1\. 장점
 
@@ -466,7 +466,7 @@ lottos.forEach((lotto) => {
 
 <br>
 
-**개선된 코드**
+**[개선된 코드]**
 
 ```js
 const fragment = document.createDocumentFragment();
@@ -492,7 +492,7 @@ $lottosList.appendChild(fragment);
 
 ### <mark class="yellow">3. 구입 버튼 두 번 클릭 시 에러 발생</mark>
 
-**문제점**
+**[문제점]**
 
 금액을 입력한 후 구입 버튼을 두 번 누르면 어떤 숫자를 입력해도 에러가 발생한다.
 
@@ -500,7 +500,7 @@ $lottosList.appendChild(fragment);
 
 <br>
 
-**이유**
+**[이유]**
 
 **src/controller/LottoGameController2.js**
 
@@ -526,7 +526,7 @@ $lottosList.appendChild(fragment);
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 **src/view/View.js**
 
@@ -552,7 +552,7 @@ renderPurchasedLottos(lottos) {
 
 ### <mark class="yellow">4. 유효성 검사 통과 못 했을 때 모달창 뜸</mark>
 
-**문제점 & 이유**
+**[문제점 & 이유]**
 
 **src/controller/LottoGameController2.js**
 
@@ -596,7 +596,7 @@ renderPurchasedLottos(lottos) {
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 **src/controller/LottoGameController2.js**
 
@@ -655,15 +655,156 @@ renderPurchasedLottos(lottos) {
 
 ### <mark class="yellow">DOM 변경을 비싼 작업이라고 하는 이유는 무엇일까?</mark>
 
+DOM 변경은 브라우저가 화면을 다시 그리기 위해 여러 단계를 거쳐야 하기 때문에 비용이 많이 드는 작업이다.
+
 **DOM을 추가/삭제/수정하면 브라우저에서는 어떤 일이 일어날까?**
+
+1\. DOM 트리 수정
+
+- 브라우저는 DOM 트리를 업데이트 한다.
+- DOM 트리: 브라우저가 HTML 문서를 파싱해 생성한 데이터 구조
+
+2\. 스타일 계산
+
+- DOM이 변경되면 브라우저는 CSS 스타일을 다시 계산한다.
+- 각 DOM 요소가 어떤 스타일을 적용받는지 다시 결정한다.
+
+3\. 레이아웃 단계(Reflow)
+
+- 요소의 크기와 위치를 다시 계산한다.
+
+4\. 페인팅 단계
+
+- 레이아웃이 끝난 후, 페인팅을 한다.
+- 각 요소의 텍스트, 색상, 그림자 등을 계산해 화면에 렌더링할 이미지를 생성한다.
+
+5\. 컴포지팅 단계
+
+- 페인팅이 끝난 후 브라우저는 모든 레이어를 결합하여 최종 화면을 만든다.
+- GPU를 사용해 렌더링된 요소들을 결합하고, 사용자의 화면에 표시한다.
 
 <br>
 <br>
 
 ### <mark class="yellow">이벤트 핸들러 함수를 만들 때 bind(this) vs 화살표 함수의 차이</mark>
 
-**this - 함수가 실행될 때 this가 어떤 걸로 결정되는 지 예상할 수 있는지?**
+**함수가 실행될 때 this가 어떤 걸로 결정되는 지 예상할 수 있는가?**
 
-**일반 함수와 화살표 함수는 무슨 차이가 있을까?**
+1\. 일반 함수 (function)
 
-- this binding, call/apply/bind
+- this는 함수를 호출한 객체에 의해 동적으로 바인딩된다.
+- 이벤트 핸들러에서 일반 함수로 작성된 경우 호출 시점의 컨텍스트에 따라 `this`가 달라질 수 있다.
+
+```js
+const obj = {
+  name: "Object",
+  handler: function () {
+    console.log(this.name); // 호출하는 객체에 따라 this가 결정
+  },
+};
+
+obj.handler(); // "Object"
+const external = obj.handler; // external는 obj와 연관이 없음
+external(); // undefined (전역 컨텍스트에서 호출)
+```
+
+2\. 화살표 함수 (=>)
+
+- 렉시컬 바인딩을 사용한다.
+- 작성된 시점의 `this`를 기억하며, 호출 방식에 상관없이 `this`가 변경되지 않는다.
+
+```js
+const obj = {
+  name: "Object",
+  handler: () => {
+    console.log(this.name); // 작성 당시의 this를 사용
+  },
+};
+
+obj.handler(); // undefined (this는 전역 객체 window)
+
+window.name = "Global Object"; // 브라우저에서 전역 객체에 name 추가
+obj.handler(); // "Global Object" (this는 여전히 window)
+```
+
+<br>
+
+**bind(this)와 화살표 함수**
+
+1\. bind(this)
+
+- `bind(this)`는 새로운 함수 객체를 생성하며, 명시적으로 `this`를 바인딩한다.
+- 동적 바인딩 문제를 해결하기 위해 이벤트 핸들러에서 자주 사용된다.
+- 이벤트 핸들러 내부에서 `this`는 **이벤트를 발생시킨 대상**을 가리키게 되고 아래 예시에서는 `button`을 의미한다.
+
+```js
+class Component {
+  constructor() {
+    this.name = "Component";
+  }
+  handler() {
+    console.log(this.name); // bind(this)가 없으면 this는 button이 되고 button엔 name 속성이 없어서 undefined가 출력됨
+  }
+  attachEvent() {
+    const button = document.querySelector("button");
+    button.addEventListener("click", this.handler.bind(this)); // this.handler의 this를 현재 클래스 인스턴스로 바인딩
+  }
+}
+
+const comp = new Component();
+comp.attachEvent(); // 클릭하면 "Component" 출력
+```
+
+2\. 화살표 함수
+
+- 렉시컬 바인딩을 사용하므로, 호출 방식에 상관없이 `this`는 선언 당시의 컨텍스트를 유지한다.
+- 클래스 내에서 이벤트 핸들러를 작성할 때 자주 사용된다.
+
+```js
+class Component {
+  constructor() {
+    this.name = "Component";
+  }
+  attachEvent() {
+    const button = document.querySelector("button");
+    button.addEventListener("click", () => {
+      console.log(this.name);
+    });
+  }
+}
+
+const comp = new Component();
+comp.attachEvent(); // 클릭하면 "Component" 출력
+```
+
+<br>
+
+**call/apply/bind**
+
+1\. 일반 함수
+
+- call, apply, bind를 통해 this를 명시적으로 변경할 수 있다.
+
+```js
+const obj = { name: "Object" };
+
+function regularFunc() {
+  console.log(this.name);
+}
+
+regularFunc.call(obj); // "Object"
+```
+
+2\. 화살표 함수
+
+- this가 이미 고정되어 있어 call, apply, bind가 효과를 발휘하지 않는다.
+
+```js
+const obj = { name: "Object" };
+
+const arrowFunc = () => {
+  console.log(this.name);
+};
+
+arrowFunc.call(obj); // undefined (this는 렉시컬 바인딩)
+```

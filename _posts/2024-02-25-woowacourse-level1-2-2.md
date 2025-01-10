@@ -146,13 +146,13 @@ export default LottosManager;
 
 ### <mark class="yellow">1. InputController 생성</mark>
 
-**구현 사항**
+**[구현 사항]**
 
 InputController에서 입력에 관한 코드를 하나로 분리하였다.
 
 <br>
 
-**이유**
+**[이유]**
 
 1차 미션때는 이 부분이 없었다. tryCatch를 util 함수로 관리했기 때문이다.  
 이번 미션 때도 똑같이 관리하려고 했지만 보너스 함수를 유효성 검사하는 과정에서 당첨번호를 인자로 같이 넘겨줘야 했고, 이 부분에서 오류가 떴었다.  
@@ -165,7 +165,7 @@ InputController에서 입력에 관한 코드를 하나로 분리하였다.
 
 ### <mark class="yellow">1. 조건 충족할 때만 메소드 호출하기</mark>
 
-**이전 코드**
+**[이전 코드]**
 
 **src/domain/Lottos.js**
 
@@ -194,7 +194,7 @@ getWinningResults(winningNumbers, bonusNumber) {
 
 <br>
 
-**피드백**
+**[피드백]**
 
 matchedNumbers가 3 이상일 때만 winningCriteria에서 값을 가져와서 반환하고, 아니면 undefined(빈 문자열)를 반환하는 부분이 있다.
 
@@ -202,7 +202,7 @@ matchedNumbers가 3 이상일 때만 winningCriteria에서 값을 가져와서 �
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 **src/domain/LottosManager.js**
 
@@ -224,7 +224,7 @@ if문을 추가하여 3(MIN_RANKING_MATCHING_NUMBER) 이상일 때만 winningRes
 
 ### <mark class="yellow">2. 예외 케이스 실험하기</mark>
 
-**예외 케이스**
+**[예외 케이스]**
 
 1\. 앞 뒤에 콤마가 하나 더 들어가면 숫자가 7개로 인식된다.
 
@@ -233,19 +233,19 @@ if문을 추가하여 3(MIN_RANKING_MATCHING_NUMBER) 이상일 때만 winningRes
 
 <br>
 
-**피드백**
+**[피드백]**
 
 처음부터 모든 상황을 고려할 순 없지만 에러가 터지고 나서 뒷처리를 어떻게 하느냐가 중요하다. 에러를 수정한 후 테스트 코드 작성, 해당 에러에 대한 문서화까지 습관화해두면 도움이 될 거다.
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 **src/validator/Validator.js**
 
 JavaScript의 number 타입이 표현할 수 있는 최대값은 1.7976931348623157e+308이지만, 금액 관련 계산이나 특정 반복 로직이 메모리 문제를 유발했다.
 
-`LottoMachine` 클래스에서 구입 금액으로 로또 리스트 배열을 만들고 각 리스트 배열에서는 최소 6번 랜덤 숫자를 생성했기 때문에 이 부분에서 힙 메모리를 추가하였다.
+`LottoMachine` 클래스에서 구입 금액으로 로또 리스트 배열을 만들고 각 리스트 배열에서는 최소 6번 랜덤 숫자를 생성했기 때문에 이 부분에서 힙 메모리를 초과하였다.
 
 따라서 구입 금액에 한도를 걸어서 오류를 해결하였다.
 
@@ -301,7 +301,7 @@ return winningNumbers
 
 ### <mark class="yellow">3. 식 vs 문</mark>
 
-**틀린 코드**
+**[틀린 코드]**
 
 ```js
 #calculateProfitRate(winningResults) {
@@ -313,7 +313,7 @@ return winningNumbers
 
 <br>
 
-**식 vs 문**
+**[식 vs 문]**
 
 1\. 식
 
@@ -342,7 +342,7 @@ let z = 0; // 변수 선언문도 문 (값을 반환하지 않음)
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 ```js
 // 식
@@ -362,7 +362,7 @@ return result;
 
 ### <mark class="yellow">4. hasOwnProperty vs in 연산자</mark>
 
-**예시 코드**
+**[예시 코드]**
 
 `parentObj`의 프로퍼티에는 `inheritedKey`가 있고,  
 `obj`에 `ownKey`라는 프로퍼티를 추가한다.
@@ -375,7 +375,7 @@ obj.ownKey = "Hello";
 
 <br>
 
-**hasOwnProperty**
+**[hasOwnProperty]**
 
 - 객체의 직접 소유한 프로퍼티만 확인(프로토타입 체인 무시)
 - 프로토타입 체인을 포함하지 않고 객체 자신이 정의한 프로퍼티에 대해서만 `true`를 반환
@@ -387,7 +387,7 @@ console.log(obj.hasOwnProperty("inheritedKey")); // false(parentObj에 있는 �
 
 <br>
 
-**in 연산자**
+**[in 연산자]**
 
 - 객체와 객체의 프로토타입 체인에서 해당 프로퍼티가 존재하는지를 확인
 - 프로토타입 체인을 포함하여 해당 키가 있으면 `true`를 반환
@@ -399,7 +399,7 @@ console.log("inheritedKey" in obj); // true (프로토타입 체인에 존재)
 
 <br>
 
-**개선 방안**
+**[개선 방안]**
 
 객체의 소유 프로퍼티만 확인하는 시도는 좋다. 하지만 `hasOwnProperty`는 예전에 쓰던 문법이고 현재는 권장되지 않는다.
 

@@ -154,7 +154,7 @@ export default TryCount;
 
 ### <mark class="yellow">1. 모델에서 유효성 검사하기</mark>
 
-**구현 사항**
+**[구현 사항]**
 
 모델에서 각각의 유효성 검사를 하는 `#validate` 메소드를 작성했다.
 
@@ -164,7 +164,7 @@ export default TryCount;
 
 <br>
 
-**이유**
+**[이유]**
 
 유효성 검사를 util 함수에서 모든 유효성 검사를 하는 것도 좋은 추상화지만 한 클래스가 모든 기능을 담당하길 원했다.  
 따라서 한 클래스에서 파싱과 유효성 검사를 모두 했고, 이를 통과하면 접근 제어자(#)에 인자로 받은 값을 넣었다.
@@ -176,7 +176,7 @@ export default TryCount;
 
 ### <mark class="yellow">2. 도메인에서 도메인으로 private 값을 내보낼 때: getter</mark>
 
-**구현 사항**
+**[구현 사항]**
 
 `get name()` 에서 `getName()` 으로 변경했다.
 
@@ -194,7 +194,7 @@ getLocation() {
 
 <br>
 
-**이유**
+**[이유]**
 
 [Airbnb JavaScript Style Guide - Accessors](https://github.com/airbnb/javascript?tab=readme-ov-file#accessors)를 따랐다.
 
@@ -219,7 +219,7 @@ getName() {
 
 ### <mark class="yellow">3. 반복 입력일 때 while? 재귀?</mark>
 
-**구현 사항**
+**[구현 사항]**
 
 반복으로 입력 받을 때 재귀대신 while문을 사용하였다.
 
@@ -242,7 +242,7 @@ const catchReturn = async (callback) => {
 
 <br>
 
-**이유**
+**[이유]**
 
 계속 입력 받는 방식에는 while문과 재귀 방식이 있다. 이렇게 제한은 없고 조건만 있을 때는 JS에서 재귀에 대한 사용을 지양한다.
 
@@ -257,7 +257,7 @@ const catchReturn = async (callback) => {
 
 ### <mark class="yellow">1. regex 대신 isNan 사용하기</mark>
 
-**이전 코드**
+**[이전 코드]**
 
 TryCount.js
 
@@ -270,7 +270,7 @@ if (!numberRegExp.test(tryCount))
 
 <br>
 
-**피드백**
+**[피드백]**
 
 regex가 읽기 좋은 도구는 아니다.
 
@@ -278,7 +278,7 @@ isNan, isNumber 같은 함수를 사용하면 훨씬 직관적인 코드다.
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 TryCount.js
 
@@ -293,7 +293,7 @@ if (!Number.isInteger(Number(tryCount))) {
 
 ### <mark class="yellow">2. 클래스가 필요할 때만 사용하기</mark>
 
-**이전 코드**
+**[이전 코드]**
 
 Console.js
 
@@ -307,7 +307,7 @@ class Console {
 
 <br>
 
-**피드백**
+**[피드백]**
 
 객체를 만드는 방법에는 object, class 등이 있다.
 
@@ -317,7 +317,7 @@ class Console {
 
 <br>
 
-**수정한 코드**
+**[수정한 코드]**
 
 class와 단순 객체
 
