@@ -81,6 +81,41 @@ document.querySelectorAll(".search-input-style");
 
 <br>
 
+### <mark class="yellow">HTML 빠르게 작성하기</mark>
+
+- .lottos-container
+  ```html
+  <div class="lottos-container"></div>
+  ```
+- #main
+  ```html
+  <div id="main"></div>
+  ```
+- li.lottos-list-items\*5
+  ```html
+  <li class="lottos-list-items"></li>
+  <li class="lottos-list-items"></li>
+  <li class="lottos-list-items"></li>
+  <li class="lottos-list-items"></li>
+  <li class="lottos-list-items"></li>
+  ```
+
+<br>
+
+### <mark class="yellow">CSS 컨벤션</mark>
+
+- margin, padding은 축약 표기법 사용하기
+
+  ```
+  margin : 0px 0px 0px 10px; (top , right , bottom, left)
+  margin : 10px; (네개의 분면이 모두 10px)
+  margin : 10px 15px; (top, bottom 은 10px , right, left는 15px)
+  ```
+
+- 0에는 단위를 생략한다.
+
+<br>
+
 ### <mark class="yellow">추가 학습</mark>
 
 **1\. 내가 작성한 HTML 코드가 DOM인가?**  

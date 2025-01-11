@@ -246,6 +246,54 @@ const View = {
 <br>
 <br>
 
+### <mark class="yellow">3. hidden 속성이 적용되지 않을 때</mark>
+
+**[문제점]**
+
+hidden 속성이 적용되지 않았다.
+
+```html
+<div id="modal" hidden></div>
+```
+
+<br>
+
+**[이전 코드]**
+
+flex가 있으면 hidden 보다 우선순위가 높기 때문에 hidden이 반영되지 않는다.
+
+```css
+#modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+```
+
+<br>
+
+**[수정한 코드]**
+
+flex를 없애주었다.
+
+```css
+#modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+```
+
+<br>
+<br>
+
 ## <mark class="pink">🔥2단계 피드백</mark>
 
 ### <mark class="yellow">1. 시맨틱 태그 사용하기</mark>
