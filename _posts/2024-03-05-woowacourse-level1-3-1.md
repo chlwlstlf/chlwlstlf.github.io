@@ -117,6 +117,8 @@ toc_sticky: true
   const pet: Animal = "Cat";
   ```
 
+- 유니온 타입은 하나 이상의 타입을 가질 수 있는 타입이다. 여러 타입을 `|` 연산자로 결합하여 사용한다.
+
 <br>
 
 **Implements**
@@ -139,6 +141,155 @@ toc_sticky: true
     }
   }
   ```
+
+<br>
+<br>
+
+### <mark class="yellow">타입 좁히기</mark>
+
+유니온 타입(ex: `string|number`) 또는 더 넓은 타입을 조건문 등을 이용해 더 구체적인 타입으로 제한하는 것을 말한다.
+
+1\. `typeof` 사용  
+기본 자료형(`string`, `number`, `boolean`) 등을 좁힐 때 사용된다.
+
+```js
+if (typeof value === "string") {
+}
+```
+
+<br>
+
+2\. `instanceof` 사용  
+객체가 특정 클래스의 인스턴스인지 확인할 때 사용된다.
+
+```js
+function makeSound(animal: Dog | Cat) {
+  if (animal instanceof Dog) {
+    animal.bark(); // Dog 타입으로 좁혀짐
+  } else {
+    animal.meow(); // Cat 타입으로 좁혀짐
+  }
+}
+```
+
+<br>
+
+3\. `in` 연산자 사용  
+객체에 특정 속성이 존재하는지 확인할 때 사용된다.
+
+```js
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    animal.swim();
+  } else {
+    animal.fly();
+  }
+}
+```
+
+<br>
+
+4\. 커스텀 타입 가드  
+타입 가드 함수를 사용하여 타입을 좁히는 방식이다. 함수의 반환 타입에 `value is Type`을 사용하여 특정 타입임을 명시한다.
+
+```js
+type Circle = { kind: "circle" };
+type Rectangle = { kind: "rectangle" };
+
+function isCircle(shape: Circle | Rectangle): shape is Circle {
+  return shape.kind === "circle";
+}
+```
+
+<br>
+
+5\. 리터럴 타입 체크
+
+```js
+type Action = { type: "ADD", payload: number } | { type: "DELETE", id: string };
+
+function handleAction(action: Action) {
+  if (action.type === "ADD") {
+    console.log("Adding:", action.payload);
+  } else if (action.type === "DELETE") {
+    console.log("Deleting ID:", action.id);
+  }
+}
+```
+
+<br>
+<br>
+
+### <mark class="yellow">선언과 단언</mark>
+
+**선언과 단언의 차이점**
+
+1\. 타입 선언  
+변수의 타입을 명시적으로 지정하는 방식이다.
+
+```js
+const name: string = "Alice"; // string 타입 선언
+```
+
+2\. 타입 단언  
+개발자가 변수의 타입을 직접 단언하며, 타입스크립트는 이를 신뢰하여 타입 검사를 생략한다.  
+`as` 키워드를 사용한다.
+
+```js
+const value: unknown = "Alice";
+const name = value as string; // 타입 단언
+```
+
+<br>
+
+**단언했을 때의 문제점**
+
+1\. 런타임 문제  
+단언은 타입스크립트가 타입 검사를 생략하므로 잘못된 단언은 런타임 오류를 유발할 수 있다.
+
+```js
+const value: unknown = 123;
+const name = value as string; // 잘못된 단언
+console.log(name.toUpperCase()); // 런타임 오류 발생
+```
+
+2\. 컴파일 문제  
+타입 단언은 타입스크립트의 타입 검사를 우회하기 때문에, 잘못된 단언이 있어도 컴파일러가 이를 잡아내지 못한다.
+
+```js
+const value: number = 42;
+const name = value as string; // 컴파일러는 오류를 잡지 못함
+```
+
+<br>
+
+**단언을 사용하는 상황**
+
+💡 타입 스크립트가 타입을 안전하게 추론할 수 있는 경우에는 단언을 피해야한다.
+
+1\. 타입스크립트가 타입을 추론하지 못 하는 경우  
+ex) DOM 조작
+
+```js
+const input = document.querySelector("input") as HTMLInputElement;
+input.value = "Hello";
+```
+
+2\. 데이터가 특정 타입임을 확인하는 경우  
+ex) API 응답 데이터
+
+```js
+const response: unknown = fetchData();
+const data = response as MyType;
+```
+
+3\. 외부 데이터를 가져오는 경우
+ex) JSON 데이터와 Storybook의 Meta 타입을 만족시키기 위해
+
+JSON 파일에서 가져온 데이터는 타입스크립트의 타입 체킹 없이 일반적인 객체 형태로 읽힌다. 따라서 특정 리터럴 타입으로 정의됐을 경우 이를 인식하지 못하고 `string`으로 추론된다. 이때 타입 단언을 사용해 컴파일러에게 올바른 타입임을 명시한다.
 
 <br>
 <br>
