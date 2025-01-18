@@ -6,7 +6,7 @@ toc: true
 toc_sticky: true
 ---
 
-# 미션2 🥡점심 뭐 먹지 1단계
+# 미션3 🥡점심 뭐 먹지 1단계
 
 ## <mark class="pink">🔥1단계 구현 사항</mark>
 
