@@ -169,7 +169,7 @@ toc_sticky: true
 
 <div class="blue-box">
   <p>
-    <div>Enter, Change일 떄 세번째 값이 닉네임이므로 같은 아이디에 닉네임을 갱신해줌(안 바껴도 갱신해줌)</div>
+    <div>Enter, Change일 때 세번째 값이 닉네임이므로 같은 아이디에 닉네임을 갱신해줌(안 바껴도 갱신해줌)</div>
   </p>
 </div>
 

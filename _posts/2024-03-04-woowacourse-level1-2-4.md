@@ -212,7 +212,7 @@ const View = {
 
 <br>
 
-하지만 당첨 결과 부분은 동적인 부분이기 떄문에 `tbody` 안에 내용이 없다. js에서 동적으로 결과 표를 렌더링했다.
+하지만 당첨 결과 부분은 동적인 부분이기 때문에 `tbody` 안에 내용이 없다. js에서 동적으로 결과 표를 렌더링했다.
 
 ![6](https://github.com/user-attachments/assets/36d12bd7-1e8a-43c7-aa43-cb6989bbceb5)
 

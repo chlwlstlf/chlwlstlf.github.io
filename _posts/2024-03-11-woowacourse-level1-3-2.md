@@ -12,7 +12,7 @@ toc_sticky: true
 
 [1단계 - 음식점 목록](https://github.com/woowacourse/javascript-lunch/pull/128){: .btn .btn--primary}
 
-### <mark class="yellow">RestaurantService</mark>
+### <mark class="yellow">1. RestaurantService</mark>
 
 **src/interface/RestaurantInterfaces.ts**
 
@@ -118,7 +118,7 @@ export default RestaurantService;
 <br>
 <br>
 
-### <mark class="yellow">버튼 컴포넌트</mark>
+### <mark class="yellow">2. 버튼 컴포넌트</mark>
 
 **src/components/Common/Button.ts**
 
@@ -131,7 +131,7 @@ const Button = (
   content: string
 ) => {
   return /*html*/ `
-  <button type=${type} class="button button--${variant} text-caption">${content}</button>
+    <button type=${type} class="button button--${variant} text-caption">${content}</button>
   `;
 };
 
@@ -158,7 +158,7 @@ const AddRestaurant = () => {
 <br>
 <br>
 
-### <mark class="yellow">insertAdjacentHTML</mark>
+### <mark class="yellow">3. insertAdjacentHTML</mark>
 
 **index.html**
 
