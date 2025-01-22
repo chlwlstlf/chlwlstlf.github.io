@@ -145,7 +145,7 @@ toc_sticky: true
 <br>
 <br>
 
-### <mark class="yellow">타입 좁히기</mark>
+### <mark class="yellow">타입 내로잉</mark>
 
 유니온 타입(ex: `string|number`) 또는 더 넓은 타입을 조건문 등을 이용해 더 구체적인 타입으로 제한하는 것을 말한다.
 

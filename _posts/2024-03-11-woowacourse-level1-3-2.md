@@ -233,3 +233,161 @@ if (!form) {
 
 form.addEventListener('submit', ...)
 ```
+
+<br>
+<br>
+
+## <mark class="pink">🔥생각해보기</mark>
+
+### <mark class="yellow">1. 읽기 전용으로 만들기</mark>
+
+**1\. Object.freeze**  
+객체를 런타임에서 불변으로 만든다.
+
+속성을 수정, 추가, 삭제할 수 없게 만든다. 컴파일 시 타입 체크가 아닌 **런타임에서 동작**한다.
+
+```ts
+const obj = Object.freeze({ name: "Alice", age: 30 });
+obj.name = "Bob"; // Error: Cannot assign to read-only property
+```
+
+배열도 고정되지만 내부 요소는 참조 가능(얕은 동결)한다.
+
+```ts
+const deepObj = Object.freeze({ inner: { value: 10 } });
+deepObj.inner.value = 20; // 변경 가능
+```
+
+<br>
+
+**2\. as const**  
+리터럴 객체나 배열을 **읽기 전용 리터럴 타입**으로 만든다.
+
+컴파일 단계에서 리터럴 값을 `변하지 않는 상수 타입`으로 추론한다. 객체와 배열 모두 지원하고, 타입스크립트 수준에서 타입을 고정(불변)한다.
+
+```ts
+const obj = { name: "Alice", age: 30 } as const;
+obj.name = "Bob"; // Error: Cannot assign to 'name' because it is a read-only property
+
+const arr = [1, 2, 3] as const;
+arr[0] = 4; // Error: Index signature in type 'readonly [1, 2, 3]' only permits reading
+```
+
+중첩된 구조도 고정된다. (리터럴 타입으로 추론)
+
+```ts
+const deepObj = { inner: { value: 10 } } as const;
+deepObj.inner.value = 20; // Error
+```
+
+<br>
+
+**3\. readonly**  
+객체 속성을 읽기 전용으로 지정한다.
+
+`type` 또는 `interface` 정의에서 사용한다. 객체를 런타임에서 불변으로 만들지는 않는다. 읽기 전용 속성은 컴파일러에서 변경 불가로 체크한다.
+
+```ts
+type User = {
+  readonly name: string;
+  age: number;
+};
+
+const user: User = { name: "Alice", age: 30 };
+user.name = "Bob"; // Error: Cannot assign to 'name' because it is a read-only property
+user.age = 35; // 가능
+```
+
+<br>
+
+**4\. `Readonly<Type>`**  
+기존 타입의 모든 속성을 읽기 전용으로 변환한다.
+
+기존 타입을 쉽게 변환하는 유틸리티 타입이다. `Partial`, `Required` 등과 함께 사용 가능하다.
+
+```ts
+type User = { name: string; age: number };
+const user: Readonly<User> = { name: "Alice", age: 30 };
+user.age = 35; // Error: Cannot assign to 'age' because it is a read-only property
+```
+
+<br>
+<br>
+
+### <mark class="yellow">2. Type Alias vs Interface</mark>
+
+**1\. Type Alias**  
+타입에 별칭을 부여한다. 기본 타입이나 유니언 타입을 정의할 수 있다. 객체, 함수 타입도 정의 가능하다. `&` 연산자로 타입 확장을 할 수 있다.
+
+```ts
+type ID = string | number; // 유니언 타입
+type Point = { x: number; y: number }; // 객체 타입
+type Add = (a: number, b: number) => number; // 함수 타입
+
+// 타입 확장
+type Animal = { name: string };
+type Dog = Animal & { breed: string };
+```
+
+<br>
+
+**2\. Interface**  
+객체 타입의 구조를 정의한다. `extends` 키워드로 확장할 수 있다.
+
+```ts
+// 타입 확장
+interface Animal {
+  name: string;
+}
+interface Dog extends Animal {
+  breed: string;
+}
+```
+
+<br>
+<br>
+
+### <mark class="yellow">3. 타입 내로잉(narrowing)</mark>
+
+유니언 타입과 같은 넓은 타입을 더 구체적인 타입으로 좁히는 과정이다.  
+타입스크립트는 코드 실행 중에 구체적인 타입을 알 수 없다. 타입 내로잉을 통해 타입을 명확히 하면 안전하게 작업할 수 있다.
+
+1\. 유니언 타입 처리
+
+```ts
+function printId(id: string | number) {
+  if (typeof id === "string") {
+    console.log(id.toUpperCase()); // string으로 좁힘
+  } else {
+    console.log(id.toFixed(2)); // number로 좁힘
+  }
+}
+```
+
+2\. 타입 가드 사용
+
+```ts
+function isDog(animal: Dog | Cat): animal is Dog {
+  return (animal as Dog).bark !== undefined;
+}
+```
+
+3\. 속성 존재 여부 체크
+
+```ts
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    animal.swim();
+  } else {
+    animal.fly();
+  }
+}
+```
+
+4\. `instanceof` 사용
+
+```ts
+if (date instanceof Date) {
+  console.log(date.getTime()); // Date 타입으로 좁힘
+}
+```
