@@ -12,7 +12,7 @@ toc_sticky: true
 
 **<mark class="yellow">[ 문제상황 ]</mark>**
 
-storybook에서 theme이 적용이 안된다!!!!!
+storybook에서 theme이 적용이 안 되고 있습니다!!!!!
 
 <br>
 

@@ -332,10 +332,6 @@ class App {
 }
 ```
 
-<video controls>
-  <source src="https://github.com/user-attachments/assets/e68f4d5b-d925-4049-bb03-de6c3702820b" type="video/mp4">
-</video>
-
 <br>
 
 **[피드백]**  
@@ -349,6 +345,10 @@ class App {
 
 **[질문 사항]**  
 모달을 클래스로 만든 후 아이템을 누를 때마다 생성하면 누른 아이템 수만큼 html에 모달 코드가 추가된다. 모달은 그대로 두고 안에 내용만 갈아 끼우는 것이 아니라 새로운 모달을 추가하는 것이 일반적인지 혹은 메모리나 렌더링 부분에서 괜찮은 방법인지 궁금하다.
+
+<video controls>
+  <source src="https://github.com/user-attachments/assets/e68f4d5b-d925-4049-bb03-de6c3702820b" type="video/mp4">
+</video>
 
 <br>
 
@@ -512,8 +512,8 @@ if (onFavoriteButtonClick) {
 
 ```ts
 if (onFavoriteButtonClick) {
-  onFavoriteButtonClick(event);
   event.stopPropagation();
+  onFavoriteButtonClick(event);
 }
 ```
 
@@ -554,5 +554,5 @@ if (onFavoriteButtonClick) {
 
 <br>
 
-**TypeScript는 어느 시점의 안정성을 보장할 수 있나요?**  
+**3\. TypeScript는 어느 시점의 안정성을 보장할 수 있나요?**  
 TypeScript는 "컴파일 타임"의 안정성을 보장한다. 타입스크립트는 컴파일 단계에서 코드의 타입을 검사해 오류를 잡아낸다.
