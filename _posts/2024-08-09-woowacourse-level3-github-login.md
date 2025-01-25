@@ -364,7 +364,7 @@ const postLogin = async (code: string) => {
 <br>
 <br>
 
-### OAuth 로그인 과정 최종 정리
+### <mark class="pink">OAuth 로그인 과정 최종 정리</mark>
 
 ![1003](https://github.com/user-attachments/assets/d9cad189-c443-40de-b17a-cec5e5b12c82)
 
