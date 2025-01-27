@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[React]state 관리"
+title: "[React] state 관리"
 categories: react
 toc: true
 toc_sticky: true

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level2 페이먼츠"
+title: "[우테코] Level2 페이먼츠"
 categories: woowacourse
 toc: true
 toc_sticky: true

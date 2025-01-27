@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level3 Github 로그인"
+title: "[우테코] Level3 Github 로그인"
 categories: woowacourse
 toc: true
 toc_sticky: true

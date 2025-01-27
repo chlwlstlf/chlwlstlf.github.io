@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level4 3 같은 건 매번 새로 요청하지 않기"
+title: "[우테코] Level4 3 같은 건 매번 새로 요청하지 않기"
 categories: woowacourse
 toc: true
 toc_sticky: true

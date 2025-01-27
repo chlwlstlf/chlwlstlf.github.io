@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[React]useRef, useEffect"
+title: "[React] useRef, useEffect"
 categories: react
 toc: true
 toc_sticky: true

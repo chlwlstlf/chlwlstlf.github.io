@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]프리코스 1주차"
+title: "[우테코] 프리코스 1주차"
 categories: woowacourse
 toc: true
 toc_sticky: true

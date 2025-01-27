@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level4 4 최소한의 변경만 일으키기"
+title: "[우테코] Level4 4 최소한의 변경만 일으키기"
 categories: woowacourse
 toc: true
 toc_sticky: true

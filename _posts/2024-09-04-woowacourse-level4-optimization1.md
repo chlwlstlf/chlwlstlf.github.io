@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level4 로딩, 렌더링 성능 개선이란?"
+title: "[우테코] Level4 로딩, 렌더링 성능 개선이란?"
 categories: woowacourse
 toc: true
 toc_sticky: true

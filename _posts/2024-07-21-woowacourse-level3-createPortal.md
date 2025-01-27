@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level3 createPortal"
+title: "[우테코] Level3 createPortal"
 categories: woowacourse
 toc: true
 toc_sticky: true

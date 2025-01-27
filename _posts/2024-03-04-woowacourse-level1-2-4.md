@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 로또 게임 2단계"
+title: "[우테코] Level1 로또 게임 2단계"
 categories: woowacourse
 toc: true
 toc_sticky: true

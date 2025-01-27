@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Next.js]Next.js 시작하기"
+title: "[Next.js] Next.js 시작하기"
 categories: next
 toc: true
 toc_sticky: true

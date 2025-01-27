@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 DOM, BOM, Event"
+title: "[우테코] Level1 DOM, BOM, Event"
 categories: woowacourse
 toc: true
 toc_sticky: true

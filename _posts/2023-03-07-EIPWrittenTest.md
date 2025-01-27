@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[정보처리기사]필기"
+title: "[정보처리기사] 필기"
 categories: elp
 toc: true
 toc_sticky: true

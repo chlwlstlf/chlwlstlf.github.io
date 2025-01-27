@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Firebase]구글 Firebase로 배포하기"
+title: "[Firebase] 구글 Firebase로 배포하기"
 categories: etc
 toc: true
 toc_sticky: true

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 페어프로그래밍 제출 방법"
+title: "[우테코] Level1 페어프로그래밍 제출 방법"
 categories: woowacourse
 toc: true
 toc_sticky: true

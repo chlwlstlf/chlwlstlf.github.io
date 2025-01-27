@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level2 Controlled & Uncontrolled Components, Hooks API"
+title: "[우테코] Level2 Controlled & Uncontrolled Components, Hooks API"
 categories: woowacourse
 toc: true
 toc_sticky: true

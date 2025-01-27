@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 점심 뭐 먹지 2단계"
+title: "[우테코] Level1 점심 뭐 먹지 2단계"
 categories: woowacourse
 toc: true
 toc_sticky: true

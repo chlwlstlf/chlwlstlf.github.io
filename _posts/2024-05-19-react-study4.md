@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[React]Webpack"
+title: "[React] Webpack"
 categories: react
 toc: true
 toc_sticky: true

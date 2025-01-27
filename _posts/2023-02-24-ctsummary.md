@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "코딩테스트 준비"
+title: "[이코테] 코딩테스트 준비"
 categories: cote
 toc: true
 toc_sticky: true

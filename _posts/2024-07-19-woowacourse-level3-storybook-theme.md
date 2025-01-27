@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level3 storybook에 theme, 절대경로, createPortal 적용하기"
+title: "[우테코] Level3 storybook에 theme, 절대경로, createPortal 적용하기"
 categories: woowacourse
 toc: true
 toc_sticky: true

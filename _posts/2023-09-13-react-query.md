@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[React]react-query 라이브러리"
+title: "[React] react-query 라이브러리"
 categories: react
 toc: true
 toc_sticky: true

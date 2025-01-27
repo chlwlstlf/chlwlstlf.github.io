@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level4 1 요청 크기 줄이기"
+title: "[우테코] Level4 1 요청 크기 줄이기"
 categories: woowacourse
 toc: true
 toc_sticky: true

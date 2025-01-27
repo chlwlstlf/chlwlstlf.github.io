@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[CodingTest]코딩 테스트 스터디"
+title: "[CodingTest] 코딩 테스트 스터디"
 categories: boj
 toc: true
 toc_sticky: true

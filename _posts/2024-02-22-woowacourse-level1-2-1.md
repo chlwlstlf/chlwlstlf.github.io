@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 TDD, 객체, 함수"
+title: "[우테코] Level1 TDD, 객체, 함수"
 categories: woowacourse
 toc: true
 toc_sticky: true

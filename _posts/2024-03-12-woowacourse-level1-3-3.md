@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 SPA"
+title: "[우테코] Level1 SPA"
 categories: woowacourse
 toc: true
 toc_sticky: true

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[React]react hooks"
+title: "[React] react hooks"
 categories: react
 toc: true
 toc_sticky: true

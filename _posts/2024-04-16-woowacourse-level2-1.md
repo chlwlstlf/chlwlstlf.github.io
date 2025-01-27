@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level2 Component, Storybook"
+title: "[우테코] Level2 Component, Storybook"
 categories: woowacourse
 toc: true
 toc_sticky: true

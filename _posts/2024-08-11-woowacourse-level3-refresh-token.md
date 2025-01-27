@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level3 Refresh Token"
+title: "[우테코] Level3 Refresh Token"
 categories: woowacourse
 toc: true
 toc_sticky: true

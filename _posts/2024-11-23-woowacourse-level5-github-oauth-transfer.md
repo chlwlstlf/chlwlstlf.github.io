@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level5 Github OAuth 소유권 이전"
+title: "[우테코] Level5 Github OAuth 소유권 이전"
 categories: woowacourse
 toc: true
 toc_sticky: true

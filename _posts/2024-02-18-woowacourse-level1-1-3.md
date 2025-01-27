@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 Data Types, Scope, Object, Prototype"
+title: "[우테코] Level1 Data Types, Scope, Object, Prototype"
 categories: woowacourse
 toc: true
 toc_sticky: true

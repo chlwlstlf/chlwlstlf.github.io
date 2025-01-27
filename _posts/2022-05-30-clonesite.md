@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "MegaBox 2022"
+title: "[UMC] MegaBox 2022"
 categories: umc
 toc: true
 toc_sticky: true

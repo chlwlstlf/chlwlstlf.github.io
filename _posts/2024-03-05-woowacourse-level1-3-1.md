@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 컴포넌트, Typescript, E2E 테스트"
+title: "[우테코] Level1 컴포넌트, Typescript, E2E 테스트"
 categories: woowacourse
 toc: true
 toc_sticky: true

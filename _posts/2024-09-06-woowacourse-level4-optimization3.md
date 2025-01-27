@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level4 2 필요한 것만 요청하기"
+title: "[우테코] Level4 2 필요한 것만 요청하기"
 categories: woowacourse
 toc: true
 toc_sticky: true

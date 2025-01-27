@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level1 좋은 코드, 단위 테스트"
+title: "[우테코] Level1 좋은 코드, 단위 테스트"
 categories: woowacourse
 toc: true
 toc_sticky: true

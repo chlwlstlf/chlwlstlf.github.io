@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코]Level5 onKeyDown 이벤트가 두 번 발생하는 이유"
+title: "[우테코] Level5 onKeyDown 이벤트가 두 번 발생하는 이유"
 categories: woowacourse
 toc: true
 toc_sticky: true
