@@ -12,23 +12,35 @@ toc_sticky: true
 
 ### <mark class="yellow">1. 웹 서버와 웹 클라이언트</mark>
 
-클라이언트-서버 모델 구조는 client가 요청하면 server가 응답해주는 구조이다. 웹서버는 네트워크상에 공개하는 하이퍼텍스트(HTML 형식의 파일)를 쌓고, 웹 클라이언트가 요청하는 HTML 파일을 건네주는 구조로 되어있다.
+클라이언트-서버 모델 구조는 **client가 요청**하면 **server가 응답**해주는 구조이다.
+
+웹서버는 네트워크상에 공개하는 하이퍼텍스트(HTML 형식의 파일)를 쌓고, 웹 클라이언트가 요청하는 **HTML 파일**을 건네주는 구조로 되어있다.
 
 <br>
 
-**왜 클라이언트와 서버로 나뉘는 것일까?**  
-웹에 존재하는 대부분의 콘텐츠는 업데이트가 이루어진다. 그런데 여러곳에 분산돼 있으면 어디에 저장되어 있는지 파악하고 동시에 갱신하는 것이 매우 어렵고 비용이 많이 드는 작업이 된다. 즉 웹 서버와 같이 컴퓨터 하나에 정보를 모아 두는 편이 관리가 수월하다.
+**왜 클라이언트와 서버로 나뉘는 것일까?**
 
-또한 웹은 불특정 다수의 사람이 콘텐츠를 자유롭게 열람할 수 있어야 하는데, 사용자가 콘텐츠를 열람하기 위해 그 콘텐츠를 보관하고 처리하는 웹 서버를 직접 조작하는 것은 비현실적인 일이다. 그래서 사용자 앞에 있는 PC를 웹 클라이언트로, 콘텐츠 자원을 관리하고 처리하는 컴퓨터를 웹서버로 만들어 인터넷으로 연결하는 것이다.
+웹에 존재하는 대부분의 콘텐츠는 업데이트가 이루어진다. 그런데 여러곳에 분산되어 있으면 어디에 저장되어 있는지 파악하고 동시에 갱신하는 것이 매우 어렵고 비용이 많이 드는 작업이 된다. 즉 웹 서버와 같이 컴퓨터 하나에 정보를 모아 두는 편이 관리가 수월하다.
+
+또한 웹은 불특정 다수의 사람이 콘텐츠를 자유롭게 열람할 수 있어야 하는데, 사용자가 콘텐츠를 열람하기 위해 그 콘텐츠를 보관하고 처리하는 웹 서버를 직접 조작하는 것은 비현실적인 일이다. 그래서 사용자 앞에 있는 **PC를 웹 클라이언트**로, 콘텐츠 **자원을 관리하고 처리하는 컴퓨터를 웹서버**로 만들어 인터넷으로 연결하는 것이다.
 
 <br>
 
-**그 리소스(html 파일)는 어디서 찾아서 주는 것일까? - URL**  
-클라이언트(유저)는 "어디 어디에 있는 이 콘텐츠를 읽고 싶다"라고 지정할 방법이 필요하다. 따라서 인터넷 상의 콘텐츠를 고유하게 지정하기 위한 구조가 URL(Uniform Resource Locator)인 것이다. 즉 유저가 웹 브라우저로 특정 사이트에 접속할 때 주소창에 입력하는 문자열이 바로 URL이다. 예를 들어 유저가 은행에서 돈을 찾는 화면을 이용한다면 아래와 같은 방식으로 요청할 수 있다.
+**그 리소스(html 파일)는 어디서 찾아서 주는 것일까? - URL**
+
+클라이언트(유저)는 "어디 어디에 있는 이 콘텐츠를 읽고 싶다"라고 지정할 방법이 필요하다. 따라서 인터넷 상의 콘텐츠를 고유하게 지정하기 위한 구조가 URL(Uniform Resource Locator)인 것이다. 즉 유저가 웹 브라우저로 특정 사이트에 접속할 때 주소창에 입력하는 문자열이 바로 URL이다.
+
+예를 들어 유저가 은행에서 돈을 찾는 화면을 이용한다면 아래와 같은 방식으로 요청할 수 있다.
+
+---
 
 ![](https://user-images.githubusercontent.com/50367798/60485705-d2803f80-9cd8-11e9-8df4-e20996be695b.png)
 
+---
+
 ![](https://user-images.githubusercontent.com/50367798/60485707-d4e29980-9cd8-11e9-8261-5640fee1c41b.png)
+
+---
 
 <br>
 <br>
@@ -37,14 +49,16 @@ toc_sticky: true
 
 우리는 URL을 이용함으로써 웹 상에 공개된 다양한 콘텐츠를 얻을 수 있다. 하지만 웹의 구현에는 한 가지 더 넘어야 할 산이 있다. 바로 하이퍼텍스트를 비롯한 콘텐츠를 컴퓨터가 **어떻게** 송수신할지에 대한 것이다.
 
-인터넷에는 다양한 종류의 컴퓨터가 연결돼있는데, 웹 서버와 웹 클라이언트가 통신하려면 어떻게 정보를 주고 받을지에 대한 약속이 필요하다. 이 약속을 `통신 프로토콜` 이라고 한다. 웹의 창시자 버너스 리 박사는 HTML 전송에 적합한 프로토콜을 새로 고안했다. 이것이 현재도 널리 사용되고 있는 HTTP(HyperText Transfer Protocol)이다. HTTP는 다른 프로토콜에 비해 매우 단순해서 간단히 구현할 수 있어 쉽게 널리 이용됐다.
+인터넷에는 다양한 종류의 컴퓨터가 연결되어 있는데, 웹 서버와 웹 클라이언트가 통신하려면 어떻게 정보를 주고 받을지에 대한 약속이 필요하다. 이 약속을 **통신 프로토콜** 이라고 한다.
+
+웹의 창시자 버너스 리 박사는 HTML 전송에 적합한 프로토콜을 새로 고안했다. 이것이 현재도 널리 사용되고 있는 HTTP(HyperText Transfer Protocol)이다. HTTP는 다른 프로토콜에 비해 매우 단순해서 간단히 구현할 수 있어 쉽게 널리 이용됐다.
 
 ![](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_Steps.png)
 
 <br>
 <br>
 
-**1\. URL(Uniform Resource Location)**
+**<mark class="yellow">1. URL(Uniform Resource Location)</mark>**
 
 ![](https://user-images.githubusercontent.com/50367798/60554681-859d7700-9d73-11e9-9859-38b628ca957c.png)
 
@@ -81,7 +95,7 @@ www.wootecto.com/webcontents/index.html
 <br>
 <br>
 
-**2\. HTTP Request Line**
+**<mark class="yellow">2. HTTP Request Line</mark>**
 
 ![](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png)
 
@@ -123,7 +137,7 @@ GET 메서드는 단순히 "정보를 주세요"라는 의미에 불과하며, U
 <br>
 <br>
 
-**3\. HTTP response**
+**<mark class="yellow">3. HTTP response</mark>**
 
 ![](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png)
 
@@ -170,7 +184,7 @@ HTTP 버전은 요청에서와 마찬가지로 사용하는 프로토콜의 버�
 <br>
 <br>
 
-**4\. HTTP method**
+**<mark class="yellow">4. HTTP method</mark>**
 
 ![](http://www.aliencoders.org/wp-content/uploads/2016/01/http-header-functions.jpg)
 
@@ -193,7 +207,11 @@ HTTP 버전은 요청에서와 마찬가지로 사용하는 프로토콜의 버�
 
 초기에는 XML/XLST 포맷 형태의 데이터를 주고받다가 최근에는 JSON 형태의 데이터를 주고받는 웹 비동기 기술로 정착되고 있다.
 
-AJAX는 HTML, XML, JSON 등 다양한 데이터를 주고받을 수 있다. AJAX를 위해서 자바스크립트는 XMLHttpRequest 객체를 사용한다. XMLHttpRequest 객체는 자바스크립트의 내장 객체로 비동기 통신 구현을 위한 객체이며, 이 객체는 서버로 요청을 보내고 요청받은 결과를 비동기로 처리한다. 따라서 요청을 보낸 후 사용자는 UI 화면과 상호작용을 하거나 다른 AJAX 요청을 추가로 보낼 수 있다.
+**AJAX**  
+AJAX는 HTML, XML, JSON 등 다양한 데이터를 주고받을 수 있다. AJAX를 위해서 자바스크립트는 XMLHttpRequest 객체를 사용한다.
+
+**XMLHttpRequest**  
+XMLHttpRequest 객체는 자바스크립트의 내장 객체로 비동기 통신 구현을 위한 객체이며, 이 객체는 서버로 요청을 보내고 요청받은 결과를 비동기로 처리한다. 따라서 요청을 보낸 후 사용자는 UI 화면과 상호작용을 하거나 다른 AJAX 요청을 추가로 보낼 수 있다.
 
 서버에서 응답이 오면 AJAX 요청을 보낼 때 등록한 콜백 함수를 통해 결과 데이터를 처리하게 된다.
 
@@ -203,7 +221,9 @@ AJAX는 HTML, XML, JSON 등 다양한 데이터를 주고받을 수 있다. AJAX
 
 > JavaScript Object Notation
 
-AJAX로 받아오는 대부분의 데이터는 JSON 포맷이다. 비동기로 받은 데이터가 HTML이면 웹 페이지에 바로 붙여널을 수 있지만, JSON 데이터면 동적으로 HTML 태그들을 생성해 넣어야 한다. 전통적인 웹페이지와 다르게 동적 웹페이지를 생성하는 데 있어 JSON을 사용해야 하는 이유는 JSON으로 전송하는 데이터의 양이 HTML보다 훨씬 적기 떄문에 느린 인터넷 환경, 특히 모바일 환경에서 **더 빠른 페이지 로딩과 페이지 갱신**을 보장할 수 있기 떄문이다.
+AJAX로 받아오는 대부분의 데이터는 **JSON 포맷**이다. 비동기로 받은 데이터가 HTML이면 웹 페이지에 바로 붙여널을 수 있지만, JSON 데이터면 동적으로 HTML 태그들을 생성해 넣어야 한다.
+
+전통적인 웹페이지와 다르게 동적 웹페이지를 생성하는 데 있어 JSON을 사용해야 하는 이유는 JSON으로 전송하는 데이터의 양이 HTML보다 훨씬 적기 떄문에 느린 인터넷 환경, 특히 모바일 환경에서 **더 빠른 페이지 로딩과 페이지 갱신**을 보장할 수 있기 떄문이다.
 
 또한, HTML 데이터를 받아 웹페이지에 붙이는 과정이 적은 자바스크립트 코드만으로 구현이 가능하지만, 내부 과정은 결국 HTML 데이터를 파싱해 DOM 노드를 생성해 붙이는 과정을 거치기 때문에 JSON 데이터를 사용해 동적으로 HTML 페이지를 갱신하는 과정과 차이가 없다.
 
@@ -222,7 +242,9 @@ const json = JSON.parse(xhr.responseText);
 
 ## <mark class="pink">📖RESTful API</mark>
 
-`REST(Representational State Transfer)`는 HTTP **URI를 통해 자원을 명시**하고, HTTP Method를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미한다.
+`REST(Representational State Transfer)`는 **HTTP URI를 통해 자원을 명시**하고, HTTP Method를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미한다.
+
+<br>
 
 **[REST API 특성]**
 
@@ -255,13 +277,13 @@ Promise는 Promise가 생성될 때 꼭 알 수 있지는 않은 값을 위한 �
 
 Promise를 사용하면 비동기 메서드에서 마치 동기 메서드처럼 값을 반환할 수 있다. 다만 최종 결과를 반환하지는 않고, 대신 Promise를 반환해서 **미래의 어떤 시점에 결과를 제공**한다.
 
-미랫값인 Promise는 성공할 수도, 실패할 수도 있습니다.
+미랫값인 Promise는 성공할 수도, 실패할 수도 있다.
 
 <br>
 
 ### <mark class="yellow">2. 콜백</mark>
 
-Promise가 등장하기 전에 사용하던 방법이다.
+> Promise가 등장하기 전에 사용하던 방법
 
 **[콜백 지옥]**  
 서비스의 로직이 복잡해지고 여러 비동기 동작들이 필요한 시점부터 비동기 함수에서 다른 비동기 함수를 호출하고, 거기서 또 다른 비동기 함수를 호출하는 등의 중첩이 발생했다. 이런 경우를 **콜백 지옥**에 빠졌다고 한다.
@@ -299,13 +321,13 @@ try {
 <br>
 <br>
 
-### <mark class="yellow">2. Promise</mark>
+### <mark class="yellow">3. Promise</mark>
 
 Promise는 콜백 함수를 인자로 받는 대신에 **성공과 실패에 대응하는 메서드**를 제공한다. 그리고 콜백 함수를 중첩하지 않고, 여러 개의 비동기 동작을 연결할 수 있는 방법을 제공한다.
 
 Promise는 비동기 작업을 전달받아서 응답에 따라 두 가지 메서드 중 하나를 호출하는 객체이다. Promise는 비동기 작업이 성공하거나 충족된 경우 then() 메서드에 결과를 넘겨준다. 비동기 작업에 실패하거나 거부되는 경우에는 catch() 메서드를 호출한다. then()과 catch() 메서드에는 모두 함수를 인자로 전달한다. 이때 두 메서드에 전달되는 함수에는 비동기 작업의 결과인 응답만이 인수로 전달된다.
 
-Promise는 두 개의 인자. **resolve()**와 **reject()**를 전달받는다. resole()는 코드가 정상적으로 동작했을 때 실행된다. resolve()가 호출되면 then() 메서드에 전달된 함수가 실행된다. Promise를 설정할 때 then()과 catch 메서드를 모두 사용할 수 있다. then() 메서드는 성공한 경우를 처리하고, catch() 메서드는 거절된 경우를 처리한다.
+Promise는 두 개의 인자 **resolve()**와 **reject()**를 전달받는다. resole()는 코드가 정상적으로 동작했을 때 실행된다. resolve()가 호출되면 then() 메서드에 전달된 함수가 실행된다. Promise를 설정할 때 then()과 catch 메서드를 모두 사용할 수 있다. then() 메서드는 성공한 경우를 처리하고, catch() 메서드는 거절된 경우를 처리한다.
 
 ```js
 new Promise(function (resolve, reject) {
@@ -316,6 +338,8 @@ new Promise(function (resolve, reject) {
 ```
 
 <br>
+
+---
 
 ![](https://techcourse-storage.s3.ap-northeast-2.amazonaws.com/2020-05-14T20%3A11%3A42.267image.png)
 
@@ -331,6 +355,8 @@ getUserPreferences()
 
 여기서 Promise를 연결하는 경우에는 catch() 메서드를 개별적으로 연결할 필요가 없다. catch() 메서드를 하나만 정의해서 Promise가 거절되면 모든 경우를 처리할 수 있다.
 
+<br>
+
 이제 비동기 작업을 처리할 수 있는 도구를 다룰 수 있게 되었다. 이런 Promise가 가장 많이 사용되는 상황 중 하나는 바로 API에서 데이터를 가져오는 경우이다. 그렇다면 이 Promise를 활용해 자바스크립트에서 데이터를 가져오는 fetch에 대해 알아보자.
 
 <br>
@@ -340,7 +366,7 @@ getUserPreferences()
 
 규모가 있는 자바스크립트 앱을 개발하는 경우에는 필연적으로 API를 다루게 된다. API를 이용하면 페이지가 아닌 **데이터**를 가져올 수 있어서, 화면을 새로 고침하지 않아도 요소를 갱신할 수 있다. 즉 문서를 애플리케이션으로 만들 수 있다.
 
-최근 프론트엔드의 트렌드 중 하나인 단일 페이지 웹앱은 자바스크립트가 인기를 끄는 이유 중 하나이지만, Ajax로 데이터를 가져오는 작업은 오랜 시간 동안 꽤 번거로운 방법이었다. 그래서 오랜시간 개발자들은 복잡도를 낮춘 jQuery와 같은 라이브러리를 사용했다.
+최근 프론트엔드의 트렌드 중 하나인 단일 페이지 웹앱은 자바스크립트가 인기를 끄는 이유 중 하나이지만, Ajax로 데이터를 가져오는 작업은 오랜 시간 동안 꽤 번거로운 방법이었다. 그래서 오랜시간 개발자들은 복잡도를 낮춘 jQuery와 같은 라이브러리를 사용했고, 더 복잡도를 낮춘 fetch라는 도구를 만들어냈다.
 
 <br>
 
@@ -353,6 +379,8 @@ fetch()를 사용하려면 API 끝점(엔드 포인트)이 필요하다.
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1");
 ```
+
+<br>
 
 응답: 해당 포스트 정보를 받았다.
 
@@ -372,7 +400,9 @@ fetch("https://jsonplaceholder.typicode.com/posts/1");
 
 💡 주의할 점. json() 메서드도 Promise를 반환하기 때문에 then() 메서드를 추가해야 한다. 추가한 then() 메서드에서 콜백에서 파싱된 데이터를 처리할 수 있다.
 
-제목만 가져오기
+<br>
+
+**제목만 가져오기**
 
 ```js
 fetch("https://jsonplaceholder.typicode.com/posts/1")
@@ -468,7 +498,7 @@ async function getUser() {
 
 <br>
 
-async 함수가 유용할 때는 여러 개의 Promise를 다룰 때이다.
+async 함수가 유용할 때는 **여러 개의 Promise**를 다룰 때이다.
 
 ```js
 // async
@@ -490,7 +520,7 @@ getArtistPreference()
 
 ## <mark class="pink">📖비동기 퀴즈</mark>
 
-### <mark class="yellow">Q1. setTimeout과 Promise</mark>
+### <mark class="yellow">Q1. 이벤트 루프와 실행 컨텍스트</mark>
 
 **[문제]**
 
@@ -509,10 +539,63 @@ setTimeout(() => console.log("4"));
 
 **[답]**
 
+1\. 동기 코드
+
+```js
+console.log("1");
+```
+
+- 동기 코드이므로 가장 먼저 실행된다.
+
+<br>
+
+2\. 첫 번째 setTimeout
+
+```js
+setTimeout(() => console.log("2"));
+```
+
+- setTimeout은 비동기 작업으로, 콜백함수 (`() => console.log("2")`)를 **매크로 태스크 큐**로 보낸다.
+- 대기 시간이 없지만, 태스크 큐에 있는 콜백은 메인 스레드가 비어야 실행되므로, 나중에 실행된다.
+
+<br>
+
+3\. Promise
+
+```js
+new Promise((resolve) => resolve()).then(() => {
+  console.log("3");
+});
+```
+
+- `new Promise`는 즉시 실행되는 동기 코드이므로 `resolve()`가 즉시 호출된다.
+- `.then()`의 콜백은 **마이크로태스크 큐**에 추가된다.
+- 마이크로태스크 큐는 매크로 태스크 큐보다 우선적으로 처리되므로, 메인 스레드가 비는 즉시 실행된다.
+
+<br>
+
+4\. 두 번째 setTimeout
+
+```js
+setTimeout(() => console.log("4"));
+```
+
+- 두 번째 setTimeout도 첫 번째와 동일하게 **매크로태스크 큐**에 콜백 함수가 추가된다.
+- 마이크로태스크가 모두 실행된 후 실행된다.
+
+<br>
+
+<div class="blue-box">
+  <b>💡 이벤트 루프란?</b>
+  <div>Javascript는 싱글 스레드 언어이기 때문에, 하나의 작업만 처리할 수 있지만 이벤트 루프 덕분에 비동기 작업을 효율적으로 관리할 수 있다.</div>
+  <div>콜 스택과 태스크 큐 사이에서 작업 순서를 관리하는 역할을 한다.</div>
+  <div>동기 작업과 비동기 작업을 구분하고, 비동기 작업이 완료되었을 때 실행될 수 있도록 한다.</div>
+</div>
+
 <br>
 <br>
 
-### <mark class="yellow">Q2. 렉시컬 환경</mark>
+### <mark class="yellow">Q2. 스코프와 클로저</mark>
 
 **[문제]**
 
@@ -536,10 +619,84 @@ for (var i = 0; i < 10; i++) {
 
 **[답]**
 
+1\. 첫 번째 코드
+
+```js
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => console.log(i)); // 10이 10번 출력
+}
+```
+
+[1] `var`의 특성
+
+- `var`는 함수 스코프를 가지며, 블록 스코프를 가지지 않는다. 따라서 for문의 모든 반복에서 i는 하나의 공통된 변수를 공유한다.
+- 반복문이 끝난 후 i의 값은 최종적으로 10이 된다.
+
+[2] 비동기 작업과 클로저
+
+- `setTimeout`은 비동기 함수이다. 콜백 함수(`() => console.log(i)`)는 이벤트 루프에 의해 실행되며, 루프가 완료된 후 실행된다.
+- 반복문이 끝난 후에도 `setTimeout`의 콜백 함수는 마지막 값(10)을 참조한다. 이는 i가 하나의 공유된 변수이기 때문이다.
+
+[3] 결과
+
+- `setTimeout`의 콜백은 루프가 완료된 후 실행되므로, 모든 콜백은 i의 최종 값인 10을 참조한다.
+- 10이 10번 출력된다.
+
+<br>
+
+2\. 두 번째 코드
+
+```js
+for (var i = 0; i < 10; i++) {
+  (function (i) {
+    setTimeout(() => console.log(i)); // 0 1 2 3 4 5 6 7 8 9
+  })(i);
+}
+```
+
+[1] 즉시 실행 함수
+
+- function는 즉시 실행 함수이다.
+- 이 함수는 각각의 반복에서 즉시 호출되며 현재의 값을 매개변수로 전달받는다.
+- 즉, 반복마다 새로운 스코프가 생성되고, i 값이 복사된다.
+
+[2] 클로저
+
+- setTimeout의 콜백 함수는 IIFE 내부의 매개변수 i를 참조한다.
+- 이 i는 각 반복마다 생성된 독립적인 변수이다.
+- 따라서 setTimeout이 실행될 때마다 다른 스코프의 i 값을 참조하게 된다.
+
+[3] 결과
+
+- 각각의 setTimeout은 독립적인 i 값을 가지므로, 0부터 9까지 출력된다.
+
+<br>
+
+3\. let을 사용한 동일한 결과
+
+- ES6에서는 `let`이 블록 스코프를 가지므로, 아래와 같이 작성하면 두 번째 코드와 동일한 결과를 얻을 수 있다.
+
+- let은 각 반복마다 새로운 변수를 생성하므로, 별도의 IIFE 없이도 두 번째 코드와 같은 동작을 한다.
+
+```js
+for (let i = 0; i < 10; i++) {
+  setTimeout(() => console.log(i)); // 0 1 2 3 4 5 6 7 8 9
+}
+```
+
+<br>
+
+<div class="blue-box">
+  <b>💡 IIFE란?</b>
+  <div>즉시 실행 함수(Immediately Invoked Function Expression, IIFE)</div>
+  <div>즉시 실행 함수 내부에서 생성된 변수는 완전히 독립적인 스코프를 가진다.</div>
+  <div>작성된 위치에서 즉시 실행된다.</div>
+</div>
+
 <br>
 <br>
 
-### <mark class="yellow">Q3. async와 비동기</mark>
+### <mark class="yellow">Q3. Promise와 비동기</mark>
 
 **[문제]**
 
@@ -573,6 +730,74 @@ foo();
 
 **[답]**
 
+```js
+function foo() {
+  getPopularMovies().then((movies) => console.log(movies));
+}
+```
+
+1\. `getPopularMovies()`는 비동기 함수
+
+- `async function getPopularMovies()`는 비동기 함수이며, await을 사용하여 1초 동안 대기한 후 영화 목록을 반환한다.
+- `return`을 사용했지만, 비동기 함수는 항상 `Promise`를 반환한다.
+- 따라서 `getPopularMovies()`의 반환 값은 `Promise<Array<string>>`가 된다.
+
+<br>
+
+2\. foo 함수는 async 키워드를 붙일 수 없다.
+
+- `foo()`에 `async` 키워드를 붙일 수 없다고 했으므로, `await`을 사용할 수 없다.
+- 하지만 `Promise`를 처리하려면 `await` 대신 `.then()`을 사용해야 한다.
+
+<br>
+
+3\. `then()`을 사용하여 결과 처리
+
+- `getPopularMovies()`는 Promise를 반환하므로, `then()`을 사용하여 비동기 작업이 완료된 후 movies를 얻을 수 있다.
+- then()의 콜백 함수는 movies를 매개변수로 받아 콘솔에 출력한다.
+
+<br>
+
+**[추가 설명]**
+
+1\. Promise의 기본 동작
+
+- async 함수는 항상 **Promise 객체**를 반환한다.
+
+```js
+Promise.resolve([
+  "쿵푸팬더4",
+  "댐즐",
+  "스리 아시",
+  "돼지와 뱀과 비둘기",
+  "듄: 파트 2",
+  "가여운 것들",
+]);
+```
+
+<br>
+
+2\. await의 역할
+
+- await은 Promise가 이행(fulfilled)될 때까지 대기한다.
+- Promise가 완료되면, Promise가 반환한 값을 바로 반환받는다.
+
+```js
+const moviesPromise = getPopularMovies();
+console.log(moviesPromise); // Promise 객체 출력
+```
+
+![Image](https://github.com/user-attachments/assets/04285ff4-705e-46d5-8ebd-ea9466442123)
+
+<br>
+
+```js
+const movies = await getPopularMovies();
+console.log(movies); // Promise의 결과인 배열 출력
+```
+
+![Image](https://github.com/user-attachments/assets/f624f33c-1d00-490b-a7ea-79757d5103ad)
+
 <br>
 <br>
 
@@ -603,3 +828,80 @@ const getPopularMovies = new Promise((resolve, reject) => {
 <br>
 
 **[답]**
+
+```js
+const getPopularMovies = new Promise((resolve, reject) => {
+  setTimeout(resolve, Math.random() * 4000 + 1000, "외부 API 접근한 결괏값");
+});
+
+// 타임아웃을 설정한 코드
+const timeoutPromise = new Promise((_, reject) => {
+  setTimeout(() => reject(new Error("대기 시간이 오래 걸립니다")), 3000);
+});
+
+// 두 개의 Promise를 경쟁시킴
+Promise.race([getPopularMovies, timeoutPromise])
+  .then((result) => {
+    console.log(result); // 성공 시 결과 출력
+  })
+  .catch((error) => {
+    console.error(error.message); // 3초 초과 시 오류 메시지 출력
+  });
+```
+
+**Promise.race()의 동작**
+
+- Promise.race()는 여러개의 Promise를 받아서 가장 먼저 완료된 Promise의 결과를 반환한다.
+- 배열 안에 있는 함수들 중 하나가 먼저 완료되면 다른 Promise는 무시된다.
+
+<br>
+
+**[추가 설명]**
+
+1\. setTimeout의 기본 형태
+
+```js
+setTimeout(callback, delay, ...args);
+```
+
+`callback`: 지연 시간이 지나면 실행할 함수  
+`delay`: 지연 시간(밀리초 단위, 1초 1000)  
+`...args`: callback 함수에 전달할 추가적인 인자
+
+지정된 시간(delay)이 지난 후에 비동기적으로 callback을 실행한다.
+
+<br>
+
+2\. 주어진 코드에서의 setTimeout 인자
+
+```js
+setTimeout(resolve, Math.random() * 4000 + 1000, "외부 API 접근한 결괏값");
+```
+
+**첫 번째 인자** (`resolve`)
+
+- setTimeout이 1초에서 5초 사이의 임의 시간(`delay`)이 지난 후 **resolve**를 호출한다.
+- 이 resolve는 Promise를 fulfilled(이행) 상태로 바꾸는 역할을 한다.
+
+**두 번째 인자** (`Math.random() * 4000 + 1000`)
+
+- `Math.random()`은 0 이상 1 미만의 난수를 반환한다.
+- 따라서 위 코드의 최종 결과는 1000(1초) ~ 5000(5초) 사이의 값이 된다.
+
+**세 번째 인자** ("외부 API 접근한 결괏값")
+
+- setTimeout이 실행될 때 resolve 함수에 전달할 값이다.
+- 즉 위 메세지가 resolve를 통해 Promise의 결과로 반환된다.
+
+<br>
+
+3\. 화살표 함수 사용해서 변경
+
+```js
+setTimeout(
+  () => resolve("외부 API 접근한 결괏값"),
+  Math.random() * 4000 + 1000
+);
+```
+
+화살표 함수는 코드의 가독성을 높이고 resolve 함수에 전달되는 값을 명확히 나타낼 수 있다.
