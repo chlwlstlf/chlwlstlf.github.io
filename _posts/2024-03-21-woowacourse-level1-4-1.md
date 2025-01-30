@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[우테코] Level1 AJAX&JSON, RESTful API, Promise&async/await"
+title: "[우테코] Level1 웹의 동작, AJAX&JSON, RESTful API, Promise&async/await"
 categories: woowacourse
 toc: true
 toc_sticky: true

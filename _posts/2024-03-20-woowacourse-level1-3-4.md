@@ -59,7 +59,7 @@ renderHeader(container) {
 
 **2\. 식당 리스트 - replaceChildren**  
 즐겨찾기나 카테고리, 정렬 등 processedList에 변화가 생기면 화면에 보이는 식당 리스트가 바뀌어야 한다.  
-`<ul>` 태그 안의 `<li>`들을 바꾸어야 하기 떄문에 `...restaurantItems`로 replaceChildren을 해주어야 한다.
+`<ul>` 태그 안의 `<li>`들을 바꾸어야 하기 때문에 `...restaurantItems`로 replaceChildren을 해주어야 한다.
 
 `replaceChildren()`은 여러 개의 노드를 한 번에 받을 수 있는 메서드이기 때문에 스프레드 연산자를 사용하여 여러 개 노드를 인자로 전달할 수 있다.
 
