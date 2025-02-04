@@ -35,6 +35,9 @@ docs:
       - title: "프로그래머스"
         url: /categories/programmers
         category: "programmers"
+      - title: "소프티어"
+        url: /categories/softeer
+        category: "softeer"
 
   - title: Computer Science
     children:
