@@ -17,7 +17,7 @@ toc_sticky: true
 **src/components/skeleton/Skeleton.ts**
 
 Skeleton은 서버 또는 사용자 입력과 무관한 정적인 구조이기 때문에 XSS 공격이 낮다. 따라서 DOM API를 사용하지 않고 html 코드를 그대로 넣었다.  
-한 번에 띄울 데이터가 20개이기 때문에 skeleton 또한 repeat(20)으로 해주었다.
+한 번에 띄울 데이터가 20개이기 때문에 skeleton 또한 `repeat(20)`으로 해주었다.
 
 ```ts
 const Skeleton = () => {
@@ -46,9 +46,9 @@ export default Skeleton;
 
 **src/view/view.ts**
 
-1\. `renderMovieCard`은 첫 번째 스켈레톤 바로 앞 요소에 MovieCard(`<li>`)를 삽입한다.  
-2\. `showSkeleton`는 스켈레톤의 `none` 클래스를 **제거**하여 스켈레톤을 보여준다.  
-3\. `hideSkeleton`는 스켈레톤의 `none` 클래스를 **추가**하여 스켈레톤을 숨긴다.
+1\. `renderMovieCard`는 첫 번째 스켈레톤 바로 앞 요소에 MovieCard(`<li>`)를 삽입한다.  
+2\. `showSkeleton`은 스켈레톤의 `none` 클래스를 **제거**하여 스켈레톤을 보여준다.  
+3\. `hideSkeleton`은 스켈레톤의 `none` 클래스를 **추가**하여 스켈레톤을 숨긴다.
 
 ```ts
 const view = {
@@ -83,7 +83,7 @@ export default view;
 
 **src/components/movieListWrapper/MovieListWrapper.ts**
 
-MovieListWrapper은 title, viewType, inputValue을 인자로 받아 `.item-view`에 제목과 영화 리스트를 보여주는 클래스이다.
+MovieListWrapper은 title, viewType, inputValue를 인자로 받아 `.item-view`에 제목과 영화 리스트를 보여주는 클래스이다.
 
 1\. 인자가 바뀔 때마다 MovieListWrapper 인스턴스가 새로 생성되는데 그때마다 Skeleton을 html에 삽입한다.  
 2\. fetch하기 전에 `view.showSkeleton()`을 호출하여 Skeleton을 보여준다.  
@@ -177,6 +177,8 @@ class MovieListWrapper {
 export default MovieListWrapper;
 ```
 
+<br>
+
 <video controls>
   <source src="https://github.com/user-attachments/assets/dc7134df-f574-49c5-bdf3-ab2b95af63d9" type="video/mp4">
 </video>
@@ -196,7 +198,7 @@ export default MovieListWrapper;
 
 **src/components/movieCard/movieCard.ts**
 
-1\. 클래스에 `skeleton`을 추가한다.  
+1\. 썸네일 클래스에 `skeleton`을 추가한다.  
 2\. `<img>` 요소에 loading="lazy" 속성을 추가하여 화면에 보일 때만 이미지를 로드하도록 설정한다. 이는 초기 페이지 로딩 속도를 개선하고, 불필요한 네트워크 요청을 줄이는 효과가 있다.  
 3\. onload 이벤트: 이미지가 완전히 로드된 후 실행되는 이벤트, 이때 스켈레톤 클래스를 제거하여 실제 이미지를 자연스럽게 보여준다.
 
@@ -217,7 +219,7 @@ thumbnail.onload = () => {
 
 **[결과 화면]**
 
-이미지 로딩이 끝나면 클래스에서 `skeleton`을 제거하여 이미지를 보여준다.
+이미지 로딩이 끝나면 클래스에서 `skeleton`을 제거하여 이미지를 보여준다. (개발자 도구 확인)
 
 <video controls>
   <source src="https://github.com/user-attachments/assets/34129277-8369-4142-9b31-f28b30521dad" type="video/mp4">
@@ -314,7 +316,7 @@ async function fetchData(url) {
 **src/utils/errorHandler.js**
 
 errorHandler 함수가 호출되면 사용자의 혼돈을 야기하지 않기 위해 스켈레톤을 숨겼다.  
-에러 메세지는 '어떤 오류가 떴으며, 다음에 어떻게 실행해야 할 지' 를 알려주는 것이 제일 좋은 메세지인 것 같아서 이런 형태로 수정했다.
+에러 메세지는 '어떤 오류가 떴으며, 다음에 어떻게 실행해야 할지' 를 알려주는 것이 제일 좋은 메세지인 것 같아서 이런 형태로 수정했다.
 
 ```ts
 const errorHandler = (code) => {
@@ -387,9 +389,6 @@ const errorHandler = (code) => {
 
 언제 사용?
 
-- 단위 테스트에서 API 응답을 시뮬레이션할 때
-- API 호출 없이 프론트엔드 로직을 검증할 때
-- 비용과 성능을 고려하여 빠르게 테스트할 때
 - 서버에서 API가 구현되기 전 (백엔드 인프라가 구축되지 않는 등의 이유로 실제 서버에 접근할 수 없는 환경이라면 요청할 수 없다.)
 - 한정된 자원을 사용해야 하는 환경 (예: Youtube API는 일 10,000회로 제한되어 있다.)
 - 실제 서버의 응답이 오래 걸릴 때 (오래 걸리는 만큼 테스트하는 시간도 그만큼 길어지기 때문이다.)
@@ -412,7 +411,7 @@ const errorHandler = (code) => {
 좋은 경우
 
 - 타입 안정성을 유지하면서 재사용 가능한 유틸리티 함수, 컴포넌트를 만들 때
-- 여러 타입을 다룰 수 있어야 하는 경우(예: Array<T>, Promise<T>)
+- 여러 타입을 다룰 수 있어야 하는 경우(예: `Array<T>`, `Promise<T>`)
 
 나쁜 경우
 
@@ -422,7 +421,7 @@ const errorHandler = (code) => {
 
 <br>
 
-**3. Type과 Interface의 차이는 무엇일까?**
+**3. Type과 Interface의 차이는 무엇일까? 나만의 기준 정하기**
 
 Interface → 객체의 구조(Shape)를 정의할 때 사용  
 Type → 유니온 타입, 튜플, 함수 타입 정의 등에 사용
@@ -460,6 +459,5 @@ await 다음 코드는 비동기적으로 실행되며, Promise의 실행이 끝
 
 **4. 비동기 함수에서 숫자 1을 반환한다면 어떤 타입일까?**
 
-`Promise<number>` 타입이다. 비동기 함수(async function)는 항상 Promise를 반환하기 때문이다.
-
+`Promise<number>` 타입이다. 비동기 함수(async function)는 항상 Promise를 반환하기 때문이다.  
 값을 직접 얻고 싶다면 await 키워드를 사용하면 된다.
