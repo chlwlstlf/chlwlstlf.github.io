@@ -123,7 +123,7 @@ export default setupIntersectionObserver;
 **[동작 과정]**
 
 1\. 페이지 하단에 end-list 요소 배치  
-2\. 사용자가 스크롤하여 end-list가 뷰포트에 10% 이상 보이면
+2\. 사용자가 스크롤하여 end-list가 뷰포트에 조금이라돈 보이면
 onIntersect 콜백 실행  
 3\. 로딩 상태 관리로 중복 요청 방지  
 4\. 새로운 영화 데이터 로드 및 렌더링  
@@ -190,7 +190,7 @@ class MovieListWrapper {
       });
     };
 
-    // 2. end-list가 뷰포트에 10% 이상 보이면 onIntersect 콜백 실행
+    // 2. end-list가 뷰포트에 보이면 onIntersect 콜백 실행
     setupIntersectionObserver(onIntersect, endList);
   }
 
@@ -225,7 +225,7 @@ export default MovieListWrapper;
 모바일 버전과 데스크탑 버전의 검색 기능이 다르게 되어야 하기 때문에 resize 이벤트로 현재 화면 크기를 확인한다.  
 하지만 창 크기를 변경할 때마다 이벤트가 연속적으로 실행되면 DOM 조작이나 복잡한 연산이 빈번히 일어나 브라우저 성능에 큰 영향을 줄 수 있다.
 
-이를 방지하기 위해 debouncing을 사용하여 이벤트 실행을 최적화했다. debouncing을 사용하면 이벤트가 마지막으로 호출된 후 일정 시간(delay) 동안 대기한 뒤에만 실행됩니다.
+이를 방지하기 위해 debouncing을 사용하여 이벤트 실행을 최적화했다. debouncing을 사용하면 이벤트가 마지막으로 호출된 후 일정 시간(delay) 동안 대기한 뒤에만 실행된다.
 
 <br>
 
@@ -253,7 +253,7 @@ export const debounce = (callback, delay) => {
 
 **src/components/header/header.ts**
 
-handleResize 함수는 화면 크기에 맞춰 새로운 header 렌더링하는 함수이다.  
+handleResize 함수는 화면 크기에 맞춰 새로운 header를 렌더링하는 함수이다.  
 resize를 할 때 debounce를 걸어 비용이 큰 handleResize 함수를 resize가 끝난 후 0.3초 뒤에 실행하게 했다.
 
 ```ts
@@ -368,14 +368,13 @@ const HeaderMobile = ({ onLogoClick, inputSubmitHandle }: Props) => {
     // <-- 중략 -->
 
     searchButton.addEventListener("click", () => {
-      if (searchButton.type === "submit") return; // submit 타입이면 click 이벤트 x
+      if (searchButton.type === "submit") return; // submit 타입이면 click 이벤트x
 
       const isInputVisible = searchInput.style.display === "block";
 
-      // 3. input창이 열려있는데 입력값이 없어 button인 상태
+      // 3. input창이 열려있는데 입력값이 없어 button인 상태 -> 창 닫힘
       if (isInputVisible) {
         hideSearchInput();
-        toggleSearchButton("button");
       } else {
         showSearchInput(); // 2. 돋보기 누르면 input창이 열림
         searchInput.focus();
@@ -436,7 +435,7 @@ export default HeaderMobile;
 
 ## <mark class="pink">🔥2단계 피드백</mark>
 
-### <mark class="yellow">1. 영화 상세 조회 시, 로딩 처리</mark>
+### <mark class="yellow">1. 모달 로딩 처리</mark>
 
 **[피드백]**
 
@@ -452,9 +451,9 @@ export default HeaderMobile;
 
 **src/components/movieDetailModal/MovieDetailContent.ts**
 
-1\. loading 화면을 만든다.
-2\. title과 subDetail을 none으로 초기화한다.
-3\. `thumbnail.onload`가 되면 `showModalContent` 함수를 실행시켜 모달이 보이게 한다.
+1\. loading 화면을 만든다.  
+2\. title과 subDetail을 none으로 초기화한다.  
+3\. `thumbnail.onload`가 되면 `showModalContent` 함수를 실행시켜 모달 컨텐츠를 보이게 한다.
 
 ```ts
 class MovieDetailContent {
@@ -539,7 +538,7 @@ export default MovieDetailContent;
 <div class="blue-box">
   <p>
     <b>💡 CSS로 display를 제어하지 않는 이유</b>
-    <div>CSS에서 display는 none은 초기 숨김만 가능하고, 로딩이 완료된 후 자동으로 보이게 하는 로직을 CSS만으로 처리하기 어렵다.</div>
+    <div>CSS에서 display: none은 초기 숨김이 가능하지만, 로딩이 완료된 후 자동으로 보이게 하는 로직을 CSS만으로 처리하기는 어렵다.</div>
     <div>
       따라서 로딩이 끝난 onload 시점에서만 "동적으로" style을 변경하려면 JS에서 처리해야한다.
     </div>
