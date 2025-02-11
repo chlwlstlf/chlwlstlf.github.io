@@ -282,6 +282,8 @@ const Header = (props: Props) => {
 export default Header;
 ```
 
+💡 기존 replaceWith() 방식: DOM을 완전히 교체 → input 값이 초기화됨
+
 <br>
 
 **[디바운싱 적용 전]**
@@ -301,7 +303,148 @@ export default Header;
 <br>
 <br>
 
-### <mark class="yellow">4. 검색 기능 - 모바일 버전</mark>
+### <mark class="yellow">4. 불필요한 이벤트 호출 줄이기</mark>
+
+**[문제 인식]**
+
+<video controls>
+  <source src="https://github.com/user-attachments/assets/2c3a0fe7-2799-435c-b35d-528d45d220bf" type="video/mp4">
+</video>
+
+resize를 했을 때마다 header를 리렌더링 해야할까?  
+데스크탑 -> 태블릿이면 이전과 같은 header를 보여줘도 되지 않을까?  
+또 이 서비스의 모든 화면 크기는 같은데 resize 이벤트, 이전 viewport, 현재 viewport를 한 곳에서만 관리하면 되지 않을까?
+
+💡 resize 이벤트를 전역으로 관리하며 handleResize 호출 횟수를 더 줄여보자.
+
+<br>
+
+**src/utils/ViewportManager.js**
+
+`ViewportManager`는 구독 함수들, 이전 viewport, resize 이벤트를 전역적으로 관리하는 클래스이다.  
+`new ViewportManager()`를 바로 내보내면서 애플리케이션에서 하나의 인스턴스만 유지하도록 만들었고, 어디에서 가져다 써도 같은 ViewportManager 인스턴스를 공유하게 된다.
+
+💡 싱글톤 패턴을 적용하여, 전체 애플리케이션에서 하나의 뷰포트 매니저만 사용되도록 보장한다.
+
+```js
+class ViewportManager {
+  constructor() {
+    this.listeners = new Set();
+    this.prevViewport = window.innerWidth;
+    this.resizeHandler = this.notifyListeners.bind(this);
+    window.addEventListener("resize", this.resizeHandler);
+  }
+
+  // "이전 크기 → 현재 크기" 변경을 감지하고, 필요한 경우 구독자에게 알림을 보냄
+  notifyListeners() {
+    const currentViewport = window.innerWidth;
+    this.listeners.forEach(({ trigger, callback }) => {
+      if (trigger(this.prevViewport, currentViewport)) {
+        callback(currentViewport);
+      }
+    });
+
+    this.prevViewport = currentViewport;
+  }
+
+  // viewport 변경을 감지하는 구독 함수
+  subscribe({ trigger, callback }) {
+    const listener = { trigger, callback };
+    this.listeners.add(listener);
+
+    return () => {
+      this.listeners.delete(listener);
+    };
+  }
+
+  // 리스너 제거 및 window 이벤트 해제
+  destroy() {
+    window.removeEventListener("resize", this.resizeHandler);
+    this.listeners.clear();
+  }
+}
+
+export default new ViewportManager(); // 하나의 인스턴스만 공유
+```
+
+<br>
+
+✅ 아래 처럼 사용하면 구독을 해제할 수 있다.
+
+```ts
+const unsubscribe = viewportManager.subscribe({
+  trigger: handleTrigger,
+  callback: handleResize,
+});
+
+unsubscribe();
+```
+
+<br>
+
+**src/components/header/header.ts**
+
+1\. `header` 요소는 모바일과 데스크탑에서 동작이 동일하므로 이 컴포넌트에서 생성하는 것으로 코드를 변경했다.
+2\. `handleTrigger` 함수: 이전 뷰포트 타입과 현재 뷰포트 타입을 비교하여 모바일에서 다른 타입으로 변경되면 true를 반환
+3\. `handleResize` 함수: 디바운싱을 적용한 리렌더링 함수
+
+viewportManager를 구독하며 trigger 여부와 callback 함수를 인자로 넘긴다.  
+header는 항상 mount 되어 있는 상태이기 때문에 구독 해제를 할 필요가 없다.
+
+```ts
+const Header = (props: Props) => {
+  const header = document.createElement("header");
+  header.className = "header";
+
+  // 헤더 클릭 시 스크롤 상단으로 이동
+  header.onclick = (event) => {
+    if ((event.target as HTMLElement).tagName === "HEADER") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const isMobile = (viewport: number) => getViewportType(viewport) === "MOBILE";
+
+  const render = (width: number) => {
+    header.innerHTML = "";
+    const content = isMobile(width)
+      ? HeaderMobile(props)
+      : HeaderDesktop(props);
+    header.appendChild(content);
+  };
+
+  const handleTrigger = (prev: number, current: number) => {
+    return isMobile(prev) != isMobile(current);
+  };
+
+  const handleResize = debounce((current: number) => {
+    render(current);
+  }, 300);
+
+  viewportManager.subscribe({ trigger: handleTrigger, callback: handleResize });
+
+  render(window.innerWidth);
+
+  return header;
+};
+
+export default Header;
+```
+
+<br>
+
+**[결과 화면]**
+
+resize 이벤트 -> 디바운싱 적용 -> viewportManager 를 통해 약 60번 이상 발생하던 이벤트 실행을 약 3번으로 줄일 수 있게 되었다!
+
+<video controls>
+  <source src="https://github.com/user-attachments/assets/3decb2e4-f794-4136-a640-23dfd06e0e75" type="video/mp4">
+</video>
+
+<br>
+<br>
+
+### <mark class="yellow">5. 검색 기능 - 모바일 버전</mark>
 
 **[검색 기능 - 데스크탑 버전]**
 
@@ -327,18 +470,9 @@ export default Header;
 💡 `submit` 타입일 때 `click` 이벤트가 먼저 실행되고 그 후 `submit` 이벤트가 실행된다. 따라서 `click` 이벤트 안에서 예외처리를 해주어야 한다.
 
 ```ts
-import logoPng from "../../images/logo.png";
-
-interface Props {
-  onLogoClick?: () => void;
-  inputSubmitHandle?: (value: string) => void;
-}
-
 const HeaderMobile = ({ onLogoClick, inputSubmitHandle }: Props) => {
   const render = () => {
-    // 헤더 생성
-    const header = document.createElement("header");
-    header.className = "header";
+    const fragment = document.createDocumentFragment();
 
     // 로고 생성
     const logo = document.createElement("h1");
@@ -363,7 +497,7 @@ const HeaderMobile = ({ onLogoClick, inputSubmitHandle }: Props) => {
     searchButton.textContent = "검색";
 
     searchBox.append(searchInput, searchButton);
-    header.append(logo, searchBox);
+    fragment.append(logo, searchBox);
 
     // <-- 중략 -->
 
@@ -413,7 +547,7 @@ const HeaderMobile = ({ onLogoClick, inputSubmitHandle }: Props) => {
       searchButton.type = type;
     };
 
-    return header;
+    return fragment;
   };
 
   return render();
@@ -423,6 +557,8 @@ export default HeaderMobile;
 ```
 
 <br>
+
+**[결과 화면]**
 
 검색어가 입력되면 submit으로 바뀌고 그 외에는 다 button 상태인 걸 알 수 있다.
 
