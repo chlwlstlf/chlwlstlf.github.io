@@ -96,7 +96,8 @@ export default ApiClient;
 
 **src/utils/setupIntersectionObserver.js**
 
-setupIntersectionObserver는 IntersectionObserver API를 설정하는 함수이다. 즉, "특정 요소가 화면에 보이는지 감시하는 관찰자를 설정하는 함수"이다.
+setupIntersectionObserver는 IntersectionObserver API를 설정하는 함수이다.  
+즉, "특정 요소가 화면에 보이는지 감시하는 관찰자를 설정하는 함수"이다.
 
 - 특정 요소(target)가 화면에 보이는지 감시
 - 요소가 화면에 보이면 지정된 콜백 함수 실행
@@ -123,7 +124,7 @@ export default setupIntersectionObserver;
 **[동작 과정]**
 
 1\. 페이지 하단에 end-list 요소 배치  
-2\. 사용자가 스크롤하여 end-list가 뷰포트에 조금이라돈 보이면
+2\. 사용자가 스크롤하여 end-list가 뷰포트에 조금이라도 보이면
 onIntersect 콜백 실행  
 3\. 로딩 상태 관리로 중복 요청 방지  
 4\. 새로운 영화 데이터 로드 및 렌더링  
@@ -222,10 +223,10 @@ export default MovieListWrapper;
 
 ### <mark class="yellow">3. 디바운싱</mark>
 
-모바일 버전과 데스크탑 버전의 검색 기능이 다르게 되어야 하기 때문에 resize 이벤트로 현재 화면 크기를 확인한다.  
+모바일 버전과 데스크탑 버전의 검색 기능이 다르게 되어야 하기 때문에 **resize 이벤트**로 header를 다르게 보여준다.  
 하지만 창 크기를 변경할 때마다 이벤트가 연속적으로 실행되면 DOM 조작이나 복잡한 연산이 빈번히 일어나 브라우저 성능에 큰 영향을 줄 수 있다.
 
-이를 방지하기 위해 debouncing을 사용하여 이벤트 실행을 최적화했다. debouncing을 사용하면 이벤트가 마지막으로 호출된 후 일정 시간(delay) 동안 대기한 뒤에만 실행된다.
+이를 방지하기 위해 debouncing을 사용하여 이벤트 실행을 최적화했다. debouncing을 사용하면 이벤트가 **마지막으로 호출**된 후 일정 시간(delay) 동안 대기한 뒤에만 실행된다.
 
 <br>
 
@@ -254,7 +255,7 @@ export const debounce = (callback, delay) => {
 **src/components/header/header.ts**
 
 handleResize 함수는 화면 크기에 맞춰 새로운 header를 렌더링하는 함수이다.  
-resize를 할 때 debounce를 걸어 비용이 큰 handleResize 함수를 resize가 끝난 후 0.3초 뒤에 실행하게 했다.
+resize를 할 때 debounce를 걸어 비용이 큰 handleResize 함수를 화면 크기 변경이 끝난 후 0.3초 뒤에 실행하게 했다.
 
 ```ts
 interface Props {
@@ -282,7 +283,7 @@ const Header = (props: Props) => {
 export default Header;
 ```
 
-💡 기존 replaceWith() 방식: DOM을 완전히 교체 → input 값이 초기화됨
+💡 replaceWith() 방식: DOM을 완전히 교체 → input 값이 초기화됨
 
 <br>
 
@@ -307,13 +308,11 @@ export default Header;
 
 **[문제 인식]**
 
-<video controls>
-  <source src="https://github.com/user-attachments/assets/2c3a0fe7-2799-435c-b35d-528d45d220bf" type="video/mp4">
-</video>
+디바운싱으로 호출 횟수를 충분히 줄였지만 아래와 같은 고민이 더 생겼다.
 
-resize를 했을 때마다 header를 리렌더링 해야할까?  
-데스크탑 -> 태블릿이면 이전과 같은 header를 보여줘도 되지 않을까?  
-또 이 서비스의 모든 화면 크기는 같은데 resize 이벤트, 이전 viewport, 현재 viewport를 한 곳에서만 관리하면 되지 않을까?
+1\. resize를 했을 때마다 header를 리렌더링 해야할까?  
+2\. 데스크탑 -> 태블릿이면 이전과 같은 header를 보여줘도 되지 않을까?  
+3\. 또 이 서비스의 모든 화면 크기는 같은데 `resize 이벤트`, `이전 viewport` 등을 한 곳에서만 관리하면 되지 않을까?
 
 💡 resize 이벤트를 전역으로 관리하며 handleResize 호출 횟수를 더 줄여보자.
 
@@ -321,8 +320,8 @@ resize를 했을 때마다 header를 리렌더링 해야할까?
 
 **src/utils/ViewportManager.js**
 
-`ViewportManager`는 구독 함수들, 이전 viewport, resize 이벤트를 전역적으로 관리하는 클래스이다.  
-`new ViewportManager()`를 바로 내보내면서 애플리케이션에서 하나의 인스턴스만 유지하도록 만들었고, 어디에서 가져다 써도 같은 ViewportManager 인스턴스를 공유하게 된다.
+`ViewportManager`는 `구독 함수들`, `이전 viewport`, `resize 이벤트`를 전역적으로 관리하는 클래스이다.  
+`new ViewportManager()`를 바로 내보내 애플리케이션에서 하나의 인스턴스만 유지하도록 만들었고, 어디에서 가져다 써도 같은 ViewportManager 인스턴스를 공유하게 했다.
 
 💡 싱글톤 패턴을 적용하여, 전체 애플리케이션에서 하나의 뷰포트 매니저만 사용되도록 보장한다.
 
@@ -384,8 +383,8 @@ unsubscribe();
 
 **src/components/header/header.ts**
 
-1\. `header` 요소는 모바일과 데스크탑에서 동작이 동일하므로 이 컴포넌트에서 생성하는 것으로 코드를 변경했다.
-2\. `handleTrigger` 함수: 이전 뷰포트 타입과 현재 뷰포트 타입을 비교하여 모바일에서 다른 타입으로 변경되면 true를 반환
+1\. `header` 요소는 모바일과 데스크탑에서 동작이 동일하므로 이 컴포넌트에서 생성하는 것으로 코드를 변경했다.  
+2\. `handleTrigger` 함수: 이전 뷰포트 타입과 현재 뷰포트 타입을 비교하여 모바일에서 다른 타입으로 변경되면 true를 반환  
 3\. `handleResize` 함수: 디바운싱을 적용한 리렌더링 함수
 
 viewportManager를 구독하며 trigger 여부와 callback 함수를 인자로 넘긴다.  
@@ -433,9 +432,20 @@ export default Header;
 
 <br>
 
-**[결과 화면]**
+**[매번 호출]**
 
-resize 이벤트 -> 디바운싱 적용 -> viewportManager 를 통해 약 60번 이상 발생하던 이벤트 실행을 약 3번으로 줄일 수 있게 되었다!
+resize가 생기면 header를 리렌더링 했다.
+
+<video controls>
+  <source src="https://github.com/user-attachments/assets/7844613e-243b-46e7-9c77-6c2deef7803f" type="video/mp4">
+</video>
+
+<br>
+
+**[필요할 때만 호출]**
+
+모바일일 때만 header를 리렌더링 했다.  
+✅ 필요할 때만 헤더가 리렌더링된다!
 
 <video controls>
   <source src="https://github.com/user-attachments/assets/3decb2e4-f794-4136-a640-23dfd06e0e75" type="video/mp4">
@@ -453,6 +463,8 @@ resize 이벤트 -> 디바운싱 적용 -> viewportManager 를 통해 약 60번 
 <video controls>
   <source src="https://github.com/user-attachments/assets/1c177c33-e2a7-46dd-a3c3-20c7b4c59c64" type="video/mp4">
 </video>
+
+<br>
 
 하지만 모바일 화면에서는 긴 검색창을 띄울 수가 없다. 어떻게 해야할까?
 
@@ -502,7 +514,7 @@ const HeaderMobile = ({ onLogoClick, inputSubmitHandle }: Props) => {
     // <-- 중략 -->
 
     searchButton.addEventListener("click", () => {
-      if (searchButton.type === "submit") return; // submit 타입이면 click 이벤트x
+      if (searchButton.type === "submit") return; // 예외처리: submit 타입이면 click 이벤트x
 
       const isInputVisible = searchInput.style.display === "block";
 
