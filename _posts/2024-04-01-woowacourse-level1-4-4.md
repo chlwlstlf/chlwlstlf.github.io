@@ -257,6 +257,9 @@ export const debounce = (callback, delay) => {
 handleResize 함수는 화면 크기에 맞춰 새로운 header를 렌더링하는 함수이다.  
 resize를 할 때 debounce를 걸어 비용이 큰 handleResize 함수를 화면 크기 변경이 끝난 후 0.3초 뒤에 실행하게 했다.
 
+※ 0.3s로 지정한 이유는 UX와 성능 사이의 균형을 맞추기 위해 임의로 지정했다.  
+(너무 빠르면 디바운싱 효과가 적어 성능이 안 좋아지고, 너무 느리면 화면이 멈춰있다는 느낌을 받아 UX가 안 좋아진다.)
+
 ```ts
 interface Props {
   onLogoClick?: () => void;
@@ -320,10 +323,24 @@ export default Header;
 
 **src/utils/ViewportManager.js**
 
-`ViewportManager`는 `구독 함수들`, `이전 viewport`, `resize 이벤트`를 전역적으로 관리하는 클래스이다.  
-`new ViewportManager()`를 바로 내보내 애플리케이션에서 하나의 인스턴스만 유지하도록 만들었고, 어디에서 가져다 써도 같은 ViewportManager 인스턴스를 공유하게 했다.
+`ViewportManager`는 `구독 함수들`, `이전 viewport`, `resize 이벤트`를 전역적으로 관리하는 클래스이다.
 
-💡 싱글톤 패턴을 적용하여, 전체 애플리케이션에서 하나의 뷰포트 매니저만 사용되도록 보장한다.
+<br>
+
+**싱글톤 패턴**
+
+여러 개의 인스턴스를 만들면 불필요한 resize 이벤트 리스너가 중복 실행될 가능성이 있기 때문에 애플리케이션에서 하나의 인스턴스만 유지하는 싱글톤 패턴을 사용했다. 어디에서 가져다 써도 같은 ViewportManager 인스턴스를 공유하게 한다.
+
+<br>
+
+**옵저버 패턴**
+
+특정 이벤트가 발생하면, 등록된 여러 개의 "구독자(listener)"들에게 알림을 보내는 패턴이다. 뷰포트 변경을 감지하는 여러 개의 컴포넌트가 독립적으로 동작할 수 있도록 하기 위해 이 패턴을 사용했다.
+
+`subscribe()`: 여러 컴포넌트가 뷰포트 변경을 감지할 수 있도록 하는 함수
+`notifyListeners()`: resize가 될 때 호출되는 메서드. 이 메서드가 호출될 때 모든 구독자들에게 변경을 알림
+
+<br>
 
 ```js
 class ViewportManager {
