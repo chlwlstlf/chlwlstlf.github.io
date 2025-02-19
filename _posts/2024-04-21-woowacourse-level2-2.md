@@ -12,10 +12,6 @@ toc_sticky: true
 
 [1단계 - 페이먼츠](https://github.com/woowacourse/react-payments/pull/346){: .btn .btn--primary}
 
-[페이먼츠 배포 사이트](https://chlwlstlf.github.io/react-payments/)
-
-[스토리북 배포 사이트](https://chlwlstlf.github.io/react-payments/storybook/)
-
 <br>
 <br>
 

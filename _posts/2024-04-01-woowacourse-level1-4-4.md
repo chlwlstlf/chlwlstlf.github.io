@@ -337,7 +337,7 @@ export default Header;
 
 특정 이벤트가 발생하면, 등록된 여러 개의 "구독자(listener)"들에게 알림을 보내는 패턴이다. 뷰포트 변경을 감지하는 여러 개의 컴포넌트가 독립적으로 동작할 수 있도록 하기 위해 이 패턴을 사용했다.
 
-`subscribe()`: 여러 컴포넌트가 뷰포트 변경을 감지할 수 있도록 하는 함수
+`subscribe()`: 여러 컴포넌트가 뷰포트 변경을 감지할 수 있도록 하는 함수  
 `notifyListeners()`: resize가 될 때 호출되는 메서드. 이 메서드가 호출될 때 모든 구독자들에게 변경을 알림
 
 <br>
@@ -437,7 +437,7 @@ const Header = (props: Props) => {
     render(current);
   }, 300);
 
-  viewportManager.subscribe({ trigger: handleTrigger, callback: handleResize });
+  viewportManager.subscribe({ trigger: handleTrigger, callback: handleResize }); // viewportManager 구독
 
   render(window.innerWidth);
 
@@ -449,7 +449,7 @@ export default Header;
 
 <br>
 
-**[매번 호출]**
+**[이전-매번 호출]**
 
 resize가 생기면 header를 리렌더링 했다.
 
@@ -459,9 +459,9 @@ resize가 생기면 header를 리렌더링 했다.
 
 <br>
 
-**[필요할 때만 호출]**
+**[현재-필요할 때만 호출]**
 
-모바일일 때만 header를 리렌더링 했다.  
+모바일에서 또는 모바일로 변경될 때만 header를 리렌더링 했다.  
 ✅ 필요할 때만 헤더가 리렌더링된다!
 
 <video controls>
