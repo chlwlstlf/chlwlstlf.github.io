@@ -8,15 +8,143 @@ toc_sticky: true
 
 # Refresh Token으로 Access Token 갱신하기
 
-## <mark class="pink">📌apiClient.ts 코드</mark>
+## <mark class="pink">📌JWT란?</mark>
 
-accessToken을 localStorage로 가지고 있었을 때의 코드입니다.
+JWT 토큰은 클라이언트와 서버 간의 인증과 정보 교환을 위한 데이터 형식입니다. Header, Payload, Signature로 구성됩니다.
+
+Header: 토큰의 타입(JWT)과 암호화 알고리즘  
+Payload: 유저의 신원 정보나 권한 정보와 같은 데이터를 포함  
+Signature: Header와 Payload를 서버의 비밀키(대칭키) 또는 개인키(비대칭키)로 서명한 값이 담겨있음
+
+<br>
+<br>
+
+## <mark class="pink">📌JWT의 문제</mark>
+
+**<mark class="yellow">1. 탈취(Man-in-the-Middle)</mark>**
+
+JWT 토큰이 탈취되면, 공격자는 그 토큰을 사용해 인증된 사용자처럼 서버에 접근할 수 있습니다.  
+서버는 JWT의 서명을 검증할 수 있지만, 누가 해당 토큰을 사용 중인지는 구분할 수 없습니다. 따라서 탈취된 토큰을 막을 수 없습니다.
+
+<br>
+
+**<mark class="yellow">2. 유효기간 관리의 어려움</mark>**
+
+JWT는 기본적으로 "무상태(Stateless)"이므로, 서버는 토큰을 생성한 이후 만료 전까지 토큰 자체를 철회하거나 무효화할 수 없습니다. (단, 예외적으로 Redis와 같은 저장소를 이용해 블랙리스트를 구현할 수 있습니다).
+
+<br>
+
+**<mark class="yellow">결론</mark>**
+
+유효기간이 **짧으면 사용자 경험(UX)**이 저하됩니다. (사용자가 로그인을 자주 요구받음)  
+유효기간이 **길면 보안 위험**이 커집니다. (탈취 시 오랜 시간 동안 유효)
+
+<br>
+<br>
+
+## <mark class="pink">📌해결법</mark>
+
+**<mark class="yellow">Access Token과 Refresh Token의 조합</mark>**
+
+JWT 기반 인증 시스템에서 보안과 사용자 경험의 균형을 맞추기 위해 다음 방식을 사용합니다.
+
+<br>
+
+**<mark class="yellow">Access Token</mark>**
+
+유효기간이 짧은 토큰입니다. (몇 분~몇 시간)  
+클라이언트가 API 요청을 보낼 때마다 이 토큰을 사용하여 인증합니다.
+
+👍 장점: 탈취되더라도 짧은 시간 내에 만료되어 피해를 줄일 수 있습니다.  
+👎 단점: 유효기간이 짧기 때문에 갱신을 자주 해야 합니다.
+
+<br>
+
+**<mark class="yellow">Refresh Token</mark>**
+
+유효기간이 긴 토큰입니다. (일주일~일년)  
+Access Token이 만료되었을 때, 클라이언트는 이 토큰을 서버로 보내 새로운 Access Token을 발급받습니다.  
+Refresh Token은 보통 서버의 데이터베이스에 저장하거나 관리하여 탈취를 방지합니다.
+Refresh Token 만료 시엔 재로그인을 하여 새로운 Refresh Token을 받아야 합니다.
+
+👍 장점: Access Token의 만료를 관리하면서도 사용자가 다시 로그인하지 않아도 됩니다.  
+👎 단점: Refresh Token이 탈취되면 장기적으로 악용될 가능성이 있습니다.
+
+<br>
+<br>
+
+## <mark class="pink">📌JWT 인증 방식 흐름</mark>
+
+사용자가 로그인하면, 서버는 Access Token과 Refresh Token을 발급합니다.
+
+<br>
+
+**<mark class="yellow">클라이언트</mark>**
+
+API 요청 시 Access Token을 헤더에 포함하여 보냅니다.  
+Access Token이 만료되면, Refresh Token을 사용해 새로운 Access Token을 발급받습니다.
+
+<br>
+
+**<mark class="yellow">서버</mark>**
+
+Refresh Token 요청 시 Refresh Token의 유효성을 검증합니다.  
+⭕ 유효하다면, 새로운 Access Token을 생성합니다.  
+❌ 유효하지 않다면, 로그아웃을 강제하거나 재로그인을 요구합니다.
+
+<br>
+
+![1](https://github.com/user-attachments/assets/199ae9f6-f63c-4abe-984b-a1f72293f49b)
+
+<br>
+<br>
+
+## <mark class="pink">🔥Refresh Token을 도입한 이유</mark>
+
+프로젝트에 도입한 이유는 사실 다양한 경험을 해보고 싶었기 때문입니다. FE에서 Refresh Token을 구현하는 것이 조금 어렵다는 글을 보았고, 프로젝트에서 그 경험을 하고 싶었습니다.
+
+그 후 많은 서비스에서 Refresh Token을 도입한 이유에 대해 찾아보았을 땐 **보안과 사용자 경험(UX)**의 균형을 맞추기 위함이라고 하였습니다.
+
+<br>
+
+**보안**
+
+- Access Toke은 탈취 위험이 있으므로 유효기간을 짧게 설정하는 것이 일반적입니다.
+- 하지만 이 경우, 사용자는 자주 로그인이 풀리는 불편을 겪게 됩니다.
+- 이 문제를 해결하기 위해, 만료된 Access Token을 안전하게 갱신할 수 있는 수단으로 Refresh Token이 사용됩니다.
+
+**사용자 경험**
+
+- 사용자는 로그인 후 오랜 시간 동안 재로그인 없이 서비스를 이용하길 원합니다.
+- Refresh Token을 사용하면 로그인을 다시 하지 않고도 Access Token을 자동으로 재발급할 수 있어, UX가 훨씬 매끄러워집니다.
+
+<br>
+<br>
+
+## <mark class="pink">🔥토큰 만료 시간</mark>
+
+Access Token은 **30분**으로 짧게 설정했습니다. 탈취 시 공격자가 사용할 수 있는 기간을 제한하기 위함이었습니다.
+
+Refresh Token은 **일주일**로 설정했습니다. 도메인이 코드 리뷰인데 이 활동은 일주일을 넘기지 않을 것으로 판단하고 활동을 마친 사이클일 때마다 로그인을 하는 것이 좋을 것 이라고 판단하였습니다.
+
+<div class="blue-box">
+  <b>참고</b>
+  <div>Google OAuth: Access Token은 1시간, Refresh Token은 최대 6개월.</div>
+  <div>GitHub: Access Token은 1시간, Refresh Token은 사용자가 설정한 기간.</div>
+</div>
+
+<br>
+<br>
+
+## <mark class="pink">📌apiClient.ts 코드 설명</mark>
+
+Refresh Token 도입 전 Access Token을 localStorage로 가지고 있었을 때의 코드입니다.
 
 `createRequestInit` 함수는 HTTP 요청을 보낼 때 필요한 RequestInit 객체를 생성하는 역할을 합니다. 이 객체는 fetch API에 요청을 보낼 때 사용됩니다.
 
 `fetchWithErrorHandling` 함수는 실제 HTTP 요청을 보내고 응답을 처리하는 역할을 합니다. 이 함수는 fetch API를 사용하여 네트워크 요청을 보내고, 응답을 확인한 후, 오류가 있으면 적절한 오류를 던집니다. 또한, 오프라인 상태에서 요청을 보내지 않도록 체크합니다.
 
-여기서 refresh token과 Access Token을 추가해보겠습니다.
+여기서 Refresh token과 Access Token 갱신 로직을 추가해보겠습니다.
 
 ```ts
 import { serverUrl } from "@/config/serverUrl";
@@ -139,123 +267,6 @@ export default apiClient;
 <br>
 <br>
 
-## <mark class="pink">📌JWT란?</mark>
-
-JWT 토큰은 클라이언트와 서버 간의 인증과 정보 교환을 위한 데이터 형식입니다.
-
-Header, Payload, Signature로 구성됩니다.  
-Header는 토큰의 타입(JWT)과 암호화 알고리즘, Payload는 유저의 신원 정보나 권한 정보와 같은 데이터를 포함합니다. Signature에는 Header와 Payload를 서버의 비밀키(대칭키) 또는 개인키(비대칭키)로 서명한 값이 담겨있습니다.
-
-<br>
-<br>
-
-## <mark class="pink">📌JWT의 문제</mark>
-
-**<mark class="yellow">1. 탈취(Man-in-the-Middle)</mark>**
-
-JWT 토큰이 탈취되면, 공격자는 그 토큰을 사용해 인증된 사용자처럼 서버에 접근할 수 있습니다.
-서버는 JWT의 서명을 검증할 수 있지만, 누가 해당 토큰을 사용 중인지는 구분할 수 없습니다. 따라서 탈취된 토큰을 막을 수 없습니다.
-
-<br>
-
-**<mark class="yellow">2. 유효기간 관리의 어려움</mark>**
-
-JWT는 기본적으로 "무상태(Stateless)"이므로, 서버는 토큰을 생성한 이후 만료 전까지 토큰 자체를 철회하거나 무효화할 수 없습니다(단, 예외적으로 Redis와 같은 저장소를 이용해 블랙리스트를 구현할 수 있습니다).
-
-<br>
-
-유효기간이 **짧으면 사용자 경험(UX)**이 저하됩니다(사용자가 로그인을 자주 요구받음).  
-유효기간이 **길면 보안 위험**이 커집니다(탈취 시 오랜 시간 동안 유효).
-
-<br>
-<br>
-
-## <mark class="pink">📌해결법</mark>
-
-**<mark class="yellow">Access Token과 Refresh Token의 조합</mark>**
-
-JWT 기반 인증 시스템에서 보안과 사용자 경험의 균형을 맞추기 위해 다음 방식을 사용합니다.
-
-<br>
-
-**<mark class="yellow">Access Token</mark>**
-
-유효기간이 짧은 토큰입니다(몇 분~몇 시간).  
-클라이언트가 API 요청을 보낼 때마다 이 토큰을 사용하여 인증합니다.
-
-장점: 탈취되더라도 짧은 시간 내에 만료되어 피해를 줄일 수 있습니다.
-
-단점: 유효기간이 짧기 때문에 만료 시 재발급이 필요합니다.
-
-<br>
-
-**<mark class="yellow">Refresh Token</mark>**
-
-유효기간이 긴 토큰입니다(며칠~몇 주).  
-Access Token이 만료되었을 때, 클라이언트는 이 토큰을 서버로 보내 새로운 Access Token을 발급받습니다.  
-Refresh Token은 보통 서버의 데이터베이스에 저장하거나 관리하여 탈취를 방지합니다.
-Refresh Token 만료 시엔 재로그인을 하여 새로운 Refresh Token을 받아야 합니다.
-
-장점: Access Token의 만료를 관리하면서도 사용자가 다시 로그인하지 않아도 됩니다.
-
-단점: Refresh Token이 탈취되면 장기적으로 악용될 가능성이 있습니다.
-
-<br>
-<br>
-
-## <mark class="pink">📌JWT 인증 방식 흐름</mark>
-
-사용자가 로그인하면, 서버는 Access Token과 Refresh Token을 발급합니다.
-
-<br>
-
-**<mark class="yellow">클라이언트</mark>**
-
-API 요청 시 Access Token을 헤더에 포함하여 보냅니다.
-
-Access Token이 만료되면, Refresh Token을 사용해 새로운 Access Token을 발급받습니다.
-
-<br>
-
-**<mark class="yellow">서버</mark>**
-
-Refresh Token 요청 시 Refresh Token의 유효성을 검증합니다.
-
-유효하다면, 새로운 Access Token을 생성합니다.
-
-유효하지 않다면, 로그아웃을 강제하거나 재로그인을 요구합니다.
-
-<br>
-
-![1](https://github.com/user-attachments/assets/199ae9f6-f63c-4abe-984b-a1f72293f49b)
-
-<br>
-<br>
-
-## <mark class="pink">🔥Refresh Token을 도입한 이유</mark>
-
-프로젝트에 도입한 이유는 사실 다양한 경험을 해보고 싶었기 때문입니다. FE에서 Refresh Token을 구현하는 것이 조금 어렵다는 글을 보았고, 프로젝트에서 그 경험을 하고 싶었습니다.
-
-그 후 많은 서비스에서 Refresh Token을 도입한 이유에 대해 찾아보았을 땐 **보안성과 사용자 경험(UX)**의 균형을 맞추기 위함이라고 하였습니다.
-
-<br>
-<br>
-
-## <mark class="pink">🔥토큰 만료 시간</mark>
-
-Access Token은 30분으로 짧게 설정했습니다. 탈취 시 공격자가 사용할 수 있는 기간을 제한하기 위함이었습니다.
-
-Refresh Token은 1주일로 설정했습니다. 도메인이 코드 리뷰인데 이 활동은 일주일을 넘기지 않을 것으로 판단하고 활동을 마친 사이클일 때마다 로그인을 하는 것이 좋을 것 이라고 판단하였습니다.
-
-<div class="blue-box">
-  <b>참고</b>
-  <div>Google OAuth: Access Token은 1시간, Refresh Token은 최대 6개월.</div>
-  <div>GitHub: Access Token은 1시간, Refresh Token은 사용자가 설정한 기간.</div>
-</div>
-
-<br>
-<br>
-
 ## <mark class="pink">🔥처음 작성했던 잘못된 코드</mark>
 
 401 상태가 발생하면 refreshAccessToken 함수에서 새로운 accessToken을 갱신합니다.  
@@ -336,6 +347,18 @@ const fetchWithToken = async (
   return text ? data : response;
 };
 ```
+
+<br>
+
+**<mark class="yellow">결과 화면</mark>**
+
+![Image](https://github.com/user-attachments/assets/9b81a93c-6ac8-4c59-8687-3dcd38a61e7a)
+
+1\. refreshAccessToken에 임의로 `await new Promise((resolve) => setTimeout(resolve, 3000));` 코드를 추가하여 3초 delay를 시켰습니다. 너무 빨라서 Race Condition 이슈를 확인하기 어렵웠기 때문에 일부러 요청을 지연시켜 확인하였습니다.
+
+2\. Access Token이 만료된 상태에서 여러 요청이 거의 동시에 발생하고 각 요청이 refreshAccessToken()을 각자 호출합니다.
+
+3\. 하나의 요청이 새로운 토큰을 저장하기 전에 다른 요청이 기존 토큰으로 재요청하였고 또 401 발생이 반복되면서 요청 수 만큼 refresh를 하고 있습니다.
 
 <br>
 <br>
@@ -479,7 +502,7 @@ const fetchWithToken = async (
     // 10. 토큰 갱신 중인 상태면 요청의 resolve와 reject를 failedQueue에 추가(두 번째 요청부터 failedQueue에 추가됨)
     // 이 Promise는 processQueue에서 resolve/reject될 때까지 대기
     if (isRefreshing) {
-      new Promise<string>((resolve, reject) => {
+      return new Promise<string>((resolve, reject) => {
         failedQueue.push({ resolve, reject });
       }).then(async (token) => {
         // 11. processQueue가 호출되어 Promise가 resolve되면 then 블록 실행
@@ -490,10 +513,14 @@ const fetchWithToken = async (
         };
 
         response = await fetch(`${serverUrl}${endpoint}`, requestInit);
+        text = await response.text();
+        data = text ? JSON.parse(text) : null;
 
         if (!response.ok && response.status !== 401) {
           throw new HTTPError(data.message || MESSAGES.ERROR.POST_REFRESH);
         }
+
+        return text ? data : response;
       });
     }
 
@@ -529,19 +556,33 @@ const fetchWithToken = async (
 
 **<mark class="yellow">결과 화면</mark>**
 
-첫 번째 api 요청 401 상태(109)  
-→ refresh  
-→ 첫 번째 api 재요청(109)  
-→ 대기 중이던 나머지 api 요청(reviewers, reviewees, participants)
+![Image](https://github.com/user-attachments/assets/de6735cd-febe-4220-a602-77c3eae006a2)
 
-![2](https://github.com/user-attachments/assets/82bb3005-4482-40b0-8ca3-0e3ebce08d28)
+1\. 이번에도 refreshAccessToken을 3초 delay를 시켜 실험해보았습니다.
+
+2\. Access Token이 만료된 상태에서 여러 API 요청이 동시에 발생하면, 각 요청은 401 에러를 받고 refreshAccessToken을 호출하려 합니다.
+
+3\. 이때, isRefreshing이 true인 경우에는 새 토큰을 기다리는 중이라는 뜻이므로, 해당 요청은 failedQueue에 저장되어 재시도 타이밍을 지연시킵니다.
+
+4\. refreshAccessToken이 완료되면 `processQueue(null, newAccessToken)`을 실행하여,
+failedQueue에 쌓여있던 요청들의 resolve 콜백을 호출하고, 각 요청은 갱신된 Access Token으로 재시도를 진행합니다.
+
+![Image](https://github.com/user-attachments/assets/eee4470d-3f4d-4163-ae13-02142b5b8f0a)
+
+<br>
+
+**<mark class="yellow">이 코드의 장점</mark>**
+
+이렇게 구현하면 하나의 토큰 재발급 요청만 보내도록 제어할 수 있으며, 동시에 발생한 요청들이 중복으로 refresh 요청을 보내는 `Race Condition` 문제를 방지할 수 있습니다.
+
+특히 failedQueue는 일종의 요청 재시도 대기열 역할을 하며, refresh가 끝난 뒤 한꺼번에 처리되기 때문에 안전하고 효율적인 흐름을 만들 수 있습니다.
 
 <br>
 <br>
 
 ## <mark class="pink">🔥코드 추가 설명</mark>
 
-**<mark class="yellow">failedQueue는 Promise 형태인가?</mark>**
+**<mark class="yellow">Q1. failedQueue는 Promise 형태인가?</mark>**
 
 아닙니다. failedQueue는 Promise 객체 자체를 저장하지 않고, resolve와 reject 함수만 저장합니다.
 
@@ -549,15 +590,16 @@ Promise 객체는 해당 함수들을 호출하여 원하는 시점에 완료되
 
 <br>
 
-**<mark class="yellow">Promise의 pending 상태는 고려할 필요가 없는가?</mark>**
+**<mark class="yellow">Q2. Promise의 pending 상태는 고려할 필요가 없는가?</mark>**
 
 Promise는 resolve나 reject가 호출되기 전까지 항상 pending 상태입니다.  
 설계된 코드를 보면 processQueue 함수로 대기 중인 요청의 resolve나 reject가 무조건 실행되므로  
 Promise의 상태 전환이 명확하여 pending 상태를 직접 관리할 필요가 없습니다.
 
-## 쿠키로 바꿈
+<br>
+<br>
 
-> 곧 할 예정
+## <mark class="pink">🔥쿠키로 변경 (25.02.19)</mark>
 
 Refresh Token은 HttpOnly 쿠키 또는 안전한 저장소(예: Keychain, Encrypted Storage 등)에 저장해야 합니다.
 로컬 스토리지(LocalStorage)는 XSS에 취약하므로 권장되지 않습니다.

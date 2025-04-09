@@ -151,8 +151,8 @@ Authorization Server를 통해 Access Token을 발급받고, 이후 Access Token
 <div class="blue-box">
   <b>❗ 참고</b>
   <p>현재 서비스에서는 Authorization Server에 사용자 정보를 저장해야 하기 때문에</p>
-  <p>Authorization Server가 Resource Server로부터 발급받은 Access Token으로 User Info를 받은 후</p>
-  <p>Authorization Server가 자체 생성한 Access Token과 Refresh Token, 그리고 응답 받은 User Info를 Client에게 넘겨줍니다.</p>
+  <div>Authorization Server가 Resource Server로부터 발급받은 Access Token으로 User Info를 받은 후</div>
+  <div>Authorization Server가 자체 생성한 Access Token과 Refresh Token, 그리고 응답 받은 User Info를 Client에게 넘겨줍니다.</div>
 </div>
 
 <div class="blue-box">
@@ -175,6 +175,8 @@ Settings > Developer settings > OAuth Apps
 
 **<mark class="yellow">2. New OAuth App</mark>**
 
+![3](https://github.com/user-attachments/assets/174c5cc5-6a9a-4232-9612-84c75497e1aa)
+
 **Application name**
 
 - 서비스 이름
@@ -191,13 +193,13 @@ Settings > Developer settings > OAuth Apps
 - 서비스 URL의 콜백 페이지 주소를 넣으면 됩니다.
 - ex) `http://localhost:3000/callback`
 
-![3](https://github.com/user-attachments/assets/174c5cc5-6a9a-4232-9612-84c75497e1aa)
-
 <br>
 
 **<mark class="yellow">3. Client ID, Client secrets</mark>**
 
 > OAuth App을 생성하면 Client ID, Client secrets를 발급 받습니다.
+
+![ci, cs](https://github.com/user-attachments/assets/09e359ab-32f2-463a-8f8f-0f0f4827b4ad)
 
 **Client ID**
 
@@ -209,8 +211,6 @@ Settings > Developer settings > OAuth Apps
 - 절대 유출되면 안 되는 정보이므로 처음 발급받을 때 이후로는 깃허브에서도 확인을 할 수 없습니다.
 - Authorization Server에서 Resource Server로 api를 요청할 때 사용합니다.
 - Authorization Server는 서브 모듈에 Client secrets를 저장합니다.
-
-![ci, cs](https://github.com/user-attachments/assets/09e359ab-32f2-463a-8f8f-0f0f4827b4ad)
 
 <br>
 <br>
@@ -284,7 +284,7 @@ export default Header;
 
 <br>
 
-6\. Authorization Server는 자체 생성한 Access Token, Refresh Token 그리고 Resource Server로 부터 받은 User Info를 Client에 넘겨줍니다.
+6\. Authorization Server는 자체 생성한 <mark class="yellow">Access Token</mark>, <mark class="yellow">Refresh Token</mark> 그리고 Resource Server로 부터 받은 <mark class="yellow">User Info</mark>를 Client에 넘겨줍니다.
 
 <br>
 
@@ -301,7 +301,7 @@ Frontend 개발자가 할 일은 1, 2, 3, 7번 입니다.
 4, 5, 6번은 Backend 개발자가 Authorization Server와 Resource Server 사이에서 데이터를 주고 받는 코드를 작성하면 됩니다.
 
 ```tsx
-// 1. Callback 페이지 (Github 로그인을 하면 자동으로 이동합니다)
+// 1. "/callback" 페이지 (Github 로그인을 하면 자동으로 이동합니다)
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -385,7 +385,7 @@ const postLogin = async (code: string) => {
 
 ## <mark class="pink">📌OAuth 로그아웃 과정</mark>
 
-### <mark class="yellow">로그아웃은 언제 일어나나요?</mark>
+### <mark class="yellow">1. 로그아웃은 언제 일어나나요?</mark>
 
 **🕓 refresh Token이 만료됐을 때**
 
@@ -395,21 +395,21 @@ const postLogin = async (code: string) => {
 
 <br>
 
-**🖱 로그아웃을 눌렀을 때**
+**💻 로그아웃을 눌렀을 때**
 
 1\. Client는 localStorage를 clear한 후 `로그아웃 post`를 요청합니다.
 
 2\. Authorization Server는 로그아웃 post를 요청 받으면 DB에 있는 refresh Token을 삭제합니다.
 
 <br>
+<br>
 
-### <mark class="yellow">로그아웃 클릭</mark>
+### <mark class="yellow">2. 로그아웃 클릭</mark>
 
 1\. Client는 localStorage를 clear한 후 `로그아웃 post`를 요청합니다.
 
 2\. Authorization Server는 로그아웃 post를 요청 받으면 DB에 있는 refresh Token을 삭제합니다.
 
-<br>
 <br>
 
 **<mark class="yellow">로그아웃 코드</mark>**
@@ -420,7 +420,7 @@ const Header = () => {
     try {
       await postLogout(); // 로그아웃 요청
       localStorage.clear(); // 로그아웃 후 로컬 스토리지 클리어
-      window.location.replace("/"); // 로그아웃 상태로 바꾸기 위해 새로고침
+      window.location.replace("/"); // 로그아웃 상태로 바꾸기 위한 새로고침
     } catch (error) {
       alert(error.message);
     }
@@ -466,7 +466,9 @@ OAuth는 소셜 로그인, API 호출, 인증된 자원 접근 등 다양한 곳
 
 **참고 및 이미지 출처**
 
-- 모든 이미지는 [GitHub 공식 문서](https://docs.github.com/en)에서 제공된 자료와 [CoReA 사이트](https://code-review-area.com/) 화면 자료를 사용하였습니다.
-- 참고 문서
-  - [Registering a GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
-  - [Authorizing OAuth Apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
+참고 문서
+
+- [Registering a GitHub App](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)
+- [Authorizing OAuth Apps](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)
+
+모든 이미지는 [GitHub 공식 문서](https://docs.github.com/en)에서 제공된 자료와 [CoReA 사이트](https://code-review-area.com/) 화면 자료를 사용하였습니다.
