@@ -10,9 +10,9 @@ toc_sticky: true
 
 ## 뱃지 만들기
 
-[hits 사이트](https://hits.seeyoufarm.com)
+[hits 사이트](https://hits.sh/)
 
-![1](https://github.com/chlwlstlf/data/assets/63334368/17a7e30e-4f63-4413-9131-bb82f0a974bd)
+![Image](https://github.com/user-attachments/assets/60925233-feb7-4366-85f2-dc3b16fb4ff6)
 
 1. \+ Add Icon: 뱃지 제일 앞에 아이콘 추가
 2. ICON COLOR: 아이콘 색깔 변경
