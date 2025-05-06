@@ -354,7 +354,7 @@ const fetchWithToken = async (
 
 ![Image](https://github.com/user-attachments/assets/9b81a93c-6ac8-4c59-8687-3dcd38a61e7a)
 
-1\. refreshAccessToken에 임의로 `await new Promise((resolve) => setTimeout(resolve, 3000));` 코드를 추가하여 3초 delay를 시켰습니다. 너무 빨라서 Race Condition 이슈를 확인하기 어렵웠기 때문에 일부러 요청을 지연시켜 확인하였습니다.
+1\. refreshAccessToken에 임의로 `await new Promise((resolve) => setTimeout(resolve, 3000));` 코드를 추가하여 3초 delay를 시켰습니다. 너무 빨라서 Race Condition 이슈를 확인하기 어려웠기 때문에 일부러 요청을 지연시켜 확인하였습니다.
 
 2\. Access Token이 만료된 상태에서 여러 요청이 거의 동시에 발생하고 각 요청이 refreshAccessToken()을 각자 호출합니다.
 
@@ -562,7 +562,7 @@ const fetchWithToken = async (
 
 2\. Access Token이 만료된 상태에서 여러 API 요청이 동시에 발생하면, 각 요청은 401 에러를 받고 refreshAccessToken을 호출하려 합니다.
 
-3\. 이때, isRefreshing이 true인 경우에는 새 토큰을 기다리는 중이라는 뜻이므로, 해당 요청은 failedQueue에 저장되어 재시도 타이밍을 지연시킵니다.
+3\. 이때 isRefreshing이 true인 경우에는 새 토큰을 기다리는 중이라는 뜻이므로, 해당 요청은 failedQueue에 저장되어 재시도 타이밍을 지연시킵니다.
 
 4\. refreshAccessToken이 완료되면 `processQueue(null, newAccessToken)`을 실행하여,
 failedQueue에 쌓여있던 요청들의 resolve 콜백을 호출하고, 각 요청은 갱신된 Access Token으로 재시도를 진행합니다.
@@ -599,12 +599,112 @@ Promise의 상태 전환이 명확하여 pending 상태를 직접 관리할 필�
 <br>
 <br>
 
-## <mark class="pink">🔥쿠키로 변경 (25.02.19)</mark>
+## <mark class="pink">🔥Refresh Token 쿠키에 저장 (25.02.19)</mark>
 
-Refresh Token은 HttpOnly 쿠키 또는 안전한 저장소(예: Keychain, Encrypted Storage 등)에 저장해야 합니다.
-로컬 스토리지(LocalStorage)는 XSS에 취약하므로 권장되지 않습니다.
+**<mark class="yellow">1. 저장 위치 변경한 이유</mark>**
 
-Refresh Token은 반드시 안전하게 관리해야 하며, XSS 및 탈취 방지를 위해 HttpOnly 쿠키 사용과 IP/디바이스 검증 등의 보안 조치가 필요합니다.
+Refresh Token을 쿠키에 저장하는 것으로 변경했습니다. 그 이유는 아래와 같습니다.
+
+Access Token보다 Refresh Token이 만료 기간이 깁니다. 따라서 Refresh Token이 탈취되었을 때 보안적 이슈가 더 커지고 Refresh Token과 Access Token의 저장 위치를 다르게 하여 보안을 강하게 하려고 했습니다.
+
+<br>
+
+**<mark class="yellow">2. 왜 쿠키인가?</mark>**
+
+**1\. LocalStorage의 취약점**
+
+- JavaScript로 완전히 접근 가능 → XSS 공격 시 토큰 탈취 위험
+
+**2\. HttpOnly 쿠키의 장점**
+
+- 클라이언트 스크립트에서 읽을 수 없도록 차단 → XSS 방어
+
+**3\. SameSite 설정**
+
+- 크로스사이트 요청 시 쿠키 전송 여부 제어 → CSRF 방어
+
+<br>
+
+**<mark class="yellow">3. 주요 웹 공격과 대응</mark>**
+
+**1\. XSS (Cross-Site Scripting)** [OWASP - XSS](https://owasp.org/www-community/attacks/xss/)  
+악성 스크립트를 삽입하는 공격의 한 유형으로, 일반적으로 무해하고 신뢰할 수 있는 웹사이트에 삽입됩니다.
+
+**2\. CSRF (Cross-Site Request Forgery)**  
+CSRF 공격은 사용자가 인증된 상태를 악용해, 의도치 않은 상태 변경(POST, DELETE 등)을 수행하게 만드는 기법입니다.
+
+<br>
+
+**<mark class="yellow">4. 쿠키 주요 속성 정리</mark>**
+
+**1\. HttpOnly** [OWASP - HttpOnly](https://owasp.org/www-community/HttpOnly)  
+HttpOnly를 지원하는 브라우저가 HttpOnly 플래그가 포함된 쿠키를 감지하고 클라이언트 측 스크립트 코드가 해당 쿠키를 읽으려고 시도하면, 브라우저는 빈 문자열을 반환합니다. 이로 인해 악성 코드(일반적으로 XSS)가 공격자의 웹사이트로 데이터를 전송하는 것을 차단하여 공격이 실패하게 됩니다.
+
+**2\. Secure**  
+HTTPS 연결에서만 쿠키가 전송되도록 합니다. 네트워크 스니핑(중간자 공격)으로부터 쿠키를 보호합니다.
+
+**3\. SameSite** [OWASP - SameSite](https://owasp.org/www-community/SameSite)  
+SameSite는 브라우저가 이 쿠키를 크로스 사이트 요청과 함께 전송하는 것을 차단합니다. 주요 목표는 크로스 오리진 정보 유출 위험을 완화하는 것입니다.
+
+| 옵션       | 설명                                                                                                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Strict** | 첫-파티(First-party) 컨텍스트에서만 쿠키 전송. 오직 동일 도메인 네비게이션/요청에만 보내집니다. CSRF 방어에 가장 강력하지만, 링크 클릭 시 세션 쿠키가 빠져 로그인이 풀릴 수 있습니다. |
+| **Lax**    | 동일 사이트 요청 및 사용자가 외부에서 해당 사이트로 ‘네비게이션’할 때(예: 링크 클릭) 쿠키를 전송합니다. Strict가 너무 제한적일 때 사용합니다.                                         |
+| **None**   | 크로스사이트(Third-party) 컨텍스트에서도 쿠키 전송을 허용합니다. 이 경우 Secure 속성이 필수입니다.                                                                                    |
+
+<br>
+
+**<mark class="yellow">5. frontend에서 쿠키 처리</mark>**
+
+`credentials: "include"`를 추가해주면 자동으로 쿠키를 함께 백엔드 서버로 전달합니다.
+
+```ts
+const response = await fetch(`${serverUrl}${API_ENDPOINTS.REFRESH}`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  credentials: "include",
+});
+```
+
+<br>
+
+| 값              | 설명                                                                     |
+| --------------- | ------------------------------------------------------------------------ |
+| **omit**        | 어떠한 경우에도 쿠키나 인증 헤더를 전송하지 않습니다.                    |
+| **same-origin** | 같은 출처(origin) 요청에 한해서만 쿠키를 전송합니다.                     |
+| **include**     | 크로스-오리진(cross-origin) 요청을 포함한 모든 요청에 쿠키를 전송합니다. |
+
+<br>
+
+※ 주의할 점
+
+- 서버도 CORS 설정에서 `Access-Control-Allow-Credentials: true`를 허용해야 합니다.
+- `include`를 사용할 때는 응답 헤더에 `Access-Control-Allow-Origin`을 `*` 대신 **정확한 도메인**으로 설정해야 합니다.
+
+<br>
+<br>
+
+## <mark class="pink">🔥Refresh Token Rotation (25.04.07)</mark>
+
+Refresh Token 만료 1분 전에 사용자가 서비스에 다시 접속했을 때 1분 뒤에 재로그인을 유도하는 것이 맞는 흐름일까요?
+
+또 Refresh Token을 탈취했을 때 이것으로 Access Token을 계속 발급받아 기존 유저처럼 사용할 수 있는데 보안상 괜찮을까요?
+
+이를 해결하기 위해 **Refresh Token Rotation**을 적용하였습니다.
+
+<br>
+
+**<mark class="yellow">Refresh Token Rotation란?</mark>**
+
+Access Token이 만료될 때마다 기존 Refresh Token을 이용하여 Access Token을 재발급해주는 것 뿐만 아니라, 이후에 새로운 Refresh Token을 발급하여 쿠키에 저장합니다.
+
+위 과정을 통해 Refresh Token 만료 이전에 사용자가 서비스에 다시 접속했다면 Refresh Token 만료 기한이 초기화되어 그 기간동안 재로그인 없이 서비스를 이용할 수 있습니다.
+
+또 Refresh Token 탈취시에도 기존 사용자의 Access Token이 만료되고 나면 유효하지 않은 토큰이 됩니다.
+
+✅ 실제로 Auth 에서도 제안하는 방식입니다. [Refresh Token Rotation](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation)
 
 <br>
 <br>
