@@ -8,7 +8,7 @@ toc_sticky: true
 
 # 지역 Suspense와 지역 ErrorBoundary로 배너 계속 보여주기
 
-## <mark class="pink">🔥[이전] 전체가 Loading 화면으로 된다</mark>
+## <mark class="pink">🔥[이전] 전역 Suspense</mark>
 
 모집 중을 눌렀을 때 전체에 loading이 생기는 게 어색해 보였습니다. 지역 Suspense를 사용해서 방 리스트가 뜨는 곳만 로딩 처리를 하는 것으로 변경하였습니다.
 
@@ -17,7 +17,7 @@ toc_sticky: true
 <br>
 <br>
 
-## <mark class="pink">🔥[변경 후] 방 리스트에만 suspense</mark>
+## <mark class="pink">🔥[변경 후] 지역 Suspense</mark>
 
 모든 방 호출이 useSuspenseQuery로 되어있기 때문에 지역 Suspense를 쉽게 적용할 수 있었습니다.  
 방 리스트에 suspense를 감싸주고 fallback UI를 skeleton으로 보여주었습니다.
@@ -99,7 +99,7 @@ const LocalErrorBoundary = ({ children, fallback }) => {
 
 <br>
 
-**<mark class="yellow">useSuspenseQuery 코드리</mark>**
+**<mark class="yellow">useSuspenseQuery 코드</mark>**
 
 ```ts
 export function useSuspenseQuery<
