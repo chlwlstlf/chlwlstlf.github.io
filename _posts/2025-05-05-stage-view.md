@@ -22,7 +22,7 @@ toc_sticky: true
 
 **<mark class="yellow">1. svg 요소에 `btn` 추가</mark>**
 
-- stage나 버튼 요소는 클릭이 되면 안 되고, 좌석은 클릭이 되어야 한다.
+- stage나 층수 정보는 클릭이 되면 안 되고, 좌석은 클릭이 되어야 한다.
 - 이를 구분하기 위해 디자이너에게 클릭 가능한 요소들만 id에 `btn_` prefix를 추가해달라고 부탁했다.
 
 <br>
@@ -32,6 +32,8 @@ toc_sticky: true
 - 그렇게 클릭을 할 수 있게 만들었다. 클릭한 요소의 id를 출력해보니 `btn_floorA`라고 떴다.
 - 백엔드에 보내야하는 `sectionId` 정보가 없어 다시 백엔드 팀원과 디자이너에게 `sectionId`까지 포함한 id를 만들어달라고 했다.
 
+<br>
+
 ![Image](https://github.com/user-attachments/assets/82376aeb-4b94-4e38-b9f0-84c163a67a4e)
 
 (감사합니다😭👏)
@@ -40,7 +42,7 @@ toc_sticky: true
 
 **<mark class="yellow">[최종 SVG]</mark>**
 
-`btn`과 `sectionId`가 있다.
+`btn`과 `sectionId`가 모두 생겼다.
 
 ![Image](https://github.com/user-attachments/assets/0c15623a-5a62-4793-abac-5f5197f19efd)
 
@@ -49,13 +51,13 @@ toc_sticky: true
 
 ## <mark class="pink">🔥2. SVG fetching해서 보여주기</mark>
 
-이렇게 완성된 svg를 S3+CloudFront에 저장했다. 프론트가 SVG 파일을 갖고 있으면 앞으로 경기장 개수가 늘어날수록 번들 크기와 로딩 비용이 그만큼 커지기 때문이다.
+이렇게 완성된 SVG를 S3+CloudFront에 저장했다. 프론트가 SVG 파일을 갖고 있으면 앞으로 경기장 개수가 늘어날수록 번들 크기와 로딩 비용이 그만큼 커지기 때문이다.
 
 <br>
 
-**<mark class="yellow">img로 svg 보여주기</mark>**
+**<mark class="yellow">Image로 SVG 보여주기</mark>**
 
-CloudFront링크로 가져와서 img로 보여줄 수 있다.
+CloudFront url로 좌석배치도 SVG를 가져와서 Image로 보여준다.
 
 **getAssetUrl.ts**
 
@@ -74,7 +76,7 @@ export const getStadiumAssetUrl = (stadiumId: number) =>
 
 **<mark class="yellow">🤔문제점</mark>**
 
-- 하지만 여기에 css를 추가하거나 선택하거나 classList를 조작할 수 없다.
+- 하지만 여기에는 css를 추가하거나 클릭하거나 classList를 조작할 수 없다.
 - 그 이유는 img의 src로 SVG를 삽입하면 그걸 "이미지 비트맵"으로만 처리해서 내부 `<g>` 요소가 DOM에 드러나지 않기 때문이다.
 
 <br>
@@ -88,13 +90,11 @@ export const getStadiumAssetUrl = (stadiumId: number) =>
 
 **<mark class="yellow">fetching 코드</mark>**
 
-※ 토스에서 icon을 fetching하는 코드를 참고하였다.
-
 1\. `fetchStageSvg` 라는 fetching하는 함수를 만든다.
 
 2\. `svgCache`는 완성된 SVG 문자열을 저장하고, `svgRequestCache`는 진행 중인 fetch 요청을 저장한다. 아직 받아오고 있는 중인 응답도 캐싱해두면 fetch -> 처리 -> 캐싱의 흐름이 한 번만 일어나고 이후엔 즉시 결과나 진행 중인 Promise를 재사용할 수 있어서 훨씬 효율적이다.
 
-3\. fetching을 실행한다. svgCache에 있으면 바로 return하고, 아니라면 fetching한다. fetching 결과도 svgCache에 캐싱한다.
+3\. fetching을 실행한다. svgCache에 있으면 바로 return하고, 아니면 fetching한다. fetching 결과도 svgCache에 캐싱한다.
 
 4\. `dangerouslySetInnerHTML`로 SVG 문자열을 DOM에 넣어준다. React의 가상돔 관리 하에서는 JSX로 표현되지 않는 직접적인 DOM 변경을 허용하지 않는다. `dangerouslySetInnerHTML`은 그 유일한 예외로 이 부분만 React의 관리 밖으로 빼고 그대로 넣을 수 있다.
 
@@ -180,8 +180,11 @@ async function fetchStageSvg(id: number) {
 }
 ```
 
+<br>
+
 <div class="blue-box">
   <b>※ useMemo 사용한 이유</b>
+  <br>
   <div>{ __html: innerHTML } 객체를 렌더링마다 새로 생성하지 않도록 하기 위해서다.</div>
   <div>줌/팬 이벤트가 일어날 때마다 React가 전체 div를 리렌더링하는데 이때 새로운 DOM을 다시 덮어쓴다.</div>
   <div>이러면 사용자가 클릭하여 변경한 사항들이 초기화된다.</div>
@@ -206,7 +209,7 @@ scale에 따른 최대 이동 범위를 제한한다.
 
 <br>
 
-**<mark class="yellow">1. `clamp` 유틸 함수 만들기</mark>**
+**<mark class="yellow">1. clamp 유틸 함수 만들기</mark>**
 
 - clamp는 주어진 값을 최소(min)와 최대(max) 범위 안으로 `강제 제한`하는 함수이다.
 - min보다 value가 작으면 min을, max보다 value가 크면 max를 반환한다.
@@ -221,12 +224,12 @@ export const clamp = (value: number, min: number, max: number) => {
 
 <br>
 
-**<mark class="yellow">2. `getTranslateLimits`로 이동 가능 범위 계산하기</mark>**
+**<mark class="yellow">2. getTranslateLimits로 이동 가능 범위 계산하기</mark>**
 
 - `wrapper.offsetWidth`에 `scale`을 곱해서 확대 후의 전체 가로 길이를 구한다.
 - `container.getBoundingClientRect().width`는 container 요소의 현재 화면에 보이는 가로 폭이다.
 - 확대된 이미지 너비에서 화면의 너비를 빼면 이미지가 화면을 얼마만큼 넘치고 있는지 나온다.
-- 이 넘치는 부분을 양끝으로 반씩 나누면 끝까지 이동할 수 있는 최대 거리를 구할 수 있다.
+- 이 넘치는 부분을 양끝으로 반씩 나눈 값을 이동할 수 있는 최대 거리로 정했다.
 
 ex) 확대 후 wrapper의 width가 800이고 container의 width는 400일 때 minX는 -200, maxX는 200이다.
 
@@ -263,7 +266,7 @@ const getTranslateLimits = () => {
 
 <br>
 
-**<mark class="yellow">3. `updateTransform`로 제한하기</mark>**
+**<mark class="yellow">3. updateTransform로 제한하기</mark>**
 
 **useStageTransform.ts**
 
@@ -299,9 +302,9 @@ const updateTransform = () => {
 
 <br>
 
-**<mark class="yellow">3. `updateTransform`로 제한하기</mark>**
+**<mark class="yellow">3. updateTransform로 제한하기</mark>**
 
-[translateX가 0일 때]
+**[translateX가 0일 때]**
 
 그림이 한 가운데 있을 때가 0이다. 이때 더 왼쪽을 보려고 하면 translateX 값이 +가 되고, 그림의 오른쪽을 보려고 하면 값이 -가 된다. 이 translateX의 최소최대 범위를 조정하여 사진이 밖으로 나가지 못 하게 했다.
 
@@ -309,7 +312,7 @@ const updateTransform = () => {
 
 <br>
 
-[오른쪽으로 이동시킨 경우]
+**[오른쪽으로 이동시킨 경우]**
 
 scale이 2일 때 container.width가 400px, wrapper.width가 800px이 된다.
 이때 minX는 -200, maxX는 200이 되며 왼쪽 시작점을 맞추면 translateX가 200px이 된다. 브라우저 입장에서는 사진이 오른쪽으로 200px 이동한 것이기 때문이다.
@@ -336,6 +339,8 @@ scale이 2일 때 container.width가 400px, wrapper.width가 800px이 된다.
 `containerAspectRatio`를 인자로 받아 div의 `aspectRatio`에 담고 container의 25%로 맞췄다.  
 디자인&기획에 확대되지 않았다면 MiniMap을 띄우지 않는 것으로 되어 있어서 scale이 1이면 minimap을 안 보이게 했다.
 
+{% raw %}
+
 ```tsx
 <div
   className={styles.minimap}
@@ -350,6 +355,8 @@ scale이 2일 때 container.width가 400px, wrapper.width가 800px이 된다.
   {/* 빨간 네모 박스 */}
 </div>
 ```
+
+{% endraw %}
 
 <br>
 
@@ -416,8 +423,8 @@ const updateViewportBox = () => {
 4. 보이는 영역의 원본 이미지 내 오프셋(offset) 계산  
    `(imageSize - visibleSize)/2` 로 중앙 정렬 오프셋을 구하고, `- translate/scale` 만큼 이동된 만큼 빼 주면, “이미지 좌표계 기준 보이는 영역의 왼쪽·위쪽 위치”가 나온다.
 
-5. 원본 이미지 → 미니맵 스케일 비율 계산  
-   `minimapWidth / wrapperWidth` : 미니맵 1px가 원본 이미지에서 몇 px에 해당하는지  
+5. 원본 이미지 -> 미니맵 스케일 비율 계산  
+   `minimapWidth / wrapperWidth` : 원본 이미지 1px이 미니맵에서 px인지  
    `minimapHeight / wrapperHeight` : 세로도 동일
 
 <br>
@@ -591,7 +598,7 @@ svg g[id^="btn"].selected > path {
 참고: [https://stackoverflow.com/questions/58132952/how-to-set-brightness-over-a-svg-path-element](https://stackoverflow.com/questions/58132952/how-to-set-brightness-over-a-svg-path-element)
 
 - HTML 요소: 렌더링 → 비트맵 생성 → CSS filter 적용
-- SVG 벡터 요소: Blink/WebKit에서는 비트맵 생성 과정을 건너뛰어, CSS filter를 제대로 적용하지 않음
+- SVG 벡터 요소: Blink/WebKit에서는 비트맵 생성 과정을 건너뛰어, CSS filter가 제대로 적용되지 않는 오류였다.
 
 <br>
 
@@ -599,6 +606,8 @@ svg g[id^="btn"].selected > path {
 
 CSS filter는 비트맵 레이어에서 적용되는데 SVG는 비트맵 변환 단계없이 직접 벡터를 그린다.  
 그래서 SVG에 CSS filter와 동일한 형태를 가진 요소를 정의하고 `filter: url()`로 그 요소를 참조하여 같은 효과를 줄 수 있다.
+
+<br>
 
 **1\. `<filter>` 요소 생성**
 
@@ -655,7 +664,7 @@ const fetchSvg = async () => {
 
 **3\. css에 적용**
 
-url로 filter의 id를 참조합니다.
+url로 filter의 id를 참조한다.
 
 **StageView.module.scss**
 
@@ -670,7 +679,7 @@ svg g[id^="btn"].selected > path {
 
 <br>
 
-### 결과 화면
+**결과 화면**
 
 | 데스크탑(크롬)                                                                                                             | 모바일(아이폰, 크롬)                                                                                                       | 모바일(아이폰, 사파리)                                                                                                     |
 | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
