@@ -8,11 +8,15 @@ toc_sticky: true
 
 # 토큰 만료되면 재로그인 유도 모달 띄우기
 
+<br>
+
 관련 PR: [Errorboundary 전략 세우기, Network에 따른 UI 변경](https://github.com/woowacourse-teams/2024-corea/pull/814)
+
+<br>
 
 ## <mark class="pink">🔥[문제점]</mark>
 
-refresh 토큰이 만료되었을 때 Toast가 뜨는 것이 어색했습니다. 이를 Modal로 띄우기 위해 ErrorBoundary를 전략에 따라 다른 UI를 보여주기로 결정하였습니다.
+refresh 토큰이 만료되었을 때 alert 창이 뜨는 것이 UX에 안 좋다고 판단했습니다. 이를 Modal로 띄우기 위해 ErrorBoundary를 전략에 따라 다른 UI를 보여주기로 결정하였습니다.
 
 <br>
 <br>
@@ -25,7 +29,7 @@ refresh 토큰이 만료되었을 때 Toast가 뜨는 것이 어색했습니다.
 
 **apiClient.ts**
 
-`/refresh`: 모든 에러는 `AuthorizationError`로 간주한다.
+`/refresh` 요청의 모든 에러는 `AuthorizationError`로 간주합니다.
 
 ```ts
 const refreshAccessToken = async (): Promise<string | undefined> => {
@@ -60,7 +64,9 @@ const refreshAccessToken = async (): Promise<string | undefined> => {
 };
 ```
 
-그 외 api 요청: AccessToken 401 토큰 만료 외에 모든 401 에러는 AuthorizationError로 간주한다.
+<br>
+
+그 외 api 요청: AccessToken 401 토큰 만료 외에 모든 401 에러는 AuthorizationError로 간주합니다.
 
 ```ts
 if (!response.ok) {
@@ -124,7 +130,8 @@ if (!response.ok) {
 
 **<mark class="yellow">2. POST, PUT, DELETE 요청</mark>**
 
-- `mutation` 에러는 `mutationCache`의 onError로 넘어갑니다. - 여기서 error를 추가하면, `ErrorManager`의 useEffect에서 error 변화를 감지하고 해당 전략에 맞게 UI를 띄웁니다.
+- `mutation` 에러는 `mutationCache`의 onError로 넘어갑니다.
+- 여기서 error를 추가하면, `ErrorManager`의 useEffect에서 error 변화를 감지하고 해당 전략에 맞게 UI를 띄웁니다.
 
 ![image](https://github.com/user-attachments/assets/c9e7c18c-1b7a-46c7-9c35-4a892f3dae29)
 
@@ -135,7 +142,7 @@ if (!response.ok) {
 
 **ErrorProvider.tsx**
 
-context api로 전역에서 발생하는 error 수집한다.
+context api로 전역에서 발생하는 error 수집합니다.
 
 ```tsx
 import type { PropsWithChildren } from "react";
@@ -249,7 +256,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <ErrorProvider>
         <QueryProvider>
           <ToastProvider>
-            // Error 모달 전략 띄우는 Provider 추가
+            // Error 전용 모달 띄우는 Provider 추가
             <ErrorModalProvider>
               <ErrorManager>
                 <GlobalStyles />
@@ -421,8 +428,6 @@ await apiClient.post({
 
 ## <mark class="pink">🔥4. CustomError 만들기</mark>
 
-이렇게 에러 전략을 세웠고, Error도 종류를 분리하여 다르게 띄워보고 싶었습니다.
-
 기존 Error는 `message`만 인자로 갖고 있기 때문에 이를 확장하여 `strategy`와 `status` 그리고 다양한 옵션을 줄 수 있는 `meta` 인자를 추가로 받는 `CustomError`를 만들었습니다.
 
 **CustomError.ts**
@@ -487,7 +492,7 @@ export class ApiError extends CustomError {
 
 **<mark class="yellow">2. AuthorizationError</mark>**
 
-가장 중요한 `AuthorizationError` 에러입니다. 사실 이것을 위해 여기까지 달려온 것인데요,,
+가장 중요한 `AuthorizationError` 에러입니다. 사실 이것을 위해 여기까지 달려온 것인데요,,🤔
 
 이전 flow는 토큰이 만료되면 1) alert 창이 뜨고, 2) 사용자가 로그인 버튼을 눌러야 했습니다. 하지만 이렇게 되면 사용자는 직접 로그인 버튼을 찾아서 눌러야 하고 서비스 이용 흐름이 끊기게 됩니다.
 
@@ -515,10 +520,11 @@ if (!response.ok) {
 
 `AuthorizationError`를 던지면 어떤 일이 일어날까요?
 
+<br>
+
 **CustomError.ts**
 
-확인 버튼의 문구는 "로그인하기"로 동작은 "로컬스토리지 비우기", "github 로그인 페이지로 이동"으로 커스텀하였습니다.
-
+확인 버튼의 문구는 "로그인하기"로 동작은 "로컬스토리지 비우기", "github 로그인 페이지로 이동"으로 커스텀하였습니다.  
 취소 버튼의 문구는 "나중에 하기"로 동작은 "로컬스토리지 비우기", "홈으로 이동"으로 커스텀하였습니다.
 
 ```ts

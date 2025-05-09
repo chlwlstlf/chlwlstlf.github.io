@@ -195,7 +195,89 @@ async function fetchStageSvg(id: number) {
 <br>
 <br>
 
-## <mark class="pink">🔨3. SVG를 화면 밖으로 내보낼 수 있다?</mark>
+## <mark class="pink">🔥3. 좌석 선택하기</mark>
+
+fetching을 했으니 이제 좌석을 선택하고 거기서 `sectionId`를 추출해야 한다.  
+좌석 선택 전후 UI는 아래와 같다.
+
+<br>
+
+|                                      선택 안 했을 때                                      |                                       선택 했을 때                                        |
+| :---------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+|                                    원래 색으로 보인다                                     |                     모든 좌석은 어두워지고<br>선택한 좌석만 밝아진다                      |
+| ![image](https://github.com/user-attachments/assets/c3ee6cf1-c7cd-4e80-919d-c8bcdbe94f80) | ![image](https://github.com/user-attachments/assets/803e932a-77d1-4989-a6d1-276ac2fe872e) |
+
+<br>
+
+**StageView.tsx**
+
+- `target`은 내가 누른 element이다. 이 target과 가장 가까운 `g[id^="btn"]`를 찾아 `group`에 저장한다.
+- `svg`는 좌석배치도 전체를 의미한다.
+- 좌석 하나를 클릭하면 모든 g 태그의 `.selected`를 제거하여 초기화한다.
+- 모든 좌석은 어두워져야 하므로 svg에 `.gHasSelection` 클래스를 추가한다. 그리고 클릭한 id의 g태그를 찾아 `.selected` 클래스를 추가한다.
+- `group.id`는 `btn_2F_43_40`이고 `parseBtnId` 함수를 사용하여 sectionId인 40과 sectionName인 "2F_43"을 추출한다.
+
+```tsx
+const handleSVGClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const target = e.target as Element;
+  const group = target.closest('g[id^="btn"]');
+  if (!group) return;
+
+  const svg = wrapperRef.current?.querySelector("svg");
+  if (!svg) return;
+
+  // 모두 해제
+  svg
+    .querySelectorAll('g[id^="btn"]')
+    .forEach((g) => g.classList.remove(styles.selected));
+
+  // 클릭된 것만 selected 추가
+  svg.classList.add(styles.gHasSelection);
+  svg.querySelector(`g[id="${group.id}"]`)!.classList.add(styles.selected);
+
+  const { sectionId, sectionName } = parseBtnId(group.id);
+  if (!sectionId) return;
+
+  onSelectSection({ sectionId, sectionName });
+};
+```
+
+<br>
+
+**StageView.module.scss**
+
+```scss
+svg g[id^="btn"] {
+  cursor: pointer;
+  filter: none;
+}
+
+// 선택된 좌석 밝게
+svg g[id^="btn"].selected > path {
+  opacity: 1;
+  filter: brightness(2) drop-shadow(10px 10px 20px rgb(0 0 0 / 70%));
+}
+
+// 선택 안 된 모든 좌석 어둡게
+svg.gHasSelection g[id^="btn"]:not(.selected) > path {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+```
+
+<br>
+<br>
+
+**<mark class="yellow">결과 화면</mark>**
+
+좌석을 선택하면 svg 태그에 `.gHasSelection` 클래스가 추가되고, 선택한 g 태그에도 `.selected` 클래스가 추가된다.
+
+![image](https://github.com/user-attachments/assets/ff5b8b86-b884-41bb-9598-3c7ed6285974)
+
+<br>
+<br>
+
+## <mark class="pink">🔨4. SVG를 화면 밖으로 내보낼 수 있다?</mark>
 
 **<mark class="yellow">🤔문제점</mark>**
 
@@ -302,8 +384,6 @@ const updateTransform = () => {
 
 <br>
 
-**<mark class="yellow">3. updateTransform로 제한하기</mark>**
-
 **[translateX가 0일 때]**
 
 그림이 한 가운데 있을 때가 0이다. 이때 더 왼쪽을 보려고 하면 translateX 값이 +가 되고, 그림의 오른쪽을 보려고 하면 값이 -가 된다. 이 translateX의 최소최대 범위를 조정하여 사진이 밖으로 나가지 못 하게 했다.
@@ -322,7 +402,7 @@ scale이 2일 때 container.width가 400px, wrapper.width가 800px이 된다.
 <br>
 <br>
 
-## <mark class="pink">🔥4. 미니맵 보여주기</mark>
+## <mark class="pink">🔥5. 미니맵 보여주기</mark>
 
 **<mark class="yellow">1. container와 비율 맞추기</mark>**
 
@@ -482,94 +562,13 @@ const updateViewportBox = () => {
 <br>
 <br>
 
-**<mark class="yellow">결과 화면</mark>**
+**<mark class="yellow">결과 화면: scale 2일 때</mark>**
 
 ![image](https://github.com/user-attachments/assets/a64047d8-65a6-46bf-bc4e-5c77a5212f12)
 
 <video controls>
   <source src="https://github.com/user-attachments/assets/cd2fa9c2-b98f-4a6d-b4fa-470488818628" type="video/mp4">
 </video>
-
-<br>
-<br>
-
-## <mark class="pink">🔥5. 좌석 선택하기</mark>
-
-UI 작업은 어느 정도 끝났다. 이제 좌석을 선택하고 거기서 `sectionId`를 추출한다.
-
-<br>
-
-|                                      선택 안 했을 때                                      |                                       선택 했을 때                                        |
-| :---------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
-|                                    원래 색으로 보인다                                     |                     모든 좌석은 어두워지고<br>선택한 좌석만 밝아진다                      |
-| ![image](https://github.com/user-attachments/assets/c3ee6cf1-c7cd-4e80-919d-c8bcdbe94f80) | ![image](https://github.com/user-attachments/assets/803e932a-77d1-4989-a6d1-276ac2fe872e) |
-
-<br>
-
-**StageView.tsx**
-
-- `target`은 내가 누른 element이다. 이 target과 가장 가까운 `g[id^="btn"]`를 찾아 `group`에 저장한다.
-- `svg`는 좌석배치도 전체를 의미한다.
-- 좌석 하나를 클릭하면 모든 g 태그의 `.selected`를 제거하여 초기화한다.
-- 모든 좌석은 어두워져야 하므로 svg에 `.gHasSelection` 클래스를 추가한다. 그리고 클릭한 id의 g태그를 찾아 `.selected` 클래스를 추가한다.
-- `group.id`는 `btn_2F_43_40`이고 `parseBtnId` 함수를 사용하여 sectionId인 40과 sectionName인 "2F_43"을 추출한다.
-
-```tsx
-const handleSVGClick = (e: React.MouseEvent<HTMLDivElement>) => {
-  const target = e.target as Element;
-  const group = target.closest('g[id^="btn"]');
-  if (!group) return;
-
-  const svg = wrapperRef.current?.querySelector("svg");
-  if (!svg) return;
-
-  // 모두 해제
-  svg
-    .querySelectorAll('g[id^="btn"]')
-    .forEach((g) => g.classList.remove(styles.selected));
-
-  // 클릭된 것만 selected 추가
-  svg.classList.add(styles.gHasSelection);
-  svg.querySelector(`g[id="${group.id}"]`)!.classList.add(styles.selected);
-
-  const { sectionId, sectionName } = parseBtnId(group.id);
-  if (!sectionId) return;
-
-  onSelectSection({ sectionId, sectionName });
-};
-```
-
-<br>
-
-**StageView.module.scss**
-
-```scss
-svg g[id^="btn"] {
-  cursor: pointer;
-  filter: none;
-}
-
-// 선택된 좌석 밝게
-svg g[id^="btn"].selected > path {
-  opacity: 1;
-  filter: brightness(2) drop-shadow(10px 10px 20px rgb(0 0 0 / 70%));
-}
-
-// 선택 안 된 모든 좌석 어둡게
-svg.gHasSelection g[id^="btn"]:not(.selected) > path {
-  opacity: 0.5;
-  transition: opacity 0.2s ease;
-}
-```
-
-<br>
-<br>
-
-**<mark class="yellow">결과 화면</mark>**
-
-좌석을 선택하면 svg 태그에 `.gHasSelection` 클래스가 추가되고, 선택한 g 태그에도 `.selected` 클래스가 추가된다.
-
-![image](https://github.com/user-attachments/assets/ff5b8b86-b884-41bb-9598-3c7ed6285974)
 
 <br>
 <br>
