@@ -23,7 +23,7 @@ toc_sticky: true
 <br>
 <br>
 
-**<mark class="yellow">1\. showToast 함수에 type 추가</mark>**
+**<mark class="yellow">1. showToast 함수에 type 추가</mark>**
 
 **[이전]**
 
@@ -51,7 +51,7 @@ showToast("성공하였습니다.", "success");
 <br>
 <br>
 
-**<mark class="yellow">2\. showToast 함수에 durationMs 추가</mark>**
+**<mark class="yellow">2. showToast 함수에 durationMs 추가</mark>**
 
 **[이전]**
 
@@ -92,7 +92,7 @@ const showToast = (
 <br>
 <br>
 
-**<mark class="yellow">3\. useToast 훅에 closeToast 함수 추가</mark>**
+**<mark class="yellow">3. useToast 훅에 closeToast 함수 추가</mark>**
 
 - 무한으로 보여주는 Toast가 생겼기 때문에 닫는 동작도 추가하였습니다.
 - 현재 떠있는 toast 중에서 props의 message와 동일 toast를 닫습니다.
@@ -115,7 +115,7 @@ closeToast(MESSAGES.ERROR.OFFLINE); // 오프라인 에러 토스트 닫기
 <br>
 <br>
 
-**<mark class="yellow">4\. showToast 함수에 message로 중복 처리</mark>**
+**<mark class="yellow">4. showToast 함수에 message로 중복 처리</mark>**
 
 - 사용자들이 같은 버튼을 계속 누르면 동일한 메세지 Toast가 계속 떠서 화면이 안 보이게 됩니다.
 - Toast message로 중복 처리를 하여 같은 메세지 Toast는 한 번만 뜨게 합니다.
@@ -138,7 +138,7 @@ const showToast = (
 <br>
 <br>
 
-**<mark class="yellow">5\. 토스트 여러 개 띄우기</mark>**
+**<mark class="yellow">5. 토스트 여러 개 띄우기</mark>**
 
 - Network 에러와 mutation 동작에서 모두 Toast를 띄울 예정이기 때문에 Toast를 여러 개 띄워야 합니다.
 - toasts 배열로 받고, 일정 시간이 지나면 closingToasts에 담아 toast를 제거합니다.

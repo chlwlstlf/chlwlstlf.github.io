@@ -344,7 +344,7 @@ export default ErrorManager;
 
 ## <mark class="pink">🔥3. 에러 전략 세우기</mark>
 
-**<mark class="yellow">1\. default 전략 설명</mark>**
+**<mark class="yellow">1. default 전략 설명</mark>**
 
 apiClient의 request 함수에서 get 요청은 Errorboundary, 나머지 요청은 Toast로 설정합니다.
 
@@ -367,7 +367,7 @@ request: async ({
 
 <br>
 
-**<mark class="yellow">2\. Toast 전략</mark>**
+**<mark class="yellow">2. Toast 전략</mark>**
 
 error가 가지고 있는 message를 띄웁니다.
 
@@ -381,7 +381,7 @@ await apiClient.post({
 
 <br>
 
-**<mark class="yellow">3\. Modal 전략</mark>**
+**<mark class="yellow">3. Modal 전략</mark>**
 
 확인 버튼, 취소 버튼, 확인 동작, 취소 동작을 커스텀할 수 있습니다.
 
@@ -401,7 +401,7 @@ await apiClient.post({
 
 <br>
 
-**<mark class="yellow">4\. Redirect 전략</mark>**
+**<mark class="yellow">4. Redirect 전략</mark>**
 
 redirectTo: redirect 시킬 url
 
@@ -468,7 +468,7 @@ export class CustomError extends Error {
 
 <br>
 
-**<mark class="yellow">1\. ApiError</mark>**
+**<mark class="yellow">1. ApiError</mark>**
 
 ApiError는 정해진 에러 전략이 없습니다. 사용자가 커스텀할 수 있습니다.
 
@@ -485,7 +485,7 @@ export class ApiError extends CustomError {
 
 <br>
 
-**<mark class="yellow">2\. AuthorizationError</mark>**
+**<mark class="yellow">2. AuthorizationError</mark>**
 
 가장 중요한 `AuthorizationError` 에러입니다. 사실 이것을 위해 여기까지 달려온 것인데요,,
 
@@ -555,7 +555,7 @@ export class AuthorizationError extends CustomError {
 
 <br>
 
-**<mark class="yellow">3\. NetworkError</mark>**
+**<mark class="yellow">3. NetworkError</mark>**
 
 NetworkError는 toast를 보여주어 사용자가 빠르게 네트워크 연결을 할 수 있게 유도합니다.
 
