@@ -574,7 +574,54 @@ svg.gHasSelection g[id^="btn"]:not(.selected) > path {
 <br>
 <br>
 
-## <mark class="pink">🔨6. 모바일에서는 좌석이 안 밝아진다?</mark>
+## <mark class="pink">🔨6. 이전으로 가면 선택한 좌석이 풀린다?</mark>
+
+**<mark class="yellow">🤔문제점</mark>**
+
+퍼널에서 열 선택에서 이전으로 가면 좌석 배치도가 보이는데 선택했던 구역이 풀려 안 보였다.
+
+<br>
+
+**<mark class="yellow">💡원인</mark>**
+
+퍼널 데이터에 선택한 구역은 저장되어 있었지만 좌석 배치도가 다시 마운트되면서 추가했던 클래스가 사라졌다.
+
+선택한 구역이 있다면 이를 좌석 배치도에 다시 보여주는 작업을 해야한다.
+
+<br>
+
+**<mark class="yellow">🌈해결방법</mark>**
+
+**StageView.tsx**
+
+`selectedSectionId`는 퍼널 데이터의 `sectionId`이다.  
+svg 안에 있는 `g[id^="btn"]` 요소를 모두 탐색하며 해당 `sectionId`에 `.selected` 클래스를 주입한다.  
+이때 svg에도 `.gHasSelection` 클래스를 주입하여 어둡게 만든다.
+
+```tsx
+// 페이지 복귀 시, 기존 선택 상태 복원
+useEffect(() => {
+  if (selectedSectionId === null || !wrapperRef.current) return;
+
+  const svg = wrapperRef.current.querySelector("svg");
+  if (!svg) return;
+
+  svg.querySelectorAll('g[id^="btn"]').forEach((g) => {
+    g.classList.remove(styles.selected);
+
+    const { sectionId } = parseBtnId(g.id);
+    if (sectionId === selectedSectionId) {
+      g.classList.add(styles.selected);
+      svg.classList.add(styles.gHasSelection);
+    }
+  });
+}, []);
+```
+
+<br>
+<br>
+
+## <mark class="pink">🔨7. 모바일에서는 좌석이 안 밝아진다?</mark>
 
 **<mark class="yellow">🤔문제점</mark>**
 
