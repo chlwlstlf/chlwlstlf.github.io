@@ -91,7 +91,7 @@ const LocalErrorBoundary = ({ children, fallback }) => {
 <br>
 <br>
 
-## <mark class="pink">🔥useSuspenseQuery</mark>
+## <mark class="pink">📌useSuspenseQuery</mark>
 
 왜 `useSuspenseQuery`를 쓰면 Suspense와 ErrorBoundary를 쓸 수 있을까요?
 

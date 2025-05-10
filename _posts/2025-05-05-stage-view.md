@@ -20,17 +20,18 @@ toc_sticky: true
 
 ## <mark class="pink">🔥1. 클릭 요소 정하기</mark>
 
-**<mark class="yellow">1. svg 요소에 `btn` 추가</mark>**
+**<mark class="yellow">1. svg 요소에 'btn' 추가</mark>**
 
 - stage나 층수 정보는 클릭이 되면 안 되고, 좌석은 클릭이 되어야 한다.
 - 이를 구분하기 위해 디자이너에게 클릭 가능한 요소들만 id에 `btn_` prefix를 추가해달라고 부탁했다.
 
 <br>
 
-**<mark class="yellow">2. svg 요소에 `sectionId` 추가</mark>**
+**<mark class="yellow">2. svg 요소에 'sectionId' 추가</mark>**
 
 - 그렇게 클릭을 할 수 있게 만들었다. 클릭한 요소의 id를 출력해보니 `btn_floorA`라고 떴다.
 - 백엔드에 보내야하는 `sectionId` 정보가 없어 다시 백엔드 팀원과 디자이너에게 `sectionId`까지 포함한 id를 만들어달라고 했다.
+- 나는 `sectionId`가 어떻게 부여되어 있는지 모르기 때문에 백엔드 팀원이 대신 말해주었다.
 
 <br>
 
@@ -76,7 +77,7 @@ export const getStadiumAssetUrl = (stadiumId: number) =>
 
 **<mark class="yellow">🤔문제점</mark>**
 
-- 하지만 여기에는 css를 추가하거나 클릭하거나 classList를 조작할 수 없다.
+- 하지만 Image에는 css를 추가하거나 클릭하거나 classList를 조작할 수 없다.
 - 그 이유는 img의 src로 SVG를 삽입하면 그걸 "이미지 비트맵"으로만 처리해서 내부 `<g>` 요소가 DOM에 드러나지 않기 때문이다.
 
 <br>
@@ -97,6 +98,8 @@ export const getStadiumAssetUrl = (stadiumId: number) =>
 3\. fetching을 실행한다. svgCache에 있으면 바로 return하고, 아니면 fetching한다. fetching 결과도 svgCache에 캐싱한다.
 
 4\. `dangerouslySetInnerHTML`로 SVG 문자열을 DOM에 넣어준다. React의 가상돔 관리 하에서는 JSX로 표현되지 않는 직접적인 DOM 변경을 허용하지 않는다. `dangerouslySetInnerHTML`은 그 유일한 예외로 이 부분만 React의 관리 밖으로 빼고 그대로 넣을 수 있다.
+
+**StageView.tsx**
 
 ```tsx
 // 2. svgCache, svgRequestCache 캐싱
@@ -353,8 +356,8 @@ const getTranslateLimits = () => {
 **useStageTransform.ts**
 
 위 예시에서 minX는 -200, maxX는 200였다.  
-사용자가 드래그해서 `translateX = 400`이 되었다면 clam(400, -200, 200)은 200,  
-`translateX = -300`였다면 clam(-300, -200, 200)은 -200이 되어  
+사용자가 드래그해서 `translateX = 400`이 되었다면 clamp(400, -200, 200)은 200,  
+`translateX = -300`였다면 clamp(-300, -200, 200)은 -200이 되어  
 이미지는 절대로 container 바깥으로 200px 이상 밀려 나가지 않게 된다.
 
 ```ts
@@ -364,7 +367,7 @@ const updateTransform = () => {
   // 1. limits 계산
   const limits = getTranslateLimits();
 
-  // 2. 현재 확대 상태 가져오기
+  // 2. 현재 이동 상태 가져오기
   let { translateX, translateY } = dragState.current;
 
   // 3. clamp로 화면 밖으로 나가지 않도록 제한
@@ -397,7 +400,7 @@ const updateTransform = () => {
 scale이 2일 때 container.width가 400px, wrapper.width가 800px이 된다.
 이때 minX는 -200, maxX는 200이 되며 왼쪽 시작점을 맞추면 translateX가 200px이 된다. 브라우저 입장에서는 사진이 오른쪽으로 200px 이동한 것이기 때문이다.
 
-![image](https://github.com/user-attachments/assets/f5df2b06-d8b3-473f-91b4-7c112ad8eb73)
+![image](https://github.com/user-attachments/assets/ae33cdba-72e8-4ef5-8ef5-fcfe47fdbc77)
 
 <br>
 <br>
@@ -492,20 +495,27 @@ const updateViewportBox = () => {
 
 **<mark class="yellow">2. 빨간 네모 박스 보여주기</mark>**
 
-1. 현재 확대(scale)와 드래그 이동량(translateX/Y) 을 읽어 온다.
+1\. 현재 확대(scale)와 드래그 이동량(translateX/Y) 을 읽어 오기
 
-2. container, wrapper, minimap의 가로 세로 길이를 계산한다.
+2\. container, image, minimap의 가로 세로 길이 계산
 
-3. 화면에 보이는 영역(visible) 크기 계산  
-   드래그·확대된 상태(scale)를 고려해 "실제 이미지 좌표계"에서 보이는 크기를 구한다.  
-   ex) 화면 위에 200px로 그려진 것이, 원본에선 100px 이므로 나눠 준다.
+- container와 image의 크기는 같지만 역할이 다르기 때문에 편의상 둘 다 계산한다.
+- `container`: 현재 유저가 화면에서 보고 있는 영역
+- `image` : 원본 콘텐츠가 가진 레이아웃 박스 크기
 
-4. 보이는 영역의 원본 이미지 내 오프셋(offset) 계산  
-   `(imageSize - visibleSize)/2` 로 중앙 정렬 오프셋을 구하고, `- translate/scale` 만큼 이동된 만큼 빼 주면, “이미지 좌표계 기준 보이는 영역의 왼쪽·위쪽 위치”가 나온다.
+3\. 화면에 보이는 영역(visible) 크기를 계산
 
-5. 원본 이미지 -> 미니맵 스케일 비율 계산  
-   `minimapWidth / wrapperWidth` : 원본 이미지 1px이 미니맵에서 px인지  
-   `minimapHeight / wrapperHeight` : 세로도 동일
+- 드래그·확대된 상태(scale)를 고려해 "실제 이미지 좌표계"에서 보이는 크기를 구한다.
+- ex) 실제 SVG이 400px일 때 2배 확대를 하면 화면에 보이는 것은 200px이기 때문에 scale로 나눠준다.
+
+4\. 보이는 영역의 원본 이미지 내 오프셋(offset) 계산
+
+- `(imageSize - visibleSize)/2` 로 중앙 정렬 오프셋을 구하고, `- translate/scale` 만큼 이동된 만큼 빼 주면, “이미지 좌표계 기준 보이는 영역의 왼쪽·위쪽 위치”가 나온다.
+
+5\. 원본 이미지 -> 미니맵 스케일 비율 계산
+
+- "원본 이미지 1px이 미니맵에서 px인지"
+- 사실 MiniMap이 25%로 그려진 것이기 때문에 `scaleX`와 `scaleY`는 항상 0.25이다.
 
 <br>
 
@@ -529,9 +539,9 @@ const updateViewportBox = () => {
     setContainerAspectRatio(containerWidth / containerHeight);
   }
 
-  // 2-2. wrapper의 크기 측정
-  const wrapperWidth = wrapper.offsetWidth;
-  const wrapperHeight = wrapper.offsetHeight;
+  // 2-2. image의 크기 측정
+  const imageWidth = wrapper.offsetWidth;
+  const imageHeight = wrapper.offsetHeight;
 
   // 2-3. 미니맵 박스 크기 측정
   const minimapWidth = minimap.offsetWidth;
@@ -542,12 +552,12 @@ const updateViewportBox = () => {
   const visibleHeight = containerHeight / scale;
 
   // 4. 보이는 영역의 원본 이미지 내 오프셋(offset) 계산
-  const offsetX = (wrapperWidth - visibleWidth) / 2 - translateX / scale;
-  const offsetY = (wrapperHeight - visibleHeight) / 2 - translateY / scale;
+  const offsetX = (imageWidth - visibleWidth) / 2 - translateX / scale;
+  const offsetY = (imageHeight - visibleHeight) / 2 - translateY / scale;
 
   // 5. 원본 이미지 → 미니맵 스케일 비율 계산
-  const scaleX = minimapWidth / wrapperWidth;
-  const scaleY = minimapHeight / wrapperHeight;
+  const scaleX = minimapWidth / imageWidth;
+  const scaleY = minimapHeight / imageHeight;
 
   setViewportBox({
     scale,
@@ -562,9 +572,16 @@ const updateViewportBox = () => {
 <br>
 <br>
 
-**<mark class="yellow">결과 화면: scale 2일 때</mark>**
+**<mark class="yellow">결과 화면</mark>**
 
-![image](https://github.com/user-attachments/assets/a64047d8-65a6-46bf-bc4e-5c77a5212f12)
+- `containerWidth`: 400px
+- `visibleWidth` : 400px / 2 = 200px
+- `imageWidth` : 400px
+- `translateX` : 0
+- `scale` : 2
+- `offsetX` : (imageWidth - visibleWidth)/2 - translateX/scale = (400 − 200)/2 − 0 = 100px
+
+![image](https://github.com/user-attachments/assets/b6e3a36f-ef01-4e94-a681-1a70426f04e9)
 
 <video controls>
   <source src="https://github.com/user-attachments/assets/cd2fa9c2-b98f-4a6d-b4fa-470488818628" type="video/mp4">
@@ -655,7 +672,7 @@ CSS filter는 비트맵 레이어에서 적용되는데 SVG는 비트맵 변환 
 
 <br>
 
-**1\. `<filter>` 요소 생성**
+**<mark class="yellow">1. `<filter>` 요소 생성</mark>**
 
 - SVG 문자열에 밝기 2.5배 - `brightness(2.5)`와 동일
 - DropShadow 삽입 - `drop-shadow(10px 10px 20px rgb(0 0 0 / 70%))`와 동일
@@ -681,7 +698,7 @@ const injectFilter = (raw: string): string => {
 
 <br>
 
-**2\. fetching할 때 `<defs>` 주입**
+**<mark class="yellow">2. fetching할 때 `<defs>` 주입</mark>**
 
 fetching 결과에 `<defs>`를 주입한 후 캐싱한다.
 
@@ -708,7 +725,7 @@ const fetchSvg = async () => {
 
 <br>
 
-**3\. css에 적용**
+**<mark class="yellow">3. css에 적용</mark>**
 
 url로 filter의 id를 참조한다.
 
@@ -726,6 +743,8 @@ svg g[id^="btn"].selected > path {
 <br>
 
 **결과 화면**
+
+갤럭시에서는 원래 잘 나왔기 때문에 아이폰으로만 확인했다. 다 잘 나온다!!
 
 | 데스크탑(크롬)                                                                                                             | 모바일(아이폰, 크롬)                                                                                                       | 모바일(아이폰, 사파리)                                                                                                     |
 | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
