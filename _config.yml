@@ -71,9 +71,9 @@ google:
   search_engine_id: # YOUR_SEARCH_ENGINE_ID
   instant_search: # false (default), true
 # SEO Related
-google_site_verification:
+google_site_verification: lU-Q--D1VwSCIijdGME7pQ0d5JVNPPMiC10zYjQ6Jvk
 bing_site_verification:
-naver_site_verification: "a360db64cdf50c1b24e1c25755da2be6ebe72b94"
+naver_site_verification: a360db64cdf50c1b24e1c25755da2be6ebe72b94
 yandex_site_verification:
 baidu_site_verification:
 
@@ -103,7 +103,7 @@ analytics:
 author:
   name: "최진실"
   avatar: "/assets/images/chlwlstlf.jpg"
-  bio: "Sejong Univ. DataScience  
+  bio: "SJU DataScience  
   woowacourse
   "
 
@@ -182,7 +182,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+paginate: 10 # amount of posts to show
 paginate_path: /page:num/
 # timezone: Asia/Seoul
 
