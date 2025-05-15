@@ -273,6 +273,8 @@ export default CardPreview;
 Three.js의 Canvas를 생성하고, 그 안에 3D Mesh(카드)를 배치한다.  
 camera의 position은 [x, y, z]이며, z만 5로 지정하여 앞에서 카드를 정면으로 볼 수 있게 하였다.
 
+{% raw %}
+
 ```tsx
 <Canvas
   style={{ width: "375px", height: "300px" }}
@@ -281,6 +283,8 @@ camera의 position은 [x, y, z]이며, z만 5로 지정하여 앞에서 카드�
   {/* 카드 */}
 </Canvas>
 ```
+
+{% endraw %}
 
 <br>
 
