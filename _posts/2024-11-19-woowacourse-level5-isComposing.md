@@ -149,7 +149,11 @@ onKeyPress는 이벤트는 공식적으로 deprecated되었다. deprecated란 �
 
 ## <mark class="pink">🔥다양한 OS와 브라우저에서의 IME</mark>
 
-왜 MacOS+Chrome 환경에서만 이런 오류가 생기는지 IME를 어떻게 처리해서 문제가 발생하는지 궁금했다. 추가로 크로스 브라우징 이슈를 해결해보고 싶어 다양한 OS와 브라우저 환경에서 실험해보았다. (맥북 유저 다르 감사합니다🙇‍♀️)
+왜 MacOS+Chrome 환경에서만 이런 오류가 생기는지 IME를 어떻게 처리해서 문제가 발생하는지 궁금했다. 추가로 크로스 브라우징 이슈를 해결해보고 싶어 다양한 OS와 브라우저 환경에서 실험해보았다.
+
+![Image](https://github.com/user-attachments/assets/3b9b41c9-7805-4cb3-8b7e-294570b1ff27)
+
+(다르 블로그에 샤라웃 당했다. 맥북 유저 다르 감사합니다🙇‍♀️)
 
 <br>
 
@@ -162,7 +166,7 @@ onKeyPress는 이벤트는 공식적으로 deprecated되었다. deprecated란 �
 `handleKeyDown` 이벤트 안에서 `keyword`, `e.nativeEvent.isComposing`, `e.key` 콘솔을 찍어보았다.
 
 `keyword`: 유저가 입력하는 Input 값 (React.state에 저장된 값)
-`e.nativeEvent.isComposing`: 현재 조합 중인지에 대한 여부
+`e.nativeEvent.isComposing`: 현재 조합 중인지에 대한 여부  
 `e.key`: 유저가 타이핑 값
 
 조합 중일 때 Enter를 누르면 Process로 한 번, Enter로 한 번 실행된다. 한글 조합이 완료되며 input의 값이 갱신되고, React는 이를 새로운 입력으로 감지해 onKeyDown이 한 번 더 발생하게 된다.
@@ -209,7 +213,7 @@ Firefox에서도 해당 문제가 생기지 않았다.
 <br>
 <br>
 
-## <mark class="pink">🔥[ 해결방안 ] isComposing이 아닐 때 이벤트 실행</mark>
+## <mark class="pink">🔥[ 해결방안1 ] isComposing이 아닐 때 이벤트 실행</mark>
 
 **<mark class="yellow">KeyboardEvent.isComposing?</mark>**
 
