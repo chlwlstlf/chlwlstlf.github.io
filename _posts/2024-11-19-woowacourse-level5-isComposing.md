@@ -151,9 +151,8 @@ onKeyPress는 이벤트는 공식적으로 deprecated되었다. deprecated란 �
 
 왜 MacOS+Chrome 환경에서만 이런 오류가 생기는지 IME를 어떻게 처리해서 문제가 발생하는지 궁금했다. 추가로 크로스 브라우징 이슈를 해결해보고 싶어 다양한 OS와 브라우저 환경에서 실험해보았다.
 
-![Image](https://github.com/user-attachments/assets/3b9b41c9-7805-4cb3-8b7e-294570b1ff27)
-
-(다르 블로그에 샤라웃 당했다. 맥북 유저 다르 감사합니다🙇‍♀️)
+다르 블로그에 샤라웃 당했다. 맥북 유저 다르 감사합니다🙇‍♀️
+<img src="https://github.com/user-attachments/assets/3b9b41c9-7805-4cb3-8b7e-294570b1ff27" style="border: 1px solid #ccc; border-radius: 4px;" />
 
 <br>
 
@@ -208,7 +207,8 @@ Firefox에서도 해당 문제가 생기지 않았다.
 
 ![MacOS+firefox](https://github.com/user-attachments/assets/6a5537e6-65fa-430c-a13a-41ed366b8998)
 
-여기서도 조합 중이면 `key`가 `Process`로 출력된다. `Window+Chrome`과 매우 비슷하게 작동한다. `isComposing`이 `false`일 때만 이벤트가 실행된다.
+여기서도 조합 중이면 `key`가 `Process`로 출력된다. Window+Chrome과 이 부분은 비슷하지만 다른 점이 있다.  
+Enter 키를 누르면 먼저 `compositionend`가 발생하여 조합이 종료되고, 그 뒤에 `keydown` 이벤트가 `Enter` 키로 한 번만 발생한다. 이때 `isComposing`은 false 이고 중복 이벤트는 발생하지 않는다.
 
 <br>
 <br>
