@@ -164,13 +164,13 @@ onKeyPress는 이벤트는 공식적으로 deprecated되었다. deprecated란 �
 
 `handleKeyDown` 이벤트 안에서 `keyword`, `e.nativeEvent.isComposing`, `e.key` 콘솔을 찍어보았다.
 
-`keyword`: 유저가 입력하는 Input 값 (React.state에 저장된 값)
+`keyword`: 유저가 입력하는 Input 값 (React.state에 저장된 값)  
 `e.nativeEvent.isComposing`: 현재 조합 중인지에 대한 여부  
 `e.key`: 유저가 타이핑 값
 
-조합 중일 때 Enter를 누르면 Process로 한 번, Enter로 한 번 실행된다. 한글 조합이 완료되며 input의 값이 갱신되고, React는 이를 새로운 입력으로 감지해 onKeyDown이 한 번 더 발생하게 된다.
+조합 중일 때 Enter를 누르면 `Process`로 한 번, `Enter`로 한 번 실행된다. 한글 조합이 완료되면 input의 값이 갱신되고, React는 이를 새로운 입력으로 감지해 onKeyDown이 한 번 더 실행되게 된다.
 
-여기서 `isComposing`이 `true`일 때는 `e.key` 값이 타이핑한 값이 아니라 `Process`임을 기억하고 맥북 환경으로 넘어가 보자.
+여기서 isComposing이 `true`일 때는 e.key 값이 타이핑한 값이 아니라 `Process`임을 기억하고 맥북 환경으로 넘어가 보자.
 
 <br>
 <br>
@@ -181,11 +181,11 @@ onKeyPress는 이벤트는 공식적으로 deprecated되었다. deprecated란 �
 
 ![MacOS+Chrome](https://github.com/user-attachments/assets/b36e51ed-53b9-482f-bec4-b70242eb9170)
 
-맥+Chrome에서는 `e.key`의 값이 타이핑한 값이다. 마지막에 Enter가 두 번 실행되는데 한 번은 "안녕"으로 두 번째는 "녕"으로 실행된다.
+맥+Chrome에서는 `e.key`의 값이 **타이핑한 값**이다. 마지막에 Enter가 두 번 실행되는데 한 번은 "안녕"으로 두 번째는 "녕"으로 실행된다.
 
-윈도우에서도 조합 중일 때 Enter를 누르면 두 번 실행되지만 첫 번째는 `isComposing`이 `true`라 `Process` 키를 누른 것으로 인식하고, 두 번째에 타이핑한 값이 `Enter`가 된다.
+윈도우에서도 조합 중일 때 Enter를 누르면 두 번 실행되지만 첫 번째는 isComposing이 `true`라 `Process` 키를 누른 것으로 인식하고, 한 번 더 실행됐을 때 e.key가 `Enter`가 된다.
 
-하지만 맥은 `e.key`가 타이핑한 값이기 때문에 두 번 모두 `Enter`로 인식하고 동작하여 오류가 생긴다. "녕"은 실제 사용자가 따로 입력한 것이 아니라 조합 중이던 문자가 다시 인식되는 것이다.
+하지만 맥은 e.key가 타이핑한 값이기 때문에 **두 번 모두** `Enter`로 인식하고 동작하여 오류가 생긴다. "녕"은 실제 사용자가 따로 입력한 것이 아니라 조합 중이던 문자가 다시 인식되는 것이다.
 
 <br>
 <br>
@@ -207,13 +207,13 @@ Firefox에서도 해당 문제가 생기지 않았다.
 
 ![MacOS+firefox](https://github.com/user-attachments/assets/6a5537e6-65fa-430c-a13a-41ed366b8998)
 
-여기서도 조합 중이면 `key`가 `Process`로 출력된다. Window+Chrome과 이 부분은 비슷하지만 다른 점이 있다.  
+여기서도 조합 중이면 e.key가 `Process`로 출력된다. Window+Chrome과 이 부분은 비슷하지만 다른 점이 있다.  
 Enter 키를 누르면 먼저 `compositionend`가 발생하여 조합이 종료되고, 그 뒤에 `keydown` 이벤트가 `Enter` 키로 한 번만 발생한다. 이때 `isComposing`은 false 이고 중복 이벤트는 발생하지 않는다.
 
 <br>
 <br>
 
-## <mark class="pink">🔥[ 해결방안1 ] isComposing이 아닐 때 이벤트 실행</mark>
+## <mark class="pink">🔥[ 해결방안 ] 조합 중이 아닐 때만 이벤트 실행</mark>
 
 **<mark class="yellow">KeyboardEvent.isComposing?</mark>**
 
@@ -231,7 +231,7 @@ Vanilla JavaScript에서는 네이티브 DOM 이벤트 객체를 바로 사용�
 
 하지만 React에는 `Synthetic Event`라는 것이 있다. `Synthetic Event`란 React의 이벤트를 브라우저의 네이티브 DOM 이벤트에 래핑한 것으로 React의 이벤트 시스템(이벤트 풀링, 크로스 브라우저 호환성 등)에 최적화되어 있다. 또 React가 자체적으로 관리하므로 이벤트 핸들러는 모든 브라우저에서 동일하게 작동한다.
 
-`Synthetic Event`는 React가 제공하는 인터페이스에 따라 동작하며, 네이티브 DOM 이벤트가 제공하는 모든 속성을 직접 노출하지 않을 수 있다. 특정 속성이나 동작이 Synthetic Event에서 노출되지 않으면 nativeEvent를 통해 원래 DOM 이벤트에 접근해야 한다.
+`Synthetic Event`는 React가 제공하는 인터페이스에 따라 동작하며, 네이티브 DOM 이벤트가 제공하는 모든 속성을 **직접 노출하지 않을 수 있다**. 특정 속성이나 동작이 Synthetic Event에서 노출되지 않으면 nativeEvent를 통해 원래 DOM 이벤트에 접근해야 한다.
 
 `isComposing`도 노출되지 않은 속성 중 하나여서 `event.nativeEvent.isComposing`으로 `isComposing`에 접근할 수 있다.
 
