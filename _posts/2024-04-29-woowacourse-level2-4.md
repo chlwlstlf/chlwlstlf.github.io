@@ -326,7 +326,9 @@ const { rotationY } = useSpring({
 `ambientLight` → 전체적인 조명 (자연스러운 밝기 유지)
 `directionalLight` → 특정 방향에서 오는 조명 (입체감 강조)
 
-https://github.com/user-attachments/assets/09e08dd7-0f3c-4efd-9df2-9bd6e32a6402
+<video controls>
+  <source src="https://github.com/user-attachments/assets/09e08dd7-0f3c-4efd-9df2-9bd6e32a6402" type="video/mp4">
+</video>
 
 <br>
 <br>
