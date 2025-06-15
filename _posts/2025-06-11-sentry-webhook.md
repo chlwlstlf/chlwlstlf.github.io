@@ -20,7 +20,7 @@ toc_sticky: true
 
 ## <mark class="pink">🔥Sentry 시작하기</mark>
 
-참고: [Next.js | Sentry for Next.js](https://docs.sentry.io/platforms/javascript/guides/nextjs/)
+참고: [Next.js \| Sentry for Next.js](https://docs.sentry.io/platforms/javascript/guides/nextjs/)
 
 **<mark class="yellow">1. 설치</mark>**
 
@@ -34,7 +34,7 @@ npx @sentry/wizard@latest -i nextjs --saas --org conseat --project javascript-ne
 
 **<mark class="yellow">2. 아래 파일들 생김</mark>**
 
-참고 : [Manual Setup | Sentry for Next.js](https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/)
+참고 : [Manual Setup \| Sentry for Next.js](https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/)
 
 ![Image](https://github.com/user-attachments/assets/45be6901-3d12-493b-b0d6-ec49ccdc928a)
 
@@ -52,13 +52,13 @@ npx @sentry/wizard@latest -i nextjs --saas --org conseat --project javascript-ne
 
 `sentry.client.config.js` → 더 이상 쓰지 않아도 됨
 
-> If you previously had a file called sentry.client.config.js, you can safely rename this to instrumentation-client.(js|ts) for all Next.js versions.
+> If you previously had a file called sentry.client.config.js, you can safely rename this to instrumentation-client.(js\|ts) for all Next.js versions.
 >
-> ![image.png](attachment:173e9da4-a950-4f4c-ab7e-ab194c9cbf55:image.png)
+> ![Image](https://github.com/user-attachments/assets/687bde90-0d29-4e81-88b2-41f5a033b54a)
 
-→ 즉 이제는 공식 가이드 기준으로는  
-✅ `instrumentation-client.js`가 클라이언트 초기화도 담당.  
-✅ `sentry.client.config.js`는 이제 안 써도 됨 (아니면 instrumentation-client.js로 이름 바꾸라고 가이드에 나옴).
+-> 공식 가이드 기준으로는  
+✅ `instrumentation-client.js`가 클라이언트 초기화도 담당  
+✅ `sentry.client.config.js`는 이제 안 써도 됨 (아니면 instrumentation-client.js로 이름 바꾸라고 가이드에 나옴)
 
 <br>
 
@@ -110,11 +110,8 @@ export default withSentryConfig(pwaConfig(nextConfig), {
 });
 ```
 
-📌 **`SENTRY_AUTH_TOKEN` 발급 경로**  
-1️⃣ Sentry 웹에서 로그인  
-2️⃣ 우측 상단 프로필 아이콘 클릭 → `Settings` 클릭  
-3️⃣ 좌측 사이드바 → `Developer Settings` → `Organization Tokens`  
-4️⃣ `Create New Token` 버튼 클릭
+📌 **`SENTRY_AUTH_TOKEN`**  
+처음 sentry를 설치했을 때 `.env.sentry-build-plugin`에 자동으로 생성된다.
 
 <br>
 
@@ -122,7 +119,7 @@ export default withSentryConfig(pwaConfig(nextConfig), {
 
 ![Image](https://github.com/user-attachments/assets/35911631-a7ad-4c1d-97fb-766484f2d975)
 
-사진 아래 쪽 네모 안에 DSN이 있다. DSN을 복사한 후 env에 `NEXT_PUBLIC_SENTRY_DSN`를 넣는다.
+사진 아래쪽 네모 안에 DSN이 있다. DSN을 복사한 후 env에 `NEXT_PUBLIC_SENTRY_DSN`를 넣는다.
 
 <br>
 <br>
@@ -137,15 +134,16 @@ response 결과
 { "detail": "bad sentry DSN public key", "causes": ["invalid project key"] }
 ```
 
-**`Sentry.diagnoseSdkConnectivity()`는 Sentry SDK가 서버와 제대로 연결되어 있는지 확인하기 위한 진단용 메서드입니다.**
+<br>
 
-- 이 메서드는 **Sentry에서 미리 지정한 테스트용 프로젝트(ID: 1337)** 로 요청을 보내 연결 상태를 점검합니다.
-- 단순히 한 번의 요청만 보내는 것이 아니라, 여러 서버 엔드포인트에 순차적으로 요청하며 각 응답을 확인합니다.
-- 이 중 일부 요청은 **의도적으로 실패하도록 설계**되어 있어, 에러 응답이 발생해도 문제가 있는 건 아닙니다.
-  오히려 이런 실패를 통해 **정상적인 오류 처리가 이뤄지는지 확인하는 것**이 목적입니다.
+**`Sentry.diagnoseSdkConnectivity()`는 Sentry SDK가 서버와 제대로 연결되어 있는지 확인하기 위한 진단용 메서드이다.**
+
+- 이 메서드는 **Sentry에서 미리 지정한 테스트용 프로젝트(ID: 1337)** 로 요청을 보내 연결 상태를 점검한다.
+- 단순히 한 번의 요청만 보내는 것이 아니라, 여러 서버 엔드포인트에 순차적으로 요청하며 각 응답을 확인한다.
+- 이 중 일부 요청은 **의도적으로 실패하도록 설계**되어 있어, 에러 응답이 발생해도 문제가 있는 건 아니다. 오히려 이런 실패를 통해 **정상적인 오류 처리가 이뤄지는지 확인하는 것**이 목적이다.
 
 따라서 `diagnoseSdkConnectivity()` 실행 결과에 일부 실패 메시지가 포함되어 있어도,
-핵심 엔드포인트(예: 이벤트 전송용 DSN)가 성공한다면 정상적으로 작동 중인 것으로 간주할 수 있습니다.
+핵심 엔드포인트(예: 이벤트 전송용 DSN)가 성공한다면 정상적으로 작동 중인 것으로 간주할 수 있다.
 
 <br>
 <br>
@@ -164,20 +162,20 @@ You can validate your setup by (re)starting your dev environment (e.g. npm run d
 <br/>
 
 에러 이름 보임
-![Image](https://github.com/user-attachments/assets/025e9574-47a0-49d3-be9d-5a18c9cf48b6)
+<img src="https://github.com/user-attachments/assets/025e9574-47a0-49d3-be9d-5a18c9cf48b6" alt="에러 이름 보임" />
 
 소스맵 처리 잘 돼서 원래 코드로 보임
-![Image](https://github.com/user-attachments/assets/f34cfcd5-3b4b-4a4c-8f22-493d7f1f2438)
+<img src="https://github.com/user-attachments/assets/f34cfcd5-3b4b-4a4c-8f22-493d7f1f2438" alt="소스맵 원본 코드" />
 
 리플레이 볼 수 있음
-![Image](https://github.com/user-attachments/assets/ce5d91e9-4441-40fe-99d0-a94b132bfeb9)
+<img src="https://github.com/user-attachments/assets/ce5d91e9-4441-40fe-99d0-a94b132bfeb9" alt="리플레이 보기 1" />
 
-![Image](https://github.com/user-attachments/assets/98610fb5-506d-46a4-90f3-149a1b6a7fa6)
+<img src="https://github.com/user-attachments/assets/98610fb5-506d-46a4-90f3-149a1b6a7fa6" alt="리플레이 보기 2" />
 
-![Image](https://github.com/user-attachments/assets/0997a3cb-0aae-475c-9516-39628d91bc06)
+<img src="https://github.com/user-attachments/assets/0997a3cb-0aae-475c-9516-39628d91bc06" alt="리플레이 보기 3" />
 
 Contexts > User: 로그인 후 에러 보내면 사용자 정보(name, email)이 보임
-![Image](https://github.com/user-attachments/assets/7b02ac17-681a-48c1-86de-0aafe5cea372)
+<img src="https://github.com/user-attachments/assets/7b02ac17-681a-48c1-86de-0aafe5cea372" alt="사용자 정보 확인" />
 
 </details>
 
@@ -186,16 +184,16 @@ Contexts > User: 로그인 후 에러 보내면 사용자 정보(name, email)이
 
 ## <mark class="pink">🔥Discord 알림</mark>
 
-참고  
-[Sentry 로 에러 추적해보기](https://cabi.oopy.io/59af0a52-9d2b-4655-bfe0-e504cbdfab68)  
-[Webhooks](https://docs.sentry.io/organization/integrations/integration-platform/webhooks/)
+참고 : [Sentry 로 에러 추적해보기](https://cabi.oopy.io/59af0a52-9d2b-4655-bfe0-e504cbdfab68), [Webhooks](https://docs.sentry.io/organization/integrations/integration-platform/webhooks/)
 
 **<mark class="yellow">1. 통합 타입 정하기</mark>**
 
 디스코드 알림은 유료 서비스이기 때문에 커스텀 integration를 만들고 Discord 웹훅을 연결해보려고 한다.  
-→ 팀 내부에서만 쓰기 때문에 Internal integration 씀
+-> 팀 내부에서만 쓰기 때문에 Internal integration 씀
 
-> 참고 : [GitHub - integration-platform-example](https://github.com/getsentry/integration-platform-example) > [Public integrations](https://docs.sentry.io/product/integrations/integration-platform/public-integration) are meant to be accessed by all Sentry Customers, regardless of whether or not they belong to your organization.
+> 참고 : [GitHub - integration-platform-example](https://github.com/getsentry/integration-platform-example)
+>
+> [Public integrations](https://docs.sentry.io/product/integrations/integration-platform/public-integration) are meant to be accessed by all Sentry Customers, regardless of whether or not they belong to your organization.
 >
 > If you only wish to provide an application to your team or organization, you should probably develop an [Internal integration](https://docs.sentry.io/product/integrations/integration-platform/internal-integration). These are far easier to get up and running, as they skip the OAuth installation process and become immediately available for webhooks, UI components or API usage.
 
@@ -241,7 +239,7 @@ Sentry에서 디스코드 연동을 유료로 제공하고 있어서, 디스코�
 
 다른 블로그에서 `Cloudflare Workers`를 사용하여 우회하는 것을 보았고, Next의 serverless 기능을 쓰면 될 것 같아 그렇게 우회해보려고 한다.
 
-우회 방법: 프론트 서버에 Webhook endpoint를 만들고 → 거기서 Discord로 알림을 보내도록 함
+우회 방법: 프론트 서버에 Webhook endpoint를 만들고 -> 거기서 Discord로 알림을 보내도록 함
 
 <br>
 
@@ -249,15 +247,15 @@ Sentry에서 디스코드 연동을 유료로 제공하고 있어서, 디스코�
 
 아까 Discord Webhook URL을 넣어놨었는데 이를 Next 서버의 URL로 변경해준다.
 
-`https://concertseat.site/sentry/webhook`로 설정 → **Sentry가 이제 이 URL로 POST 요청 보냄**
+`https://concertseat.site/sentry/webhook`로 설정 -> **Sentry가 이제 이 URL로 POST 요청 보냄**
 
 ![Image](https://github.com/user-attachments/assets/ff12b9e5-08a2-4e47-aa8d-643a0838db73)
 
 <div class="blue-box">
   <b>URL 설정</b>
   <br>
-  <div>보통은 `url/api/sentry/webhook`으로 한다.</div>
-  <div>우리 서비스는 백엔드 서버 URL이 `url/api`이기 때문에 혼란을 방지하기 위해 `/api`를 제거하였다.</div>
+  <div>보통은 `주소/api/sentry/webhook`으로 한다.</div>
+  <div>우리 서비스는 백엔드 서버 URL이 `주소/api`이기 때문에 혼란을 방지하기 위해 `/api`를 제거하였다.</div>
 </div>
 
 <br>
@@ -271,7 +269,7 @@ Sentry에서 디스코드 연동을 유료로 제공하고 있어서, 디스코�
 
 <br/>
 
-```json
+<pre><code>
 {
   "action": "triggered",
   "installation": {
@@ -833,7 +831,7 @@ Sentry에서 디스코드 연동을 유료로 제공하고 있어서, 디스코�
     "name": "Sentry"
   }
 }
-```
+</code></pre>
 
 </details>
 
@@ -842,7 +840,7 @@ Sentry에서 디스코드 연동을 유료로 제공하고 있어서, 디스코�
 
 <br/>
 
-```json
+<pre><code>
 {
   "action": "triggered",
   "installation": {
@@ -1164,14 +1162,14 @@ Sentry에서 디스코드 연동을 유료로 제공하고 있어서, 디스코�
     "name": "Sentry"
   }
 }
-```
+</code></pre>
 
 </details>
 
-payload 결과를 참고하여 탬플릿을 작성한다.  
+payload 출력 결과를 참고하여 탬플릿을 작성한다.
 Discord 알림 메시지에 에러명, API endpoint, 환경 등 유용한 정보를 추가했다.
 
-**app > sentry > webhook > route.ts**
+**app/sentry/webhook/route.ts**
 
 ```ts
 import { NextRequest } from "next/server";
