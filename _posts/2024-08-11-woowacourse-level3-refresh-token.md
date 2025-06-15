@@ -269,11 +269,11 @@ export default apiClient;
 
 ## <mark class="pink">🔥처음 작성했던 잘못된 코드</mark>
 
-401 상태가 발생하면 refreshAccessToken 함수에서 새로운 accessToken을 갱신합니다.  
-이후 모든 요청은 localStorage에서 갱신된 accessToken을 읽어 사용하기 때문에, 다른 요청들은 401 없이 정상적으로 동작합니다.
+401 상태가 발생하면 `refreshAccessToken` 함수에서 새로운 accessToken을 갱신합니다.  
+이후 모든 요청은 localStorage에서 갱신된 accessToken을 읽어 사용하기 때문에, 일반적으로는 정상적으로 동작합니다.
 
-하지만 두 개 이상의 작업이 동시에 실행되면서 그 실행 순서나 타이밍에 따라 결과가 달라질 수 있는 `Race Condition` 문제가 발생할 수 있습니다.  
-여러 요청이 동시에 발생할 때, Access Token이 localStorage에 저장되기 전에 다른 요청이 401을 반환할 가능성이 있고 여기서 문제가 생길 수 있습니다.
+그러나 여러 요청이 연이어 발생하는 상황에서, **accessToken이 아직 갱신되기 전에 다른 요청이 기존 토큰으로 서버에 도달하면** 해당 요청은 401 에러를 다시 발생시킬 수 있습니다.  
+즉, 단순히 요청이 동시에 발생했기 때문이 아니라, **토큰 갱신과 요청 처리 사이의 비동기 타이밍 문제**로 인해 예기치 않은 에러가 발생할 수 있습니다.
 
 <br>
 
@@ -354,11 +354,12 @@ const fetchWithToken = async (
 
 ![Image](https://github.com/user-attachments/assets/9b81a93c-6ac8-4c59-8687-3dcd38a61e7a)
 
-1\. refreshAccessToken에 임의로 `await new Promise((resolve) => setTimeout(resolve, 3000));` 코드를 추가하여 3초 delay를 시켰습니다. 너무 빨라서 Race Condition 이슈를 확인하기 어려웠기 때문에 일부러 요청을 지연시켜 확인하였습니다.
+1\. `refreshAccessToken`에 임의로 `await new Promise((resolve) => setTimeout(resolve, 3000));` 코드를 추가해 3초간 지연시켰습니다. 토큰 갱신이 너무 빨라 Race Condition 상황을 관찰하기 어려워, 의도적으로 딜레이를 주었습니다.
 
-2\. Access Token이 만료된 상태에서 여러 요청이 거의 동시에 발생하고 각 요청이 refreshAccessToken()을 각자 호출합니다.
+2\. Access Token이 만료된 상태에서 여러 요청이 거의 동시에 발생하면, 각 요청이 개별적으로 `refreshAccessToken()`을 호출하게 됩니다.
 
-3\. 하나의 요청이 새로운 토큰을 저장하기 전에 다른 요청이 기존 토큰으로 재요청하였고 또 401 발생이 반복되면서 요청 수 만큼 refresh를 하고 있습니다.
+3\. 이때 하나의 요청이 새로운 토큰을 저장하기 전에 다른 요청이 여전히 만료된 기존 토큰으로 재요청하면, 이들 요청도 401을 발생시키고 다시 refresh를 시도합니다.  
+이로 인해 **요청 수만큼 중복 갱신이 발생하고, 모든 요청이 401 → refresh를 반복하는 비효율적인 상황**이 발생합니다.
 
 <br>
 <br>
@@ -584,17 +585,18 @@ failedQueue에 쌓여있던 요청들의 resolve 콜백을 호출하고, 각 요
 
 **<mark class="yellow">Q1. failedQueue는 Promise 형태인가?</mark>**
 
-아닙니다. failedQueue는 Promise 객체 자체를 저장하지 않고, resolve와 reject 함수만 저장합니다.
-
+아닙니다. failedQueue는 Promise 객체 자체를 저장하지 않고, resolve와 reject 함수만 저장합니다.  
 Promise 객체는 해당 함수들을 호출하여 원하는 시점에 완료되거나 에러로 처리되도록 제어할 수 있습니다.
 
 <br>
 
-**<mark class="yellow">Q2. Promise의 pending 상태는 고려할 필요가 없는가?</mark>**
+<mark class="yellow">Q2. Promise의 pending 상태는 고려할 필요가 없는가?</mark>
 
-Promise는 resolve나 reject가 호출되기 전까지 항상 pending 상태입니다.  
-설계된 코드를 보면 processQueue 함수로 대기 중인 요청의 resolve나 reject가 무조건 실행되므로  
-Promise의 상태 전환이 명확하여 pending 상태를 직접 관리할 필요가 없습니다.
+`failedQueue`에는 Promise 객체가 직접 들어가는 것이 아니라, 각각의 요청을 처리할 resolve와 reject 함수가 들어갑니다.  
+이 함수들은 refreshAccessToken이 완료되었을 때 processQueue를 통해 실행되며, 그 순간 각 요청의 상태가 확정됩니다.
+
+따라서 여기서 고려해야 할 것은 각 요청의 Promise 상태가 아니라, 공통으로 사용되는 **refreshAccessToken의 pending 상태가 길어질 경우입니다.**  
+예기치 않게 refreshAccessToken이 resolve나 reject되지 않고 계속 pending 상태에 머물면, failedQueue에 쌓인 요청들도 처리되지 않은 채 멈춰 있게 되므로, 이를 방어하기 위한 타임아웃 처리나 fallback 전략이 필요합니다.
 
 <br>
 <br>

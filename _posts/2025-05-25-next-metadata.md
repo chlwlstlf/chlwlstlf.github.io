@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Next.js] Metadata 설정하기"
+title: "[Next.js] Next15에서 Metadata 설정하기"
 categories: next
 toc: true
 toc_sticky: true
@@ -215,7 +215,7 @@ og 이미지를 SVG에서 PNG로 변환하여 해결했다.
 
 <br>
 
-**<mark class="yellow">[추가사항]</mark>**  
+**<mark class="yellow">[추가 구현사항]</mark>**  
 로고 해상도가 깨져보여서 피그마에서 `2x`로 추출했다.
 
 <br>
@@ -275,7 +275,7 @@ const ResultPage = async ({ params }) => {};
 
 현재 `og:url`는 default 값인 `https://concertseat.site` 이고, 이 url의 메타데이터인 default 값이 보였던 것이다.
 
-![Image](https://github.com/user-attachments/assets/a66f2f02-b724-4f95-af02-77b4d7b8b421)
+<img src="https://github.com/user-attachments/assets/a66f2f02-b724-4f95-af02-77b4d7b8b421" style="border: 1px solid #ccc; border-radius: 10px;" />
 
 <br>
 
@@ -309,7 +309,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 그래도 이전 og 태그가 보인다면 이는 **캐싱**되어 있는 것이다. 빠른 og 정보를 가져오기 위해 카카오가 캐싱한다. 함수 내용이 바뀌었다면 캐싱을 수동으로 제거해줘야 한다.
 
-아래 사이트에서 사이트 url을 넣고 "디버그" -> "캐시 초기화"를 눌러 캐시를 제거한다.
+아래 사이트에서 **사이트 url**을 넣고 "디버그" -> "캐시 초기화"를 눌러 캐시를 제거한다.
 
 [https://developers.kakao.com/tool/debugger/sharing](https://developers.kakao.com/tool/debugger/sharing)
 
@@ -353,10 +353,12 @@ export default KakaoScript;
 **2\. 공유하기 정보 커스텀하기**
 
 - `window.Kakao.Share`: Link에서 Share로 변경됨
-- 메시지 구성 방법: 카카오 디벨로퍼에서 확인 가능('sendDefault()' \| 'sendCustom()' \| 'sendScrap()')
-- 기본 메시지 템플릿(`objectType`): 카카오 디벨로퍼에서 확인 가능('feed' \| 'list' \| 'location' \| 'commerce' \| 'text')
+- 메시지 구성 방법: 카카오 디벨로퍼에서 확인 가능  
+  'sendDefault()' \| 'sendScrap()' \| 'sendCustom()'
+- 기본 메시지 템플릿(`objectType`): 카카오 디벨로퍼에서 확인 가능  
+  'feed' \| 'list' \| 'location' \| 'commerce' \| 'text'
 
-![Image](https://github.com/user-attachments/assets/50708bda-8e13-48bd-988f-37c010af6f20)
+<img src="https://github.com/user-attachments/assets/50708bda-8e13-48bd-988f-37c010af6f20" style="border: 1px solid #ccc; border-radius: 10px;" />
 
 <br>
 
@@ -365,7 +367,7 @@ export default KakaoScript;
 ```tsx
 const handleShareKakao = () => {
   window.Kakao.Share.sendDefault({
-    //2022.05.30부터 Link에서 Share로 변경
+    //2022.05.30부터 Kakao.Link에서 Kakao.Share로 변경
     objectType: "feed",
     content: {
       title,
@@ -444,7 +446,7 @@ twitter: {
 ## <mark class="pink">🔥3-2. 트위터 공유하기</mark>
 
 **<mark class="yellow">[구현 사항]</mark>**  
-`https://twitter.com/intent/tweet?url=` 뒤에 인코딩 된 url과 text를 넣으면 된다.
+`https://twitter.com/intent/tweet?url=` 뒤에 인코딩 된 url과 text를 넣으면 원하는 게시글과 링크를 자동으로 넣을 수 있다.
 
 **ShareArea.tsx**
 
@@ -465,12 +467,12 @@ const handleShareTwitter = () => {
 **<mark class="yellow">[결과 화면]</mark>**  
 정의한 text가 자동 기재된다.
 
-![Image](https://github.com/user-attachments/assets/a2ea93f4-6134-4e29-aa84-18f1edaf7708)
+<img src="https://github.com/user-attachments/assets/a2ea93f4-6134-4e29-aa84-18f1edaf7708" style="border: 1px solid #ccc; border-radius: 10px;" />
 
 <br>
 
 **<mark class="yellow">[주의 사항]</mark>**  
-트위터도 빠른 og 태그 렌더링을 위해 **캐싱**한다. 카카오는 캐시 초기화를 할 수 있지만 트위터는 1~3일마다 자체적으로 캐시를 초기화하는 것 같다. 바로 안 바뀌더라도 며칠 기다려보자😁
+트위터도 빠른 og 태그 렌더링을 위해 **캐싱**한다. 카카오는 캐시 초기화를 할 수 있지만 트위터는 1~3일마다 자체적으로 캐시를 초기화하는 것 같다. **바로 안 바뀌더라도 며칠 기다려보자😁**
 
 <br>
 <br>
@@ -503,13 +505,13 @@ appleWebApp: {
 - title을 그대로 적었더니 앱 이름이 너무 길어졌다.
 - 아이폰은 홈 화면 추가 아이콘을 따로 지정해주어야 한다.
 
-**[아이폰 (문제)]**
+**[아이폰]** - 문제
 
 ![Image](https://github.com/user-attachments/assets/402bd62a-8e0b-458b-8669-883490b1099d)
 
 <br>
 
-**[갤럭시 (잘 나옴)]**
+**[갤럭시]** - 잘 나옴
 
 ![Image](https://github.com/user-attachments/assets/a5e47dd7-706e-4084-b055-7f547392c815)
 

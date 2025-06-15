@@ -33,11 +33,9 @@ toc_sticky: true
 - 백엔드에 보내야하는 `sectionId` 정보가 없어 다시 백엔드 팀원과 디자이너에게 `sectionId`까지 포함한 id를 만들어달라고 했다.
 - 나는 `sectionId`가 어떻게 부여되어 있는지 모르기 때문에 백엔드 팀원이 대신 말해주었다.
 
-<br>
-
 ![Image](https://github.com/user-attachments/assets/82376aeb-4b94-4e38-b9f0-84c163a67a4e)
 
-(감사합니다😭👏)
+(히히 감사합니다👏👏)
 
 <br>
 

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Next.js] Next에서 Tanstack Query 사용하기"
+title: "[Next.js] Next15에서 Tanstack Query 사용하기"
 categories: next
 toc: true
 toc_sticky: true
@@ -39,7 +39,7 @@ export const getAccessToken = async (): Promise<string> => {
     const session = await auth();
     return session?.accessToken ?? "";
   } else {
-    const res = await fetch("/api/auth/session");
+    const res = await fetch("/auth/session");
     const session = await res.json();
     return session?.accessToken ?? "";
   }

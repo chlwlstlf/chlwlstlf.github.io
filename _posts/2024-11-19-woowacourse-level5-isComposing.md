@@ -147,12 +147,12 @@ onKeyPress는 이벤트는 공식적으로 deprecated되었다. deprecated란 �
 <br>
 <br>
 
-## <mark class="pink">🔥다양한 OS와 브라우저에서의 IME</mark>
+## <mark class="pink">🔥[ 실험 ] 다양한 OS와 브라우저에서의 IME</mark>
 
-왜 MacOS+Chrome 환경에서만 이런 오류가 생기는지 IME를 어떻게 처리해서 문제가 발생하는지 궁금했다. 추가로 크로스 브라우징 이슈를 해결해보고 싶어 다양한 OS와 브라우저 환경에서 실험해보았다.
+왜 MacOS+Chrome 환경에서만 이런 오류가 생기는지 IME를 어떻게 처리해서 문제가 발생하는지 궁금했다. 추가로 크로스 브라우징 이슈를 해결해보고 싶어 **다양한 OS와 브라우저 환경에서 실험해보았다.**
 
 다르 블로그에 샤라웃 당했다. 맥북 유저 다르 감사합니다🙇‍♀️
-<img src="https://github.com/user-attachments/assets/3b9b41c9-7805-4cb3-8b7e-294570b1ff27" style="border: 1px solid #ccc; border-radius: 4px;" />
+<img src="https://github.com/user-attachments/assets/3b9b41c9-7805-4cb3-8b7e-294570b1ff27" style="border: 1px solid #ccc; border-radius: 10px;" />
 
 <br>
 
