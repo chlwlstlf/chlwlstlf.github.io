@@ -8,6 +8,8 @@ main:
 docs:
   - title: Front
     children:
+      - title: "JavaScript"
+        url: /categories/javascript
       - title: "React"
         url: /categories/react
         category: "react"

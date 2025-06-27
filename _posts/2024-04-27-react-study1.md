@@ -201,13 +201,13 @@ React에서는 16ms 단위로 batch update를 진행한다. 16ms 동안 변경�
 
 [React에서의 setState](https://mingule.tistory.com/64)
 
-1\. 첫번째 이유
+**1\. 첫번째 이유**
 
 state가 바뀔 때마다 렌더링 하면 효율성이 떨어지기 때문이다.
 
 <br>
 
-2\. 두번쨰 이유
+**2\. 두번째 이유**
 
 내부적인 State, Props, Ref들에 대한 일관성을 보장할 수 있다. React는 재조정(reconciliation) 그리고 바뀌는 작업(flush) 이후에 State과 Props를 업데이트 하도록 만들어놨다. 이렇게 state가 바로 바뀌는 것이 아닌, 바뀌는 시간을 딜레이 함으로써
 
@@ -217,13 +217,17 @@ state 를 생성할 때는 ‘반드시 필요한’ ‘핵심적인’ state �
 
 <br>
 
-3\. 세번째 이유
+**3\. 세번째 이유**
 
-16 \* 60 = 960
+1000ms / 60fps ≈ 16.66ms  
+→ 화면은 보통 1초에 60번 그려짐 (60Hz 주사율)  
+→ 즉, 브라우저는 약 16.6ms마다 한 번씩 화면을 갱신
 
-1000ms = 1s
+그래서 보통 `requestAnimationFrame()`은 이 주기에 맞춰 콜백을 실행시킨다.
 
-⇒ 모니터의 주사율 때문이다.
+state는 렌더링을 유발하고, React는 다음 "프레임"에 맞춰 렌더링 스케줄을 등록한다. 이 렌더링은 브라우저의 60FPS 주기(≈16.6ms)에 맞춰 일어나야 하기 때문에 동기적으로 처리되지 않고, 다음 프레임에 맞춰 배치 처리된다.
+
+따라서 상태 변경 → 실제 DOM 반영 → 화면에 보이는 것까지 약 16ms 딜레이가 존재할 수 있다.
 
 <br>
 <br>
@@ -363,6 +367,8 @@ export default function App() {
 }
 ```
 
+> 하나는 `div` 태그의 자식, 하나는 `section` 태그의 자식이기 때문에 다른 위치이다.
+
 ```jsx
 export default function App() {
   const [isFancy, setIsFancy] = useState(false);
@@ -396,7 +402,7 @@ export default function App() {
 
 <mark class="yellow">같은 위치</mark>
 
-> React에서 중요한 것은 JSX 마크업이 아니라 UI 트리에서의 위치라는 것을 기억하세요! 이 컴포넌트에는 if 내부와 외부에 서로 다른 <Counter /> JSX 태그가 있는 두 개의 return절이 있습니다
+> React에서 중요한 것은 JSX 마크업이 아니라 UI 트리에서의 위치라는 것을 기억하자. 이 컴포넌트에는 if 내부와 외부에 서로 다른 `<Counter />` JSX 태그가 있는 두 개의 return절이 있다.
 
 ```jsx
 export default function App() {
@@ -415,6 +421,8 @@ export default function App() {
 **2\. 동일한 위치에서 state 재설정하기**
 
 <mark class="yellow">잘못된 코드</mark>
+
+> React는 "Taylor에서 Sarah로 바뀌었지만 같은 자리네?" 라고 판단하여 기존 Counter의 state를 재사용한다. 결과적으로 Sarah의 카운터가 Taylor의 값을 그대로 이어받는 버그가 생긴다.
 
 ```jsx
 export default function Scoreboard() {
@@ -438,7 +446,7 @@ export default function Scoreboard() {
 
 <mark class="yellow">올바른 코드</mark>
 
-1\) 컴포넌트를 다른 위치에 렌더링하기
+해결1. 컴포넌트를 다른 위치에 렌더링하기
 
 ```jsx
 export default function Scoreboard() {
@@ -461,7 +469,7 @@ export default function Scoreboard() {
 
 <br>
 
-2\) 각 컴포넌트에 key로 명시적인 아이덴티티를 부여하기 (props는 상관x)
+해결2. 각 컴포넌트에 key로 명시적인 아이덴티티를 부여하기 (props는 상관x)
 
 - key를 지정하면 React가 부모 내 순서가 아닌 key 자체를 위치의 일부로 사용하도록 지시한다.
 - 그렇기 때문에 JSX에서 같은 위치에 렌더링하더라도 React의 관점에서 보면 두 카운터는 서로 다른 카운터이다.

@@ -103,7 +103,9 @@ analytics:
 author:
   name: "최진실"
   avatar: "/assets/images/chlwlstlf.jpg"
-  bio: "SJU DataScience\nwoowacourse 6기 FE"
+  bio: |
+    SJU DataScience  
+    woowacourse 6기 FE
 
 # Site Footer
 footer:
