@@ -10,6 +10,7 @@ docs:
     children:
       - title: "JavaScript"
         url: /categories/javascript
+        category: "javascript"
       - title: "React"
         url: /categories/react
         category: "react"
