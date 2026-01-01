@@ -44,6 +44,7 @@ div.blue-box {
   border-color: #bce8f1;
 }
 
-img {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+img,
+video {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
